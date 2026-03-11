@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "IMt76Zp5Jis=",
   "success": true,
   "projectFilePath": "C:\\Users\\anderson.psantos32\\source\\integrador\\IntegradorV1\\IntegradorV1\\IntegradorV1.csproj",
+=======
+  "dgSpecHash": "d22syRweDb4=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\victor.dsalmeida\\OneDrive - SENAC - SP\\Área de Trabalho\\IntegradorV1\\IntegradorV1\\IntegradorV1.csproj",
+>>>>>>> 7a7469d (testando)
   "expectedPackageFiles": [],
   "logs": []
 }

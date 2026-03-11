@@ -14,7 +14,11 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = IntegradorV1
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\anderson.psantos32\source\integrador\IntegradorV1\IntegradorV1\
+=======
+build_property.ProjectDir = C:\Users\victor.dsalmeida\OneDrive - SENAC - SP\Área de Trabalho\IntegradorV1\IntegradorV1\
+>>>>>>> 7a7469d (testando)
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTUseWindowsUIXamlProjections = false
