@@ -45,13 +45,8 @@
             estoqueToolStripMenuItem = new ToolStripMenuItem();
             usuáriosToolStripMenuItem = new ToolStripMenuItem();
             configuraçõesGeraisToolStripMenuItem = new ToolStripMenuItem();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            panel3.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
@@ -126,10 +121,6 @@
             // panel3
             // 
             panel3.BackColor = Color.White;
-            panel3.Controls.Add(button5);
-            panel3.Controls.Add(button4);
-            panel3.Controls.Add(button3);
-            panel3.Controls.Add(button2);
             panel3.Location = new Point(293, 146);
             panel3.Name = "panel3";
             panel3.Size = new Size(424, 188);
@@ -186,7 +177,7 @@
             // caixaToolStripMenuItem
             // 
             caixaToolStripMenuItem.Name = "caixaToolStripMenuItem";
-            caixaToolStripMenuItem.Size = new Size(48, 20);
+            caixaToolStripMenuItem.Size = new Size(47, 20);
             caixaToolStripMenuItem.Text = "Caixa";
             caixaToolStripMenuItem.Click += caixaToolStripMenuItem_Click;
             // 
@@ -209,42 +200,6 @@
             configuraçõesGeraisToolStripMenuItem.Size = new Size(131, 20);
             configuraçõesGeraisToolStripMenuItem.Text = "Configurações Gerais";
             // 
-            // button2
-            // 
-            button2.Location = new Point(51, 22);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 0;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(169, 25);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 1;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(71, 81);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 2;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.Location = new Point(208, 85);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 23);
-            button5.TabIndex = 3;
-            button5.Text = "button5";
-            button5.UseVisualStyleBackColor = true;
-            // 
             // TelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -260,7 +215,6 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -287,9 +241,5 @@
         private Button button1;
         private Label label2;
         private PictureBox pictureBox2;
-        private Button button5;
-        private Button button4;
-        private Button button3;
-        private Button button2;
     }
 }

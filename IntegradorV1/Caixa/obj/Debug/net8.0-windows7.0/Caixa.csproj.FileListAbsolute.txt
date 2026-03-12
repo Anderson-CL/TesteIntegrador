@@ -1,0 +1,17 @@
+C:\Users\victor.dsalmeida\source\Integrador\IntegradorV1\Caixa\bin\Debug\net8.0-windows7.0\Caixa.exe
+C:\Users\victor.dsalmeida\source\Integrador\IntegradorV1\Caixa\bin\Debug\net8.0-windows7.0\Caixa.deps.json
+C:\Users\victor.dsalmeida\source\Integrador\IntegradorV1\Caixa\bin\Debug\net8.0-windows7.0\Caixa.runtimeconfig.json
+C:\Users\victor.dsalmeida\source\Integrador\IntegradorV1\Caixa\bin\Debug\net8.0-windows7.0\Caixa.dll
+C:\Users\victor.dsalmeida\source\Integrador\IntegradorV1\Caixa\bin\Debug\net8.0-windows7.0\Caixa.pdb
+C:\Users\victor.dsalmeida\source\Integrador\IntegradorV1\Caixa\obj\Debug\net8.0-windows7.0\Caixa.Caixa.resources
+C:\Users\victor.dsalmeida\source\Integrador\IntegradorV1\Caixa\obj\Debug\net8.0-windows7.0\Caixa.csproj.GenerateResource.cache
+C:\Users\victor.dsalmeida\source\Integrador\IntegradorV1\Caixa\obj\Debug\net8.0-windows7.0\Caixa.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\victor.dsalmeida\source\Integrador\IntegradorV1\Caixa\obj\Debug\net8.0-windows7.0\Caixa.AssemblyInfoInputs.cache
+C:\Users\victor.dsalmeida\source\Integrador\IntegradorV1\Caixa\obj\Debug\net8.0-windows7.0\Caixa.AssemblyInfo.cs
+C:\Users\victor.dsalmeida\source\Integrador\IntegradorV1\Caixa\obj\Debug\net8.0-windows7.0\Caixa.csproj.CoreCompileInputs.cache
+C:\Users\victor.dsalmeida\source\Integrador\IntegradorV1\Caixa\obj\Debug\net8.0-windows7.0\Caixa.sourcelink.json
+C:\Users\victor.dsalmeida\source\Integrador\IntegradorV1\Caixa\obj\Debug\net8.0-windows7.0\Caixa.dll
+C:\Users\victor.dsalmeida\source\Integrador\IntegradorV1\Caixa\obj\Debug\net8.0-windows7.0\refint\Caixa.dll
+C:\Users\victor.dsalmeida\source\Integrador\IntegradorV1\Caixa\obj\Debug\net8.0-windows7.0\Caixa.pdb
+C:\Users\victor.dsalmeida\source\Integrador\IntegradorV1\Caixa\obj\Debug\net8.0-windows7.0\Caixa.genruntimeconfig.cache
+C:\Users\victor.dsalmeida\source\Integrador\IntegradorV1\Caixa\obj\Debug\net8.0-windows7.0\ref\Caixa.dll
