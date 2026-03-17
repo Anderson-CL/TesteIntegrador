@@ -4,24 +4,27 @@ namespace CaixaIntegrador
 {
     public partial class Form1 : Form
     {
- //Carregando lista
+        //Carregando lista
         List<Categoria> categorias;
         List<SubCategoria> subCategorias;
         List<Produto> produtos;
- //Puxa os UserControl para ser usado no forms
+        //Puxa os UserControl para ser usado no forms
         UCCategorias ucCategorias = new UCCategorias();
         UCSubCategorias ucSubCategorias = new UCSubCategorias();
         UCProdutos ucProdutos = new UCProdutos();
-       
+
         public Form1()
         {
             InitializeComponent();
             //Ação Puxando o evento quando são selecionados
             ucCategorias.CategoriaSelecionada += CategoriaSelecionada;
             ucSubCategorias.SubCategoriaSelecionada += SubCategoriaSelecionada;
+            ucProdutos.ProdutoSelecionado += AdicionarProdutoNaTabela;
+
             //Faz com que as opções acima aparecam no painel
             panelPrincipal.Controls.Add(ucCategorias);
             ucCategorias.Dock = DockStyle.Fill;
+
             //Ação do botão Voltar
             CarregarDados();
             ucSubCategorias.VoltarClick += VoltarCategorias;
@@ -58,14 +61,14 @@ namespace CaixaIntegrador
             new SubCategoria{Id=3, Nome="Agua", CategoriaId=1},
 
             new SubCategoria{Id=4, Nome="Cigarros", CategoriaId=2},
-            new SubCategoria{Id=5, Nome="carvão", CategoriaId=2},           
+            new SubCategoria{Id=5, Nome="carvão", CategoriaId=2},
 
             new SubCategoria{Id=6, Nome="Bolachas", CategoriaId=3},
             new SubCategoria{Id=7, Nome="Balas", CategoriaId=3},
             new SubCategoria{Id=8, Nome="Chocolates", CategoriaId=3},
              };
 
-             produtos = new List<Produto>()
+            produtos = new List<Produto>()
              {
             new Produto{Id=1, Nome="Coca Cola", SubCategoriaId=1, Preco=6},
             new Produto{Id=2, Nome="Pepsi", SubCategoriaId=1, Preco=5},
@@ -73,24 +76,24 @@ namespace CaixaIntegrador
 
             new Produto{Id=4, Nome="Heineken", SubCategoriaId=2, Preco=10},
             new Produto{Id=5, Nome="Skol", Preco=8, SubCategoriaId=2},
-            new Produto{Id=6, Nome="Água sem gás", SubCategoriaId=3, Preco=3.75},
+            new Produto{Id=6, Nome="Água sem gás", SubCategoriaId=3, Preco=3.75m},
 
-            new Produto{Id=7, Nome="Malboro", SubCategoriaId=4, Preco=8.75},
-            new Produto{Id=8, Nome="Rotmans", SubCategoriaId=4, Preco=7.75},
+            new Produto{Id=7, Nome="Malboro", SubCategoriaId=4, Preco=8.75m},
+            new Produto{Id=8, Nome="Rotmans", SubCategoriaId=4, Preco=7.75m},
 
-            new Produto{Id=9, Nome="Coco Bass", SubCategoriaId=5, Preco=5.75},
-            new Produto{Id=10, Nome="Zomo", SubCategoriaId=5, Preco=5.75},
+            new Produto{Id=9, Nome="Coco Bass", SubCategoriaId=5, Preco=5.75m},
+            new Produto{Id=10, Nome="Zomo", SubCategoriaId=5, Preco=5.75m},
 
-            new Produto{Id=11, Nome="Trakinas", SubCategoriaId=6, Preco=4.75},
-            new Produto{Id=12, Nome="Passa-tempo", SubCategoriaId=6, Preco=2.75},
+            new Produto{Id=11, Nome="Trakinas", SubCategoriaId=6, Preco=4.75m},
+            new Produto{Id=12, Nome="Passa-tempo", SubCategoriaId=6, Preco=2.75m},
 
-            new Produto{Id=13, Nome="Halls", SubCategoriaId=7, Preco=3.75},
-            new Produto{Id=14, Nome="Bubbalo", SubCategoriaId=7, Preco=0.75},
+            new Produto{Id=13, Nome="Halls", SubCategoriaId=7, Preco=3.75m},
+            new Produto{Id=14, Nome="Bubbalo", SubCategoriaId=7, Preco=0.75m},
 
-            new Produto{Id=15, Nome="Laka", SubCategoriaId=8, Preco=4.25},
-            new Produto{Id=16, Nome="Bis", SubCategoriaId=8, Preco=4.50},
+            new Produto{Id=15, Nome="Laka", SubCategoriaId=8, Preco=4.25m},
+            new Produto{Id=16, Nome="Bis", SubCategoriaId=8, Preco=4.50m},
              };
-           
+
             //Método para filtrar as subcategoria com base na categoria escolhida
             //void CategoriaSelecionada(int categoriaId)
             //{
@@ -104,7 +107,7 @@ namespace CaixaIntegrador
             //    ucProdutos.CarregarProdutos(lista);
             //}
         }
-        
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -115,8 +118,8 @@ namespace CaixaIntegrador
 
         }
         //Método ao clicar na categoria, Filtra com base no ID da categoria, Limpa os botões e carrega a lista da SubCategorias
-       void CategoriaSelecionada(int categoriaId)
-       {
+        void CategoriaSelecionada(int categoriaId)
+        {
             var lista = subCategorias
                 .Where(x => x.CategoriaId == categoriaId)
                 .ToList();
@@ -126,7 +129,8 @@ namespace CaixaIntegrador
             ucSubCategorias.Dock = DockStyle.Fill;
 
             ucSubCategorias.CarregarSubCategorias(lista);
-       }
+        }
+
         //Mesma coisa do de cima, só que com os produtos
         void SubCategoriaSelecionada(int subId)
         {
@@ -141,6 +145,38 @@ namespace CaixaIntegrador
             ucProdutos.CarregarProdutos(lista);
         }
 
+        //Botão que adiciona os produtos na tabela
+        private void AdicionarProdutoNaTabela(Produto p)
+        {
+            int Qtd = 1;
+            decimal Total = p.Preco * Qtd;
+
+            DataGrid_Produtos.Rows.Add(p.Nome, Qtd, p.Preco * Qtd);
+            DataGrid_Produtos.Refresh();
+        }
+
+
+        public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DataGrid_Produtos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DataGrid_Produtos.Columns[e.ColumnIndex].Name == "Qtd")
+            {
+                var row = DataGrid_Produtos.Rows[e.RowIndex];
+
+                // Pega a quantidade digitada
+                int qtd = Convert.ToInt32(row.Cells["Qtd"].Value);
+
+                // Pega o preço unitário guardado na Tag
+                decimal precoUnitario = (decimal)row.Cells["Preço"].Tag;
+
+                // Atualiza o valor total
+                row.Cells["Preço"].Value = precoUnitario * qtd;
+            }
+        }
     }
 
 }

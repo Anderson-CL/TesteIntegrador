@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCSubCategorias));
             FlowSubCategorias = new FlowLayoutPanel();
             btnVoltar = new Button();
             FlowSubCategorias.SuspendLayout();
@@ -45,13 +46,21 @@
             // btnVoltar
             // 
             btnVoltar.BackColor = Color.Crimson;
+            btnVoltar.Cursor = Cursors.Hand;
+            btnVoltar.FlatAppearance.BorderColor = Color.Black;
+            btnVoltar.FlatAppearance.BorderSize = 2;
+            btnVoltar.FlatStyle = FlatStyle.Flat;
             btnVoltar.Font = new Font("Arial", 15F);
             btnVoltar.ForeColor = Color.White;
+            btnVoltar.Image = (Image)resources.GetObject("btnVoltar.Image");
+            btnVoltar.ImageAlign = ContentAlignment.BottomCenter;
             btnVoltar.Location = new Point(3, 3);
             btnVoltar.Name = "btnVoltar";
             btnVoltar.Size = new Size(120, 120);
             btnVoltar.TabIndex = 0;
             btnVoltar.Text = "Voltar";
+            btnVoltar.TextAlign = ContentAlignment.BottomCenter;
+            btnVoltar.TextImageRelation = TextImageRelation.TextAboveImage;
             btnVoltar.UseVisualStyleBackColor = false;
             btnVoltar.Click += btnVoltar_Click;
             // 

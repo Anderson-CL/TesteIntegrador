@@ -28,10 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            FlowProdutos = new FlowLayoutPanel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCProdutos));
             btnVoltar = new Button();
+            FlowProdutos = new FlowLayoutPanel();
             FlowProdutos.SuspendLayout();
             SuspendLayout();
+            // 
+            // btnVoltar
+            // 
+            btnVoltar.BackColor = Color.Crimson;
+            btnVoltar.Cursor = Cursors.Hand;
+            btnVoltar.FlatAppearance.BorderColor = Color.Black;
+            btnVoltar.FlatAppearance.BorderSize = 2;
+            btnVoltar.FlatStyle = FlatStyle.Flat;
+            btnVoltar.Font = new Font("Arial", 15F);
+            btnVoltar.ForeColor = Color.White;
+            btnVoltar.Image = (Image)resources.GetObject("btnVoltar.Image");
+            btnVoltar.ImageAlign = ContentAlignment.BottomCenter;
+            btnVoltar.Location = new Point(3, 3);
+            btnVoltar.Name = "btnVoltar";
+            btnVoltar.Size = new Size(120, 120);
+            btnVoltar.TabIndex = 0;
+            btnVoltar.Text = "Voltar";
+            btnVoltar.TextAlign = ContentAlignment.BottomCenter;
+            btnVoltar.TextImageRelation = TextImageRelation.TextAboveImage;
+            btnVoltar.UseVisualStyleBackColor = false;
+            btnVoltar.Click += btnVoltar_Click;
             // 
             // FlowProdutos
             // 
@@ -39,22 +61,9 @@
             FlowProdutos.Dock = DockStyle.Fill;
             FlowProdutos.Location = new Point(0, 0);
             FlowProdutos.Name = "FlowProdutos";
-            FlowProdutos.Size = new Size(150, 150);
+            FlowProdutos.Size = new Size(600, 368);
             FlowProdutos.TabIndex = 0;
             FlowProdutos.Paint += FlowProdutos_Paint;
-            // 
-            // btnVoltar
-            // 
-            btnVoltar.BackColor = Color.Crimson;
-            btnVoltar.Font = new Font("Arial", 15F);
-            btnVoltar.ForeColor = Color.White;
-            btnVoltar.Location = new Point(3, 3);
-            btnVoltar.Name = "btnVoltar";
-            btnVoltar.Size = new Size(120, 120);
-            btnVoltar.TabIndex = 0;
-            btnVoltar.Text = "Voltar";
-            btnVoltar.UseVisualStyleBackColor = false;
-            btnVoltar.Click += btnVoltar_Click;
             // 
             // UCProdutos
             // 
@@ -62,14 +71,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(FlowProdutos);
             Name = "UCProdutos";
+            Size = new Size(600, 368);
             Load += Produtos_Load;
             FlowProdutos.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private FlowLayoutPanel FlowProdutos;
         private Button btnVoltar;
+        private FlowLayoutPanel FlowProdutos;
     }
 }

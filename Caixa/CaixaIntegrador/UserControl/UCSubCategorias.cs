@@ -1,4 +1,5 @@
 ﻿using CaixaIntegrador.Classes;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,11 +24,14 @@ namespace CaixaIntegrador
 
             foreach (var sub in lista)
             {
-                Button btn = new Button();
+                Guna2Button btn = new Guna2Button();
                 btn.Text = sub.Nome;
                 btn.Width = 120;
                 btn.Height = 120;
-                btn.Font = new Font("Arial", 15);
+                btn.Font = new Font("Arial Black", 12);
+                btn.BorderRadius = 13;
+                btn.BorderThickness = 2;
+                btn.BorderColor = Color.Black;
 
                 btn.Click += (s, e) =>
                 {

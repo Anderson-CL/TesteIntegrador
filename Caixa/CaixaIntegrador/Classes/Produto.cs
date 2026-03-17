@@ -12,6 +12,6 @@ namespace CaixaIntegrador.Classes
         public int Id { get; set; }
         public string Nome { get; set; }
         public int SubCategoriaId { get; set; }
-        public double Preco { get; set; }
+        public decimal Preco { get; set; }
     }
 }

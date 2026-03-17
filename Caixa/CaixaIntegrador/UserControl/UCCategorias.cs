@@ -11,6 +11,7 @@ using System.Windows.Forms;
 namespace CaixaIntegrador
 {
     using CaixaIntegrador.Classes;
+    using Guna.UI2.WinForms;
 
     public partial class UCCategorias : UserControl
     {
@@ -24,11 +25,14 @@ namespace CaixaIntegrador
             //Foreach para criar botões automaticamente
             foreach (var cat in categorias)
             {
-                Button btn = new Button();
+                Guna2Button btn = new Guna2Button();
                 btn.Text = cat.Nome;
                 btn.Width = 120;
                 btn.Height = 120;
-                btn.Font = new Font("arial", 15);
+                btn.Font = new Font("Arial Black", 12);
+                btn.BorderRadius = 13;
+                btn.BorderThickness = 2;
+                btn.BorderColor = Color.Black;
                 //Evento para o botão quando clicado
                 btn.Click += (s, e) =>
                 {

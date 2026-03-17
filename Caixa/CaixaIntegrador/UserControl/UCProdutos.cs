@@ -1,4 +1,5 @@
 ﻿using CaixaIntegrador.Classes;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,17 +20,22 @@ namespace CaixaIntegrador
         }
         public event Action<Produto> ProdutoSelecionado;
         public event Action VoltarClick;
+
         public void CarregarProdutos(List<Produto> produtos)
         {
             FlowProdutos.Controls.Clear();
             FlowProdutos.Controls.Add(btnVoltar);
             foreach (var prod in produtos)
+           
             {
-                Button btn = new Button();
-                btn.Text = prod.Nome + "\n\nR$ " + prod.Preco;
+                Guna2Button btn = new Guna2Button();
+                btn.Text = prod.Nome;
                 btn.Width = 120;
                 btn.Height = 120;
-                btn.Font = new Font("Arial", 15);
+                btn.Font = new Font("Arial Black", 12);
+                btn.BorderRadius = 13;
+                btn.BorderThickness = 2;
+                btn.BorderColor = Color.Black;
 
                 btn.Click += (s, e) =>
                 {
