@@ -7,16 +7,24 @@
       "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\caixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\dennis\\source\\repos\\projeto integrador\\caixa\\caixaintegrador\\caixa.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\caixa.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\dennis\\source\\repos\\projeto integrador\\caixa\\caixaintegrador\\classes\\carrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\classes\\carrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\dennis\\source\\repos\\projeto integrador\\caixa\\caixaintegrador\\classes\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\classes\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\dennis\\source\\repos\\projeto integrador\\caixa\\caixaintegrador\\usercontrol\\ucprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\usercontrol\\ucprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\caixaintegrador\\caixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\caixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\dennis\\source\\repos\\projeto integrador\\caixa\\caixaintegrador\\usercontrol\\ucprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\usercontrol\\ucprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,49 +44,79 @@
               "RelativeDocumentMoniker": "CaixaIntegrador\\Caixa.cs",
               "ToolTip": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Caixa.cs",
               "RelativeToolTip": "CaixaIntegrador\\Caixa.cs",
-              "ViewState": "AgIAAJ4AAAAAAAAAAAA1wLAAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAUwMEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-16T04:06:59.846Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Produto.cs",
-              "DocumentMoniker": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Classes\\Produto.cs",
-              "RelativeDocumentMoniker": "CaixaIntegrador\\Classes\\Produto.cs",
-              "ToolTip": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Classes\\Produto.cs",
-              "RelativeToolTip": "CaixaIntegrador\\Classes\\Produto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAWAAAAAAAAAA==",
+              "Title": "Caixa.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Caixa.Designer.cs",
+              "RelativeDocumentMoniker": "CaixaIntegrador\\Caixa.Designer.cs",
+              "ToolTip": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Caixa.Designer.cs",
+              "RelativeToolTip": "CaixaIntegrador\\Caixa.Designer.cs",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAAAKIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T20:42:52.609Z",
+              "WhenOpened": "2026-03-18T05:29:30.241Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UCProdutos.cs",
-              "DocumentMoniker": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\UserControl\\UCProdutos.cs",
-              "RelativeDocumentMoniker": "CaixaIntegrador\\UserControl\\UCProdutos.cs",
-              "ToolTip": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\UserControl\\UCProdutos.cs",
-              "RelativeToolTip": "CaixaIntegrador\\UserControl\\UCProdutos.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAqwCwAAAAvAAAAAAAAAA==",
+              "Title": "Carrinho.cs",
+              "DocumentMoniker": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Classes\\Carrinho.cs",
+              "RelativeDocumentMoniker": "CaixaIntegrador\\Classes\\Carrinho.cs",
+              "ToolTip": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Classes\\Carrinho.cs",
+              "RelativeToolTip": "CaixaIntegrador\\Classes\\Carrinho.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T19:13:22.825Z",
+              "WhenOpened": "2026-03-18T05:19:22.008Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Produto.cs",
+              "DocumentMoniker": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Classes\\Produto.cs",
+              "RelativeDocumentMoniker": "CaixaIntegrador\\Classes\\Produto.cs",
+              "ToolTip": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Classes\\Produto.cs",
+              "RelativeToolTip": "CaixaIntegrador\\Classes\\Produto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T04:53:15.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Caixa.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Caixa.cs",
               "RelativeDocumentMoniker": "CaixaIntegrador\\Caixa.cs",
               "ToolTip": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Caixa.cs [Projeto]",
               "RelativeToolTip": "CaixaIntegrador\\Caixa.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T19:28:01.645Z",
+              "WhenOpened": "2026-03-18T04:35:39.295Z",
               "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UCProdutos.cs",
+              "DocumentMoniker": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\UserControl\\UCProdutos.cs",
+              "RelativeDocumentMoniker": "CaixaIntegrador\\UserControl\\UCProdutos.cs",
+              "ToolTip": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\UserControl\\UCProdutos.cs",
+              "RelativeToolTip": "CaixaIntegrador\\UserControl\\UCProdutos.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAxwBQAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T19:13:22.825Z",
+              "EditorCaption": ""
             }
           ]
         }

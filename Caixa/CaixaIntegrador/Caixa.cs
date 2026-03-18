@@ -3,178 +3,189 @@ using CaixaIntegrador.Classes;
 namespace CaixaIntegrador
 {
     public partial class Form1 : Form
-    {
-        //Carregando lista
-        List<Categoria> categorias;
-        List<SubCategoria> subCategorias;
-        List<Produto> produtos;
-        //Puxa os UserControl para ser usado no forms
-        UCCategorias ucCategorias = new UCCategorias();
-        UCSubCategorias ucSubCategorias = new UCSubCategorias();
-        UCProdutos ucProdutos = new UCProdutos();
+    {   //Puxa as listas de categorias, subcategorias, produtos e carrinho
+        private List<Categoria> categorias;
+        private List<SubCategoria> subCategorias;
+        private List<Produto> produtos;
+        private List<CarrinhoCompra> carrinho = new();
+        //puxa os user controls
+        private UCCategorias ucCategorias = new UCCategorias();
+        private UCSubCategorias ucSubCategorias = new UCSubCategorias();
+        private UCProdutos ucProdutos = new UCProdutos();
 
+        //métodos adicionados na inicialização do form
         public Form1()
         {
             InitializeComponent();
-            //Ação Puxando o evento quando são selecionados
+            InicializarEventos();
+            CarregarDados();
+            AdicionarUserControlPrincipal();
+        }
+
+        // Conecta os eventos dos user controls 
+        private void InicializarEventos()
+        {
             ucCategorias.CategoriaSelecionada += CategoriaSelecionada;
             ucSubCategorias.SubCategoriaSelecionada += SubCategoriaSelecionada;
-            ucProdutos.ProdutoSelecionado += AdicionarProdutoNaTabela;
-
-            //Faz com que as opções acima aparecam no painel
-            panelPrincipal.Controls.Add(ucCategorias);
-            ucCategorias.Dock = DockStyle.Fill;
-
-            //Ação do botão Voltar
-            CarregarDados();
+            ucProdutos.ProdutoSelecionado += AdicionarAoCarrinho; 
             ucSubCategorias.VoltarClick += VoltarCategorias;
             ucProdutos.VoltarClick += VoltarSubCategorias;
         }
-        //Criando a ação do botão voltar e adiocionando os botões 
-        void VoltarCategorias()
+
+        // Adiciona o user control no painel
+        private void AdicionarUserControlPrincipal()
         {
-            panelPrincipal.Controls.Clear();
             panelPrincipal.Controls.Add(ucCategorias);
             ucCategorias.Dock = DockStyle.Fill;
         }
-        void VoltarSubCategorias()
+
+        // Carrega todos os dados dos métodos  e caarega o usercontrol de categorias
+        private void CarregarDados()
         {
-            panelPrincipal.Controls.Clear();
-            panelPrincipal.Controls.Add(ucSubCategorias);
-            ucSubCategorias.Dock = DockStyle.Fill;
+            CarregarCategorias();
+            CarregarSubCategorias();
+            CarregarProdutos();
+            ucCategorias.CarregarCategorias(categorias);
         }
-        //Método para carregar as listas
-        void CarregarDados()
+
+        // método de categorias
+        private void CarregarCategorias()
         {
             categorias = new List<Categoria>()
             {
-            new Categoria{Id=1, Nome="Bebidas"},
-            new Categoria{Id=2, Nome="Tabacaria"},
-            new Categoria{Id=3, Nome="Doces"}
-             };
-            //Método pra para mostrar as categorias
-            ucCategorias.CarregarCategorias(categorias);
+                new Categoria { Id = 1, Nome = "Bebidas" },
+                new Categoria { Id = 2, Nome = "Tabacaria" },
+                new Categoria { Id = 3, Nome = "Doces" }
+            };
+        }
+
+        // método de lista de subcategorias
+        private void CarregarSubCategorias()
+        {
             subCategorias = new List<SubCategoria>()
             {
-            new SubCategoria{Id=1, Nome="Refrigerante", CategoriaId=1},
-            new SubCategoria{Id=2, Nome="Cerveja", CategoriaId=1},
-            new SubCategoria{Id=3, Nome="Agua", CategoriaId=1},
+                new SubCategoria { Id = 1, Nome = "Refrigerante", CategoriaId = 1 },
+                new SubCategoria { Id = 2, Nome = "Cerveja", CategoriaId = 1 },
+                new SubCategoria { Id = 3, Nome = "Agua", CategoriaId = 1 },
+                new SubCategoria { Id = 4, Nome = "Cigarros", CategoriaId = 2 },
+                new SubCategoria { Id = 5, Nome = "carvão", CategoriaId = 2 },
+                new SubCategoria { Id = 6, Nome = "Bolachas", CategoriaId = 3 },
+                new SubCategoria { Id = 7, Nome = "Balas", CategoriaId = 3 },
+                new SubCategoria { Id = 8, Nome = "Chocolates", CategoriaId = 3 }
+            };
+        }
 
-            new SubCategoria{Id=4, Nome="Cigarros", CategoriaId=2},
-            new SubCategoria{Id=5, Nome="carvão", CategoriaId=2},
 
-            new SubCategoria{Id=6, Nome="Bolachas", CategoriaId=3},
-            new SubCategoria{Id=7, Nome="Balas", CategoriaId=3},
-            new SubCategoria{Id=8, Nome="Chocolates", CategoriaId=3},
-             };
-
+        // método da lista de produtos
+        private void CarregarProdutos()
+        {
             produtos = new List<Produto>()
-             {
-            new Produto{Id=1, Nome="Coca Cola", SubCategoriaId=1, Preco=6},
-            new Produto{Id=2, Nome="Pepsi", SubCategoriaId=1, Preco=5},
-            new Produto{Id=3, Nome="Fanta", SubCategoriaId=1, Preco=5},
-
-            new Produto{Id=4, Nome="Heineken", SubCategoriaId=2, Preco=10},
-            new Produto{Id=5, Nome="Skol", Preco=8, SubCategoriaId=2},
-            new Produto{Id=6, Nome="Água sem gás", SubCategoriaId=3, Preco=3.75m},
-
-            new Produto{Id=7, Nome="Malboro", SubCategoriaId=4, Preco=8.75m},
-            new Produto{Id=8, Nome="Rotmans", SubCategoriaId=4, Preco=7.75m},
-
-            new Produto{Id=9, Nome="Coco Bass", SubCategoriaId=5, Preco=5.75m},
-            new Produto{Id=10, Nome="Zomo", SubCategoriaId=5, Preco=5.75m},
-
-            new Produto{Id=11, Nome="Trakinas", SubCategoriaId=6, Preco=4.75m},
-            new Produto{Id=12, Nome="Passa-tempo", SubCategoriaId=6, Preco=2.75m},
-
-            new Produto{Id=13, Nome="Halls", SubCategoriaId=7, Preco=3.75m},
-            new Produto{Id=14, Nome="Bubbalo", SubCategoriaId=7, Preco=0.75m},
-
-            new Produto{Id=15, Nome="Laka", SubCategoriaId=8, Preco=4.25m},
-            new Produto{Id=16, Nome="Bis", SubCategoriaId=8, Preco=4.50m},
-             };
-
-            //Método para filtrar as subcategoria com base na categoria escolhida
-            //void CategoriaSelecionada(int categoriaId)
-            //{
-            //var lista = subCategorias.Where(x => x.CategoriaId == categoriaId).ToList();
-            //ucSubCategorias.CarregarSubCategorias(lista);
-            //}
-            ////Mesma coisa do de cima
-            //void SubCategoriaSelecionada(int subId)
-            //{
-            //var lista = produtos.Where(x => x.SubCategoriaId == subId).ToList();
-            //    ucProdutos.CarregarProdutos(lista);
-            //}
+            {
+                new Produto { Id = 1, Nome = "Coca Cola", SubCategoriaId = 1, Preco = 6 },
+                new Produto { Id = 2, Nome = "Pepsi", SubCategoriaId = 1, Preco = 5 },
+                new Produto { Id = 3, Nome = "Fanta", SubCategoriaId = 1, Preco = 5 },
+                new Produto { Id = 4, Nome = "Heineken", SubCategoriaId = 2, Preco = 10 },
+                new Produto { Id = 5, Nome = "Skol", SubCategoriaId = 2, Preco = 8 },
+                new Produto { Id = 6, Nome = "Água sem gás", SubCategoriaId = 3, Preco = 3.75m },
+                new Produto { Id = 7, Nome = "Malboro", SubCategoriaId = 4, Preco = 8.75m },
+                new Produto { Id = 8, Nome = "Rotmans", SubCategoriaId = 4, Preco = 7.75m },
+                new Produto { Id = 9, Nome = "Coco Bass", SubCategoriaId = 5, Preco = 5.75m },
+                new Produto { Id = 10, Nome = "Zomo", SubCategoriaId = 5, Preco = 5.75m },
+                new Produto { Id = 11, Nome = "Trakinas", SubCategoriaId = 6, Preco = 4.75m },
+                new Produto { Id = 12, Nome = "Passa-tempo", SubCategoriaId = 6, Preco = 2.75m },
+                new Produto { Id = 13, Nome = "Halls", SubCategoriaId = 7, Preco = 3.75m },
+                new Produto { Id = 14, Nome = "Bubbalo", SubCategoriaId = 7, Preco = 0.75m },
+                new Produto { Id = 15, Nome = "Laka", SubCategoriaId = 8, Preco = 4.25m },
+                new Produto { Id = 16, Nome = "Bis", SubCategoriaId = 8, Preco = 4.50m }
+            };
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        // Volta para a tela de categorias
+        private void VoltarCategorias()
         {
-
-
+            ExibirUserControl(ucCategorias);
         }
-        private void panel1_Paint(object sender, PaintEventArgs e)
+
+        // Volta para a tela de subcategorias
+        private void VoltarSubCategorias()
         {
-
+            ExibirUserControl(ucSubCategorias);
         }
-        //Método ao clicar na categoria, Filtra com base no ID da categoria, Limpa os botões e carrega a lista da SubCategorias
-        void CategoriaSelecionada(int categoriaId)
+
+        // Limpa o painel principal e mostra o usercontrol
+        private void ExibirUserControl(Control userControl)
+        {
+            panelPrincipal.Controls.Clear();
+            panelPrincipal.Controls.Add(userControl);
+            userControl.Dock = DockStyle.Fill;
+        }
+
+        // Filtra e exibe as subcategorias para categoria selecionada
+        private void CategoriaSelecionada(int categoriaId)
         {
             var lista = subCategorias
                 .Where(x => x.CategoriaId == categoriaId)
                 .ToList();
 
-            panelPrincipal.Controls.Clear();
-            panelPrincipal.Controls.Add(ucSubCategorias);
-            ucSubCategorias.Dock = DockStyle.Fill;
-
+            ExibirUserControl(ucSubCategorias);
             ucSubCategorias.CarregarSubCategorias(lista);
         }
 
-        //Mesma coisa do de cima, só que com os produtos
-        void SubCategoriaSelecionada(int subId)
+        // Filtra e exibe os produtos para subcategoria selecionada
+        private void SubCategoriaSelecionada(int subId)
         {
             var lista = produtos
                 .Where(x => x.SubCategoriaId == subId)
                 .ToList();
 
-            panelPrincipal.Controls.Clear();
-            panelPrincipal.Controls.Add(ucProdutos);
-            ucProdutos.Dock = DockStyle.Fill;
-
+            ExibirUserControl(ucProdutos);
             ucProdutos.CarregarProdutos(lista);
         }
 
-        //Botão que adiciona os produtos na tabela
-        private void AdicionarProdutoNaTabela(Produto p)
+        // Adiciona um produto no carrinho ou aumenta sua quantidade se já tem
+        private void AdicionarAoCarrinho(Produto produto)
         {
-            int Qtd = 1;
-            decimal Total = p.Preco * Qtd;
-
-            DataGrid_Produtos.Rows.Add(p.Nome, Qtd, p.Preco * Qtd);
-            DataGrid_Produtos.Refresh();
+            var itemExistente = carrinho.FirstOrDefault(c => c.Produto == produto.Nome);
+            if (itemExistente != null)
+            {
+                itemExistente.Qtd++;
+            }
+            else
+            {
+                carrinho.Add(new CarrinhoCompra { Produto = produto.Nome, Qtd = 1, Preco = produto.Preco });
+            }
+            AtualizarCarrinhoUI();
         }
 
-
-        public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        // Atualiza a exibição do carrinho na DataGrid
+        private void AtualizarCarrinhoUI()
         {
-
+            DataGrid_Produtos.DataSource = null;
+            DataGrid_Produtos.DataSource = carrinho;
+            AtualizarTotal();
+        }
+        // Calcula e exibe o valor total do carrinho
+        private void AtualizarTotal()
+        {
+            decimal totalGeral = carrinho.Sum(c => c.Total);
+            lblTotal_Text.Text = $"Total: R$ {totalGeral}";
         }
 
+        // Atualiza a quantidade de um produto quando editado na DataGrid
         private void DataGrid_Produtos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if (DataGrid_Produtos.Columns[e.ColumnIndex].Name == "Qtd")
             {
                 var row = DataGrid_Produtos.Rows[e.RowIndex];
 
-                // Pega a quantidade digitada
-                int qtd = Convert.ToInt32(row.Cells["Qtd"].Value);
-
-                // Pega o preço unitário guardado na Tag
-                decimal precoUnitario = (decimal)row.Cells["Preço"].Tag;
-
-                // Atualiza o valor total
-                row.Cells["Preço"].Value = precoUnitario * qtd;
+                if (int.TryParse(row.Cells["Qtd"].Value?.ToString(), out int novaQuantidade))
+                {
+                    var item = carrinho[e.RowIndex];
+                    item.Qtd = novaQuantidade;
+                    row.Cells["Total"].Value = item.Total;
+                    AtualizarTotal();
+                    DataGrid_Produtos.Refresh();
+                }
             }
         }
     }
