@@ -28,15 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
+            btnLimparCarrinho = new Button();
+            btnDeletarMarcados = new Button();
             DataGrid_Produtos = new DataGridView();
-            groupBox2 = new GroupBox();
-            lblTotal_Text = new Label();
-            panelPrincipal = new Panel();
+            Column5 = new DataGridViewCheckBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
+            groupBox2 = new GroupBox();
+            lblTotal_Text = new Label();
+            panelPrincipal = new Panel();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DataGrid_Produtos).BeginInit();
             groupBox2.SuspendLayout();
@@ -45,6 +51,8 @@
             // groupBox1
             // 
             groupBox1.BackColor = SystemColors.GradientInactiveCaption;
+            groupBox1.Controls.Add(btnLimparCarrinho);
+            groupBox1.Controls.Add(btnDeletarMarcados);
             groupBox1.Controls.Add(DataGrid_Produtos);
             groupBox1.Dock = DockStyle.Left;
             groupBox1.Location = new Point(0, 0);
@@ -54,19 +62,97 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
             // 
+            // btnLimparCarrinho
+            // 
+            btnLimparCarrinho.BackColor = Color.Red;
+            btnLimparCarrinho.Font = new Font("Arial", 12F, FontStyle.Bold);
+            btnLimparCarrinho.ForeColor = Color.White;
+            btnLimparCarrinho.Location = new Point(3, 481);
+            btnLimparCarrinho.Name = "btnLimparCarrinho";
+            btnLimparCarrinho.Size = new Size(160, 70);
+            btnLimparCarrinho.TabIndex = 2;
+            btnLimparCarrinho.Text = "Limpar Carrinho";
+            btnLimparCarrinho.UseVisualStyleBackColor = false;
+            btnLimparCarrinho.Click += BtnLimparCarrinho_Click;
+            // 
+            // btnDeletarMarcados
+            // 
+            btnDeletarMarcados.BackColor = Color.Orange;
+            btnDeletarMarcados.Font = new Font("Arial", 12F, FontStyle.Bold);
+            btnDeletarMarcados.ForeColor = Color.White;
+            btnDeletarMarcados.Location = new Point(162, 481);
+            btnDeletarMarcados.Name = "btnDeletarMarcados";
+            btnDeletarMarcados.Size = new Size(160, 70);
+            btnDeletarMarcados.TabIndex = 1;
+            btnDeletarMarcados.Text = "Deletar";
+            btnDeletarMarcados.UseVisualStyleBackColor = false;
+            btnDeletarMarcados.Click += BtnDeletarMarcados_Click;
+            // 
             // DataGrid_Produtos
             // 
             DataGrid_Produtos.AllowUserToAddRows = false;
-            DataGrid_Produtos.AutoGenerateColumns = false;
+            DataGrid_Produtos.AllowUserToResizeColumns = false;
+            DataGrid_Produtos.AllowUserToResizeRows = false;
+            DataGrid_Produtos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DataGrid_Produtos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGrid_Produtos.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
+            DataGrid_Produtos.Columns.AddRange(new DataGridViewColumn[] { Column5, Column1, Column2, Column3, Column4 });
             DataGrid_Produtos.Dock = DockStyle.Top;
             DataGrid_Produtos.Location = new Point(3, 19);
             DataGrid_Produtos.Name = "DataGrid_Produtos";
+            DataGrid_Produtos.RowHeadersVisible = false;
             DataGrid_Produtos.RowHeadersWidth = 35;
-            DataGrid_Produtos.Size = new Size(316, 414);
+            DataGrid_Produtos.RowTemplate.Resizable = DataGridViewTriState.True;
+            DataGrid_Produtos.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            DataGrid_Produtos.Size = new Size(316, 456);
             DataGrid_Produtos.TabIndex = 0;
             DataGrid_Produtos.CellEndEdit += DataGrid_Produtos_CellEndEdit;
+            // 
+            // Column5
+            // 
+            Column5.FillWeight = 35F;
+            Column5.HeaderText = "X";
+            Column5.Name = "Column5";
+            // 
+            // Column1
+            // 
+            Column1.DataPropertyName = "Produto";
+            Column1.FillWeight = 89.42893F;
+            Column1.HeaderText = "Produto";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Resizable = DataGridViewTriState.False;
+            // 
+            // Column2
+            // 
+            Column2.DataPropertyName = "Qtd";
+            dataGridViewCellStyle1.Format = "N0";
+            Column2.DefaultCellStyle = dataGridViewCellStyle1;
+            Column2.FillWeight = 89.42893F;
+            Column2.HeaderText = "Qtd";
+            Column2.Name = "Column2";
+            Column2.Resizable = DataGridViewTriState.False;
+            // 
+            // Column3
+            // 
+            Column3.DataPropertyName = "Preco";
+            dataGridViewCellStyle2.Format = "C2";
+            Column3.DefaultCellStyle = dataGridViewCellStyle2;
+            Column3.FillWeight = 89.42893F;
+            Column3.HeaderText = "Preco";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            Column3.Resizable = DataGridViewTriState.False;
+            // 
+            // Column4
+            // 
+            Column4.DataPropertyName = "Total";
+            dataGridViewCellStyle3.Format = "C2";
+            Column4.DefaultCellStyle = dataGridViewCellStyle3;
+            Column4.FillWeight = 89.42893F;
+            Column4.HeaderText = "Total";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            Column4.Resizable = DataGridViewTriState.False;
             // 
             // groupBox2
             // 
@@ -98,37 +184,6 @@
             panelPrincipal.Size = new Size(679, 681);
             panelPrincipal.TabIndex = 2;
             // 
-            // 
-            // Column1
-            // 
-            Column1.DataPropertyName = "Produto";
-            Column1.HeaderText = "Produto";
-            Column1.Name = "Produto";
-            Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.DataPropertyName = "Qtd";
-            Column2.HeaderText = "Qtd";
-            Column2.Name = "Qtd";
-            Column2.Width = 50;
-            // 
-            // Column3
-            // 
-            Column3.DataPropertyName = "Preco";
-            Column3.HeaderText = "Preco";
-            Column3.Name = "Preco";
-            Column3.ReadOnly = true;
-            Column3.Width = 50;
-            // 
-            // Column4
-            // 
-            Column4.DataPropertyName = "Total";
-            Column4.HeaderText = "Total";
-            Column4.Name = "Total";
-            Column4.ReadOnly = true;
-            Column4.Width = 79;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -153,7 +208,10 @@
         private GroupBox groupBox2;
         private Panel panelPrincipal;
         private Label lblTotal_Text;
+        private Button btnDeletarMarcados;
+        private Button btnLimparCarrinho;
         private DataGridView DataGrid_Produtos;
+        private DataGridViewCheckBoxColumn Column5;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;

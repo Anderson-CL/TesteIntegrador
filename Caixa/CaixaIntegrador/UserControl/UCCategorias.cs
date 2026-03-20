@@ -22,10 +22,18 @@ namespace CaixaIntegrador
         {
             //Limpar controles
             FlowCategorias.Controls.Clear();
+            // botão invisivel para manter o layout
+            Button btnw = new Button();
+            btnw.Enabled = false;
+            btnw.BackColor = this.BackColor;
+            btnw.Width = 120;
+            btnw.Height = 120;
+            FlowCategorias.Controls.Add(btnw);
+
             //Foreach para criar botões automaticamente
             foreach (var cat in categorias)
             {
-                Guna2Button btn = new Guna2Button();
+               Guna2Button btn = new Guna2Button();
                 btn.Text = cat.Nome;
                 btn.Width = 120;
                 btn.Height = 120;

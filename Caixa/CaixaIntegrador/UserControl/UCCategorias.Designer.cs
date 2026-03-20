@@ -40,12 +40,12 @@
             FlowCategorias.TabIndex = 0;
             FlowCategorias.Paint += FlowCategorias_Paint;
             // 
-            // Categorias
+            // UCCategorias
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(FlowCategorias);
-            Name = "Categorias";
+            Name = "UCCategorias";
             Size = new Size(655, 468);
             ResumeLayout(false);
         }

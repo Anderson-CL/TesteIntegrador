@@ -7,7 +7,7 @@ namespace CaixaIntegrador
         private List<Categoria> categorias;
         private List<SubCategoria> subCategorias;
         private List<Produto> produtos;
-        private List<CarrinhoCompra> carrinho = new();
+        private List<CarrinhoCompra> carrinho = new List<CarrinhoCompra>();
         //puxa os user controls
         private UCCategorias ucCategorias = new UCCategorias();
         private UCSubCategorias ucSubCategorias = new UCSubCategorias();
@@ -116,6 +116,7 @@ namespace CaixaIntegrador
         private void ExibirUserControl(Control userControl)
         {
             panelPrincipal.Controls.Clear();
+           
             panelPrincipal.Controls.Add(userControl);
             userControl.Dock = DockStyle.Fill;
         }
@@ -154,6 +155,28 @@ namespace CaixaIntegrador
             {
                 carrinho.Add(new CarrinhoCompra { Produto = produto.Nome, Qtd = 1, Preco = produto.Preco });
             }
+            AtualizarCarrinhoUI();
+        }
+
+        // Deleta os itens do carrinho que estão marcados na checkbox
+        private void BtnDeletarMarcados_Click(object sender, EventArgs e)
+        {
+            var itensDeletar = DataGrid_Produtos.Rows
+                .Cast<DataGridViewRow>()
+                .Where(r => r.Cells["Column5"].Value is bool marcado && marcado)
+                .Select(r => r.Index)
+                .OrderByDescending(i => i);
+
+            foreach (var i in itensDeletar)
+                carrinho.RemoveAt(i);
+
+            AtualizarCarrinhoUI();
+        }
+
+        // Limpa todo o carrinho
+        private void BtnLimparCarrinho_Click(object sender, EventArgs e)
+        {
+            carrinho.Clear();
             AtualizarCarrinhoUI();
         }
 
