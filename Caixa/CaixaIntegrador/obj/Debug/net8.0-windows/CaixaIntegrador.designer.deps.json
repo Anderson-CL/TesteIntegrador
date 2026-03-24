@@ -17,6 +17,22 @@
           }
         }
       },
+      "Krypton.Toolkit/100.26.1.19": {
+        "runtime": {
+          "lib/net8.0-windows7.0/Krypton.Toolkit.dll": {
+            "assemblyVersion": "100.26.1.19",
+            "fileVersion": "100.26.1.19"
+          }
+        }
+      },
+      "MaterialSkin.2/2.3.1": {
+        "runtime": {
+          "lib/net5.0-windows7.0/MaterialSkin.dll": {
+            "assemblyVersion": "2.3.1.0",
+            "fileVersion": "2.3.1.0"
+          }
+        }
+      },
       "System.CodeDom/7.0.0": {
         "runtime": {
           "lib/net7.0/System.CodeDom.dll": {
@@ -53,6 +69,20 @@
       "sha512": "sha512-8BdBYsfnntuICbFMHIZsd5morwURN8Ucsvq7wJeyLV1Z1ze6CAIxVKEirufgjGIiXfF0M0sCr9EVFloZSazWew==",
       "path": "guna.ui2.winforms/2.0.4.7",
       "hashPath": "guna.ui2.winforms.2.0.4.7.nupkg.sha512"
+    },
+    "Krypton.Toolkit/100.26.1.19": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AFy3MoZzxlXpOyiZujqSKG3SCXktMEi+2MlEOtN7LDW2eMAfOHyyGJTCVqBqTUjTw67bPVLlvRItYEP00EaWIA==",
+      "path": "krypton.toolkit/100.26.1.19",
+      "hashPath": "krypton.toolkit.100.26.1.19.nupkg.sha512"
+    },
+    "MaterialSkin.2/2.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-w2vFxLNk4InCDU7pXDfBqPfv55HhBtuu8HRfEqQpeS3sNTS1pUzDs/hS0b5JW2/tKvt+P1of9OINP8a9omWDBg==",
+      "path": "materialskin.2/2.3.1",
+      "hashPath": "materialskin.2.2.3.1.nupkg.sha512"
     },
     "System.CodeDom/7.0.0": {
       "type": "package",

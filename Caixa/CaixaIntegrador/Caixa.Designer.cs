@@ -199,6 +199,7 @@
             btn_FinalizarPedido.TabIndex = 0;
             btn_FinalizarPedido.Text = "Finalizar Pedido";
             btn_FinalizarPedido.UseVisualStyleBackColor = true;
+            btn_FinalizarPedido.Click += btn_FinalizarPedido_Click;
             // 
             // lblTotal_Text
             // 

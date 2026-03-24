@@ -8,12 +8,12 @@ namespace CaixaIntegrador
         private List<SubCategoria> subCategorias;
         private List<Produto> produtos;
         private List<CarrinhoCompra> carrinho = new List<CarrinhoCompra>();
+        private List<Pedido> pedidos = new List<Pedido>();
         //puxa os user controls
         private UCCategorias ucCategorias = new UCCategorias();
         private UCSubCategorias ucSubCategorias = new UCSubCategorias();
         private UCProdutos ucProdutos = new UCProdutos();
-        private UCFinalizado ucFinalizado = new UCFinalizado();
-        private UCAberto ucAberto = new UCAberto();
+
         //métodos adicionados na inicialização do form
         public Form1()
         {
@@ -212,11 +212,49 @@ namespace CaixaIntegrador
                 }
             }
         }
-
+        //Abre o form de pedidos
         private void btn_Pedido_Click(object sender, EventArgs e)
         {
-            
+            // Cria uma instância do formulário de pedidos com a lista de pedidos
+            Order tabOrder = new Order();
+            tabOrder.CarregarPedidos(pedidos);
+            tabOrder.ShowDialog();
+        }
+
+        // Finaliza o pedido atual e o salva na lista de pedidos finalizados
+        private void btn_FinalizarPedido_Click(object sender, EventArgs e)
+        {
+            // Valida se o carrinho está vazio
+            if (carrinho.Count == 0)
+            {
+                MessageBox.Show("Adicione produtos ao carrinho!", "Carrinho vazio");
+                return;
+            }
+
+            // Cria um novo pedido com status finalizado
+            var novoPedido = new Pedido
+            {
+                Id = pedidos.Count > 0 ? pedidos.Max(p => p.Id) + 1 : 1,
+                DataCriacao = DateTime.Now,
+                Itens = new List<CarrinhoCompra>(carrinho),
+                Total = carrinho.Sum(c => c.Total),
+                Status = PedidoStatus.Finalizado
+            };
+
+            // Adiciona o pedido à lista
+            pedidos.Add(novoPedido);
+
+            // Exibe mensagem de sucesso
+            MessageBox.Show($"Pedido #{novoPedido.Id} finalizado com sucesso!\nTotal: R$ {novoPedido.Total:F2}", "Pedido Finalizado");
+
+            // Limpa o carrinho após finalizar
+            carrinho.Clear();
+            AtualizarCarrinhoUI();
+
+            // Volta para a tela de categorias
+            ExibirUserControl(ucCategorias);
         }
     }
-
 }
+
+

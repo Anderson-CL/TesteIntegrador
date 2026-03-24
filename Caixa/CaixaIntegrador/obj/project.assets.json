@@ -17,6 +17,34 @@
           "Microsoft.WindowsDesktop.App.WindowsForms"
         ]
       },
+      "Krypton.Toolkit/100.26.1.19": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows7.0/Krypton.Toolkit.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Krypton.Toolkit.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "MaterialSkin.2/2.3.1": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0-windows7.0/MaterialSkin.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/MaterialSkin.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
       "System.CodeDom/7.0.0": {
         "type": "package",
         "compile": {
@@ -83,6 +111,49 @@
         "lib/netcoreapp3.1/Guna.UI2.dll"
       ]
     },
+    "Krypton.Toolkit/100.26.1.19": {
+      "sha512": "AFy3MoZzxlXpOyiZujqSKG3SCXktMEi+2MlEOtN7LDW2eMAfOHyyGJTCVqBqTUjTw67bPVLlvRItYEP00EaWIA==",
+      "type": "package",
+      "path": "krypton.toolkit/100.26.1.19",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Krypton Stable.png",
+        "License.md",
+        "README.md",
+        "krypton.toolkit.100.26.1.19.nupkg.sha512",
+        "krypton.toolkit.nuspec",
+        "lib/net10.0-windows7.0/Krypton.Toolkit.dll",
+        "lib/net10.0-windows7.0/Krypton.Toolkit.xml",
+        "lib/net472/Krypton.Toolkit.dll",
+        "lib/net472/Krypton.Toolkit.xml",
+        "lib/net48/Krypton.Toolkit.dll",
+        "lib/net48/Krypton.Toolkit.xml",
+        "lib/net481/Krypton.Toolkit.dll",
+        "lib/net481/Krypton.Toolkit.xml",
+        "lib/net8.0-windows7.0/Krypton.Toolkit.dll",
+        "lib/net8.0-windows7.0/Krypton.Toolkit.xml",
+        "lib/net9.0-windows7.0/Krypton.Toolkit.dll",
+        "lib/net9.0-windows7.0/Krypton.Toolkit.xml"
+      ]
+    },
+    "MaterialSkin.2/2.3.1": {
+      "sha512": "w2vFxLNk4InCDU7pXDfBqPfv55HhBtuu8HRfEqQpeS3sNTS1pUzDs/hS0b5JW2/tKvt+P1of9OINP8a9omWDBg==",
+      "type": "package",
+      "path": "materialskin.2/2.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net45/MaterialSkin.dll",
+        "lib/net461/MaterialSkin.dll",
+        "lib/net48/MaterialSkin.dll",
+        "lib/net5.0-windows7.0/MaterialSkin.dll",
+        "materialskin.2.2.3.1.nupkg.sha512",
+        "materialskin.2.nuspec",
+        "nugetIcon.png"
+      ]
+    },
     "System.CodeDom/7.0.0": {
       "sha512": "GLltyqEsE5/3IE+zYRP5sNa1l44qKl9v+bfdMcwg+M9qnQf47wK3H0SUR/T+3N4JEQXF3vV4CSuuo0rsg+nq2A==",
       "type": "package",
@@ -141,27 +212,29 @@
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
-      "Guna.UI2.WinForms >= 2.0.4.7"
+      "Guna.UI2.WinForms >= 2.0.4.7",
+      "Krypton.Toolkit >= 100.26.1.19",
+      "MaterialSkin.2 >= 2.3.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\victor.dsalmeida\\.nuget\\packages\\": {},
+    "C:\\Users\\Dennis\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\victor.dsalmeida\\source\\Integrador\\Caixa\\CaixaIntegrador\\CaixaIntegrador.csproj",
+      "projectUniqueName": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\CaixaIntegrador.csproj",
       "projectName": "CaixaIntegrador",
-      "projectPath": "C:\\Users\\victor.dsalmeida\\source\\Integrador\\Caixa\\CaixaIntegrador\\CaixaIntegrador.csproj",
-      "packagesPath": "C:\\Users\\victor.dsalmeida\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\victor.dsalmeida\\source\\Integrador\\Caixa\\CaixaIntegrador\\obj\\",
+      "projectPath": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\CaixaIntegrador.csproj",
+      "packagesPath": "C:\\Users\\Dennis\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\victor.dsalmeida\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dennis\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -170,7 +243,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -189,7 +261,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -198,6 +270,14 @@
           "Guna.UI2.WinForms": {
             "target": "Package",
             "version": "[2.0.4.7, )"
+          },
+          "Krypton.Toolkit": {
+            "target": "Package",
+            "version": "[100.26.1.19, )"
+          },
+          "MaterialSkin.2": {
+            "target": "Package",
+            "version": "[2.3.1, )"
           }
         },
         "imports": [
@@ -219,7 +299,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

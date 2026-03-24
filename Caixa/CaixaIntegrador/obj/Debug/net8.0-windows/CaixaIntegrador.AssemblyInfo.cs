@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CaixaIntegrador")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+84410d7912014d8598937e5642ca9357632d55f8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40a113ace245a1eb29e211b4587d08a00ad0b544")]
 [assembly: System.Reflection.AssemblyProductAttribute("CaixaIntegrador")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CaixaIntegrador")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

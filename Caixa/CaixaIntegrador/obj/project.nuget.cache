@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "8zZPfViVUvs=",
+  "dgSpecHash": "0Hc4QkJ+QTc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\victor.dsalmeida\\source\\Integrador\\Caixa\\CaixaIntegrador\\CaixaIntegrador.csproj",
+  "projectFilePath": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\CaixaIntegrador.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\victor.dsalmeida\\.nuget\\packages\\guna.ui2.winforms\\2.0.4.7\\guna.ui2.winforms.2.0.4.7.nupkg.sha512",
-    "C:\\Users\\victor.dsalmeida\\.nuget\\packages\\system.codedom\\7.0.0\\system.codedom.7.0.0.nupkg.sha512",
-    "C:\\Users\\victor.dsalmeida\\.nuget\\packages\\system.management\\7.0.0\\system.management.7.0.0.nupkg.sha512"
+    "C:\\Users\\Dennis\\.nuget\\packages\\guna.ui2.winforms\\2.0.4.7\\guna.ui2.winforms.2.0.4.7.nupkg.sha512",
+    "C:\\Users\\Dennis\\.nuget\\packages\\krypton.toolkit\\100.26.1.19\\krypton.toolkit.100.26.1.19.nupkg.sha512",
+    "C:\\Users\\Dennis\\.nuget\\packages\\materialskin.2\\2.3.1\\materialskin.2.2.3.1.nupkg.sha512",
+    "C:\\Users\\Dennis\\.nuget\\packages\\system.codedom\\7.0.0\\system.codedom.7.0.0.nupkg.sha512",
+    "C:\\Users\\Dennis\\.nuget\\packages\\system.management\\7.0.0\\system.management.7.0.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -13,11 +13,8 @@
     <Compile Update="Categorias\UCSubCategorias.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UCAberto.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="UCFinalizado.cs">
-      <SubType>UserControl</SubType>
+    <Compile Update="Order.cs">
+      <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
 </Project>

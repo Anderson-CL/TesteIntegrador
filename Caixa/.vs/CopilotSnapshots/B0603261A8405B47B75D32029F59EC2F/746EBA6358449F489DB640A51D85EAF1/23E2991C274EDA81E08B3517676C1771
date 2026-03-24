@@ -1,0 +1,82 @@
+﻿namespace CaixaIntegrador
+{
+    partial class UCFinalizado
+    {
+        /// <summary> 
+        /// Variável de designer necessária.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary> 
+        /// Limpar os recursos que estão sendo usados.
+        /// </summary>
+        /// <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Código gerado pelo Designer de Componentes
+
+        /// <summary> 
+        /// Método necessário para suporte ao Designer - não modifique 
+        /// o conteúdo deste método com o editor de código.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            btnIrAberto = new Button();
+            btnVoltarCaixa = new Button();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
+            // 
+            // btnIrAberto
+            // 
+            btnIrAberto.Location = new Point(174, 379);
+            btnIrAberto.Name = "btnIrAberto";
+            btnIrAberto.Size = new Size(165, 41);
+            btnIrAberto.TabIndex = 0;
+            btnIrAberto.Text = "Ir para Aberto";
+            btnIrAberto.UseVisualStyleBackColor = true;
+            // 
+            // btnVoltarCaixa
+            // 
+            btnVoltarCaixa.Location = new Point(3, 379);
+            btnVoltarCaixa.Name = "btnVoltarCaixa";
+            btnVoltarCaixa.Size = new Size(165, 41);
+            btnVoltarCaixa.TabIndex = 1;
+            btnVoltarCaixa.Text = "Voltar ao Caixa";
+            btnVoltarCaixa.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(3, 3);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(690, 370);
+            dataGridView1.TabIndex = 2;
+            // 
+            // UCFinalizado
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(dataGridView1);
+            Controls.Add(btnVoltarCaixa);
+            Controls.Add(btnIrAberto);
+            Name = "UCFinalizado";
+            Size = new Size(693, 423);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private Button btnIrAberto;
+        private Button btnVoltarCaixa;
+        private DataGridView dataGridView1;
+    }
+}

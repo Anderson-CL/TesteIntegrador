@@ -1,0 +1,41 @@
+﻿using CaixaIntegrador.Classes;
+
+namespace CaixaIntegrador
+{
+    public partial class UCAberto : UserControl
+    {
+        private List<Pedido> pedidosAbertos = new List<Pedido>();
+
+        public event Action IrParaFinalizado;
+        public event Action VoltarParaCaixa;
+
+        public UCAberto()
+        {
+            InitializeComponent();
+            btnIrFinalizado.Click += btnIrFinalizado_Click;
+            btnVoltarCaixa.Click += btnVoltarCaixa_Click;
+        }
+
+        public void CarregarAberto(List<Pedido> pedidos)
+        {
+            pedidosAbertos = pedidos.Where(p => p.Status == PedidoStatus.Aberto).ToList();
+            AtualizarUI();
+        }
+
+        private void AtualizarUI()
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = pedidosAbertos;
+        }
+
+        private void btnIrFinalizado_Click(object sender, EventArgs e)
+        {
+            IrParaFinalizado?.Invoke();
+        }
+
+        private void btnVoltarCaixa_Click(object sender, EventArgs e)
+        {
+            VoltarParaCaixa?.Invoke();
+        }
+    }
+}
