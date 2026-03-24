@@ -32,6 +32,7 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
+            btn_Pedido = new Button();
             btnLimparCarrinho = new Button();
             btnDeletarMarcados = new Button();
             DataGrid_Produtos = new DataGridView();
@@ -40,7 +41,9 @@
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
+            btn_PedidoAberto = new Button();
             groupBox2 = new GroupBox();
+            btn_FinalizarPedido = new Button();
             lblTotal_Text = new Label();
             panelPrincipal = new Panel();
             groupBox1.SuspendLayout();
@@ -51,6 +54,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = SystemColors.GradientInactiveCaption;
+            groupBox1.Controls.Add(btn_Pedido);
             groupBox1.Controls.Add(btnLimparCarrinho);
             groupBox1.Controls.Add(btnDeletarMarcados);
             groupBox1.Controls.Add(DataGrid_Produtos);
@@ -61,6 +65,16 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
+            // 
+            // btn_Pedido
+            // 
+            btn_Pedido.Location = new Point(6, 559);
+            btn_Pedido.Name = "btn_Pedido";
+            btn_Pedido.Size = new Size(313, 61);
+            btn_Pedido.TabIndex = 3;
+            btn_Pedido.Text = "Pedidos";
+            btn_Pedido.UseVisualStyleBackColor = true;
+            btn_Pedido.Click += btn_Pedido_Click;
             // 
             // btnLimparCarrinho
             // 
@@ -154,17 +168,37 @@
             Column4.ReadOnly = true;
             Column4.Resizable = DataGridViewTriState.False;
             // 
+            // btn_PedidoAberto
+            // 
+            btn_PedidoAberto.Location = new Point(21, 508);
+            btn_PedidoAberto.Name = "btn_PedidoAberto";
+            btn_PedidoAberto.Size = new Size(232, 43);
+            btn_PedidoAberto.TabIndex = 1;
+            btn_PedidoAberto.Text = "Pedido em Aberto";
+            btn_PedidoAberto.UseVisualStyleBackColor = true;
+            // 
             // groupBox2
             // 
             groupBox2.BackColor = SystemColors.GradientInactiveCaption;
+            groupBox2.Controls.Add(btn_FinalizarPedido);
+            groupBox2.Controls.Add(btn_PedidoAberto);
             groupBox2.Controls.Add(lblTotal_Text);
             groupBox2.Dock = DockStyle.Right;
-            groupBox2.Location = new Point(1001, 0);
+            groupBox2.Location = new Point(999, 0);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(263, 681);
+            groupBox2.Size = new Size(265, 681);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "groupBox2";
+            // 
+            // btn_FinalizarPedido
+            // 
+            btn_FinalizarPedido.Location = new Point(21, 602);
+            btn_FinalizarPedido.Name = "btn_FinalizarPedido";
+            btn_FinalizarPedido.Size = new Size(232, 67);
+            btn_FinalizarPedido.TabIndex = 0;
+            btn_FinalizarPedido.Text = "Finalizar Pedido";
+            btn_FinalizarPedido.UseVisualStyleBackColor = true;
             // 
             // lblTotal_Text
             // 
@@ -181,7 +215,7 @@
             panelPrincipal.Dock = DockStyle.Fill;
             panelPrincipal.Location = new Point(322, 0);
             panelPrincipal.Name = "panelPrincipal";
-            panelPrincipal.Size = new Size(679, 681);
+            panelPrincipal.Size = new Size(677, 681);
             panelPrincipal.TabIndex = 2;
             // 
             // Form1
@@ -216,5 +250,8 @@
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
+        private Button btn_FinalizarPedido;
+        private Button btn_Pedido;
+        private Button btn_PedidoAberto;
     }
 }

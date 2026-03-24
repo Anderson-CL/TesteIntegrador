@@ -12,7 +12,8 @@ namespace CaixaIntegrador
         private UCCategorias ucCategorias = new UCCategorias();
         private UCSubCategorias ucSubCategorias = new UCSubCategorias();
         private UCProdutos ucProdutos = new UCProdutos();
-
+        private UCFinalizado ucFinalizado = new UCFinalizado();
+        private UCAberto ucAberto = new UCAberto();
         //métodos adicionados na inicialização do form
         public Form1()
         {
@@ -27,7 +28,7 @@ namespace CaixaIntegrador
         {
             ucCategorias.CategoriaSelecionada += CategoriaSelecionada;
             ucSubCategorias.SubCategoriaSelecionada += SubCategoriaSelecionada;
-            ucProdutos.ProdutoSelecionado += AdicionarAoCarrinho; 
+            ucProdutos.ProdutoSelecionado += AdicionarAoCarrinho;
             ucSubCategorias.VoltarClick += VoltarCategorias;
             ucProdutos.VoltarClick += VoltarSubCategorias;
         }
@@ -116,7 +117,7 @@ namespace CaixaIntegrador
         private void ExibirUserControl(Control userControl)
         {
             panelPrincipal.Controls.Clear();
-           
+
             panelPrincipal.Controls.Add(userControl);
             userControl.Dock = DockStyle.Fill;
         }
@@ -210,6 +211,11 @@ namespace CaixaIntegrador
                     DataGrid_Produtos.Refresh();
                 }
             }
+        }
+
+        private void btn_Pedido_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 

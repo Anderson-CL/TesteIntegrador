@@ -25,7 +25,7 @@ namespace CaixaIntegrador
             // botão invisivel para manter o layout
             Button btnw = new Button();
             btnw.Enabled = false;
-            btnw.BackColor = this.BackColor;
+            btnw.BackColor = Color.Red;
             btnw.Width = 120;
             btnw.Height = 120;
             FlowCategorias.Controls.Add(btnw);

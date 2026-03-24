@@ -4,13 +4,19 @@
     <Compile Update="Caixa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UserControl\UCCategorias.cs">
+    <Compile Update="Categorias\UCCategorias.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControl\UCProdutos.cs">
+    <Compile Update="Categorias\UCProdutos.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControl\UCSubCategorias.cs">
+    <Compile Update="Categorias\UCSubCategorias.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UCAberto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UCFinalizado.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
