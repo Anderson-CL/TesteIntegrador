@@ -9,6 +9,8 @@ namespace CaixaIntegrador
         private List<Produto> produtos;
         private List<CarrinhoCompra> carrinho = new List<CarrinhoCompra>();
         private List<Pedido> pedidos = new List<Pedido>();
+        // Armazena os pagamentos do pedido atual
+        private List<Pagamento> pagamentosAtuais = new List<Pagamento>();
         //puxa os user controls
         private UCCategorias ucCategorias = new UCCategorias();
         private UCSubCategorias ucSubCategorias = new UCSubCategorias();
@@ -215,7 +217,6 @@ namespace CaixaIntegrador
         //Abre o form de pedidos
         private void btn_Pedido_Click(object sender, EventArgs e)
         {
-            // Cria uma instância do formulário de pedidos com a lista de pedidos
             Order tabOrder = new Order();
             tabOrder.CarregarPedidos(pedidos);
             tabOrder.ShowDialog();
@@ -231,28 +232,144 @@ namespace CaixaIntegrador
                 return;
             }
 
+            // Valida se há pagamentos registrados
+            if (pagamentosAtuais.Count == 0)
+            {
+                MessageBox.Show("Adicione pelo menos uma forma de pagamento!", "Erro");
+                return;
+            }
+
+            // Calcula o total do pedido
+            decimal totalPedido = carrinho.Sum(c => c.Total);
+            decimal totalPago = pagamentosAtuais.Sum(p => p.Valor);
+
+            // Valida se o total foi pago
+            if (totalPago < totalPedido)
+            {
+                MessageBox.Show($"Pagamento incompleto. Total: R$ {totalPedido:F2}, Pago: R$ {totalPago:F2}", "Erro");
+                return;
+            }
+
             // Cria um novo pedido com status finalizado
             var novoPedido = new Pedido
             {
                 Id = pedidos.Count > 0 ? pedidos.Max(p => p.Id) + 1 : 1,
                 DataCriacao = DateTime.Now,
                 Itens = new List<CarrinhoCompra>(carrinho),
-                Total = carrinho.Sum(c => c.Total),
-                Status = PedidoStatus.Finalizado
+                Total = totalPedido,
+                Status = PedidoStatus.Finalizado,
+                Pagamentos = new List<Pagamento>(pagamentosAtuais)
             };
 
             // Adiciona o pedido à lista
             pedidos.Add(novoPedido);
 
             // Exibe mensagem de sucesso
-            MessageBox.Show($"Pedido #{novoPedido.Id} finalizado com sucesso!\nTotal: R$ {novoPedido.Total:F2}", "Pedido Finalizado");
+            string formasPagamento = string.Join(" + ", novoPedido.Pagamentos.Select(p => $"{p.Forma} (R$ {p.Valor:F2})"));
+            MessageBox.Show(
+                $"Pedido #{novoPedido.Id} finalizado com sucesso!\n\n" +
+                $"Total: R$ {novoPedido.Total:F2}\n" +
+                $"Pagamentos: {formasPagamento}",
+                "Pedido Finalizado");
 
-            // Limpa o carrinho após finalizar
+            // Limpa o carrinho e pagamentos após finalizar
             carrinho.Clear();
+            pagamentosAtuais.Clear();
             AtualizarCarrinhoUI();
+            AtualizarLabelPagamentos();
+            LimparFormularioPagamento();
 
             // Volta para a tela de categorias
             ExibirUserControl(ucCategorias);
+        }
+
+        // Adiciona um pagamento à lista de pagamentos do pedido
+        private void btnAdicionarPagamento_Click(object sender, EventArgs e)
+        {
+            // Valida se um radio button foi selecionado
+            FormaPagamento? formaSelecionada = null;
+
+            if (materialRadioButton1.Checked) formaSelecionada = FormaPagamento.Credito;
+            else if (materialRadioButton2.Checked) formaSelecionada = FormaPagamento.Debito;
+            else if (materialRadioButton3.Checked) formaSelecionada = FormaPagamento.Pix;
+            else if (materialRadioButton4.Checked) formaSelecionada = FormaPagamento.Voucher;
+            else if (materialRadioButton5.Checked) formaSelecionada = FormaPagamento.Dinheiro;
+
+            if (formaSelecionada == null)
+            {
+                MessageBox.Show("Selecione uma forma de pagamento!", "Erro");
+                return;
+            }
+
+            // Valida se o valor é válido (aceita "50" ou "50,00")
+            string valorTexto = materialTextBox21.Text.Trim();
+            if (string.IsNullOrEmpty(valorTexto))
+            {
+                MessageBox.Show("Digite um valor válido!", "Erro");
+                return;
+            }
+
+            // Tenta converter o valor, aceitando "50" ou "50,00"
+            if (!decimal.TryParse(valorTexto, out decimal valorPagamento) || valorPagamento <= 0)
+            {
+                MessageBox.Show("Digite um valor numérico válido! (Ex: 50 ou 50,50)", "Erro");
+                return;
+            }
+
+            // Valida se o valor não ultrapassa o saldo
+            decimal totalPedido = carrinho.Sum(c => c.Total);
+            decimal valorPago = pagamentosAtuais.Sum(p => p.Valor);
+            decimal saldo = totalPedido - valorPago;
+
+            if (valorPagamento > saldo)
+            {
+                MessageBox.Show($"Valor não pode ser superior ao saldo de R$ {saldo:F2}!", "Erro");
+                return;
+            }
+
+            // Cria e adiciona o novo pagamento
+            var novoPagamento = new Pagamento
+            {
+                Forma = (FormaPagamento)formaSelecionada,
+                Valor = valorPagamento
+            };
+
+            pagamentosAtuais.Add(novoPagamento);
+
+            // Atualiza a exibição
+            AtualizarLabelPagamentos();
+            LimparFormularioPagamento();
+
+            // Se o saldo atingiu zero, desabilita novos pagamentos
+            if (saldo - valorPagamento <= 0)
+            {
+                MessageBox.Show("Pagamento completo! Clique em 'Finalizar Pedido'.", "Sucesso");
+                btnAdicionarPagamento.Enabled = false;
+            }
+        }
+
+        // Atualiza o label com o valor total de pagamentos
+        private void AtualizarLabelPagamentos()
+        {
+            decimal totalPago = pagamentosAtuais.Sum(p => p.Valor);
+            lblValorPago.Text = $"Pagamentos: R$ {totalPago:F2}";
+        }
+
+        // Limpa o formulário de pagamento
+        private void LimparFormularioPagamento()
+        {
+            // Desseleciona todos os radio buttons
+            materialRadioButton1.Checked = false;
+            materialRadioButton2.Checked = false;
+            materialRadioButton3.Checked = false;
+            materialRadioButton4.Checked = false;
+            materialRadioButton5.Checked = false;
+
+            // Limpa o textbox
+            materialTextBox21.Text = "0,00";
+
+            // Habilita o botão de adicionar pagamento
+            btnAdicionarPagamento.Enabled = true;
         }
     }
 }
