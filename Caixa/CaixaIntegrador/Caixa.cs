@@ -371,6 +371,11 @@ namespace CaixaIntegrador
             // Habilita o botão de adicionar pagamento
             btnAdicionarPagamento.Enabled = true;
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

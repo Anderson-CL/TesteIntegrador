@@ -1,34 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\",
+  "WorkspaceRootPath": "C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\caixaintegrador\\caixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\caixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\ander\\onedrive\\\u00E1rea de trabalho\\merge manual\\testeintegrador\\caixa\\caixaintegrador\\login-registro\\telaregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\login-registro\\telaregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\dennis\\source\\repos\\projeto integrador\\caixa\\caixaintegrador\\caixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\ander\\onedrive\\\u00E1rea de trabalho\\merge manual\\testeintegrador\\caixa\\caixaintegrador\\login-registro\\telalogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\login-registro\\telalogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\ander\\onedrive\\\u00E1rea de trabalho\\merge manual\\testeintegrador\\caixa\\caixaintegrador\\login-registro\\telaregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\login-registro\\telaregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\ander\\onedrive\\\u00E1rea de trabalho\\merge manual\\testeintegrador\\caixa\\caixaintegrador\\login-registro\\telalogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\login-registro\\telalogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\ander\\onedrive\\\u00E1rea de trabalho\\merge manual\\testeintegrador\\caixa\\caixaintegrador\\caixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\caixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\dennis\\source\\repos\\projeto integrador\\caixa\\caixaintegrador\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\ander\\onedrive\\\u00E1rea de trabalho\\merge manual\\testeintegrador\\caixa\\caixaintegrador\\caixa.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\caixa.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\caixaintegrador\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\dennis\\source\\repos\\projeto integrador\\caixa\\caixaintegrador\\classes\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\classes\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\dennis\\source\\repos\\projeto integrador\\caixa\\caixaintegrador\\order.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\ander\\onedrive\\\u00E1rea de trabalho\\merge manual\\testeintegrador\\caixa\\caixaintegrador\\order.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\order.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\dennis\\source\\repos\\projeto integrador\\caixa\\caixaintegrador\\caixa.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\caixa.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\ander\\onedrive\\\u00E1rea de trabalho\\merge manual\\testeintegrador\\caixa\\caixaintegrador\\caixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\caixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\ander\\onedrive\\\u00E1rea de trabalho\\merge manual\\testeintegrador\\caixa\\caixaintegrador\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\caixaintegrador\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\ander\\onedrive\\\u00E1rea de trabalho\\merge manual\\testeintegrador\\caixa\\caixaintegrador\\classes\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\classes\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,72 +54,120 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Caixa.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Caixa.cs",
-              "RelativeDocumentMoniker": "CaixaIntegrador\\Caixa.cs",
-              "ToolTip": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Caixa.cs [Projeto]",
-              "RelativeToolTip": "CaixaIntegrador\\Caixa.cs [Projeto]",
+              "DocumentIndex": 3,
+              "Title": "TelaLogin.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs",
+              "RelativeDocumentMoniker": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs",
+              "ToolTip": "C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs [Projeto]",
+              "RelativeToolTip": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T04:35:39.295Z",
+              "WhenOpened": "2026-03-27T15:27:08.678Z",
               "IsPinned": true,
               "EditorCaption": " [Projeto]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Caixa.cs",
-              "DocumentMoniker": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Caixa.cs",
-              "RelativeDocumentMoniker": "CaixaIntegrador\\Caixa.cs",
-              "ToolTip": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Caixa.cs",
-              "RelativeToolTip": "CaixaIntegrador\\Caixa.cs",
-              "ViewState": "AgIAADoBAAAAAAAAAAAQwEoBAAAtAAAAAAAAAA==",
+              "Title": "TelaLogin.cs",
+              "DocumentMoniker": "C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs",
+              "RelativeDocumentMoniker": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs",
+              "ToolTip": "C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs",
+              "RelativeToolTip": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwA8AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T04:06:59.846Z",
+              "WhenOpened": "2026-03-27T15:27:42.868Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TelaRegistro.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs",
+              "RelativeDocumentMoniker": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs",
+              "ToolTip": "C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs [Projeto]",
+              "RelativeToolTip": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T15:27:32.031Z",
+              "IsPinned": true,
+              "EditorCaption": " [Projeto]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
+              "Title": "TelaRegistro.cs",
+              "DocumentMoniker": "C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs",
+              "RelativeDocumentMoniker": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs",
+              "ToolTip": "C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs",
+              "RelativeToolTip": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T15:46:33.082Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Caixa.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\Caixa.cs",
+              "RelativeDocumentMoniker": "CaixaIntegrador\\Caixa.cs",
+              "ToolTip": "C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\Caixa.cs [Projeto]",
+              "RelativeToolTip": "CaixaIntegrador\\Caixa.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T04:35:39.295Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Caixa.cs",
+              "DocumentMoniker": "C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\Caixa.cs",
+              "RelativeDocumentMoniker": "CaixaIntegrador\\Caixa.cs",
+              "ToolTip": "C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\Caixa.cs",
+              "RelativeToolTip": "CaixaIntegrador\\Caixa.cs",
+              "ViewState": "AgIAAGoBAAAAAAAAAAAWwHgBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T04:06:59.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Caixa.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Caixa.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\Caixa.Designer.cs",
               "RelativeDocumentMoniker": "CaixaIntegrador\\Caixa.Designer.cs",
-              "ToolTip": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Caixa.Designer.cs",
+              "ToolTip": "C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\Caixa.Designer.cs",
               "RelativeToolTip": "CaixaIntegrador\\Caixa.Designer.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-26T21:01:02.347Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Order.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Order.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\Order.Designer.cs",
               "RelativeDocumentMoniker": "CaixaIntegrador\\Order.Designer.cs",
-              "ToolTip": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Order.Designer.cs",
+              "ToolTip": "C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\Order.Designer.cs",
               "RelativeToolTip": "CaixaIntegrador\\Order.Designer.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAowJwAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-26T20:44:20.437Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "Pedido.cs",
-              "DocumentMoniker": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Classes\\Pedido.cs",
+              "DocumentMoniker": "C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\Classes\\Pedido.cs",
               "RelativeDocumentMoniker": "CaixaIntegrador\\Classes\\Pedido.cs",
-              "ToolTip": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Classes\\Pedido.cs",
+              "ToolTip": "C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\Classes\\Pedido.cs",
               "RelativeToolTip": "CaixaIntegrador\\Classes\\Pedido.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -112,11 +176,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "Order.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Order.cs",
+              "DocumentMoniker": "C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\Order.cs",
               "RelativeDocumentMoniker": "CaixaIntegrador\\Order.cs",
-              "ToolTip": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Order.cs [Projeto]",
+              "ToolTip": "C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\Order.cs [Projeto]",
               "RelativeToolTip": "CaixaIntegrador\\Order.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-24T20:25:09.748Z",
@@ -124,13 +188,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Order.cs",
+              "DocumentMoniker": "C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\Order.cs",
               "RelativeDocumentMoniker": "CaixaIntegrador\\Order.cs",
-              "ToolTip": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Order.cs",
+              "ToolTip": "C:\\Users\\ander\\OneDrive\\\u00C1rea de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\Order.cs",
               "RelativeToolTip": "CaixaIntegrador\\Order.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAAAEYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEMAAAAAAAAAAIBJwEYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-24T20:14:02.659Z",
               "EditorCaption": ""

@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\CaixaIntegrador.csproj": {}
+    "C:\\Users\\ander\\OneDrive\\Área de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\CaixaIntegrador.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\CaixaIntegrador.csproj": {
+    "C:\\Users\\ander\\OneDrive\\Área de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\CaixaIntegrador.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\CaixaIntegrador.csproj",
+        "projectUniqueName": "C:\\Users\\ander\\OneDrive\\Área de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\CaixaIntegrador.csproj",
         "projectName": "CaixaIntegrador",
-        "projectPath": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\CaixaIntegrador.csproj",
-        "packagesPath": "C:\\Users\\Dennis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\obj\\",
+        "projectPath": "C:\\Users\\ander\\OneDrive\\Área de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\CaixaIntegrador.csproj",
+        "packagesPath": "C:\\Users\\ander\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ander\\OneDrive\\Área de Trabalho\\MERGE MANUAL\\TesteIntegrador\\Caixa\\CaixaIntegrador\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Dennis\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ander\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,7 +25,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0-windows7.0": {
+          "net8.0-windows": {
+            "framework": "net8.0-windows7.0",
             "targetAlias": "net8.0-windows",
             "projectReferences": {}
           }
@@ -44,10 +41,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
-        "net8.0-windows7.0": {
+        "net8.0-windows": {
+          "framework": "net8.0-windows7.0",
           "targetAlias": "net8.0-windows",
           "dependencies": {
             "Guna.UI2.WinForms": {
@@ -61,6 +59,10 @@
             "MaterialSkin.2": {
               "target": "Package",
               "version": "[2.3.1, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[9.6.0, )"
             }
           },
           "imports": [
@@ -82,7 +84,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
