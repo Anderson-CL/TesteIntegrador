@@ -1,38 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\victor.dsalmeida\\source\\Integrador\\Caixa\\",
+  "WorkspaceRootPath": "C:\\Users\\anderson.psantos32\\Desktop\\TESTE MERGE\\TesteIntegrador\\Caixa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\victor.dsalmeida\\source\\integrador\\caixa\\caixaintegrador\\ucaberto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\ucaberto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\anderson.psantos32\\desktop\\teste merge\\testeintegrador\\caixa\\caixaintegrador\\login-registro\\telaregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\login-registro\\telaregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\victor.dsalmeida\\source\\integrador\\caixa\\caixaintegrador\\categorias\\uccategorias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\categorias\\uccategorias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\anderson.psantos32\\desktop\\teste merge\\testeintegrador\\caixa\\caixaintegrador\\login-registro\\telalogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\login-registro\\telalogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\victor.dsalmeida\\source\\integrador\\caixa\\caixaintegrador\\ucaberto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\ucaberto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\anderson.psantos32\\desktop\\teste merge\\testeintegrador\\caixa\\caixaintegrador\\login-registro\\telaregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\login-registro\\telaregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\victor.dsalmeida\\source\\integrador\\caixa\\caixaintegrador\\classes\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\classes\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\victor.dsalmeida\\source\\integrador\\caixa\\caixaintegrador\\categorias\\uccategorias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\categorias\\uccategorias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\victor.dsalmeida\\source\\integrador\\caixa\\caixaintegrador\\caixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\caixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\victor.dsalmeida\\source\\integrador\\caixa\\caixaintegrador\\caixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\caixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\victor.dsalmeida\\source\\integrador\\caixa\\caixaintegrador\\ucfinalizado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\ucfinalizado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\anderson.psantos32\\desktop\\teste merge\\testeintegrador\\caixa\\caixaintegrador\\login-registro\\telalogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\login-registro\\telalogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,102 +38,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UCAberto.cs",
-              "DocumentMoniker": "C:\\Users\\victor.dsalmeida\\source\\Integrador\\Caixa\\CaixaIntegrador\\UCAberto.cs",
-              "RelativeDocumentMoniker": "CaixaIntegrador\\UCAberto.cs",
-              "ToolTip": "C:\\Users\\victor.dsalmeida\\source\\Integrador\\Caixa\\CaixaIntegrador\\UCAberto.cs",
-              "RelativeToolTip": "CaixaIntegrador\\UCAberto.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA4AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T00:49:23.922Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UCCategorias.cs",
-              "DocumentMoniker": "C:\\Users\\victor.dsalmeida\\source\\Integrador\\Caixa\\CaixaIntegrador\\Categorias\\UCCategorias.cs",
-              "RelativeDocumentMoniker": "CaixaIntegrador\\Categorias\\UCCategorias.cs",
-              "ToolTip": "C:\\Users\\victor.dsalmeida\\source\\Integrador\\Caixa\\CaixaIntegrador\\Categorias\\UCCategorias.cs",
-              "RelativeToolTip": "CaixaIntegrador\\Categorias\\UCCategorias.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T00:49:03.697Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UCCategorias.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\victor.dsalmeida\\source\\Integrador\\Caixa\\CaixaIntegrador\\Categorias\\UCCategorias.cs",
-              "RelativeDocumentMoniker": "CaixaIntegrador\\Categorias\\UCCategorias.cs",
-              "ToolTip": "C:\\Users\\victor.dsalmeida\\source\\Integrador\\Caixa\\CaixaIntegrador\\Categorias\\UCCategorias.cs [Projeto]",
-              "RelativeToolTip": "CaixaIntegrador\\Categorias\\UCCategorias.cs [Projeto]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T00:49:01.317Z",
-              "EditorCaption": " [Projeto]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Categoria.cs",
-              "DocumentMoniker": "C:\\Users\\victor.dsalmeida\\source\\Integrador\\Caixa\\CaixaIntegrador\\Classes\\Categoria.cs",
-              "RelativeDocumentMoniker": "CaixaIntegrador\\Classes\\Categoria.cs",
-              "ToolTip": "C:\\Users\\victor.dsalmeida\\source\\Integrador\\Caixa\\CaixaIntegrador\\Classes\\Categoria.cs",
-              "RelativeToolTip": "CaixaIntegrador\\Classes\\Categoria.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "TelaLogin.cs",
+              "DocumentMoniker": "C:\\Users\\anderson.psantos32\\Desktop\\TESTE MERGE\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs",
+              "RelativeDocumentMoniker": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs",
+              "ToolTip": "C:\\Users\\anderson.psantos32\\Desktop\\TESTE MERGE\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs",
+              "RelativeToolTip": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwDgAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T00:48:56.035Z",
+              "WhenOpened": "2026-03-31T00:28:55.841Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UCAberto.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\victor.dsalmeida\\source\\Integrador\\Caixa\\CaixaIntegrador\\UCAberto.cs",
-              "RelativeDocumentMoniker": "CaixaIntegrador\\UCAberto.cs",
-              "ToolTip": "C:\\Users\\victor.dsalmeida\\source\\Integrador\\Caixa\\CaixaIntegrador\\UCAberto.cs [Projeto]",
-              "RelativeToolTip": "CaixaIntegrador\\UCAberto.cs [Projeto]",
+              "Title": "TelaRegistro.cs",
+              "DocumentMoniker": "C:\\Users\\anderson.psantos32\\Desktop\\TESTE MERGE\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs",
+              "RelativeDocumentMoniker": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs",
+              "ToolTip": "C:\\Users\\anderson.psantos32\\Desktop\\TESTE MERGE\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs",
+              "RelativeToolTip": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T00:41:44.972Z",
-              "EditorCaption": " [Projeto]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UCFinalizado.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\victor.dsalmeida\\source\\Integrador\\Caixa\\CaixaIntegrador\\UCFinalizado.cs",
-              "RelativeDocumentMoniker": "CaixaIntegrador\\UCFinalizado.cs",
-              "ToolTip": "C:\\Users\\victor.dsalmeida\\source\\Integrador\\Caixa\\CaixaIntegrador\\UCFinalizado.cs [Projeto]",
-              "RelativeToolTip": "CaixaIntegrador\\UCFinalizado.cs [Projeto]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T00:35:00.444Z",
-              "EditorCaption": " [Projeto]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Caixa.cs",
-              "DocumentMoniker": "C:\\Users\\victor.dsalmeida\\source\\Integrador\\Caixa\\CaixaIntegrador\\Caixa.cs",
-              "RelativeDocumentMoniker": "CaixaIntegrador\\Caixa.cs",
-              "ToolTip": "C:\\Users\\victor.dsalmeida\\source\\Integrador\\Caixa\\CaixaIntegrador\\Caixa.cs",
-              "RelativeToolTip": "CaixaIntegrador\\Caixa.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwC8AAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T22:56:36.848Z",
+              "WhenOpened": "2026-03-31T00:19:16.955Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Caixa.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\victor.dsalmeida\\source\\Integrador\\Caixa\\CaixaIntegrador\\Caixa.cs",
-              "RelativeDocumentMoniker": "CaixaIntegrador\\Caixa.cs",
-              "ToolTip": "C:\\Users\\victor.dsalmeida\\source\\Integrador\\Caixa\\CaixaIntegrador\\Caixa.cs [Projeto]",
-              "RelativeToolTip": "CaixaIntegrador\\Caixa.cs [Projeto]",
+              "DocumentIndex": 0,
+              "Title": "TelaRegistro.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\anderson.psantos32\\Desktop\\TESTE MERGE\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs",
+              "RelativeDocumentMoniker": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs",
+              "ToolTip": "C:\\Users\\anderson.psantos32\\Desktop\\TESTE MERGE\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs [Projeto]",
+              "RelativeToolTip": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-21T00:36:08.341Z",
+              "WhenOpened": "2026-03-30T23:37:22.851Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TelaLogin.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\anderson.psantos32\\Desktop\\TESTE MERGE\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs",
+              "RelativeDocumentMoniker": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs",
+              "ToolTip": "C:\\Users\\anderson.psantos32\\Desktop\\TESTE MERGE\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs [Projeto]",
+              "RelativeToolTip": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-30T23:37:21.788Z",
               "EditorCaption": " [Projeto]"
             }
           ]

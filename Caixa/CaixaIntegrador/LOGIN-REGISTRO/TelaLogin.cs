@@ -49,10 +49,13 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
                             if (table.Rows.Count > 0)
                             {
                                 MessageBox.Show("Login realizado com sucesso!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                Form1 Caixa = new Form1();
-                                Caixa.Show();
+                                
                                 this.Hide();
+                                Form1 Caixa = new Form1();
+                                Caixa.ShowDialog();
+
+                                Application.Exit();
+                               
                             }
                             else
                             {
@@ -75,10 +78,13 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
 
         private void lblRegistro_Click(object sender, EventArgs e)
         {
-            TelaRegistro RegistroForm = new TelaRegistro();
-            RegistroForm.Show();
 
             this.Hide();
+            TelaRegistro RegistroForm = new TelaRegistro();
+            RegistroForm.ShowDialog();
+
+            this.Show();
+            
         }
     }
 }

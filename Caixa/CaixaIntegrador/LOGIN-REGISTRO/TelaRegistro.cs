@@ -77,10 +77,8 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
                                 {
                                     MessageBox.Show("Registro Feito com Sucesso!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                    TelaLogin loginForm = new TelaLogin();
-                                    loginForm.Show();
-
-                                    this.Hide();
+                                    this.DialogResult = DialogResult.OK;
+                                    this.Close();
                                 }
                                 else
                                 {
@@ -104,10 +102,9 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
 
         private void lblRegistro_Click(object sender, EventArgs e)
         {
-            TelaLogin loginForm = new TelaLogin();
-            loginForm.Show();
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
 
-            this.Hide();
         }
     }
 }
