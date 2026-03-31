@@ -43,9 +43,10 @@
             Column4 = new DataGridViewTextBoxColumn();
             btn_PedidoAberto = new Button();
             groupBox2 = new GroupBox();
+            troco_label = new Label();
             btnAdicionarPagamento = new Button();
             lblValorPago = new Label();
-            materialTextBox21 = new MaterialSkin.Controls.MaterialTextBox2();
+            Valores_MaterialTextBox = new MaterialSkin.Controls.MaterialTextBox2();
             materialRadioButton5 = new MaterialSkin.Controls.MaterialRadioButton();
             materialRadioButton4 = new MaterialSkin.Controls.MaterialRadioButton();
             materialRadioButton3 = new MaterialSkin.Controls.MaterialRadioButton();
@@ -69,20 +70,17 @@
             groupBox1.Controls.Add(DataGrid_Produtos);
             groupBox1.Dock = DockStyle.Left;
             groupBox1.Location = new Point(0, 0);
-            groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(368, 908);
+            groupBox1.Size = new Size(322, 681);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
             // 
             // btn_Pedido
             // 
-            btn_Pedido.Location = new Point(3, 819);
-            btn_Pedido.Margin = new Padding(3, 4, 3, 4);
+            btn_Pedido.Location = new Point(3, 614);
             btn_Pedido.Name = "btn_Pedido";
-            btn_Pedido.Size = new Size(358, 81);
+            btn_Pedido.Size = new Size(313, 61);
             btn_Pedido.TabIndex = 3;
             btn_Pedido.Text = "Pedidos";
             btn_Pedido.UseVisualStyleBackColor = true;
@@ -93,10 +91,9 @@
             btnLimparCarrinho.BackColor = Color.Red;
             btnLimparCarrinho.Font = new Font("Arial", 12F, FontStyle.Bold);
             btnLimparCarrinho.ForeColor = Color.White;
-            btnLimparCarrinho.Location = new Point(3, 641);
-            btnLimparCarrinho.Margin = new Padding(3, 4, 3, 4);
+            btnLimparCarrinho.Location = new Point(3, 481);
             btnLimparCarrinho.Name = "btnLimparCarrinho";
-            btnLimparCarrinho.Size = new Size(183, 93);
+            btnLimparCarrinho.Size = new Size(160, 70);
             btnLimparCarrinho.TabIndex = 2;
             btnLimparCarrinho.Text = "Limpar Carrinho";
             btnLimparCarrinho.UseVisualStyleBackColor = false;
@@ -107,10 +104,9 @@
             btnDeletarMarcados.BackColor = Color.Orange;
             btnDeletarMarcados.Font = new Font("Arial", 12F, FontStyle.Bold);
             btnDeletarMarcados.ForeColor = Color.White;
-            btnDeletarMarcados.Location = new Point(185, 641);
-            btnDeletarMarcados.Margin = new Padding(3, 4, 3, 4);
+            btnDeletarMarcados.Location = new Point(162, 481);
             btnDeletarMarcados.Name = "btnDeletarMarcados";
-            btnDeletarMarcados.Size = new Size(183, 93);
+            btnDeletarMarcados.Size = new Size(160, 70);
             btnDeletarMarcados.TabIndex = 1;
             btnDeletarMarcados.Text = "Deletar";
             btnDeletarMarcados.UseVisualStyleBackColor = false;
@@ -125,14 +121,13 @@
             DataGrid_Produtos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DataGrid_Produtos.Columns.AddRange(new DataGridViewColumn[] { Column5, Column1, Column2, Column3, Column4 });
             DataGrid_Produtos.Dock = DockStyle.Top;
-            DataGrid_Produtos.Location = new Point(3, 24);
-            DataGrid_Produtos.Margin = new Padding(3, 4, 3, 4);
+            DataGrid_Produtos.Location = new Point(3, 19);
             DataGrid_Produtos.Name = "DataGrid_Produtos";
             DataGrid_Produtos.RowHeadersVisible = false;
             DataGrid_Produtos.RowHeadersWidth = 35;
             DataGrid_Produtos.RowTemplate.Resizable = DataGridViewTriState.True;
             DataGrid_Produtos.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            DataGrid_Produtos.Size = new Size(362, 608);
+            DataGrid_Produtos.Size = new Size(316, 456);
             DataGrid_Produtos.TabIndex = 0;
             DataGrid_Produtos.CellEndEdit += DataGrid_Produtos_CellEndEdit;
             // 
@@ -190,10 +185,9 @@
             // 
             // btn_PedidoAberto
             // 
-            btn_PedidoAberto.Location = new Point(24, 677);
-            btn_PedidoAberto.Margin = new Padding(3, 4, 3, 4);
+            btn_PedidoAberto.Location = new Point(21, 527);
             btn_PedidoAberto.Name = "btn_PedidoAberto";
-            btn_PedidoAberto.Size = new Size(265, 57);
+            btn_PedidoAberto.Size = new Size(232, 43);
             btn_PedidoAberto.TabIndex = 1;
             btn_PedidoAberto.Text = "Pedido em Aberto";
             btn_PedidoAberto.UseVisualStyleBackColor = true;
@@ -201,9 +195,10 @@
             // groupBox2
             // 
             groupBox2.BackColor = SystemColors.GradientInactiveCaption;
+            groupBox2.Controls.Add(troco_label);
             groupBox2.Controls.Add(btnAdicionarPagamento);
             groupBox2.Controls.Add(lblValorPago);
-            groupBox2.Controls.Add(materialTextBox21);
+            groupBox2.Controls.Add(Valores_MaterialTextBox);
             groupBox2.Controls.Add(materialRadioButton5);
             groupBox2.Controls.Add(materialRadioButton4);
             groupBox2.Controls.Add(materialRadioButton3);
@@ -215,24 +210,31 @@
             groupBox2.Controls.Add(lblTotal_Text);
             groupBox2.Dock = DockStyle.Right;
             groupBox2.Font = new Font("Segoe UI", 9F);
-            groupBox2.Location = new Point(1142, 0);
-            groupBox2.Margin = new Padding(3, 4, 3, 4);
+            groupBox2.Location = new Point(999, 0);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(3, 4, 3, 4);
-            groupBox2.Size = new Size(303, 908);
+            groupBox2.Size = new Size(265, 681);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "groupBox2";
+            // 
+            // troco_label
+            // 
+            troco_label.AutoSize = true;
+            troco_label.Font = new Font("Sans Serif Collection", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            troco_label.Location = new Point(6, 421);
+            troco_label.Name = "troco_label";
+            troco_label.Size = new Size(62, 27);
+            troco_label.TabIndex = 12;
+            troco_label.Text = "Troco:";
             // 
             // btnAdicionarPagamento
             // 
             btnAdicionarPagamento.BackColor = Color.Green;
             btnAdicionarPagamento.Font = new Font("Arial", 10F, FontStyle.Bold);
             btnAdicionarPagamento.ForeColor = Color.White;
-            btnAdicionarPagamento.Location = new Point(7, 533);
-            btnAdicionarPagamento.Margin = new Padding(3, 4, 3, 4);
+            btnAdicionarPagamento.Location = new Point(21, 481);
             btnAdicionarPagamento.Name = "btnAdicionarPagamento";
-            btnAdicionarPagamento.Size = new Size(282, 53);
+            btnAdicionarPagamento.Size = new Size(232, 40);
             btnAdicionarPagamento.TabIndex = 11;
             btnAdicionarPagamento.Text = "Adicionar Pagamento";
             btnAdicionarPagamento.UseVisualStyleBackColor = false;
@@ -242,47 +244,49 @@
             // 
             lblValorPago.AutoSize = true;
             lblValorPago.Font = new Font("Arial", 10F, FontStyle.Bold);
-            lblValorPago.Location = new Point(7, 507);
+            lblValorPago.Location = new Point(6, 376);
             lblValorPago.Name = "lblValorPago";
-            lblValorPago.Size = new Size(175, 19);
+            lblValorPago.Size = new Size(151, 16);
             lblValorPago.TabIndex = 10;
             lblValorPago.Text = "Pagamentos: R$ 0,00";
             // 
-            // materialTextBox21
+            // Valores_MaterialTextBox
             // 
-            materialTextBox21.AnimateReadOnly = false;
-            materialTextBox21.BackgroundImageLayout = ImageLayout.None;
-            materialTextBox21.CharacterCasing = CharacterCasing.Normal;
-            materialTextBox21.Depth = 0;
-            materialTextBox21.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox21.HideSelection = true;
-            materialTextBox21.LeadingIcon = null;
-            materialTextBox21.Location = new Point(7, 433);
-            materialTextBox21.Margin = new Padding(3, 4, 3, 4);
-            materialTextBox21.MaxLength = 32767;
-            materialTextBox21.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox21.Name = "materialTextBox21";
-            materialTextBox21.PasswordChar = '\0';
-            materialTextBox21.PrefixSuffixText = null;
-            materialTextBox21.ReadOnly = false;
-            materialTextBox21.RightToLeft = RightToLeft.No;
-            materialTextBox21.SelectedText = "";
-            materialTextBox21.SelectionLength = 0;
-            materialTextBox21.SelectionStart = 0;
-            materialTextBox21.ShortcutsEnabled = true;
-            materialTextBox21.Size = new Size(238, 48);
-            materialTextBox21.TabIndex = 9;
-            materialTextBox21.TabStop = false;
-            materialTextBox21.Text = "0,00";
-            materialTextBox21.TextAlign = HorizontalAlignment.Left;
-            materialTextBox21.TrailingIcon = null;
-            materialTextBox21.UseSystemPasswordChar = false;
+            Valores_MaterialTextBox.AnimateReadOnly = false;
+            Valores_MaterialTextBox.BackgroundImageLayout = ImageLayout.None;
+            Valores_MaterialTextBox.CharacterCasing = CharacterCasing.Normal;
+            Valores_MaterialTextBox.Depth = 0;
+            Valores_MaterialTextBox.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            Valores_MaterialTextBox.HideSelection = true;
+            Valores_MaterialTextBox.LeadingIcon = null;
+            Valores_MaterialTextBox.Location = new Point(6, 325);
+            Valores_MaterialTextBox.MaxLength = 32767;
+            Valores_MaterialTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            Valores_MaterialTextBox.Name = "Valores_MaterialTextBox";
+            Valores_MaterialTextBox.PasswordChar = '\0';
+            Valores_MaterialTextBox.PrefixSuffixText = null;
+            Valores_MaterialTextBox.ReadOnly = false;
+            Valores_MaterialTextBox.RightToLeft = RightToLeft.No;
+            Valores_MaterialTextBox.SelectedText = "";
+            Valores_MaterialTextBox.SelectionLength = 0;
+            Valores_MaterialTextBox.SelectionStart = 0;
+            Valores_MaterialTextBox.ShortcutsEnabled = true;
+            Valores_MaterialTextBox.Size = new Size(208, 48);
+            Valores_MaterialTextBox.TabIndex = 9;
+            Valores_MaterialTextBox.TabStop = false;
+            Valores_MaterialTextBox.Text = "0,00";
+            Valores_MaterialTextBox.TextAlign = HorizontalAlignment.Left;
+            Valores_MaterialTextBox.TrailingIcon = null;
+            Valores_MaterialTextBox.UseSystemPasswordChar = false;
+            Valores_MaterialTextBox.Enter += materialTextBox21_Enter;
+            Valores_MaterialTextBox.KeyDown += materialTextBox21_KeyDown;
+            Valores_MaterialTextBox.Leave += materialTextBox21_Leave;
             // 
             // materialRadioButton5
             // 
             materialRadioButton5.AutoSize = true;
             materialRadioButton5.Depth = 0;
-            materialRadioButton5.Location = new Point(7, 347);
+            materialRadioButton5.Location = new Point(6, 260);
             materialRadioButton5.Margin = new Padding(0);
             materialRadioButton5.MouseLocation = new Point(-1, -1);
             materialRadioButton5.MouseState = MaterialSkin.MouseState.HOVER;
@@ -298,7 +302,7 @@
             // 
             materialRadioButton4.AutoSize = true;
             materialRadioButton4.Depth = 0;
-            materialRadioButton4.Location = new Point(7, 280);
+            materialRadioButton4.Location = new Point(6, 210);
             materialRadioButton4.Margin = new Padding(0);
             materialRadioButton4.MouseLocation = new Point(-1, -1);
             materialRadioButton4.MouseState = MaterialSkin.MouseState.HOVER;
@@ -314,7 +318,7 @@
             // 
             materialRadioButton3.AutoSize = true;
             materialRadioButton3.Depth = 0;
-            materialRadioButton3.Location = new Point(7, 213);
+            materialRadioButton3.Location = new Point(6, 160);
             materialRadioButton3.Margin = new Padding(0);
             materialRadioButton3.MouseLocation = new Point(-1, -1);
             materialRadioButton3.MouseState = MaterialSkin.MouseState.HOVER;
@@ -330,7 +334,7 @@
             // 
             materialRadioButton2.AutoSize = true;
             materialRadioButton2.Depth = 0;
-            materialRadioButton2.Location = new Point(7, 147);
+            materialRadioButton2.Location = new Point(6, 110);
             materialRadioButton2.Margin = new Padding(0);
             materialRadioButton2.MouseLocation = new Point(-1, -1);
             materialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER;
@@ -346,7 +350,7 @@
             // 
             materialRadioButton1.AutoSize = true;
             materialRadioButton1.Depth = 0;
-            materialRadioButton1.Location = new Point(7, 80);
+            materialRadioButton1.Location = new Point(6, 60);
             materialRadioButton1.Margin = new Padding(0);
             materialRadioButton1.MouseLocation = new Point(-1, -1);
             materialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -362,18 +366,17 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Sans Serif Collection", 11.25F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            label1.Location = new Point(1, 25);
+            label1.Location = new Point(1, 19);
             label1.Name = "label1";
-            label1.Size = new Size(227, 64);
+            label1.Size = new Size(258, 37);
             label1.TabIndex = 2;
             label1.Text = "Formas de Pagamento";
             // 
             // btn_FinalizarPedido
             // 
-            btn_FinalizarPedido.Location = new Point(24, 803);
-            btn_FinalizarPedido.Margin = new Padding(3, 4, 3, 4);
+            btn_FinalizarPedido.Location = new Point(21, 608);
             btn_FinalizarPedido.Name = "btn_FinalizarPedido";
-            btn_FinalizarPedido.Size = new Size(265, 89);
+            btn_FinalizarPedido.Size = new Size(232, 67);
             btn_FinalizarPedido.TabIndex = 0;
             btn_FinalizarPedido.Text = "Finalizar Pedido";
             btn_FinalizarPedido.UseVisualStyleBackColor = true;
@@ -383,30 +386,29 @@
             // 
             lblTotal_Text.AutoSize = true;
             lblTotal_Text.Font = new Font("Arial Narrow", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTotal_Text.Location = new Point(7, 595);
+            lblTotal_Text.Location = new Point(6, 392);
             lblTotal_Text.Name = "lblTotal_Text";
-            lblTotal_Text.Size = new Size(77, 35);
+            lblTotal_Text.Size = new Size(61, 29);
             lblTotal_Text.TabIndex = 0;
             lblTotal_Text.Text = "Total:";
+            lblTotal_Text.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panelPrincipal
             // 
             panelPrincipal.Dock = DockStyle.Fill;
-            panelPrincipal.Location = new Point(368, 0);
-            panelPrincipal.Margin = new Padding(3, 4, 3, 4);
+            panelPrincipal.Location = new Point(322, 0);
             panelPrincipal.Name = "panelPrincipal";
-            panelPrincipal.Size = new Size(774, 908);
+            panelPrincipal.Size = new Size(677, 681);
             panelPrincipal.TabIndex = 2;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1445, 908);
+            ClientSize = new Size(1264, 681);
             Controls.Add(panelPrincipal);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
@@ -441,8 +443,9 @@
         private MaterialSkin.Controls.MaterialRadioButton materialRadioButton3;
         private MaterialSkin.Controls.MaterialRadioButton materialRadioButton2;
         private MaterialSkin.Controls.MaterialRadioButton materialRadioButton1;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox21;
+        private MaterialSkin.Controls.MaterialTextBox2 Valores_MaterialTextBox;
         private Label lblValorPago;
         private Button btnAdicionarPagamento;
+        private Label troco_label;
     }
 }

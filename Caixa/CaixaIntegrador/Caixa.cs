@@ -1,4 +1,6 @@
 using CaixaIntegrador.Classes;
+using Google.Protobuf.WellKnownTypes;
+using Org.BouncyCastle.Math.EC;
 
 namespace CaixaIntegrador
 {
@@ -282,9 +284,37 @@ namespace CaixaIntegrador
             // Volta para a tela de categorias
             ExibirUserControl(ucCategorias);
         }
+        private void materialTextBox21_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Valores_MaterialTextBox.Text))
+            {
+                Valores_MaterialTextBox.Text = "0,00";
+                Valores_MaterialTextBox.ForeColor = Color.Gray;
+            }
+        }
+        private void materialTextBox21_Enter(object sender, EventArgs e)
+        {
+            if (Valores_MaterialTextBox.Text == "0,00")
+            {
+                Valores_MaterialTextBox.Text = "";
+                Valores_MaterialTextBox.ForeColor = Color.Black;
+            }
+        }
 
         // Adiciona um pagamento à lista de pagamentos do pedido
         private void btnAdicionarPagamento_Click(object sender, EventArgs e)
+        {
+            PagamentoGeral();
+        }
+        private void materialTextBox21_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                PagamentoGeral();
+            }
+        }
+
+        private void PagamentoGeral()
         {
             // Valida se um radio button foi selecionado
             FormaPagamento? formaSelecionada = null;
@@ -294,15 +324,15 @@ namespace CaixaIntegrador
             else if (materialRadioButton3.Checked) formaSelecionada = FormaPagamento.Pix;
             else if (materialRadioButton4.Checked) formaSelecionada = FormaPagamento.Voucher;
             else if (materialRadioButton5.Checked) formaSelecionada = FormaPagamento.Dinheiro;
-
+        
             if (formaSelecionada == null)
             {
                 MessageBox.Show("Selecione uma forma de pagamento!", "Erro");
                 return;
             }
-
+           
             // Valida se o valor é válido (aceita "50" ou "50,00")
-            string valorTexto = materialTextBox21.Text.Trim();
+            string valorTexto = Valores_MaterialTextBox.Text.Trim();
             if (string.IsNullOrEmpty(valorTexto))
             {
                 MessageBox.Show("Digite um valor válido!", "Erro");
@@ -319,35 +349,78 @@ namespace CaixaIntegrador
             // Valida se o valor não ultrapassa o saldo
             decimal totalPedido = carrinho.Sum(c => c.Total);
             decimal valorPago = pagamentosAtuais.Sum(p => p.Valor);
+           // Valores_MaterialTextBox.Text = (totalPedido - valorPago).ToString("F2");
             decimal saldo = totalPedido - valorPago;
 
-            if (valorPagamento > saldo)
+            if (formaSelecionada == FormaPagamento.Dinheiro)
             {
-                MessageBox.Show($"Valor não pode ser superior ao saldo de R$ {saldo:F2}!", "Erro");
-                return;
+                if (valorPagamento >= saldo)
+                {
+                    var troco = valorPagamento - saldo;
+
+                    var novoPagamento = new Pagamento
+                    {
+                        Forma = FormaPagamento.Dinheiro,
+                        Valor = valorPagamento
+                    };
+                    pagamentosAtuais.Add(novoPagamento);
+
+                    AtualizarLabelPagamentos();
+                    LimparFormularioPagamento();
+
+                    if (troco > 0)
+                    {
+                        MessageBox.Show($"Troco de R$ {troco:F2}", "Troco");
+                        troco_label.Text = $"Troco: {troco:F2}";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Pagamento completo! Clique em 'Finalizar Pedido'.", "Sucesso");
+                    }
+
+                    btnAdicionarPagamento.Enabled = false;
+                    Valores_MaterialTextBox.Enabled = false;
+                }
+                else
+                {
+                    // Pagamento menor que saldo → adiciona normalmente
+                    var novoPagamento = new Pagamento
+                    {
+                        Forma = FormaPagamento.Dinheiro,
+                        Valor = valorPagamento
+                    };
+                    pagamentosAtuais.Add(novoPagamento);
+
+                    AtualizarLabelPagamentos();
+                    LimparFormularioPagamento();
+                }
             }
-
-            // Cria e adiciona o novo pagamento
-            var novoPagamento = new Pagamento
+            else // outras formas de pagamento
             {
-                Forma = (FormaPagamento)formaSelecionada,
-                Valor = valorPagamento
-            };
+                if (valorPagamento > saldo)
+                {
+                    MessageBox.Show($"Valor não pode ser superior ao saldo de R$ {saldo:F2}!", "Erro");
+                    return;
+                }
 
-            pagamentosAtuais.Add(novoPagamento);
+                var novoPagamento = new Pagamento
+                {
+                    Forma = (FormaPagamento)formaSelecionada,
+                    Valor = valorPagamento
+                };
+                pagamentosAtuais.Add(novoPagamento);
 
-            // Atualiza a exibição
-            AtualizarLabelPagamentos();
-            LimparFormularioPagamento();
+                AtualizarLabelPagamentos();
+                LimparFormularioPagamento();
 
-            // Se o saldo atingiu zero, desabilita novos pagamentos
-            if (saldo - valorPagamento <= 0)
-            {
-                MessageBox.Show("Pagamento completo! Clique em 'Finalizar Pedido'.", "Sucesso");
-                btnAdicionarPagamento.Enabled = false;
+                if (saldo - valorPagamento <= 0)
+                {
+                    MessageBox.Show("Pagamento completo! Clique em 'Finalizar Pedido'.", "Sucesso");
+                    btnAdicionarPagamento.Enabled = false;
+                    Valores_MaterialTextBox.Enabled = false;
+                }
             }
         }
-
         // Atualiza o label com o valor total de pagamentos
         private void AtualizarLabelPagamentos()
         {
@@ -366,10 +439,12 @@ namespace CaixaIntegrador
             materialRadioButton5.Checked = false;
 
             // Limpa o textbox
-            materialTextBox21.Text = "0,00";
+            Valores_MaterialTextBox.Text = "";
+            troco_label.Text = "";
 
             // Habilita o botão de adicionar pagamento
             btnAdicionarPagamento.Enabled = true;
+            Valores_MaterialTextBox.Enabled = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)

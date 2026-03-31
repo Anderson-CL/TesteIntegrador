@@ -71,7 +71,7 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
                                 comando.Parameters.AddWithValue("@status", "Ativo");
                                 comando.Parameters.AddWithValue("@data", DateTime.Now);
 
-                                int LinhasAfetadas = comando.ExecuteNonQuery();
+                                int LinhasAfetadas = comando.ExecuteNonQuery(); 
 
                                 if (LinhasAfetadas > 0)
                                 {
