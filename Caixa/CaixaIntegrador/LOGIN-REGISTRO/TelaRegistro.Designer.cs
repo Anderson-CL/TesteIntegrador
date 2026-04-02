@@ -71,7 +71,7 @@
             // 
             // txtRegistroSenha2
             // 
-            txtRegistroSenha2.Location = new Point(183, 206);
+            txtRegistroSenha2.Location = new Point(183, 204);
             txtRegistroSenha2.Margin = new Padding(3, 2, 3, 2);
             txtRegistroSenha2.Name = "txtRegistroSenha2";
             txtRegistroSenha2.Size = new Size(110, 23);
@@ -80,10 +80,10 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(110, 195);
+            pictureBox4.Location = new Point(121, 204);
             pictureBox4.Margin = new Padding(3, 2, 3, 2);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(38, 32);
+            pictureBox4.Size = new Size(25, 23);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 9;
             pictureBox4.TabStop = false;
@@ -101,7 +101,7 @@
             // 
             // txtRegistroSenha1
             // 
-            txtRegistroSenha1.Location = new Point(183, 157);
+            txtRegistroSenha1.Location = new Point(183, 155);
             txtRegistroSenha1.Margin = new Padding(3, 2, 3, 2);
             txtRegistroSenha1.Name = "txtRegistroSenha1";
             txtRegistroSenha1.Size = new Size(110, 23);
@@ -109,7 +109,7 @@
             // 
             // txtRegistroLogin
             // 
-            txtRegistroLogin.Location = new Point(183, 103);
+            txtRegistroLogin.Location = new Point(183, 111);
             txtRegistroLogin.Margin = new Padding(3, 2, 3, 2);
             txtRegistroLogin.Name = "txtRegistroLogin";
             txtRegistroLogin.Size = new Size(110, 23);
@@ -147,10 +147,10 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(110, 146);
+            pictureBox3.Location = new Point(121, 155);
             pictureBox3.Margin = new Padding(3, 2, 3, 2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(38, 32);
+            pictureBox3.Size = new Size(25, 23);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
@@ -158,10 +158,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(110, 103);
+            pictureBox2.Location = new Point(121, 111);
             pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(38, 31);
+            pictureBox2.Size = new Size(25, 23);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;

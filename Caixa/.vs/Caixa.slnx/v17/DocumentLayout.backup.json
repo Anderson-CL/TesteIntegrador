@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\anderson.psantos32\\Desktop\\TESTE MERGE\\TesteIntegrador\\Caixa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\anderson.psantos32\\desktop\\teste merge\\testeintegrador\\caixa\\caixaintegrador\\login-registro\\telaregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\login-registro\\telaregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\anderson.psantos32\\desktop\\teste merge\\testeintegrador\\caixa\\caixaintegrador\\login-registro\\telalogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\login-registro\\telalogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\anderson.psantos32\\desktop\\teste merge\\testeintegrador\\caixa\\caixaintegrador\\login-registro\\telaregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\login-registro\\telaregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\anderson.psantos32\\desktop\\teste merge\\testeintegrador\\caixa\\caixaintegrador\\login-registro\\telaregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|solutionrelative:caixaintegrador\\login-registro\\telaregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1009B0AC-FA5E-5362-3EBB-162876A86E75}|CaixaIntegrador\\CaixaIntegrador.csproj|c:\\users\\anderson.psantos32\\desktop\\teste merge\\testeintegrador\\caixa\\caixaintegrador\\login-registro\\telalogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,52 +34,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "TelaLogin.cs",
               "DocumentMoniker": "C:\\Users\\anderson.psantos32\\Desktop\\TESTE MERGE\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs",
               "RelativeDocumentMoniker": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs",
               "ToolTip": "C:\\Users\\anderson.psantos32\\Desktop\\TESTE MERGE\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs",
               "RelativeToolTip": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAgwDgAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAqwFsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-31T00:28:55.841Z",
+              "WhenOpened": "2026-04-02T22:19:26.718Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TelaRegistro.cs",
-              "DocumentMoniker": "C:\\Users\\anderson.psantos32\\Desktop\\TESTE MERGE\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs",
-              "RelativeDocumentMoniker": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs",
-              "ToolTip": "C:\\Users\\anderson.psantos32\\Desktop\\TESTE MERGE\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs",
-              "RelativeToolTip": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-31T00:19:16.955Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TelaRegistro.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\anderson.psantos32\\Desktop\\TESTE MERGE\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs",
               "RelativeDocumentMoniker": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs",
               "ToolTip": "C:\\Users\\anderson.psantos32\\Desktop\\TESTE MERGE\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs [Projeto]",
               "RelativeToolTip": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaRegistro.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-30T23:37:22.851Z",
+              "WhenOpened": "2026-04-02T22:18:31.685Z",
               "EditorCaption": " [Projeto]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "TelaLogin.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\anderson.psantos32\\Desktop\\TESTE MERGE\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs",
               "RelativeDocumentMoniker": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs",
               "ToolTip": "C:\\Users\\anderson.psantos32\\Desktop\\TESTE MERGE\\TesteIntegrador\\Caixa\\CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs [Projeto]",
               "RelativeToolTip": "CaixaIntegrador\\LOGIN-REGISTRO\\TelaLogin.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-30T23:37:21.788Z",
+              "WhenOpened": "2026-04-02T22:18:30.586Z",
               "EditorCaption": " [Projeto]"
             }
           ]
