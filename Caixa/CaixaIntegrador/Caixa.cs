@@ -286,19 +286,22 @@ namespace CaixaIntegrador
         }
         private void materialTextBox21_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(Valores_MaterialTextBox.Text))
-            {
-                Valores_MaterialTextBox.Text = "0,00";
-                Valores_MaterialTextBox.ForeColor = Color.Gray;
-            }
+            AtualizarValorPadrao();
         }
         private void materialTextBox21_Enter(object sender, EventArgs e)
         {
-            if (Valores_MaterialTextBox.Text == "0,00")
+
+            decimal totalPedido = carrinho.Sum(c => c.Total);
+            decimal valorPago = pagamentosAtuais.Sum(p => p.Valor);
+            decimal saldo = totalPedido - valorPago;
+
+            if (Valores_MaterialTextBox.Text == saldo.ToString("F2")
+                && Valores_MaterialTextBox.ForeColor == Color.Gray)
             {
                 Valores_MaterialTextBox.Text = "";
                 Valores_MaterialTextBox.ForeColor = Color.Black;
             }
+
         }
 
         // Adiciona um pagamento à lista de pagamentos do pedido
@@ -324,13 +327,13 @@ namespace CaixaIntegrador
             else if (materialRadioButton3.Checked) formaSelecionada = FormaPagamento.Pix;
             else if (materialRadioButton4.Checked) formaSelecionada = FormaPagamento.Voucher;
             else if (materialRadioButton5.Checked) formaSelecionada = FormaPagamento.Dinheiro;
-        
+
             if (formaSelecionada == null)
             {
                 MessageBox.Show("Selecione uma forma de pagamento!", "Erro");
                 return;
             }
-           
+
             // Valida se o valor é válido (aceita "50" ou "50,00")
             string valorTexto = Valores_MaterialTextBox.Text.Trim();
             if (string.IsNullOrEmpty(valorTexto))
@@ -349,9 +352,7 @@ namespace CaixaIntegrador
             // Valida se o valor não ultrapassa o saldo
             decimal totalPedido = carrinho.Sum(c => c.Total);
             decimal valorPago = pagamentosAtuais.Sum(p => p.Valor);
-           // Valores_MaterialTextBox.Text = (totalPedido - valorPago).ToString("F2");
             decimal saldo = totalPedido - valorPago;
-
             if (formaSelecionada == FormaPagamento.Dinheiro)
             {
                 if (valorPagamento >= saldo)
@@ -421,11 +422,26 @@ namespace CaixaIntegrador
                 }
             }
         }
+
         // Atualiza o label com o valor total de pagamentos
         private void AtualizarLabelPagamentos()
         {
             decimal totalPago = pagamentosAtuais.Sum(p => p.Valor);
             lblValorPago.Text = $"Pagamentos: R$ {totalPago:F2}";
+        }
+
+        private void AtualizarValorPadrao()
+        {
+            decimal totalPedido = carrinho.Sum(c => c.Total);
+            decimal valorPago = pagamentosAtuais.Sum(p => p.Valor);
+            decimal saldo = totalPedido - valorPago;
+
+            if (string.IsNullOrWhiteSpace(Valores_MaterialTextBox.Text)
+                || Valores_MaterialTextBox.ForeColor == Color.Gray)
+            {
+                Valores_MaterialTextBox.Text = saldo.ToString("F2");
+                Valores_MaterialTextBox.ForeColor = Color.Gray;
+            }
         }
 
         // Limpa o formulário de pagamento
@@ -450,6 +466,31 @@ namespace CaixaIntegrador
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void materialRadioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+            AtualizarValorPadrao();
+        }
+
+        private void materialRadioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            AtualizarValorPadrao();
+        }
+
+        private void materialRadioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            AtualizarValorPadrao();
+        }
+
+        private void materialRadioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            AtualizarValorPadrao();
+        }
+
+        private void materialRadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            AtualizarValorPadrao();
         }
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
             btn_Pedido = new Button();
             btnLimparCarrinho = new Button();
@@ -151,8 +151,8 @@
             // Column2
             // 
             Column2.DataPropertyName = "Qtd";
-            dataGridViewCellStyle1.Format = "N0";
-            Column2.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Format = "N0";
+            Column2.DefaultCellStyle = dataGridViewCellStyle10;
             Column2.FillWeight = 89.42893F;
             Column2.HeaderText = "Qtd";
             Column2.MinimumWidth = 6;
@@ -162,8 +162,8 @@
             // Column3
             // 
             Column3.DataPropertyName = "Preco";
-            dataGridViewCellStyle2.Format = "C2";
-            Column3.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Format = "C2";
+            Column3.DefaultCellStyle = dataGridViewCellStyle11;
             Column3.FillWeight = 89.42893F;
             Column3.HeaderText = "Preco";
             Column3.MinimumWidth = 6;
@@ -174,8 +174,8 @@
             // Column4
             // 
             Column4.DataPropertyName = "Total";
-            dataGridViewCellStyle3.Format = "C2";
-            Column4.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Format = "C2";
+            Column4.DefaultCellStyle = dataGridViewCellStyle12;
             Column4.FillWeight = 89.42893F;
             Column4.HeaderText = "Total";
             Column4.MinimumWidth = 6;
@@ -223,7 +223,7 @@
             troco_label.Font = new Font("Sans Serif Collection", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             troco_label.Location = new Point(6, 421);
             troco_label.Name = "troco_label";
-            troco_label.Size = new Size(62, 27);
+            troco_label.Size = new Size(49, 37);
             troco_label.TabIndex = 12;
             troco_label.Text = "Troco:";
             // 
@@ -274,7 +274,6 @@
             Valores_MaterialTextBox.Size = new Size(208, 48);
             Valores_MaterialTextBox.TabIndex = 9;
             Valores_MaterialTextBox.TabStop = false;
-            Valores_MaterialTextBox.Text = "0,00";
             Valores_MaterialTextBox.TextAlign = HorizontalAlignment.Left;
             Valores_MaterialTextBox.TrailingIcon = null;
             Valores_MaterialTextBox.UseSystemPasswordChar = false;
@@ -297,6 +296,7 @@
             materialRadioButton5.TabStop = true;
             materialRadioButton5.Text = "Dinheiro";
             materialRadioButton5.UseVisualStyleBackColor = true;
+            materialRadioButton5.CheckedChanged += materialRadioButton5_CheckedChanged;
             // 
             // materialRadioButton4
             // 
@@ -313,6 +313,7 @@
             materialRadioButton4.TabStop = true;
             materialRadioButton4.Text = "Voucher";
             materialRadioButton4.UseVisualStyleBackColor = true;
+            materialRadioButton4.CheckedChanged += materialRadioButton4_CheckedChanged;
             // 
             // materialRadioButton3
             // 
@@ -329,6 +330,7 @@
             materialRadioButton3.TabStop = true;
             materialRadioButton3.Text = "Pix";
             materialRadioButton3.UseVisualStyleBackColor = true;
+            materialRadioButton3.CheckedChanged += materialRadioButton3_CheckedChanged;
             // 
             // materialRadioButton2
             // 
@@ -345,6 +347,7 @@
             materialRadioButton2.TabStop = true;
             materialRadioButton2.Text = "Cartão Débito";
             materialRadioButton2.UseVisualStyleBackColor = true;
+            materialRadioButton2.CheckedChanged += materialRadioButton2_CheckedChanged;
             // 
             // materialRadioButton1
             // 
@@ -361,6 +364,7 @@
             materialRadioButton1.TabStop = true;
             materialRadioButton1.Text = "Cartão Crédito";
             materialRadioButton1.UseVisualStyleBackColor = true;
+            materialRadioButton1.CheckedChanged += materialRadioButton1_CheckedChanged;
             // 
             // label1
             // 
@@ -368,7 +372,7 @@
             label1.Font = new Font("Sans Serif Collection", 11.25F, FontStyle.Underline, GraphicsUnit.Point, 0);
             label1.Location = new Point(1, 19);
             label1.Name = "label1";
-            label1.Size = new Size(258, 37);
+            label1.Size = new Size(174, 51);
             label1.TabIndex = 2;
             label1.Text = "Formas de Pagamento";
             // 
