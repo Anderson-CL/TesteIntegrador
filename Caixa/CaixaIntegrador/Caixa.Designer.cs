@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
             btn_Pedido = new Button();
             btnLimparCarrinho = new Button();
@@ -43,6 +43,7 @@
             Column4 = new DataGridViewTextBoxColumn();
             btn_PedidoAberto = new Button();
             groupBox2 = new GroupBox();
+            btn_Limparpag = new MaterialSkin.Controls.MaterialButton();
             troco_label = new Label();
             btnAdicionarPagamento = new Button();
             lblValorPago = new Label();
@@ -151,8 +152,8 @@
             // Column2
             // 
             Column2.DataPropertyName = "Qtd";
-            dataGridViewCellStyle10.Format = "N0";
-            Column2.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Format = "N0";
+            Column2.DefaultCellStyle = dataGridViewCellStyle1;
             Column2.FillWeight = 89.42893F;
             Column2.HeaderText = "Qtd";
             Column2.MinimumWidth = 6;
@@ -162,8 +163,8 @@
             // Column3
             // 
             Column3.DataPropertyName = "Preco";
-            dataGridViewCellStyle11.Format = "C2";
-            Column3.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Format = "C2";
+            Column3.DefaultCellStyle = dataGridViewCellStyle2;
             Column3.FillWeight = 89.42893F;
             Column3.HeaderText = "Preco";
             Column3.MinimumWidth = 6;
@@ -174,8 +175,8 @@
             // Column4
             // 
             Column4.DataPropertyName = "Total";
-            dataGridViewCellStyle12.Format = "C2";
-            Column4.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Format = "C2";
+            Column4.DefaultCellStyle = dataGridViewCellStyle3;
             Column4.FillWeight = 89.42893F;
             Column4.HeaderText = "Total";
             Column4.MinimumWidth = 6;
@@ -195,6 +196,7 @@
             // groupBox2
             // 
             groupBox2.BackColor = SystemColors.GradientInactiveCaption;
+            groupBox2.Controls.Add(btn_Limparpag);
             groupBox2.Controls.Add(troco_label);
             groupBox2.Controls.Add(btnAdicionarPagamento);
             groupBox2.Controls.Add(lblValorPago);
@@ -216,6 +218,26 @@
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "groupBox2";
+            // 
+            // btn_Limparpag
+            // 
+            btn_Limparpag.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btn_Limparpag.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btn_Limparpag.Depth = 0;
+            btn_Limparpag.HighEmphasis = true;
+            btn_Limparpag.Icon = null;
+            btn_Limparpag.Location = new Point(177, 439);
+            btn_Limparpag.Margin = new Padding(4, 6, 4, 6);
+            btn_Limparpag.MouseState = MaterialSkin.MouseState.HOVER;
+            btn_Limparpag.Name = "btn_Limparpag";
+            btn_Limparpag.NoAccentTextColor = Color.Empty;
+            btn_Limparpag.Size = new Size(75, 36);
+            btn_Limparpag.TabIndex = 13;
+            btn_Limparpag.Text = "Limpar";
+            btn_Limparpag.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btn_Limparpag.UseAccentColor = false;
+            btn_Limparpag.UseVisualStyleBackColor = true;
+            btn_Limparpag.Click += btn_Limparpag_Click;
             // 
             // troco_label
             // 
@@ -451,5 +473,6 @@
         private Label lblValorPago;
         private Button btnAdicionarPagamento;
         private Label troco_label;
+        private MaterialSkin.Controls.MaterialButton btn_Limparpag;
     }
 }

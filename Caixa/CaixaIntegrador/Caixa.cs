@@ -381,6 +381,10 @@ namespace CaixaIntegrador
 
                     btnAdicionarPagamento.Enabled = false;
                     Valores_MaterialTextBox.Enabled = false;
+                    panelPrincipal.Enabled = false;
+                    btnDeletarMarcados.Enabled = false;
+                    btnLimparCarrinho.Enabled = false;
+                    DataGrid_Produtos.Enabled = false;
                 }
                 else
                 {
@@ -419,6 +423,10 @@ namespace CaixaIntegrador
                     MessageBox.Show("Pagamento completo! Clique em 'Finalizar Pedido'.", "Sucesso");
                     btnAdicionarPagamento.Enabled = false;
                     Valores_MaterialTextBox.Enabled = false;
+                    panelPrincipal.Enabled = false;
+                    btnDeletarMarcados.Enabled = false;
+                    btnLimparCarrinho.Enabled = false;
+                    DataGrid_Produtos.Enabled = false;
                 }
             }
         }
@@ -459,8 +467,13 @@ namespace CaixaIntegrador
             troco_label.Text = "";
 
             // Habilita o botão de adicionar pagamento
+            panelPrincipal.Enabled = true;
             btnAdicionarPagamento.Enabled = true;
             Valores_MaterialTextBox.Enabled = true;
+            btnDeletarMarcados.Enabled = true;
+            btnLimparCarrinho.Enabled = true;
+            DataGrid_Produtos.Enabled = true;
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -491,6 +504,15 @@ namespace CaixaIntegrador
         private void materialRadioButton1_CheckedChanged(object sender, EventArgs e)
         {
             AtualizarValorPadrao();
+        }
+
+        private void btn_Limparpag_Click(object sender, EventArgs e)
+        {
+            LimparFormularioPagamento();
+            lblValorPago.Text = "";
+            pagamentosAtuais.Clear();
+            lblTotal_Text.Text = "";
+
         }
     }
 }
