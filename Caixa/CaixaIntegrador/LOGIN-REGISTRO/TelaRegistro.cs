@@ -11,8 +11,12 @@ using System.Windows.Forms;
 
 namespace CaixaIntegrador.LOGIN_REGISTRO
 {
+
     public partial class TelaRegistro : Form
     {
+        private bool MostrarSenha1 = false;
+        private bool MostrarSenha2 = false;
+
         MySqlConnection Conexao;
         public TelaRegistro()
         {
@@ -104,6 +108,64 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+
+        }
+
+        private void MostrarOcultar1_Click(object sender, EventArgs e)
+        {
+            MostrarSenha1 = !MostrarSenha1;
+
+            txtRegistroSenha1.UseSystemPasswordChar = !MostrarSenha1;
+
+            MostrarOcultar1.Image = MostrarSenha1
+                ? Properties.Resources.invisivel
+                : Properties.Resources.visivel;
+        }
+
+        private void MostrarOcultar2_Click(object sender, EventArgs e)
+        {
+            MostrarSenha2 = !MostrarSenha2;
+
+            txtRegistroSenha2.UseSystemPasswordChar = !MostrarSenha2;
+
+            MostrarOcultar2.Image = MostrarSenha2
+                ? Properties.Resources.invisivel
+                : Properties.Resources.visivel;
+        }
+
+        private void txtRegistroSenha1_TextChanged(object sender, EventArgs e)
+        {
+            MostrarOcultar1.Visible = txtRegistroSenha1.TextLength > 0;
+            if (txtRegistroSenha1.TextLength == 0)
+            {
+                MostrarSenha1 = false;
+                txtRegistroSenha1.UseSystemPasswordChar = true;
+                MostrarOcultar1.Image = Properties.Resources.visivel;
+            }
+        }
+
+        private void txtRegistroSenha2_TextChanged(object sender, EventArgs e)
+        {
+            MostrarOcultar2.Visible = txtRegistroSenha2.TextLength > 0;
+            if (txtRegistroSenha2.TextLength == 0)
+            {
+                MostrarSenha2 = false;
+                txtRegistroSenha2.UseSystemPasswordChar = true;
+                MostrarOcultar2.Image = Properties.Resources.visivel;
+            }
+        }
+
+        private void TelaRegistro_Load(object sender, EventArgs e)
+        {
+
+            txtRegistroSenha1.UseSystemPasswordChar = true;
+            txtRegistroSenha2.UseSystemPasswordChar = true;
+
+            MostrarOcultar1.Visible = false;
+            MostrarOcultar2.Visible = false;
+
+            MostrarOcultar1.Image = Properties.Resources.visivel;
+            MostrarOcultar2.Image = Properties.Resources.visivel;
 
         }
     }

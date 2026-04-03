@@ -13,6 +13,8 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
 {
     public partial class TelaLogin : Form
     {
+        private bool MostrarSenha = false;
+
         private MySqlConnection Conexao;
         public TelaLogin()
         {
@@ -90,6 +92,40 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
         private void TelaLogin_Load(object sender, EventArgs e)
         {
 
+
+            txtSenha.UseSystemPasswordChar = true;
+
+            MostrarOcultar.Image = Properties.Resources.visivel;
+            MostrarOcultar.Visible = false;
+
+
+
+        }
+
+        private void MostrarOcultar_Click(object sender, EventArgs e)
+        {
+
+            {
+                MostrarSenha = !MostrarSenha;
+
+                txtSenha.UseSystemPasswordChar = !MostrarSenha;
+
+                MostrarOcultar.Image = MostrarSenha
+                    ? Properties.Resources.invisivel
+                    : Properties.Resources.visivel;
+            }
+
+        }
+
+        private void txtSenha_TextChanged(object sender, EventArgs e)
+        {
+            MostrarOcultar.Visible = txtSenha.TextLength > 0;
+            if (txtSenha.TextLength == 0)
+            {
+                MostrarSenha = false;
+                txtSenha.UseSystemPasswordChar = true;
+                MostrarOcultar.Image = Properties.Resources.visivel;
+            }
         }
     }
 }

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaRegistro));
             panel1 = new Panel();
+            MostrarOcultar2 = new PictureBox();
+            MostrarOcultar1 = new PictureBox();
             txtRegistroSenha2 = new TextBox();
             pictureBox4 = new PictureBox();
             btnRegistro = new Button();
@@ -42,6 +44,8 @@
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)MostrarOcultar2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)MostrarOcultar1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -52,6 +56,8 @@
             // 
             panel1.AutoSize = true;
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(MostrarOcultar2);
+            panel1.Controls.Add(MostrarOcultar1);
             panel1.Controls.Add(txtRegistroSenha2);
             panel1.Controls.Add(pictureBox4);
             panel1.Controls.Add(btnRegistro);
@@ -69,13 +75,39 @@
             panel1.Size = new Size(457, 380);
             panel1.TabIndex = 0;
             // 
+            // MostrarOcultar2
+            // 
+            MostrarOcultar2.Cursor = Cursors.Hand;
+            MostrarOcultar2.Image = Properties.Resources.invisivel;
+            MostrarOcultar2.Location = new Point(299, 204);
+            MostrarOcultar2.Name = "MostrarOcultar2";
+            MostrarOcultar2.Size = new Size(20, 23);
+            MostrarOcultar2.SizeMode = PictureBoxSizeMode.Zoom;
+            MostrarOcultar2.TabIndex = 11;
+            MostrarOcultar2.TabStop = false;
+            MostrarOcultar2.Click += MostrarOcultar2_Click;
+            // 
+            // MostrarOcultar1
+            // 
+            MostrarOcultar1.Cursor = Cursors.Hand;
+            MostrarOcultar1.Image = Properties.Resources.invisivel;
+            MostrarOcultar1.Location = new Point(299, 155);
+            MostrarOcultar1.Name = "MostrarOcultar1";
+            MostrarOcultar1.Size = new Size(20, 23);
+            MostrarOcultar1.SizeMode = PictureBoxSizeMode.Zoom;
+            MostrarOcultar1.TabIndex = 10;
+            MostrarOcultar1.TabStop = false;
+            MostrarOcultar1.Click += MostrarOcultar1_Click;
+            // 
             // txtRegistroSenha2
             // 
+            txtRegistroSenha2.Cursor = Cursors.IBeam;
             txtRegistroSenha2.Location = new Point(183, 204);
             txtRegistroSenha2.Margin = new Padding(3, 2, 3, 2);
             txtRegistroSenha2.Name = "txtRegistroSenha2";
             txtRegistroSenha2.Size = new Size(110, 23);
             txtRegistroSenha2.TabIndex = 3;
+            txtRegistroSenha2.TextChanged += txtRegistroSenha2_TextChanged;
             // 
             // pictureBox4
             // 
@@ -90,6 +122,7 @@
             // 
             // btnRegistro
             // 
+            btnRegistro.Cursor = Cursors.Hand;
             btnRegistro.Location = new Point(193, 244);
             btnRegistro.Margin = new Padding(3, 2, 3, 2);
             btnRegistro.Name = "btnRegistro";
@@ -101,14 +134,17 @@
             // 
             // txtRegistroSenha1
             // 
+            txtRegistroSenha1.Cursor = Cursors.IBeam;
             txtRegistroSenha1.Location = new Point(183, 155);
             txtRegistroSenha1.Margin = new Padding(3, 2, 3, 2);
             txtRegistroSenha1.Name = "txtRegistroSenha1";
             txtRegistroSenha1.Size = new Size(110, 23);
             txtRegistroSenha1.TabIndex = 2;
+            txtRegistroSenha1.TextChanged += txtRegistroSenha1_TextChanged;
             // 
             // txtRegistroLogin
             // 
+            txtRegistroLogin.Cursor = Cursors.IBeam;
             txtRegistroLogin.Location = new Point(183, 111);
             txtRegistroLogin.Margin = new Padding(3, 2, 3, 2);
             txtRegistroLogin.Name = "txtRegistroLogin";
@@ -118,6 +154,7 @@
             // lblRegistro
             // 
             lblRegistro.AutoSize = true;
+            lblRegistro.Cursor = Cursors.Hand;
             lblRegistro.ForeColor = Color.RoyalBlue;
             lblRegistro.Location = new Point(270, 292);
             lblRegistro.Name = "lblRegistro";
@@ -188,8 +225,11 @@
             Name = "TelaRegistro";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "8";
+            Load += TelaRegistro_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)MostrarOcultar2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)MostrarOcultar1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -212,5 +252,7 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
+        private PictureBox MostrarOcultar2;
+        private PictureBox MostrarOcultar1;
     }
 }

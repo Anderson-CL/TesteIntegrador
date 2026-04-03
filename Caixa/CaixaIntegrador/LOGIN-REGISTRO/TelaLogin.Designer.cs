@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaLogin));
             panel1 = new Panel();
+            MostrarOcultar = new PictureBox();
             btnEntrar = new Button();
             txtSenha = new TextBox();
             txtLogin = new TextBox();
@@ -40,6 +41,7 @@
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)MostrarOcultar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -48,6 +50,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(MostrarOcultar);
             panel1.Controls.Add(btnEntrar);
             panel1.Controls.Add(txtSenha);
             panel1.Controls.Add(txtLogin);
@@ -64,8 +67,21 @@
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
+            // MostrarOcultar
+            // 
+            MostrarOcultar.Cursor = Cursors.Hand;
+            MostrarOcultar.Image = Properties.Resources.invisivel;
+            MostrarOcultar.Location = new Point(299, 169);
+            MostrarOcultar.Name = "MostrarOcultar";
+            MostrarOcultar.Size = new Size(20, 23);
+            MostrarOcultar.SizeMode = PictureBoxSizeMode.Zoom;
+            MostrarOcultar.TabIndex = 9;
+            MostrarOcultar.TabStop = false;
+            MostrarOcultar.Click += MostrarOcultar_Click;
+            // 
             // btnEntrar
             // 
+            btnEntrar.Cursor = Cursors.Hand;
             btnEntrar.Location = new Point(193, 218);
             btnEntrar.Margin = new Padding(3, 2, 3, 2);
             btnEntrar.Name = "btnEntrar";
@@ -77,14 +93,17 @@
             // 
             // txtSenha
             // 
+            txtSenha.Cursor = Cursors.IBeam;
             txtSenha.Location = new Point(183, 169);
             txtSenha.Margin = new Padding(3, 2, 3, 2);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(110, 23);
             txtSenha.TabIndex = 7;
+            txtSenha.TextChanged += txtSenha_TextChanged;
             // 
             // txtLogin
             // 
+            txtLogin.Cursor = Cursors.IBeam;
             txtLogin.Location = new Point(183, 115);
             txtLogin.Margin = new Padding(3, 2, 3, 2);
             txtLogin.Name = "txtLogin";
@@ -94,6 +113,7 @@
             // lblRegistro
             // 
             lblRegistro.AutoSize = true;
+            lblRegistro.Cursor = Cursors.Hand;
             lblRegistro.ForeColor = Color.RoyalBlue;
             lblRegistro.Location = new Point(285, 261);
             lblRegistro.Name = "lblRegistro";
@@ -168,6 +188,7 @@
             Load += TelaLogin_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)MostrarOcultar).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -186,5 +207,6 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
+        private PictureBox MostrarOcultar;
     }
 }
