@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CaixaIntegrador.LOGIN_REGISTRO;
 
 namespace CaixaIntegrador.LOGIN_REGISTRO
 {
@@ -25,6 +26,7 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
 
         private void btnRegistro_Click(object sender, EventArgs e)
         {
+
             if (txtRegistroLogin.Text == "" || txtRegistroSenha1.Text == "" || txtRegistroSenha2.Text == "")
             {
                 MessageBox.Show("Por favor, preencha todos os campos vazios", "Mensagem de Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -70,7 +72,18 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
                             using (MySqlCommand comando = new MySqlCommand(InserirDados, Conexao))
                             {
                                 comando.Parameters.AddWithValue("@login", txtRegistroLogin.Text.Trim());
-                                comando.Parameters.AddWithValue("@senha", txtRegistroSenha1.Text.Trim());
+
+                                // Criptografar senha
+
+                                string senhaCriptografada = Criptografia.CriptografarSenha(
+                                    txtRegistroSenha1.Text.Trim()
+                                );
+
+
+                                // Antigo sem Criptografia
+                                // comando.Parameters.AddWithValue("@senha", txtRegistroSenha1.Text.Trim());
+
+                                comando.Parameters.AddWithValue("@senha", senhaCriptografada);
                                 comando.Parameters.AddWithValue("@privilegio", "Admin");
                                 comando.Parameters.AddWithValue("@status", "Ativo");
                                 comando.Parameters.AddWithValue("@data", DateTime.Now);

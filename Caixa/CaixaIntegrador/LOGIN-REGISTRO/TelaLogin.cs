@@ -42,7 +42,13 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
                         using (MySqlCommand comando = new MySqlCommand(selectData, Conexao))
                         {
                             comando.Parameters.AddWithValue("@login", txtLogin.Text.Trim());
-                            comando.Parameters.AddWithValue("@senha", txtSenha.Text.Trim());
+
+
+                            string senhaCriptografada =
+                                    Criptografia.CriptografarSenha(txtSenha.Text.Trim());
+
+
+                            comando.Parameters.AddWithValue("@senha", senhaCriptografada);
 
                             MySqlDataAdapter adaptacao = new MySqlDataAdapter(comando);
                             DataTable table = new DataTable();
