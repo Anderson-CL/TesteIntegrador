@@ -242,8 +242,11 @@ namespace CaixaIntegrador
             }
 
             // Calcula o total do pedido
+
             decimal totalPedido = carrinho.Sum(c => c.Total);
             decimal totalPago = pagamentosAtuais.Sum(p => p.Valor);
+            decimal saldo = totalPedido - totalPago;
+            var troco = totalPago - totalPedido;
 
             // Valida se o total foi pago
             if (totalPago < totalPedido)
@@ -260,7 +263,8 @@ namespace CaixaIntegrador
                 Itens = new List<CarrinhoCompra>(carrinho),
                 Total = totalPedido,
                 Status = PedidoStatus.Finalizado,
-                Pagamentos = new List<Pagamento>(pagamentosAtuais)
+                Pagamentos = new List<Pagamento>(pagamentosAtuais),
+                Troco = troco,
             };
 
             // Adiciona o pedido à lista
@@ -271,8 +275,9 @@ namespace CaixaIntegrador
             MessageBox.Show(
                 $"Pedido #{novoPedido.Id} finalizado com sucesso!\n\n" +
                 $"Total: R$ {novoPedido.Total:F2}\n" +
-                $"Pagamentos: {formasPagamento}",
-                "Pedido Finalizado");
+                $"Pagamentos: {formasPagamento}\n"+
+                $"Troco: {troco}",
+                $"Pedido Finalizado");
 
             // Limpa o carrinho e pagamentos após finalizar
             carrinho.Clear();

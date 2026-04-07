@@ -92,7 +92,7 @@
             btnLimparCarrinho.BackColor = Color.Red;
             btnLimparCarrinho.Font = new Font("Arial", 12F, FontStyle.Bold);
             btnLimparCarrinho.ForeColor = Color.White;
-            btnLimparCarrinho.Location = new Point(3, 481);
+            btnLimparCarrinho.Location = new Point(0, 533);
             btnLimparCarrinho.Name = "btnLimparCarrinho";
             btnLimparCarrinho.Size = new Size(160, 70);
             btnLimparCarrinho.TabIndex = 2;
@@ -105,7 +105,7 @@
             btnDeletarMarcados.BackColor = Color.Orange;
             btnDeletarMarcados.Font = new Font("Arial", 12F, FontStyle.Bold);
             btnDeletarMarcados.ForeColor = Color.White;
-            btnDeletarMarcados.Location = new Point(162, 481);
+            btnDeletarMarcados.Location = new Point(162, 533);
             btnDeletarMarcados.Name = "btnDeletarMarcados";
             btnDeletarMarcados.Size = new Size(160, 70);
             btnDeletarMarcados.TabIndex = 1;
@@ -128,7 +128,7 @@
             DataGrid_Produtos.RowHeadersWidth = 35;
             DataGrid_Produtos.RowTemplate.Resizable = DataGridViewTriState.True;
             DataGrid_Produtos.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            DataGrid_Produtos.Size = new Size(316, 456);
+            DataGrid_Produtos.Size = new Size(316, 508);
             DataGrid_Produtos.TabIndex = 0;
             DataGrid_Produtos.CellEndEdit += DataGrid_Produtos_CellEndEdit;
             // 
@@ -186,7 +186,7 @@
             // 
             // btn_PedidoAberto
             // 
-            btn_PedidoAberto.Location = new Point(21, 527);
+            btn_PedidoAberto.Location = new Point(21, 548);
             btn_PedidoAberto.Name = "btn_PedidoAberto";
             btn_PedidoAberto.Size = new Size(232, 43);
             btn_PedidoAberto.TabIndex = 1;
@@ -221,17 +221,19 @@
             // 
             // btn_Limparpag
             // 
+            btn_Limparpag.AutoSize = false;
             btn_Limparpag.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btn_Limparpag.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             btn_Limparpag.Depth = 0;
+            btn_Limparpag.FlatStyle = FlatStyle.Popup;
             btn_Limparpag.HighEmphasis = true;
             btn_Limparpag.Icon = null;
-            btn_Limparpag.Location = new Point(177, 439);
+            btn_Limparpag.Location = new Point(142, 497);
             btn_Limparpag.Margin = new Padding(4, 6, 4, 6);
             btn_Limparpag.MouseState = MaterialSkin.MouseState.HOVER;
             btn_Limparpag.Name = "btn_Limparpag";
             btn_Limparpag.NoAccentTextColor = Color.Empty;
-            btn_Limparpag.Size = new Size(75, 36);
+            btn_Limparpag.Size = new Size(110, 40);
             btn_Limparpag.TabIndex = 13;
             btn_Limparpag.Text = "Limpar";
             btn_Limparpag.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -243,7 +245,7 @@
             // 
             troco_label.AutoSize = true;
             troco_label.Font = new Font("Sans Serif Collection", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            troco_label.Location = new Point(6, 421);
+            troco_label.Location = new Point(6, 416);
             troco_label.Name = "troco_label";
             troco_label.Size = new Size(49, 37);
             troco_label.TabIndex = 12;
@@ -252,11 +254,12 @@
             // btnAdicionarPagamento
             // 
             btnAdicionarPagamento.BackColor = Color.Green;
+            btnAdicionarPagamento.FlatStyle = FlatStyle.Popup;
             btnAdicionarPagamento.Font = new Font("Arial", 10F, FontStyle.Bold);
             btnAdicionarPagamento.ForeColor = Color.White;
-            btnAdicionarPagamento.Location = new Point(21, 481);
+            btnAdicionarPagamento.Location = new Point(21, 497);
             btnAdicionarPagamento.Name = "btnAdicionarPagamento";
-            btnAdicionarPagamento.Size = new Size(232, 40);
+            btnAdicionarPagamento.Size = new Size(110, 40);
             btnAdicionarPagamento.TabIndex = 11;
             btnAdicionarPagamento.Text = "Adicionar Pagamento";
             btnAdicionarPagamento.UseVisualStyleBackColor = false;
@@ -266,7 +269,7 @@
             // 
             lblValorPago.AutoSize = true;
             lblValorPago.Font = new Font("Arial", 10F, FontStyle.Bold);
-            lblValorPago.Location = new Point(6, 376);
+            lblValorPago.Location = new Point(6, 371);
             lblValorPago.Name = "lblValorPago";
             lblValorPago.Size = new Size(151, 16);
             lblValorPago.TabIndex = 10;
@@ -281,7 +284,7 @@
             Valores_MaterialTextBox.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             Valores_MaterialTextBox.HideSelection = true;
             Valores_MaterialTextBox.LeadingIcon = null;
-            Valores_MaterialTextBox.Location = new Point(6, 325);
+            Valores_MaterialTextBox.Location = new Point(6, 320);
             Valores_MaterialTextBox.MaxLength = 32767;
             Valores_MaterialTextBox.MouseState = MaterialSkin.MouseState.OUT;
             Valores_MaterialTextBox.Name = "Valores_MaterialTextBox";
@@ -412,7 +415,7 @@
             // 
             lblTotal_Text.AutoSize = true;
             lblTotal_Text.Font = new Font("Arial Narrow", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTotal_Text.Location = new Point(6, 392);
+            lblTotal_Text.Location = new Point(6, 387);
             lblTotal_Text.Name = "lblTotal_Text";
             lblTotal_Text.Size = new Size(61, 29);
             lblTotal_Text.TabIndex = 0;
