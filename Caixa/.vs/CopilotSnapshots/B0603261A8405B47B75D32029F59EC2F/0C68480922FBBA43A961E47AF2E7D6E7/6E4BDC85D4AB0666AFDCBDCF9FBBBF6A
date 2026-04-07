@@ -1,4 +1,4 @@
-using CaixaIntegrador.Classes;
+﻿using CaixaIntegrador.Classes;
 using Google.Protobuf.WellKnownTypes;
 using Org.BouncyCastle.Math.EC;
 
@@ -35,6 +35,13 @@ namespace CaixaIntegrador
             ucProdutos.ProdutoSelecionado += AdicionarAoCarrinho;
             ucSubCategorias.VoltarClick += VoltarCategorias;
             ucProdutos.VoltarClick += VoltarSubCategorias;
+
+            // Eventos para atualizar o TextBox quando uma forma de pagamento é selecionada
+            materialRadioButton1.CheckedChanged += (s, e) => AtualizarValorTextBoxPagamento();
+            materialRadioButton2.CheckedChanged += (s, e) => AtualizarValorTextBoxPagamento();
+            materialRadioButton3.CheckedChanged += (s, e) => AtualizarValorTextBoxPagamento();
+            materialRadioButton4.CheckedChanged += (s, e) => AtualizarValorTextBoxPagamento();
+            materialRadioButton5.CheckedChanged += (s, e) => AtualizarValorTextBoxPagamento();
         }
 
         // Adiciona o user control no painel
@@ -42,6 +49,9 @@ namespace CaixaIntegrador
         {
             panelPrincipal.Controls.Add(ucCategorias);
             ucCategorias.Dock = DockStyle.Fill;
+
+            // Inicializa o TextBox de pagamento
+            AtualizarValorTextBoxPagamento();
         }
 
         // Carrega todos os dados dos métodos  e caarega o usercontrol de categorias
@@ -242,11 +252,8 @@ namespace CaixaIntegrador
             }
 
             // Calcula o total do pedido
-
             decimal totalPedido = carrinho.Sum(c => c.Total);
             decimal totalPago = pagamentosAtuais.Sum(p => p.Valor);
-            decimal saldo = totalPedido - totalPago;
-            var troco = totalPago - totalPedido;
 
             // Valida se o total foi pago
             if (totalPago < totalPedido)
@@ -263,8 +270,7 @@ namespace CaixaIntegrador
                 Itens = new List<CarrinhoCompra>(carrinho),
                 Total = totalPedido,
                 Status = PedidoStatus.Finalizado,
-                Pagamentos = new List<Pagamento>(pagamentosAtuais),
-                Troco = troco,
+                Pagamentos = new List<Pagamento>(pagamentosAtuais)
             };
 
             // Adiciona o pedido à lista
@@ -275,10 +281,8 @@ namespace CaixaIntegrador
             MessageBox.Show(
                 $"Pedido #{novoPedido.Id} finalizado com sucesso!\n\n" +
                 $"Total: R$ {novoPedido.Total:F2}\n" +
-                $"Pagamentos: {formasPagamento}\n" +
-                //$"Troco: {troco}",
-                (novoPedido.Troco != 0 ? $"R$ {novoPedido.Troco:F2}" : ""),
-                $"Pedido Finalizado");
+                $"Pagamentos: {formasPagamento}",
+                "Pedido Finalizado");
 
             // Limpa o carrinho e pagamentos após finalizar
             carrinho.Clear();
@@ -292,22 +296,19 @@ namespace CaixaIntegrador
         }
         private void materialTextBox21_Leave(object sender, EventArgs e)
         {
-            AtualizarValorPadrao();
+            if (string.IsNullOrWhiteSpace(Valores_MaterialTextBox.Text))
+            {
+                Valores_MaterialTextBox.Text = "0,00";
+                Valores_MaterialTextBox.ForeColor = Color.Gray;
+            }
         }
         private void materialTextBox21_Enter(object sender, EventArgs e)
         {
-
-            decimal totalPedido = carrinho.Sum(c => c.Total);
-            decimal valorPago = pagamentosAtuais.Sum(p => p.Valor);
-            decimal saldo = totalPedido - valorPago;
-
-            if (Valores_MaterialTextBox.Text == saldo.ToString("F2")
-                && Valores_MaterialTextBox.ForeColor == Color.Gray)
+            if (Valores_MaterialTextBox.Text == "0,00")
             {
                 Valores_MaterialTextBox.Text = "";
                 Valores_MaterialTextBox.ForeColor = Color.Black;
             }
-
         }
 
         // Adiciona um pagamento à lista de pagamentos do pedido
@@ -333,13 +334,13 @@ namespace CaixaIntegrador
             else if (materialRadioButton3.Checked) formaSelecionada = FormaPagamento.Pix;
             else if (materialRadioButton4.Checked) formaSelecionada = FormaPagamento.Voucher;
             else if (materialRadioButton5.Checked) formaSelecionada = FormaPagamento.Dinheiro;
-
+        
             if (formaSelecionada == null)
             {
                 MessageBox.Show("Selecione uma forma de pagamento!", "Erro");
                 return;
             }
-
+           
             // Valida se o valor é válido (aceita "50" ou "50,00")
             string valorTexto = Valores_MaterialTextBox.Text.Trim();
             if (string.IsNullOrEmpty(valorTexto))
@@ -387,10 +388,6 @@ namespace CaixaIntegrador
 
                     btnAdicionarPagamento.Enabled = false;
                     Valores_MaterialTextBox.Enabled = false;
-                    panelPrincipal.Enabled = false;
-                    btnDeletarMarcados.Enabled = false;
-                    btnLimparCarrinho.Enabled = false;
-                    DataGrid_Produtos.Enabled = false;
                 }
                 else
                 {
@@ -404,6 +401,7 @@ namespace CaixaIntegrador
 
                     AtualizarLabelPagamentos();
                     LimparFormularioPagamento();
+                    AtualizarValorTextBoxPagamento();
                 }
             }
             else // outras formas de pagamento
@@ -429,33 +427,14 @@ namespace CaixaIntegrador
                     MessageBox.Show("Pagamento completo! Clique em 'Finalizar Pedido'.", "Sucesso");
                     btnAdicionarPagamento.Enabled = false;
                     Valores_MaterialTextBox.Enabled = false;
-                    panelPrincipal.Enabled = false;
-                    btnDeletarMarcados.Enabled = false;
-                    btnLimparCarrinho.Enabled = false;
-                    DataGrid_Produtos.Enabled = false;
                 }
             }
         }
-
         // Atualiza o label com o valor total de pagamentos
         private void AtualizarLabelPagamentos()
         {
             decimal totalPago = pagamentosAtuais.Sum(p => p.Valor);
             lblValorPago.Text = $"Pagamentos: R$ {totalPago:F2}";
-        }
-
-        private void AtualizarValorPadrao()
-        {
-            decimal totalPedido = carrinho.Sum(c => c.Total);
-            decimal valorPago = pagamentosAtuais.Sum(p => p.Valor);
-            decimal saldo = totalPedido - valorPago;
-
-            if (string.IsNullOrWhiteSpace(Valores_MaterialTextBox.Text)
-                || Valores_MaterialTextBox.ForeColor == Color.Gray)
-            {
-                Valores_MaterialTextBox.Text = saldo.ToString("F2");
-                Valores_MaterialTextBox.ForeColor = Color.Gray;
-            }
         }
 
         // Limpa o formulário de pagamento
@@ -473,51 +452,33 @@ namespace CaixaIntegrador
             troco_label.Text = "";
 
             // Habilita o botão de adicionar pagamento
-            panelPrincipal.Enabled = true;
             btnAdicionarPagamento.Enabled = true;
             Valores_MaterialTextBox.Enabled = true;
-            btnDeletarMarcados.Enabled = true;
-            btnLimparCarrinho.Enabled = true;
-            DataGrid_Produtos.Enabled = true;
 
+            // Atualiza o textbox com o saldo restante
+            AtualizarValorTextBoxPagamento();
+        }
+
+        // Atualiza o TextBox com o valor total a pagar ou saldo restante
+        private void AtualizarValorTextBoxPagamento()
+        {
+            if (carrinho.Count == 0)
+            {
+                Valores_MaterialTextBox.Text = "0,00";
+                Valores_MaterialTextBox.ForeColor = Color.Gray;
+                return;
+            }
+
+            decimal totalPedido = carrinho.Sum(c => c.Total);
+            decimal valorPago = pagamentosAtuais.Sum(p => p.Valor);
+            decimal saldo = totalPedido - valorPago;
+
+            Valores_MaterialTextBox.Text = saldo.ToString("F2");
+            Valores_MaterialTextBox.ForeColor = Color.Black;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void materialRadioButton5_CheckedChanged(object sender, EventArgs e)
-        {
-            AtualizarValorPadrao();
-        }
-
-        private void materialRadioButton4_CheckedChanged(object sender, EventArgs e)
-        {
-            AtualizarValorPadrao();
-        }
-
-        private void materialRadioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-            AtualizarValorPadrao();
-        }
-
-        private void materialRadioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            AtualizarValorPadrao();
-        }
-
-        private void materialRadioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            AtualizarValorPadrao();
-        }
-
-        private void btn_Limparpag_Click(object sender, EventArgs e)
-        {
-            LimparFormularioPagamento();
-            lblValorPago.Text = "";
-            pagamentosAtuais.Clear();
-            lblTotal_Text.Text = "";
 
         }
     }

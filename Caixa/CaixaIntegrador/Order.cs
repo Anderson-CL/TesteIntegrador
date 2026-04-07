@@ -44,12 +44,10 @@ namespace CaixaIntegrador
                     pedido.Id,
                     pedido.DataCriacao.ToString("dd/MM/yyyy HH:mm:ss"),
                     $"R$ {pedido.Total:F2}",
-                    string.Join(", ", pedido.Itens.Select(i => $"{i.Produto} x{i.Qtd}")));
-                    //pedido.Pagamentos,
-                    //if (pedido.Troco != 0)
-                    //{
-                    //pedido.Troco
-                    //});
+                    string.Join(", ", pedido.Pagamentos.Select(p => $"{p.Forma}")),
+                    string.Join(", ", pedido.Itens.Select(i => $"{i.Produto} x{i.Qtd}")),
+                    pedido.Troco != 0 ? $"R$ {pedido.Troco:F2}" : "");
+                   
             }
         }
 
