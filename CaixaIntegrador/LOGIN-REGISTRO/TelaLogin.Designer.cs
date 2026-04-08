@@ -70,7 +70,6 @@
             // MostrarOcultar
             // 
             MostrarOcultar.Cursor = Cursors.Hand;
-            MostrarOcultar.Image = Properties.Resources.invisivel;
             MostrarOcultar.Location = new Point(299, 169);
             MostrarOcultar.Name = "MostrarOcultar";
             MostrarOcultar.Size = new Size(20, 23);

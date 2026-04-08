@@ -59,25 +59,5 @@ namespace CaixaIntegrador.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap invisivel {
-            get {
-                object obj = ResourceManager.GetObject("invisivel", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap visivel {
-            get {
-                object obj = ResourceManager.GetObject("visivel", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

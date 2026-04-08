@@ -129,10 +129,6 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
             MostrarSenha1 = !MostrarSenha1;
 
             txtRegistroSenha1.UseSystemPasswordChar = !MostrarSenha1;
-
-            MostrarOcultar1.Image = MostrarSenha1
-                ? Properties.Resources.invisivel
-                : Properties.Resources.visivel;
         }
 
         private void MostrarOcultar2_Click(object sender, EventArgs e)
@@ -140,10 +136,6 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
             MostrarSenha2 = !MostrarSenha2;
 
             txtRegistroSenha2.UseSystemPasswordChar = !MostrarSenha2;
-
-            MostrarOcultar2.Image = MostrarSenha2
-                ? Properties.Resources.invisivel
-                : Properties.Resources.visivel;
         }
 
         private void txtRegistroSenha1_TextChanged(object sender, EventArgs e)
@@ -153,7 +145,6 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
             {
                 MostrarSenha1 = false;
                 txtRegistroSenha1.UseSystemPasswordChar = true;
-                MostrarOcultar1.Image = Properties.Resources.visivel;
             }
         }
 
@@ -164,7 +155,6 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
             {
                 MostrarSenha2 = false;
                 txtRegistroSenha2.UseSystemPasswordChar = true;
-                MostrarOcultar2.Image = Properties.Resources.visivel;
             }
         }
 
@@ -176,9 +166,6 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
 
             MostrarOcultar1.Visible = false;
             MostrarOcultar2.Visible = false;
-
-            MostrarOcultar1.Image = Properties.Resources.visivel;
-            MostrarOcultar2.Image = Properties.Resources.visivel;
 
         }
     }

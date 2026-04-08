@@ -78,7 +78,6 @@
             // MostrarOcultar2
             // 
             MostrarOcultar2.Cursor = Cursors.Hand;
-            MostrarOcultar2.Image = Properties.Resources.invisivel;
             MostrarOcultar2.Location = new Point(299, 204);
             MostrarOcultar2.Name = "MostrarOcultar2";
             MostrarOcultar2.Size = new Size(20, 23);
@@ -90,7 +89,6 @@
             // MostrarOcultar1
             // 
             MostrarOcultar1.Cursor = Cursors.Hand;
-            MostrarOcultar1.Image = Properties.Resources.invisivel;
             MostrarOcultar1.Location = new Point(299, 155);
             MostrarOcultar1.Name = "MostrarOcultar1";
             MostrarOcultar1.Size = new Size(20, 23);

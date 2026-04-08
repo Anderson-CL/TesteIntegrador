@@ -101,7 +101,6 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
 
             txtSenha.UseSystemPasswordChar = true;
 
-            MostrarOcultar.Image = Properties.Resources.visivel;
             MostrarOcultar.Visible = false;
 
 
@@ -115,10 +114,6 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
                 MostrarSenha = !MostrarSenha;
 
                 txtSenha.UseSystemPasswordChar = !MostrarSenha;
-
-                MostrarOcultar.Image = MostrarSenha
-                    ? Properties.Resources.invisivel
-                    : Properties.Resources.visivel;
             }
 
         }
@@ -130,7 +125,6 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
             {
                 MostrarSenha = false;
                 txtSenha.UseSystemPasswordChar = true;
-                MostrarOcultar.Image = Properties.Resources.visivel;
             }
         }
     }
