@@ -1,6 +1,4 @@
 using CaixaIntegrador.Classes;
-using Google.Protobuf.WellKnownTypes;
-using Org.BouncyCastle.Math.EC;
 
 namespace CaixaIntegrador
 {
@@ -242,11 +240,8 @@ namespace CaixaIntegrador
             }
 
             // Calcula o total do pedido
-
             decimal totalPedido = carrinho.Sum(c => c.Total);
             decimal totalPago = pagamentosAtuais.Sum(p => p.Valor);
-            decimal saldo = totalPedido - totalPago;
-            var troco = totalPago - totalPedido;
 
             // Valida se o total foi pago
             if (totalPago < totalPedido)
@@ -263,8 +258,7 @@ namespace CaixaIntegrador
                 Itens = new List<CarrinhoCompra>(carrinho),
                 Total = totalPedido,
                 Status = PedidoStatus.Finalizado,
-                Pagamentos = new List<Pagamento>(pagamentosAtuais),
-                Troco = troco,
+                Pagamentos = new List<Pagamento>(pagamentosAtuais)
             };
 
             // Adiciona o pedido à lista
@@ -275,10 +269,8 @@ namespace CaixaIntegrador
             MessageBox.Show(
                 $"Pedido #{novoPedido.Id} finalizado com sucesso!\n\n" +
                 $"Total: R$ {novoPedido.Total:F2}\n" +
-                $"Pagamentos: {formasPagamento}\n" +
-                //$"Troco: {troco}",
-                (novoPedido.Troco != 0 ? $"R$ {novoPedido.Troco:F2}" : ""),
-                $"Pedido Finalizado");
+                $"Pagamentos: {formasPagamento}",
+                "Pedido Finalizado");
 
             // Limpa o carrinho e pagamentos após finalizar
             carrinho.Clear();
@@ -290,40 +282,9 @@ namespace CaixaIntegrador
             // Volta para a tela de categorias
             ExibirUserControl(ucCategorias);
         }
-        private void materialTextBox21_Leave(object sender, EventArgs e)
-        {
-            AtualizarValorPadrao();
-        }
-        private void materialTextBox21_Enter(object sender, EventArgs e)
-        {
-
-            decimal totalPedido = carrinho.Sum(c => c.Total);
-            decimal valorPago = pagamentosAtuais.Sum(p => p.Valor);
-            decimal saldo = totalPedido - valorPago;
-
-            if (Valores_MaterialTextBox.Text == saldo.ToString("F2")
-                && Valores_MaterialTextBox.ForeColor == Color.Gray)
-            {
-                Valores_MaterialTextBox.Text = "";
-                Valores_MaterialTextBox.ForeColor = Color.Black;
-            }
-
-        }
 
         // Adiciona um pagamento à lista de pagamentos do pedido
         private void btnAdicionarPagamento_Click(object sender, EventArgs e)
-        {
-            PagamentoGeral();
-        }
-        private void materialTextBox21_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                PagamentoGeral();
-            }
-        }
-
-        private void PagamentoGeral()
         {
             // Valida se um radio button foi selecionado
             FormaPagamento? formaSelecionada = null;
@@ -341,7 +302,7 @@ namespace CaixaIntegrador
             }
 
             // Valida se o valor é válido (aceita "50" ou "50,00")
-            string valorTexto = Valores_MaterialTextBox.Text.Trim();
+            string valorTexto = materialTextBox21.Text.Trim();
             if (string.IsNullOrEmpty(valorTexto))
             {
                 MessageBox.Show("Digite um valor válido!", "Erro");
@@ -359,81 +320,31 @@ namespace CaixaIntegrador
             decimal totalPedido = carrinho.Sum(c => c.Total);
             decimal valorPago = pagamentosAtuais.Sum(p => p.Valor);
             decimal saldo = totalPedido - valorPago;
-            if (formaSelecionada == FormaPagamento.Dinheiro)
+
+            if (valorPagamento > saldo)
             {
-                if (valorPagamento >= saldo)
-                {
-                    var troco = valorPagamento - saldo;
-
-                    var novoPagamento = new Pagamento
-                    {
-                        Forma = FormaPagamento.Dinheiro,
-                        Valor = valorPagamento
-                    };
-                    pagamentosAtuais.Add(novoPagamento);
-
-                    AtualizarLabelPagamentos();
-                    LimparFormularioPagamento();
-
-                    if (troco > 0)
-                    {
-                        MessageBox.Show($"Troco de R$ {troco:F2}", "Troco");
-                        troco_label.Text = $"Troco: {troco:F2}";
-                    }
-                    else
-                    {
-                        MessageBox.Show("Pagamento completo! Clique em 'Finalizar Pedido'.", "Sucesso");
-                    }
-
-                    btnAdicionarPagamento.Enabled = false;
-                    Valores_MaterialTextBox.Enabled = false;
-                    panelPrincipal.Enabled = false;
-                    btnDeletarMarcados.Enabled = false;
-                    btnLimparCarrinho.Enabled = false;
-                    DataGrid_Produtos.Enabled = false;
-                }
-                else
-                {
-                    // Pagamento menor que saldo → adiciona normalmente
-                    var novoPagamento = new Pagamento
-                    {
-                        Forma = FormaPagamento.Dinheiro,
-                        Valor = valorPagamento
-                    };
-                    pagamentosAtuais.Add(novoPagamento);
-
-                    AtualizarLabelPagamentos();
-                    LimparFormularioPagamento();
-                }
+                MessageBox.Show($"Valor não pode ser superior ao saldo de R$ {saldo:F2}!", "Erro");
+                return;
             }
-            else // outras formas de pagamento
+
+            // Cria e adiciona o novo pagamento
+            var novoPagamento = new Pagamento
             {
-                if (valorPagamento > saldo)
-                {
-                    MessageBox.Show($"Valor não pode ser superior ao saldo de R$ {saldo:F2}!", "Erro");
-                    return;
-                }
+                Forma = (FormaPagamento)formaSelecionada,
+                Valor = valorPagamento
+            };
 
-                var novoPagamento = new Pagamento
-                {
-                    Forma = (FormaPagamento)formaSelecionada,
-                    Valor = valorPagamento
-                };
-                pagamentosAtuais.Add(novoPagamento);
+            pagamentosAtuais.Add(novoPagamento);
 
-                AtualizarLabelPagamentos();
-                LimparFormularioPagamento();
+            // Atualiza a exibição
+            AtualizarLabelPagamentos();
+            LimparFormularioPagamento();
 
-                if (saldo - valorPagamento <= 0)
-                {
-                    MessageBox.Show("Pagamento completo! Clique em 'Finalizar Pedido'.", "Sucesso");
-                    btnAdicionarPagamento.Enabled = false;
-                    Valores_MaterialTextBox.Enabled = false;
-                    panelPrincipal.Enabled = false;
-                    btnDeletarMarcados.Enabled = false;
-                    btnLimparCarrinho.Enabled = false;
-                    DataGrid_Produtos.Enabled = false;
-                }
+            // Se o saldo atingiu zero, desabilita novos pagamentos
+            if (saldo - valorPagamento <= 0)
+            {
+                MessageBox.Show("Pagamento completo! Clique em 'Finalizar Pedido'.", "Sucesso");
+                btnAdicionarPagamento.Enabled = false;
             }
         }
 
@@ -442,20 +353,6 @@ namespace CaixaIntegrador
         {
             decimal totalPago = pagamentosAtuais.Sum(p => p.Valor);
             lblValorPago.Text = $"Pagamentos: R$ {totalPago:F2}";
-        }
-
-        private void AtualizarValorPadrao()
-        {
-            decimal totalPedido = carrinho.Sum(c => c.Total);
-            decimal valorPago = pagamentosAtuais.Sum(p => p.Valor);
-            decimal saldo = totalPedido - valorPago;
-
-            if (string.IsNullOrWhiteSpace(Valores_MaterialTextBox.Text)
-                || Valores_MaterialTextBox.ForeColor == Color.Gray)
-            {
-                Valores_MaterialTextBox.Text = saldo.ToString("F2");
-                Valores_MaterialTextBox.ForeColor = Color.Gray;
-            }
         }
 
         // Limpa o formulário de pagamento
@@ -469,55 +366,14 @@ namespace CaixaIntegrador
             materialRadioButton5.Checked = false;
 
             // Limpa o textbox
-            Valores_MaterialTextBox.Text = "";
-            troco_label.Text = "";
+            materialTextBox21.Text = "0,00";
 
             // Habilita o botão de adicionar pagamento
-            panelPrincipal.Enabled = true;
             btnAdicionarPagamento.Enabled = true;
-            Valores_MaterialTextBox.Enabled = true;
-            btnDeletarMarcados.Enabled = true;
-            btnLimparCarrinho.Enabled = true;
-            DataGrid_Produtos.Enabled = true;
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void materialRadioButton5_CheckedChanged(object sender, EventArgs e)
-        {
-            AtualizarValorPadrao();
-        }
-
-        private void materialRadioButton4_CheckedChanged(object sender, EventArgs e)
-        {
-            AtualizarValorPadrao();
-        }
-
-        private void materialRadioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-            AtualizarValorPadrao();
-        }
-
-        private void materialRadioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            AtualizarValorPadrao();
-        }
-
-        private void materialRadioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            AtualizarValorPadrao();
-        }
-
-        private void btn_Limparpag_Click(object sender, EventArgs e)
-        {
-            LimparFormularioPagamento();
-            lblValorPago.Text = "";
-            pagamentosAtuais.Clear();
-            lblTotal_Text.Text = "";
 
         }
     }
