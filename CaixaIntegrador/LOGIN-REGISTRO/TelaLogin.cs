@@ -13,8 +13,6 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
 {
     public partial class TelaLogin : Form
     {
-        private bool MostrarSenha = false;
-
         private MySqlConnection Conexao;
         public TelaLogin()
         {
@@ -42,13 +40,7 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
                         using (MySqlCommand comando = new MySqlCommand(selectData, Conexao))
                         {
                             comando.Parameters.AddWithValue("@login", txtLogin.Text.Trim());
-
-
-                            string senhaCriptografada =
-                                    Criptografia.CriptografarSenha(txtSenha.Text.Trim());
-
-
-                            comando.Parameters.AddWithValue("@senha", senhaCriptografada);
+                            comando.Parameters.AddWithValue("@senha", txtSenha.Text.Trim());
 
                             MySqlDataAdapter adaptacao = new MySqlDataAdapter(comando);
                             DataTable table = new DataTable();
@@ -58,12 +50,9 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
                             {
                                 MessageBox.Show("Login realizado com sucesso!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                this.Hide();
                                 Form1 Caixa = new Form1();
-                                Caixa.ShowDialog();
-
-                                Application.Exit();
-
+                                Caixa.Show();
+                                this.Hide();
                             }
                             else
                             {
@@ -86,52 +75,10 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
 
         private void lblRegistro_Click(object sender, EventArgs e)
         {
+            TelaRegistro RegistroForm = new TelaRegistro();
+            RegistroForm.Show();
 
             this.Hide();
-            TelaRegistro RegistroForm = new TelaRegistro();
-            RegistroForm.ShowDialog();
-
-            this.Show();
-
-        }
-
-        private void TelaLogin_Load(object sender, EventArgs e)
-        {
-
-
-            txtSenha.UseSystemPasswordChar = true;
-
-            MostrarOcultar.Image = Properties.Resources.visivel;
-            MostrarOcultar.Visible = false;
-
-
-
-        }
-
-        private void MostrarOcultar_Click(object sender, EventArgs e)
-        {
-
-            {
-                MostrarSenha = !MostrarSenha;
-
-                txtSenha.UseSystemPasswordChar = !MostrarSenha;
-
-                MostrarOcultar.Image = MostrarSenha
-                    ? Properties.Resources.invisivel
-                    : Properties.Resources.visivel;
-            }
-
-        }
-
-        private void txtSenha_TextChanged(object sender, EventArgs e)
-        {
-            MostrarOcultar.Visible = txtSenha.TextLength > 0;
-            if (txtSenha.TextLength == 0)
-            {
-                MostrarSenha = false;
-                txtSenha.UseSystemPasswordChar = true;
-                MostrarOcultar.Image = Properties.Resources.visivel;
-            }
         }
     }
 }

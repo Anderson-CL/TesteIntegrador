@@ -37,6 +37,7 @@
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
             materialTabControl1.SuspendLayout();
             tab_finalizado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)GridViewFinalizados).BeginInit();
@@ -82,7 +83,7 @@
             // 
             GridViewFinalizados.BorderStyle = BorderStyle.None;
             GridViewFinalizados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GridViewFinalizados.Columns.AddRange(new DataGridViewColumn[] { column1, Column2, Column3, Column4 });
+            GridViewFinalizados.Columns.AddRange(new DataGridViewColumn[] { column1, Column2, Column3, Column4, Column5 });
             GridViewFinalizados.Dock = DockStyle.Fill;
             GridViewFinalizados.Location = new Point(3, 3);
             GridViewFinalizados.Name = "GridViewFinalizados";
@@ -121,9 +122,13 @@
             // 
             // Column4
             // 
-            Column4.HeaderText = "Detalhes";
+            Column4.HeaderText = "Pagamento";
             Column4.Name = "Column4";
-            Column4.Width = 350;
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Detalhes";
+            Column5.Name = "Column5";
             // 
             // Order
             // 
@@ -153,5 +158,6 @@
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
     }
 }
