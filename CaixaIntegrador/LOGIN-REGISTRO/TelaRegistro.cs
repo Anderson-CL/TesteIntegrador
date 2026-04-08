@@ -8,11 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CaixaIntegrador.LOGIN_REGISTRO;
 
 namespace CaixaIntegrador.LOGIN_REGISTRO
 {
+
     public partial class TelaRegistro : Form
     {
+        private bool MostrarSenha1 = false;
+        private bool MostrarSenha2 = false;
+
         MySqlConnection Conexao;
         public TelaRegistro()
         {
@@ -21,6 +26,7 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
 
         private void btnRegistro_Click(object sender, EventArgs e)
         {
+
             if (txtRegistroLogin.Text == "" || txtRegistroSenha1.Text == "" || txtRegistroSenha2.Text == "")
             {
                 MessageBox.Show("Por favor, preencha todos os campos vazios", "Mensagem de Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -66,7 +72,18 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
                             using (MySqlCommand comando = new MySqlCommand(InserirDados, Conexao))
                             {
                                 comando.Parameters.AddWithValue("@login", txtRegistroLogin.Text.Trim());
-                                comando.Parameters.AddWithValue("@senha", txtRegistroSenha1.Text.Trim());
+
+                                // Criptografar senha
+
+                                string senhaCriptografada = Criptografia.CriptografarSenha(
+                                    txtRegistroSenha1.Text.Trim()
+                                );
+
+
+                                // Antigo sem Criptografia
+                                // comando.Parameters.AddWithValue("@senha", txtRegistroSenha1.Text.Trim());
+
+                                comando.Parameters.AddWithValue("@senha", senhaCriptografada);
                                 comando.Parameters.AddWithValue("@privilegio", "Admin");
                                 comando.Parameters.AddWithValue("@status", "Ativo");
                                 comando.Parameters.AddWithValue("@data", DateTime.Now);
@@ -77,10 +94,8 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
                                 {
                                     MessageBox.Show("Registro Feito com Sucesso!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                    TelaLogin loginForm = new TelaLogin();
-                                    loginForm.Show();
-
-                                    this.Hide();
+                                    this.DialogResult = DialogResult.OK;
+                                    this.Close();
                                 }
                                 else
                                 {
@@ -104,10 +119,67 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
 
         private void lblRegistro_Click(object sender, EventArgs e)
         {
-            TelaLogin loginForm = new TelaLogin();
-            loginForm.Show();
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
 
-            this.Hide();
+        }
+
+        private void MostrarOcultar1_Click(object sender, EventArgs e)
+        {
+            MostrarSenha1 = !MostrarSenha1;
+
+            txtRegistroSenha1.UseSystemPasswordChar = !MostrarSenha1;
+
+            MostrarOcultar1.Image = MostrarSenha1
+                ? Properties.Resources.invisivel
+                : Properties.Resources.visivel;
+        }
+
+        private void MostrarOcultar2_Click(object sender, EventArgs e)
+        {
+            MostrarSenha2 = !MostrarSenha2;
+
+            txtRegistroSenha2.UseSystemPasswordChar = !MostrarSenha2;
+
+            MostrarOcultar2.Image = MostrarSenha2
+                ? Properties.Resources.invisivel
+                : Properties.Resources.visivel;
+        }
+
+        private void txtRegistroSenha1_TextChanged(object sender, EventArgs e)
+        {
+            MostrarOcultar1.Visible = txtRegistroSenha1.TextLength > 0;
+            if (txtRegistroSenha1.TextLength == 0)
+            {
+                MostrarSenha1 = false;
+                txtRegistroSenha1.UseSystemPasswordChar = true;
+                MostrarOcultar1.Image = Properties.Resources.visivel;
+            }
+        }
+
+        private void txtRegistroSenha2_TextChanged(object sender, EventArgs e)
+        {
+            MostrarOcultar2.Visible = txtRegistroSenha2.TextLength > 0;
+            if (txtRegistroSenha2.TextLength == 0)
+            {
+                MostrarSenha2 = false;
+                txtRegistroSenha2.UseSystemPasswordChar = true;
+                MostrarOcultar2.Image = Properties.Resources.visivel;
+            }
+        }
+
+        private void TelaRegistro_Load(object sender, EventArgs e)
+        {
+
+            txtRegistroSenha1.UseSystemPasswordChar = true;
+            txtRegistroSenha2.UseSystemPasswordChar = true;
+
+            MostrarOcultar1.Visible = false;
+            MostrarOcultar2.Visible = false;
+
+            MostrarOcultar1.Image = Properties.Resources.visivel;
+            MostrarOcultar2.Image = Properties.Resources.visivel;
+
         }
     }
 }
