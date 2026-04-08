@@ -1,0 +1,164 @@
+C:\Users\Dennis\source\repos\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.Form1.resources
+C:\Users\Dennis\source\repos\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.Properties.Resources.resources
+C:\Users\Dennis\source\repos\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.csproj.GenerateResource.cache
+C:\Users\Dennis\source\repos\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dennis\source\repos\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.AssemblyInfoInputs.cache
+C:\Users\Dennis\source\repos\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.AssemblyInfo.cs
+C:\Users\Dennis\source\repos\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.csproj.CoreCompileInputs.cache
+C:\Users\Dennis\source\repos\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.exe
+C:\Users\Dennis\source\repos\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.deps.json
+C:\Users\Dennis\source\repos\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.runtimeconfig.json
+C:\Users\Dennis\source\repos\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.dll
+C:\Users\Dennis\source\repos\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.pdb
+C:\Users\Dennis\source\repos\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.dll
+C:\Users\Dennis\source\repos\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\refint\CaixaIntegrador.dll
+C:\Users\Dennis\source\repos\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.pdb
+C:\Users\Dennis\source\repos\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.genruntimeconfig.cache
+C:\Users\Dennis\source\repos\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\ref\CaixaIntegrador.dll
+C:\Users\Dennis\source\repos\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.UCCategorias.resources
+C:\Users\Dennis\source\repos\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.UCProdutos.resources
+C:\Users\Dennis\source\repos\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.UCSubCategorias.resources
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.exe
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.deps.json
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.runtimeconfig.json
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.dll
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.pdb
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\Guna.UI2.dll
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\System.Management.dll
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\runtimes\win\lib\net7.0\System.Management.dll
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.csproj.AssemblyReference.cache
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.Form1.resources
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.Properties.Resources.resources
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.UCCategorias.resources
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.UCProdutos.resources
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.UCSubCategorias.resources
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.csproj.GenerateResource.cache
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.AssemblyInfoInputs.cache
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.AssemblyInfo.cs
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.csproj.CoreCompileInputs.cache
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.sourcelink.json
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaInt.46E60C9D.Up2Date
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.dll
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\refint\CaixaIntegrador.dll
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.pdb
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.genruntimeconfig.cache
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\ref\CaixaIntegrador.dll
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.exe
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.deps.json
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.runtimeconfig.json
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.dll
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.pdb
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\Guna.UI2.dll
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\System.Management.dll
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\runtimes\win\lib\net7.0\System.Management.dll
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.csproj.AssemblyReference.cache
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.Form1.resources
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.Properties.Resources.resources
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.UCCategorias.resources
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.UCProdutos.resources
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.UCSubCategorias.resources
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.csproj.GenerateResource.cache
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.AssemblyInfoInputs.cache
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.AssemblyInfo.cs
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.csproj.CoreCompileInputs.cache
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.sourcelink.json
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaInt.46E60C9D.Up2Date
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.dll
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\refint\CaixaIntegrador.dll
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.pdb
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.genruntimeconfig.cache
+C:\Users\victor.dsalmeida\source\Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\ref\CaixaIntegrador.dll
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\Krypton.Toolkit.dll
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\MaterialSkin.dll
+C:\Users\Dennis\source\repos\Projeto Integrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.Order.resources
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.exe
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.deps.json
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.runtimeconfig.json
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.dll
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.pdb
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\Guna.UI2.dll
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\Krypton.Toolkit.dll
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\MaterialSkin.dll
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\System.Management.dll
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\runtimes\win\lib\net7.0\System.Management.dll
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.csproj.AssemblyReference.cache
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.Form1.resources
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.UCCategorias.resources
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.UCProdutos.resources
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.UCSubCategorias.resources
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.Order.resources
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.Properties.Resources.resources
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.csproj.GenerateResource.cache
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.AssemblyInfoInputs.cache
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.AssemblyInfo.cs
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.csproj.CoreCompileInputs.cache
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.sourcelink.json
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaInt.46E60C9D.Up2Date
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.dll
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\refint\CaixaIntegrador.dll
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.pdb
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.genruntimeconfig.cache
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\ref\CaixaIntegrador.dll
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.LOGIN_REGISTRO.TelaLogin.resources
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.LOGIN_REGISTRO.TelaRegistro.resources
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\Google.Protobuf.dll
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\K4os.Compression.LZ4.dll
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\K4os.Hash.xxHash.dll
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\MySql.Data.dll
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\System.IO.Pipelines.dll
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\ZstdSharp.dll
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\runtimes\win-x64\native\comerr64.dll
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\runtimes\win-x64\native\gssapi64.dll
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\runtimes\win-x64\native\krb5_64.dll
+C:\Users\ander\OneDrive\Área de Trabalho\MERGE MANUAL\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.exe
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.deps.json
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.runtimeconfig.json
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.dll
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\CaixaIntegrador.pdb
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\Google.Protobuf.dll
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\Guna.UI2.dll
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\K4os.Compression.LZ4.dll
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\K4os.Hash.xxHash.dll
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\Krypton.Toolkit.dll
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\MaterialSkin.dll
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\MySql.Data.dll
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\System.IO.Pipelines.dll
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\System.Management.dll
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\ZstdSharp.dll
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\runtimes\win-x64\native\comerr64.dll
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\runtimes\win-x64\native\gssapi64.dll
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\runtimes\win-x64\native\krb5_64.dll
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\bin\Debug\net8.0-windows\runtimes\win\lib\net7.0\System.Management.dll
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.csproj.AssemblyReference.cache
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.Form1.resources
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.UCCategorias.resources
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.UCProdutos.resources
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.UCSubCategorias.resources
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.LOGIN_REGISTRO.TelaLogin.resources
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.LOGIN_REGISTRO.TelaRegistro.resources
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.Order.resources
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.Properties.Resources.resources
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.csproj.GenerateResource.cache
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.AssemblyInfoInputs.cache
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.AssemblyInfo.cs
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.csproj.CoreCompileInputs.cache
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.sourcelink.json
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaInt.46E60C9D.Up2Date
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.dll
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\refint\CaixaIntegrador.dll
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.pdb
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.genruntimeconfig.cache
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\ref\CaixaIntegrador.dll
+C:\Users\joao.ccsouza1\Desktop\Projeto\TesteIntegrador\Caixa\CaixaIntegrador\obj\Debug\net8.0-windows\CaixaIntegrador.estoque.resources

@@ -34,11 +34,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
@@ -50,8 +54,7 @@
               "RelativeToolTip": "CaixaIntegrador\\Categorias\\UCProdutos.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAowB8AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-07T21:05:55.318Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-07T21:05:55.318Z"
             },
             {
               "$type": "Document",
@@ -63,8 +66,7 @@
               "RelativeToolTip": "CaixaIntegrador\\Classes\\Produto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-07T21:05:45.112Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-07T21:05:45.112Z"
             },
             {
               "$type": "Document",
@@ -113,8 +115,7 @@
               "ToolTip": "C:\\Users\\Dennis\\source\\repos\\Projeto Integrador\\Caixa\\CaixaIntegrador\\Caixa.cs [Projeto]",
               "RelativeToolTip": "CaixaIntegrador\\Caixa.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T04:35:39.295Z",
-              "EditorCaption": " [Projeto]"
+              "WhenOpened": "2026-03-18T04:35:39.295Z"
             }
           ]
         }
