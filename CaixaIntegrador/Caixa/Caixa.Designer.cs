@@ -243,13 +243,14 @@
             // 
             // troco_label
             // 
+            troco_label.AutoSize = true;
             troco_label.Font = new Font("Arial Narrow", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            troco_label.Location = new Point(1, 412);
+            troco_label.Location = new Point(6, 412);
             troco_label.Name = "troco_label";
-            troco_label.Size = new Size(65, 26);
+            troco_label.Size = new Size(56, 24);
             troco_label.TabIndex = 12;
             troco_label.Text = "Troco:";
-            troco_label.TextAlign = ContentAlignment.MiddleCenter;
+            troco_label.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // btnAdicionarPagamento
             // 
@@ -413,10 +414,11 @@
             // 
             // lblTotal_Text
             // 
+            lblTotal_Text.AutoSize = true;
             lblTotal_Text.Font = new Font("Arial Narrow", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTotal_Text.Location = new Point(1, 387);
             lblTotal_Text.Name = "lblTotal_Text";
-            lblTotal_Text.Size = new Size(65, 26);
+            lblTotal_Text.Size = new Size(61, 29);
             lblTotal_Text.TabIndex = 0;
             lblTotal_Text.Text = "Total:";
             lblTotal_Text.TextAlign = ContentAlignment.MiddleCenter;

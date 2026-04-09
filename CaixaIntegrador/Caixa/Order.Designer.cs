@@ -38,6 +38,7 @@
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
+            btnNFC = new Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             materialTabControl1.SuspendLayout();
             tab_finalizado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)GridViewFinalizados).BeginInit();
@@ -83,12 +84,13 @@
             // 
             GridViewFinalizados.BorderStyle = BorderStyle.None;
             GridViewFinalizados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GridViewFinalizados.Columns.AddRange(new DataGridViewColumn[] { column1, Column2, Column3, Column4, Column5 });
+            GridViewFinalizados.Columns.AddRange(new DataGridViewColumn[] { column1, Column2, Column3, Column4, Column5, btnNFC });
             GridViewFinalizados.Dock = DockStyle.Fill;
             GridViewFinalizados.Location = new Point(3, 3);
             GridViewFinalizados.Name = "GridViewFinalizados";
             GridViewFinalizados.Size = new Size(604, 343);
             GridViewFinalizados.TabIndex = 0;
+            GridViewFinalizados.CellContentClick += GridViewFinalizados_CellContentClick;
             // 
             // materialTabSelector1
             // 
@@ -118,7 +120,6 @@
             // 
             Column3.HeaderText = "Total";
             Column3.Name = "Column3";
-            Column3.Width = 50;
             // 
             // Column4
             // 
@@ -129,6 +130,13 @@
             // 
             Column5.HeaderText = "Detalhes";
             Column5.Name = "Column5";
+            Column5.Width = 150;
+            // 
+            // btnNFC
+            // 
+            btnNFC.HeaderText = "NFC";
+            btnNFC.Name = "btnNFC";
+            btnNFC.Width = 40;
             // 
             // Order
             // 
@@ -159,5 +167,6 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
+        private Krypton.Toolkit.KryptonDataGridViewButtonColumn btnNFC;
     }
 }
