@@ -1,4 +1,5 @@
-﻿using CaixaIntegrador.Classes;
+﻿using CaixaIntegrador.Caixa;
+using CaixaIntegrador.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,15 +47,17 @@ namespace CaixaIntegrador
                     $"R$ {pedido.Total:F2}",
                     string.Join(", ", pedido.Pagamentos.Select(p => $"{p.Forma}")),
                     string.Join(", ", pedido.Itens.Select(i => $"{i.Produto} x{i.Qtd}")),
-                    pedido.Troco != 0 ? $"R$ {pedido.Troco:F2}" : "");
-                   
+                    "Nota");
+
+                //pedido.Troco != 0 ? $"Troco: R$ {pedido.Troco:F2}" : "");
+
             }
         }
 
         // Atualiza a exibição dos pedidos abertos na DataGrid
         private void AtualizarDataGridAbertos()
         {
-           
+
         }
 
         // Abre a aba de pedidos finalizados
@@ -68,6 +71,23 @@ namespace CaixaIntegrador
         {
             pedidosFinalizados.Add(pedido);
             AtualizarDataGridFinalizados();
+        }
+
+        private void GridViewFinalizados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verifica se clicou na coluna de botão existente
+            if (GridViewFinalizados.Columns[e.ColumnIndex].Name == "btnNFC" && e.RowIndex >= 0)
+            {
+                var pedido = pedidosFinalizados[e.RowIndex];
+                if (pedido != null)
+                    AbrirNFC(pedido);
+            }
+        }
+
+        private void AbrirNFC(Pedido pedido)
+        {
+            var formNFC = new NFCtela(pedido);
+            formNFC.ShowDialog();
         }
     }
 }

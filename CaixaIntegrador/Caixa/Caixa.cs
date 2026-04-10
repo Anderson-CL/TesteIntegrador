@@ -264,7 +264,7 @@ namespace CaixaIntegrador
                 Total = totalPedido,
                 Status = PedidoStatus.Finalizado,
                 Pagamentos = new List<Pagamento>(pagamentosAtuais),
-                Troco = troco,
+                Troco = troco
             };
 
             // Adiciona o pedido à lista
@@ -277,7 +277,7 @@ namespace CaixaIntegrador
                 $"Total: R$ {novoPedido.Total:F2}\n" +
                 $"Pagamentos: {formasPagamento}\n" +
                 //$"Troco: {troco}",
-                (novoPedido.Troco != 0 ? $"R$ {novoPedido.Troco:F2}" : ""),
+                (novoPedido.Troco != 0 ? $"Troco: R$ {novoPedido.Troco:F2}" : ""),
                 $"Pedido Finalizado");
 
             // Limpa o carrinho e pagamentos após finalizar
@@ -286,6 +286,7 @@ namespace CaixaIntegrador
             AtualizarCarrinhoUI();
             AtualizarLabelPagamentos();
             LimparFormularioPagamento();
+            troco_label.Text = ""; // Limpa o troco após finalizar o pedido
 
             // Volta para a tela de categorias
             ExibirUserControl(ucCategorias);
@@ -373,17 +374,23 @@ namespace CaixaIntegrador
                     pagamentosAtuais.Add(novoPagamento);
 
                     AtualizarLabelPagamentos();
-                    LimparFormularioPagamento();
 
-                    if (troco > 0)
+                    // Calcula o troco total após adicionar o pagamento (considera pagamentos anteriores)
+                    decimal trocoTotal = pagamentosAtuais.Sum(p => p.Valor) - totalPedido;
+
+                    // Exibe o troco ANTES de limpar o formulário
+                    if (trocoTotal > 0)
                     {
-                        MessageBox.Show($"Troco de R$ {troco:F2}", "Troco");
-                        troco_label.Text = $"Troco: {troco:F2}";
+                        MessageBox.Show($"Troco de {trocoTotal.ToString("C")}", "Troco");
+                        troco_label.Text = $"Troco: {trocoTotal.ToString("C")}";
+                        troco_label.Visible = true;
                     }
                     else
                     {
                         MessageBox.Show("Pagamento completo! Clique em 'Finalizar Pedido'.", "Sucesso");
                     }
+
+                    LimparFormularioPagamento();
 
                     btnAdicionarPagamento.Enabled = false;
                     Valores_MaterialTextBox.Enabled = false;
@@ -450,12 +457,21 @@ namespace CaixaIntegrador
             decimal valorPago = pagamentosAtuais.Sum(p => p.Valor);
             decimal saldo = totalPedido - valorPago;
 
+            // Não mostra valores negativos (já foi pago)
+            if (saldo <= 0)
+            {
+                Valores_MaterialTextBox.Text = "";
+                Valores_MaterialTextBox.ForeColor = Color.Black;
+                return;
+            }
+
             if (string.IsNullOrWhiteSpace(Valores_MaterialTextBox.Text)
                 || Valores_MaterialTextBox.ForeColor == Color.Gray)
             {
                 Valores_MaterialTextBox.Text = saldo.ToString("F2");
                 Valores_MaterialTextBox.ForeColor = Color.Gray;
             }
+
         }
 
         // Limpa o formulário de pagamento
@@ -468,10 +484,6 @@ namespace CaixaIntegrador
             materialRadioButton4.Checked = false;
             materialRadioButton5.Checked = false;
 
-            // Limpa o textbox
-            Valores_MaterialTextBox.Text = "";
-            troco_label.Text = "";
-
             // Habilita o botão de adicionar pagamento
             panelPrincipal.Enabled = true;
             btnAdicionarPagamento.Enabled = true;
@@ -480,6 +492,9 @@ namespace CaixaIntegrador
             btnLimparCarrinho.Enabled = true;
             DataGrid_Produtos.Enabled = true;
 
+            // Limpa o textbox
+            Valores_MaterialTextBox.Text = "";
+         
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -520,6 +535,10 @@ namespace CaixaIntegrador
             lblTotal_Text.Text = "";
 
         }
+    }
+    public interface IImpressora
+    {
+        void ImprimirNFC(Pedido pedido);
     }
 }
 
