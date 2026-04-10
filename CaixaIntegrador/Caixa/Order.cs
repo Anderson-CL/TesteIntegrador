@@ -1,4 +1,5 @@
-﻿using CaixaIntegrador.Classes;
+﻿using CaixaIntegrador.Caixa;
+using CaixaIntegrador.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,8 +46,8 @@ namespace CaixaIntegrador
                     pedido.DataCriacao.ToString("dd/MM/yyyy HH:mm:ss"),
                     $"R$ {pedido.Total:F2}",
                     string.Join(", ", pedido.Pagamentos.Select(p => $"{p.Forma}")),
-                    string.Join(", ", pedido.Itens.Select(i => $"{i.Produto} x{i.Qtd}")));
-
+                    string.Join(", ", pedido.Itens.Select(i => $"{i.Produto} x{i.Qtd}")),
+                    "Nota");
 
                 //pedido.Troco != 0 ? $"Troco: R$ {pedido.Troco:F2}" : "");
 
@@ -83,5 +84,10 @@ namespace CaixaIntegrador
             }
         }
 
+        private void AbrirNFC(Pedido pedido)
+        {
+            var formNFC = new NFCtela(pedido);
+            formNFC.ShowDialog();
+        }
     }
 }

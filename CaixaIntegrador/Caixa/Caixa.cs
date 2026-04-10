@@ -536,6 +536,10 @@ namespace CaixaIntegrador
 
         }
     }
+    public interface IImpressora
+    {
+        void ImprimirNFC(Pedido pedido);
+    }
 }
 
 

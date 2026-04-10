@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Krypton.Toolkit.KryptonDataGridViewIconColumn.ColumnButtonSpec columnButtonSpec1 = new Krypton.Toolkit.KryptonDataGridViewIconColumn.ColumnButtonSpec();
             materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             tab_aberto = new TabPage();
             tab_finalizado = new TabPage();
             GridViewFinalizados = new Krypton.Toolkit.KryptonDataGridView();
-            materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             btnNFC = new Krypton.Toolkit.KryptonDataGridViewButtonColumn();
+            materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             materialTabControl1.SuspendLayout();
             tab_finalizado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)GridViewFinalizados).BeginInit();
@@ -82,6 +83,7 @@
             // 
             // GridViewFinalizados
             // 
+            GridViewFinalizados.AllowUserToAddRows = false;
             GridViewFinalizados.BorderStyle = BorderStyle.None;
             GridViewFinalizados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             GridViewFinalizados.Columns.AddRange(new DataGridViewColumn[] { column1, Column2, Column3, Column4, Column5, btnNFC });
@@ -91,19 +93,6 @@
             GridViewFinalizados.Size = new Size(604, 343);
             GridViewFinalizados.TabIndex = 0;
             GridViewFinalizados.CellContentClick += GridViewFinalizados_CellContentClick;
-            // 
-            // materialTabSelector1
-            // 
-            materialTabSelector1.BaseTabControl = materialTabControl1;
-            materialTabSelector1.CharacterCasing = MaterialSkin.Controls.MaterialTabSelector.CustomCharacterCasing.Normal;
-            materialTabSelector1.Depth = 0;
-            materialTabSelector1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTabSelector1.Location = new Point(0, -1);
-            materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialTabSelector1.Name = "materialTabSelector1";
-            materialTabSelector1.Size = new Size(618, 48);
-            materialTabSelector1.TabIndex = 3;
-            materialTabSelector1.Text = "materialTabSelector1";
             // 
             // column1
             // 
@@ -134,9 +123,30 @@
             // 
             // btnNFC
             // 
+            columnButtonSpec1.Alignment = Krypton.Toolkit.IconSpec.IconAlignment.Right;
+            columnButtonSpec1.ExtraText = null;
+            columnButtonSpec1.Icon = null;
+            columnButtonSpec1.ImageTransparentColor = Color.FromArgb(192, 255, 192);
+            columnButtonSpec1.Text = "Nota";
+            columnButtonSpec1.Type = Krypton.Toolkit.PaletteButtonSpecStyle.Context;
+            btnNFC.ButtonSpecs.Add(columnButtonSpec1);
             btnNFC.HeaderText = "NFC";
             btnNFC.Name = "btnNFC";
+            btnNFC.Text = "";
             btnNFC.Width = 40;
+            // 
+            // materialTabSelector1
+            // 
+            materialTabSelector1.BaseTabControl = materialTabControl1;
+            materialTabSelector1.CharacterCasing = MaterialSkin.Controls.MaterialTabSelector.CustomCharacterCasing.Normal;
+            materialTabSelector1.Depth = 0;
+            materialTabSelector1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialTabSelector1.Location = new Point(0, -1);
+            materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialTabSelector1.Name = "materialTabSelector1";
+            materialTabSelector1.Size = new Size(618, 48);
+            materialTabSelector1.TabIndex = 3;
+            materialTabSelector1.Text = "materialTabSelector1";
             // 
             // Order
             // 
