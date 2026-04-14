@@ -43,23 +43,25 @@
             Column4 = new DataGridViewTextBoxColumn();
             btn_PedidoAberto = new Button();
             groupBox2 = new GroupBox();
+            PanelBtnPag = new Panel();
+            label1 = new Label();
+            materialRadioButton1 = new MaterialSkin.Controls.MaterialRadioButton();
+            materialRadioButton2 = new MaterialSkin.Controls.MaterialRadioButton();
+            materialRadioButton3 = new MaterialSkin.Controls.MaterialRadioButton();
+            materialRadioButton4 = new MaterialSkin.Controls.MaterialRadioButton();
+            materialRadioButton5 = new MaterialSkin.Controls.MaterialRadioButton();
             btn_Limparpag = new MaterialSkin.Controls.MaterialButton();
             troco_label = new Label();
             btnAdicionarPagamento = new Button();
             lblValorPago = new Label();
             Valores_MaterialTextBox = new MaterialSkin.Controls.MaterialTextBox2();
-            materialRadioButton5 = new MaterialSkin.Controls.MaterialRadioButton();
-            materialRadioButton4 = new MaterialSkin.Controls.MaterialRadioButton();
-            materialRadioButton3 = new MaterialSkin.Controls.MaterialRadioButton();
-            materialRadioButton2 = new MaterialSkin.Controls.MaterialRadioButton();
-            materialRadioButton1 = new MaterialSkin.Controls.MaterialRadioButton();
-            label1 = new Label();
             btn_FinalizarPedido = new Button();
             lblTotal_Text = new Label();
             panelPrincipal = new Panel();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DataGrid_Produtos).BeginInit();
             groupBox2.SuspendLayout();
+            PanelBtnPag.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -196,17 +198,12 @@
             // groupBox2
             // 
             groupBox2.BackColor = SystemColors.GradientInactiveCaption;
+            groupBox2.Controls.Add(PanelBtnPag);
             groupBox2.Controls.Add(btn_Limparpag);
             groupBox2.Controls.Add(troco_label);
             groupBox2.Controls.Add(btnAdicionarPagamento);
             groupBox2.Controls.Add(lblValorPago);
             groupBox2.Controls.Add(Valores_MaterialTextBox);
-            groupBox2.Controls.Add(materialRadioButton5);
-            groupBox2.Controls.Add(materialRadioButton4);
-            groupBox2.Controls.Add(materialRadioButton3);
-            groupBox2.Controls.Add(materialRadioButton2);
-            groupBox2.Controls.Add(materialRadioButton1);
-            groupBox2.Controls.Add(label1);
             groupBox2.Controls.Add(btn_FinalizarPedido);
             groupBox2.Controls.Add(btn_PedidoAberto);
             groupBox2.Controls.Add(lblTotal_Text);
@@ -218,6 +215,115 @@
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "groupBox2";
+            // 
+            // PanelBtnPag
+            // 
+            PanelBtnPag.Controls.Add(label1);
+            PanelBtnPag.Controls.Add(materialRadioButton1);
+            PanelBtnPag.Controls.Add(materialRadioButton2);
+            PanelBtnPag.Controls.Add(materialRadioButton3);
+            PanelBtnPag.Controls.Add(materialRadioButton4);
+            PanelBtnPag.Controls.Add(materialRadioButton5);
+            PanelBtnPag.Dock = DockStyle.Top;
+            PanelBtnPag.Location = new Point(3, 19);
+            PanelBtnPag.Name = "PanelBtnPag";
+            PanelBtnPag.Size = new Size(259, 300);
+            PanelBtnPag.TabIndex = 14;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Sans Serif Collection", 11.25F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            label1.Location = new Point(18, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(174, 51);
+            label1.TabIndex = 2;
+            label1.Text = "Formas de Pagamento";
+            // 
+            // materialRadioButton1
+            // 
+            materialRadioButton1.AutoSize = true;
+            materialRadioButton1.Depth = 0;
+            materialRadioButton1.Location = new Point(23, 41);
+            materialRadioButton1.Margin = new Padding(0);
+            materialRadioButton1.MouseLocation = new Point(-1, -1);
+            materialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialRadioButton1.Name = "materialRadioButton1";
+            materialRadioButton1.Ripple = true;
+            materialRadioButton1.Size = new Size(136, 37);
+            materialRadioButton1.TabIndex = 3;
+            materialRadioButton1.TabStop = true;
+            materialRadioButton1.Text = "Cartão Crédito";
+            materialRadioButton1.UseVisualStyleBackColor = true;
+            materialRadioButton1.CheckedChanged += materialRadioButton1_CheckedChanged;
+            // 
+            // materialRadioButton2
+            // 
+            materialRadioButton2.AutoSize = true;
+            materialRadioButton2.Depth = 0;
+            materialRadioButton2.Location = new Point(23, 91);
+            materialRadioButton2.Margin = new Padding(0);
+            materialRadioButton2.MouseLocation = new Point(-1, -1);
+            materialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            materialRadioButton2.Name = "materialRadioButton2";
+            materialRadioButton2.Ripple = true;
+            materialRadioButton2.Size = new Size(132, 37);
+            materialRadioButton2.TabIndex = 4;
+            materialRadioButton2.TabStop = true;
+            materialRadioButton2.Text = "Cartão Débito";
+            materialRadioButton2.UseVisualStyleBackColor = true;
+            materialRadioButton2.CheckedChanged += materialRadioButton2_CheckedChanged;
+            // 
+            // materialRadioButton3
+            // 
+            materialRadioButton3.AutoSize = true;
+            materialRadioButton3.Depth = 0;
+            materialRadioButton3.Location = new Point(23, 141);
+            materialRadioButton3.Margin = new Padding(0);
+            materialRadioButton3.MouseLocation = new Point(-1, -1);
+            materialRadioButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            materialRadioButton3.Name = "materialRadioButton3";
+            materialRadioButton3.Ripple = true;
+            materialRadioButton3.Size = new Size(57, 37);
+            materialRadioButton3.TabIndex = 5;
+            materialRadioButton3.TabStop = true;
+            materialRadioButton3.Text = "Pix";
+            materialRadioButton3.UseVisualStyleBackColor = true;
+            materialRadioButton3.CheckedChanged += materialRadioButton3_CheckedChanged;
+            // 
+            // materialRadioButton4
+            // 
+            materialRadioButton4.AutoSize = true;
+            materialRadioButton4.Depth = 0;
+            materialRadioButton4.Location = new Point(23, 191);
+            materialRadioButton4.Margin = new Padding(0);
+            materialRadioButton4.MouseLocation = new Point(-1, -1);
+            materialRadioButton4.MouseState = MaterialSkin.MouseState.HOVER;
+            materialRadioButton4.Name = "materialRadioButton4";
+            materialRadioButton4.Ripple = true;
+            materialRadioButton4.Size = new Size(93, 37);
+            materialRadioButton4.TabIndex = 6;
+            materialRadioButton4.TabStop = true;
+            materialRadioButton4.Text = "Voucher";
+            materialRadioButton4.UseVisualStyleBackColor = true;
+            materialRadioButton4.CheckedChanged += materialRadioButton4_CheckedChanged;
+            // 
+            // materialRadioButton5
+            // 
+            materialRadioButton5.AutoSize = true;
+            materialRadioButton5.Depth = 0;
+            materialRadioButton5.Location = new Point(23, 241);
+            materialRadioButton5.Margin = new Padding(0);
+            materialRadioButton5.MouseLocation = new Point(-1, -1);
+            materialRadioButton5.MouseState = MaterialSkin.MouseState.HOVER;
+            materialRadioButton5.Name = "materialRadioButton5";
+            materialRadioButton5.Ripple = true;
+            materialRadioButton5.Size = new Size(94, 37);
+            materialRadioButton5.TabIndex = 7;
+            materialRadioButton5.TabStop = true;
+            materialRadioButton5.Text = "Dinheiro";
+            materialRadioButton5.UseVisualStyleBackColor = true;
+            materialRadioButton5.CheckedChanged += materialRadioButton5_CheckedChanged;
             // 
             // btn_Limparpag
             // 
@@ -245,7 +351,7 @@
             // 
             troco_label.AutoSize = true;
             troco_label.Font = new Font("Arial Narrow", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            troco_label.Location = new Point(6, 412);
+            troco_label.Location = new Point(6, 417);
             troco_label.Name = "troco_label";
             troco_label.Size = new Size(56, 24);
             troco_label.TabIndex = 12;
@@ -270,7 +376,7 @@
             // 
             lblValorPago.AutoSize = true;
             lblValorPago.Font = new Font("Arial", 10F, FontStyle.Bold);
-            lblValorPago.Location = new Point(6, 371);
+            lblValorPago.Location = new Point(6, 376);
             lblValorPago.Name = "lblValorPago";
             lblValorPago.Size = new Size(151, 16);
             lblValorPago.TabIndex = 10;
@@ -285,7 +391,7 @@
             Valores_MaterialTextBox.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             Valores_MaterialTextBox.HideSelection = true;
             Valores_MaterialTextBox.LeadingIcon = null;
-            Valores_MaterialTextBox.Location = new Point(6, 320);
+            Valores_MaterialTextBox.Location = new Point(6, 325);
             Valores_MaterialTextBox.MaxLength = 32767;
             Valores_MaterialTextBox.MouseState = MaterialSkin.MouseState.OUT;
             Valores_MaterialTextBox.Name = "Valores_MaterialTextBox";
@@ -307,101 +413,6 @@
             Valores_MaterialTextBox.KeyDown += materialTextBox21_KeyDown;
             Valores_MaterialTextBox.Leave += materialTextBox21_Leave;
             // 
-            // materialRadioButton5
-            // 
-            materialRadioButton5.AutoSize = true;
-            materialRadioButton5.Depth = 0;
-            materialRadioButton5.Location = new Point(6, 260);
-            materialRadioButton5.Margin = new Padding(0);
-            materialRadioButton5.MouseLocation = new Point(-1, -1);
-            materialRadioButton5.MouseState = MaterialSkin.MouseState.HOVER;
-            materialRadioButton5.Name = "materialRadioButton5";
-            materialRadioButton5.Ripple = true;
-            materialRadioButton5.Size = new Size(94, 37);
-            materialRadioButton5.TabIndex = 7;
-            materialRadioButton5.TabStop = true;
-            materialRadioButton5.Text = "Dinheiro";
-            materialRadioButton5.UseVisualStyleBackColor = true;
-            materialRadioButton5.CheckedChanged += materialRadioButton5_CheckedChanged;
-            // 
-            // materialRadioButton4
-            // 
-            materialRadioButton4.AutoSize = true;
-            materialRadioButton4.Depth = 0;
-            materialRadioButton4.Location = new Point(6, 210);
-            materialRadioButton4.Margin = new Padding(0);
-            materialRadioButton4.MouseLocation = new Point(-1, -1);
-            materialRadioButton4.MouseState = MaterialSkin.MouseState.HOVER;
-            materialRadioButton4.Name = "materialRadioButton4";
-            materialRadioButton4.Ripple = true;
-            materialRadioButton4.Size = new Size(93, 37);
-            materialRadioButton4.TabIndex = 6;
-            materialRadioButton4.TabStop = true;
-            materialRadioButton4.Text = "Voucher";
-            materialRadioButton4.UseVisualStyleBackColor = true;
-            materialRadioButton4.CheckedChanged += materialRadioButton4_CheckedChanged;
-            // 
-            // materialRadioButton3
-            // 
-            materialRadioButton3.AutoSize = true;
-            materialRadioButton3.Depth = 0;
-            materialRadioButton3.Location = new Point(6, 160);
-            materialRadioButton3.Margin = new Padding(0);
-            materialRadioButton3.MouseLocation = new Point(-1, -1);
-            materialRadioButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            materialRadioButton3.Name = "materialRadioButton3";
-            materialRadioButton3.Ripple = true;
-            materialRadioButton3.Size = new Size(57, 37);
-            materialRadioButton3.TabIndex = 5;
-            materialRadioButton3.TabStop = true;
-            materialRadioButton3.Text = "Pix";
-            materialRadioButton3.UseVisualStyleBackColor = true;
-            materialRadioButton3.CheckedChanged += materialRadioButton3_CheckedChanged;
-            // 
-            // materialRadioButton2
-            // 
-            materialRadioButton2.AutoSize = true;
-            materialRadioButton2.Depth = 0;
-            materialRadioButton2.Location = new Point(6, 110);
-            materialRadioButton2.Margin = new Padding(0);
-            materialRadioButton2.MouseLocation = new Point(-1, -1);
-            materialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            materialRadioButton2.Name = "materialRadioButton2";
-            materialRadioButton2.Ripple = true;
-            materialRadioButton2.Size = new Size(132, 37);
-            materialRadioButton2.TabIndex = 4;
-            materialRadioButton2.TabStop = true;
-            materialRadioButton2.Text = "Cartão Débito";
-            materialRadioButton2.UseVisualStyleBackColor = true;
-            materialRadioButton2.CheckedChanged += materialRadioButton2_CheckedChanged;
-            // 
-            // materialRadioButton1
-            // 
-            materialRadioButton1.AutoSize = true;
-            materialRadioButton1.Depth = 0;
-            materialRadioButton1.Location = new Point(6, 60);
-            materialRadioButton1.Margin = new Padding(0);
-            materialRadioButton1.MouseLocation = new Point(-1, -1);
-            materialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialRadioButton1.Name = "materialRadioButton1";
-            materialRadioButton1.Ripple = true;
-            materialRadioButton1.Size = new Size(136, 37);
-            materialRadioButton1.TabIndex = 3;
-            materialRadioButton1.TabStop = true;
-            materialRadioButton1.Text = "Cartão Crédito";
-            materialRadioButton1.UseVisualStyleBackColor = true;
-            materialRadioButton1.CheckedChanged += materialRadioButton1_CheckedChanged;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Sans Serif Collection", 11.25F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            label1.Location = new Point(1, 19);
-            label1.Name = "label1";
-            label1.Size = new Size(258, 37);
-            label1.TabIndex = 2;
-            label1.Text = "Formas de Pagamento";
-            // 
             // btn_FinalizarPedido
             // 
             btn_FinalizarPedido.Location = new Point(21, 608);
@@ -416,7 +427,7 @@
             // 
             lblTotal_Text.AutoSize = true;
             lblTotal_Text.Font = new Font("Arial Narrow", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTotal_Text.Location = new Point(1, 387);
+            lblTotal_Text.Location = new Point(1, 392);
             lblTotal_Text.Name = "lblTotal_Text";
             lblTotal_Text.Size = new Size(61, 29);
             lblTotal_Text.TabIndex = 0;
@@ -447,6 +458,8 @@
             ((System.ComponentModel.ISupportInitialize)DataGrid_Produtos).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            PanelBtnPag.ResumeLayout(false);
+            PanelBtnPag.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -478,5 +491,6 @@
         private Button btnAdicionarPagamento;
         private Label troco_label;
         private MaterialSkin.Controls.MaterialButton btn_Limparpag;
+        private Panel PanelBtnPag;
     }
 }

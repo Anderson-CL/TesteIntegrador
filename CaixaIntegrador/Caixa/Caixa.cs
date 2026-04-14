@@ -280,6 +280,19 @@ namespace CaixaIntegrador
                 (novoPedido.Troco != 0 ? $"Troco: R$ {novoPedido.Troco:F2}" : ""),
                 $"Pedido Finalizado");
 
+            var resultado = MessageBox.Show(
+                "Deseja Imprimir Nota Fiscal?",
+                "Nota Fiscal",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+                );
+          
+            if (resultado == DialogResult.Yes)
+            {
+                var impressora = new ImpressoraNormal();
+                impressora.ImprimirNFC(novoPedido);
+            }
+
             // Limpa o carrinho e pagamentos após finalizar
             carrinho.Clear();
             pagamentosAtuais.Clear();
@@ -391,7 +404,7 @@ namespace CaixaIntegrador
                     }
 
                     LimparFormularioPagamento();
-
+                    PanelBtnPag.Enabled = false;
                     btnAdicionarPagamento.Enabled = false;
                     Valores_MaterialTextBox.Enabled = false;
                     panelPrincipal.Enabled = false;
@@ -440,6 +453,7 @@ namespace CaixaIntegrador
                     btnDeletarMarcados.Enabled = false;
                     btnLimparCarrinho.Enabled = false;
                     DataGrid_Produtos.Enabled = false;
+                    PanelBtnPag.Enabled = false;
                 }
             }
         }
@@ -491,6 +505,7 @@ namespace CaixaIntegrador
             btnDeletarMarcados.Enabled = true;
             btnLimparCarrinho.Enabled = true;
             DataGrid_Produtos.Enabled = true;
+            PanelBtnPag.Enabled = true;
 
             // Limpa o textbox
             Valores_MaterialTextBox.Text = "";
@@ -532,7 +547,7 @@ namespace CaixaIntegrador
             LimparFormularioPagamento();
             lblValorPago.Text = "";
             pagamentosAtuais.Clear();
-            lblTotal_Text.Text = "";
+           // lblTotal_Text.Text = "";
 
         }
     }

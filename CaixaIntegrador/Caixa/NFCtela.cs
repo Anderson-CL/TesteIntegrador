@@ -41,9 +41,9 @@ namespace CaixaIntegrador.Caixa
 
             // Ajusta a altura do form proporcionalmente ao cupom
             int alturaForm = Math.Min(alturaCalculada + 150, 800); // 150 para os botões, máximo 800
-            this.Size = new Size(500, alturaForm);
+            this.Size = new Size(350, alturaForm);
 
-            NFCdoc.DefaultPageSettings.PaperSize = new PaperSize("Cupom", 315, alturaCalculada);
+            NFCdoc.DefaultPageSettings.PaperSize = new PaperSize("Cupom", 300, alturaCalculada);
             NFCdoc.DefaultPageSettings.Margins = new Margins(10, 10, 10, 10);
             NFCdoc.PrintPage += (s, ev) => NFCimpressora.DesenharNota(ev, NFCpedido);
             PrintViewNFC.Document = NFCdoc;
