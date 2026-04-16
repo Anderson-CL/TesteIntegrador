@@ -1,4 +1,6 @@
-﻿namespace CaixaIntegrador.LOGIN_REGISTRO
+﻿using MaterialSkin.Controls;
+
+namespace CaixaIntegrador.LOGIN_REGISTRO
 {
     partial class TelaRegistro
     {
@@ -29,17 +31,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaRegistro));
-            panel1 = new Panel();
+            panel1 = new MaterialCard();
             MostrarOcultar2 = new PictureBox();
             MostrarOcultar1 = new PictureBox();
-            txtRegistroSenha2 = new TextBox();
+            txtRegistroSenha2 = new MaterialTextBox2();
             pictureBox4 = new PictureBox();
-            btnRegistro = new Button();
-            txtRegistroSenha1 = new TextBox();
-            txtRegistroLogin = new TextBox();
-            lblRegistro = new Label();
-            lblEsqueceu = new Label();
-            label1 = new Label();
+            btnRegistro = new MaterialButton();
+            txtRegistroSenha1 = new MaterialTextBox2();
+            txtRegistroLogin = new MaterialTextBox2();
+            lblRegistro = new MaterialLabel();
+            lblEsqueceu = new MaterialLabel();
+            label1 = new MaterialLabel();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
@@ -238,15 +240,15 @@
 
         #endregion
 
-        private Panel panel1;
-        private TextBox txtRegistroSenha2;
+        private MaterialCard panel1;
+        private MaterialTextBox2 txtRegistroSenha2;
         private PictureBox pictureBox4;
-        private Button btnRegistro;
-        private TextBox txtRegistroSenha1;
-        private TextBox txtRegistroLogin;
-        private Label lblRegistro;
-        private Label lblEsqueceu;
-        private Label label1;
+        private MaterialButton btnRegistro;
+        private MaterialTextBox2 txtRegistroSenha1;
+        private MaterialTextBox2 txtRegistroLogin;
+        private MaterialLabel lblRegistro;
+        private MaterialLabel lblEsqueceu;
+        private MaterialLabel label1;
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;

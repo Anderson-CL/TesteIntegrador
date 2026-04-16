@@ -1,4 +1,6 @@
-﻿namespace CaixaIntegrador
+﻿using MaterialSkin.Controls;
+
+namespace CaixaIntegrador
 {
     partial class UCSubCategorias
     {
@@ -30,7 +32,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCSubCategorias));
             FlowSubCategorias = new FlowLayoutPanel();
-            btnVoltar = new Button();
+            btnVoltar = new MaterialButton();
             FlowSubCategorias.SuspendLayout();
             SuspendLayout();
             // 
@@ -79,6 +81,6 @@
         #endregion
 
         private FlowLayoutPanel FlowSubCategorias;
-        private Button btnVoltar;
+        private MaterialButton btnVoltar;
     }
 }

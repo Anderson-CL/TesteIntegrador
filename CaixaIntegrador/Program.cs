@@ -1,3 +1,4 @@
+using CaixaIntegrador.Data;
 using CaixaIntegrador.LOGIN_REGISTRO;
 
 namespace CaixaIntegrador
@@ -13,6 +14,14 @@ namespace CaixaIntegrador
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+            
+            using (var db = new AppDbContext())
+            {
+                db.Database.EnsureCreated();
+            }
+
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
     }

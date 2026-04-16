@@ -1,10 +1,11 @@
 using CaixaIntegrador.Classes;
 using Google.Protobuf.WellKnownTypes;
 using Org.BouncyCastle.Math.EC;
-
+using MaterialSkin.Controls;
+using MaterialSkin;
 namespace CaixaIntegrador
 {
-    public partial class Form1 : Form
+    public partial class Form1 : MaterialForm
     {   //Puxa as listas de categorias, subcategorias, produtos e carrinho
         private List<Categoria> categorias;
         private List<SubCategoria> subCategorias;
@@ -25,6 +26,22 @@ namespace CaixaIntegrador
             InicializarEventos();
             CarregarDados();
             AdicionarUserControlPrincipal();
+
+            var materialSkinManager = MaterialSkinManager.Instance;
+
+            // 2. Adiciona o formulário atual para ser gerenciado
+            materialSkinManager.AddFormToManage(this);
+
+            // 3. Define o tema (LIGHT ou DARK)
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+            
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Red700,    // Bordô Profundo — cor principal  (#8B2635 aprox.)
+                Primary.Red900,    // Vinho Escuro — bordas e detalhes (#5C1A28 aprox.)
+                Primary.Red100,    // Creme Marfim — tom claro de apoio
+                Accent.Orange400,  // Âmbar Dourado — destaque/botões (#C8862A aprox.)
+                TextShade.WHITE    // Texto sobre as cores principais
+            );
         }
 
         // Conecta os eventos dos user controls 

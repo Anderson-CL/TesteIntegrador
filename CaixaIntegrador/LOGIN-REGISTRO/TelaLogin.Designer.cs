@@ -1,4 +1,6 @@
-﻿namespace CaixaIntegrador.LOGIN_REGISTRO
+﻿using MaterialSkin.Controls;
+
+namespace CaixaIntegrador.LOGIN_REGISTRO
 {
     partial class TelaLogin
     {
@@ -29,14 +31,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaLogin));
-            panel1 = new Panel();
+            panel1 = new MaterialCard();
             MostrarOcultar = new PictureBox();
-            btnEntrar = new Button();
-            txtSenha = new TextBox();
-            txtLogin = new TextBox();
-            lblRegistro = new Label();
-            lblEsqueceu = new Label();
-            label1 = new Label();
+            btnEntrar = new MaterialButton();
+            txtSenha = new MaterialTextBox2();
+            txtLogin = new MaterialTextBox2();
+            lblRegistro = new MaterialLabel();
+            lblEsqueceu = new MaterialLabel();
+            label1 = new MaterialLabel();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
@@ -196,13 +198,13 @@
 
         #endregion
 
-        private Panel panel1;
-        private Button btnEntrar;
-        private TextBox txtSenha;
-        private TextBox txtLogin;
-        private Label lblRegistro;
-        private Label lblEsqueceu;
-        private Label label1;
+        private MaterialCard panel1;
+        private MaterialButton btnEntrar;
+        private MaterialTextBox2 txtSenha;
+        private MaterialTextBox2 txtLogin;
+        private MaterialLabel lblRegistro;
+        private MaterialLabel lblEsqueceu;
+        private MaterialLabel label1;
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
