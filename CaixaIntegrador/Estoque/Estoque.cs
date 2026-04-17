@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MaterialSkin.Controls;
+using MaterialSkin;
 namespace CaixaIntegrador
 {
-    public partial class Estoque : Form
+    public partial class Estoque : MaterialForm
     {
         public Estoque()
         {
