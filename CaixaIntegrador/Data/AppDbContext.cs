@@ -16,8 +16,11 @@ namespace CaixaIntegrador.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            // Cria o arquivo do banco na pasta do executável
-            options.UseSqlite("Data Source=Adega.db");
+
+            string dbFileName = "Adega.db"; // use o nome exato do arquivo
+            string dbPath = System.IO.Path.Combine(AppContext.BaseDirectory, "Data", dbFileName);
+            options.UseSqlite($"Data Source={dbPath}");
+
         }
     }
     }
