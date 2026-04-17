@@ -38,9 +38,9 @@
             // PrintViewNFC
             // 
             PrintViewNFC.Dock = DockStyle.Fill;
-            PrintViewNFC.Location = new Point(0, 0);
+            PrintViewNFC.Location = new Point(3, 24);
             PrintViewNFC.Name = "PrintViewNFC";
-            PrintViewNFC.Size = new Size(484, 661);
+            PrintViewNFC.Size = new Size(350, 634);
             PrintViewNFC.TabIndex = 0;
             // 
             // materialCard1
@@ -51,12 +51,12 @@
             materialCard1.Depth = 0;
             materialCard1.Dock = DockStyle.Bottom;
             materialCard1.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard1.Location = new Point(0, 611);
+            materialCard1.Location = new Point(3, 608);
             materialCard1.Margin = new Padding(14);
             materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard1.Name = "materialCard1";
             materialCard1.Padding = new Padding(14);
-            materialCard1.Size = new Size(484, 50);
+            materialCard1.Size = new Size(350, 50);
             materialCard1.TabIndex = 1;
             // 
             // btnImprimir
@@ -103,10 +103,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(484, 661);
+            ClientSize = new Size(356, 661);
             Controls.Add(materialCard1);
             Controls.Add(PrintViewNFC);
+            FormStyle = FormStyles.ActionBar_None;
             Name = "NFCtela";
+            Padding = new Padding(3, 24, 3, 3);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "NFCtela";
             Load += NFCtela_Load;

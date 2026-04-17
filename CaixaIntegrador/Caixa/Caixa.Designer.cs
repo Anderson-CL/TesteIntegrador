@@ -76,12 +76,12 @@ namespace CaixaIntegrador
             groupBox1.Depth = 0;
             groupBox1.Dock = DockStyle.Left;
             groupBox1.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            groupBox1.Location = new Point(3, 24);
+            groupBox1.Location = new Point(0, 24);
             groupBox1.Margin = new Padding(14);
             groupBox1.MouseState = MaterialSkin.MouseState.HOVER;
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(14);
-            groupBox1.Size = new Size(322, 654);
+            groupBox1.Size = new Size(322, 657);
             groupBox1.TabIndex = 0;
             groupBox1.Text = "groupBox1";
             // 
@@ -92,7 +92,7 @@ namespace CaixaIntegrador
             btn_Pedido.Depth = 0;
             btn_Pedido.HighEmphasis = true;
             btn_Pedido.Icon = null;
-            btn_Pedido.Location = new Point(108, 614);
+            btn_Pedido.Location = new Point(94, 600);
             btn_Pedido.Margin = new Padding(4, 6, 4, 6);
             btn_Pedido.MouseState = MaterialSkin.MouseState.HOVER;
             btn_Pedido.Name = "btn_Pedido";
@@ -115,7 +115,7 @@ namespace CaixaIntegrador
             btnLimparCarrinho.ForeColor = Color.White;
             btnLimparCarrinho.HighEmphasis = true;
             btnLimparCarrinho.Icon = null;
-            btnLimparCarrinho.Location = new Point(18, 540);
+            btnLimparCarrinho.Location = new Point(4, 526);
             btnLimparCarrinho.Margin = new Padding(4, 6, 4, 6);
             btnLimparCarrinho.MouseState = MaterialSkin.MouseState.HOVER;
             btnLimparCarrinho.Name = "btnLimparCarrinho";
@@ -138,7 +138,7 @@ namespace CaixaIntegrador
             btnDeletarMarcados.ForeColor = Color.White;
             btnDeletarMarcados.HighEmphasis = true;
             btnDeletarMarcados.Icon = null;
-            btnDeletarMarcados.Location = new Point(201, 540);
+            btnDeletarMarcados.Location = new Point(187, 526);
             btnDeletarMarcados.Margin = new Padding(4, 6, 4, 6);
             btnDeletarMarcados.MouseState = MaterialSkin.MouseState.HOVER;
             btnDeletarMarcados.Name = "btnDeletarMarcados";
@@ -246,7 +246,7 @@ namespace CaixaIntegrador
             btn_PedidoAberto.Depth = 0;
             btn_PedidoAberto.HighEmphasis = true;
             btn_PedidoAberto.Icon = null;
-            btn_PedidoAberto.Location = new Point(37, 560);
+            btn_PedidoAberto.Location = new Point(5, 522);
             btn_PedidoAberto.Margin = new Padding(4, 6, 4, 6);
             btn_PedidoAberto.MouseState = MaterialSkin.MouseState.HOVER;
             btn_PedidoAberto.Name = "btn_PedidoAberto";
@@ -274,12 +274,12 @@ namespace CaixaIntegrador
             groupBox2.Dock = DockStyle.Right;
             groupBox2.Font = new Font("Segoe UI", 9F);
             groupBox2.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            groupBox2.Location = new Point(992, 24);
+            groupBox2.Location = new Point(995, 24);
             groupBox2.Margin = new Padding(14);
             groupBox2.MouseState = MaterialSkin.MouseState.HOVER;
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(14);
-            groupBox2.Size = new Size(269, 654);
+            groupBox2.Size = new Size(269, 657);
             groupBox2.TabIndex = 1;
             groupBox2.Text = "groupBox2";
             // 
@@ -294,13 +294,14 @@ namespace CaixaIntegrador
             PanelBtnPag.Controls.Add(materialRadioButton4);
             PanelBtnPag.Controls.Add(materialRadioButton5);
             PanelBtnPag.Depth = 0;
+            PanelBtnPag.Dock = DockStyle.Top;
             PanelBtnPag.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            PanelBtnPag.Location = new Point(0, 0);
+            PanelBtnPag.Location = new Point(14, 14);
             PanelBtnPag.Margin = new Padding(14);
             PanelBtnPag.MouseState = MaterialSkin.MouseState.HOVER;
             PanelBtnPag.Name = "PanelBtnPag";
             PanelBtnPag.Padding = new Padding(14);
-            PanelBtnPag.Size = new Size(269, 326);
+            PanelBtnPag.Size = new Size(241, 326);
             PanelBtnPag.TabIndex = 14;
             // 
             // label1
@@ -308,7 +309,7 @@ namespace CaixaIntegrador
             label1.AutoSize = true;
             label1.Depth = 0;
             label1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            label1.Location = new Point(17, 14);
+            label1.Location = new Point(4, 1);
             label1.MouseState = MaterialSkin.MouseState.HOVER;
             label1.Name = "label1";
             label1.Size = new Size(162, 19);
@@ -319,7 +320,7 @@ namespace CaixaIntegrador
             // 
             materialRadioButton1.AutoSize = true;
             materialRadioButton1.Depth = 0;
-            materialRadioButton1.Location = new Point(23, 41);
+            materialRadioButton1.Location = new Point(10, 28);
             materialRadioButton1.Margin = new Padding(0);
             materialRadioButton1.MouseLocation = new Point(-1, -1);
             materialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -336,7 +337,7 @@ namespace CaixaIntegrador
             // 
             materialRadioButton2.AutoSize = true;
             materialRadioButton2.Depth = 0;
-            materialRadioButton2.Location = new Point(23, 91);
+            materialRadioButton2.Location = new Point(10, 78);
             materialRadioButton2.Margin = new Padding(0);
             materialRadioButton2.MouseLocation = new Point(-1, -1);
             materialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER;
@@ -353,7 +354,7 @@ namespace CaixaIntegrador
             // 
             materialRadioButton3.AutoSize = true;
             materialRadioButton3.Depth = 0;
-            materialRadioButton3.Location = new Point(23, 141);
+            materialRadioButton3.Location = new Point(10, 128);
             materialRadioButton3.Margin = new Padding(0);
             materialRadioButton3.MouseLocation = new Point(-1, -1);
             materialRadioButton3.MouseState = MaterialSkin.MouseState.HOVER;
@@ -370,7 +371,7 @@ namespace CaixaIntegrador
             // 
             materialRadioButton4.AutoSize = true;
             materialRadioButton4.Depth = 0;
-            materialRadioButton4.Location = new Point(23, 191);
+            materialRadioButton4.Location = new Point(10, 178);
             materialRadioButton4.Margin = new Padding(0);
             materialRadioButton4.MouseLocation = new Point(-1, -1);
             materialRadioButton4.MouseState = MaterialSkin.MouseState.HOVER;
@@ -387,7 +388,7 @@ namespace CaixaIntegrador
             // 
             materialRadioButton5.AutoSize = true;
             materialRadioButton5.Depth = 0;
-            materialRadioButton5.Location = new Point(23, 241);
+            materialRadioButton5.Location = new Point(10, 228);
             materialRadioButton5.Margin = new Padding(0);
             materialRadioButton5.MouseLocation = new Point(-1, -1);
             materialRadioButton5.MouseState = MaterialSkin.MouseState.HOVER;
@@ -409,7 +410,7 @@ namespace CaixaIntegrador
             btn_Limparpag.FlatStyle = FlatStyle.Popup;
             btn_Limparpag.HighEmphasis = true;
             btn_Limparpag.Icon = null;
-            btn_Limparpag.Location = new Point(142, 498);
+            btn_Limparpag.Location = new Point(155, 474);
             btn_Limparpag.Margin = new Padding(4, 6, 4, 6);
             btn_Limparpag.MouseState = MaterialSkin.MouseState.HOVER;
             btn_Limparpag.Name = "btn_Limparpag";
@@ -428,7 +429,7 @@ namespace CaixaIntegrador
             troco_label.Depth = 0;
             troco_label.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             troco_label.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle1;
-            troco_label.Location = new Point(6, 447);
+            troco_label.Location = new Point(24, 436);
             troco_label.MouseState = MaterialSkin.MouseState.HOVER;
             troco_label.Name = "troco_label";
             troco_label.Size = new Size(46, 19);
@@ -447,7 +448,7 @@ namespace CaixaIntegrador
             btnAdicionarPagamento.ForeColor = Color.White;
             btnAdicionarPagamento.HighEmphasis = true;
             btnAdicionarPagamento.Icon = null;
-            btnAdicionarPagamento.Location = new Point(6, 500);
+            btnAdicionarPagamento.Location = new Point(8, 474);
             btnAdicionarPagamento.Margin = new Padding(4, 6, 4, 6);
             btnAdicionarPagamento.MouseState = MaterialSkin.MouseState.HOVER;
             btnAdicionarPagamento.Name = "btnAdicionarPagamento";
@@ -465,7 +466,7 @@ namespace CaixaIntegrador
             lblValorPago.AutoSize = true;
             lblValorPago.Depth = 0;
             lblValorPago.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            lblValorPago.Location = new Point(6, 376);
+            lblValorPago.Location = new Point(8, 376);
             lblValorPago.MouseState = MaterialSkin.MouseState.HOVER;
             lblValorPago.Name = "lblValorPago";
             lblValorPago.Size = new Size(152, 19);
@@ -481,7 +482,7 @@ namespace CaixaIntegrador
             Valores_MaterialTextBox.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             Valores_MaterialTextBox.HideSelection = true;
             Valores_MaterialTextBox.LeadingIcon = null;
-            Valores_MaterialTextBox.Location = new Point(0, 325);
+            Valores_MaterialTextBox.Location = new Point(3, 325);
             Valores_MaterialTextBox.MaxLength = 32767;
             Valores_MaterialTextBox.MouseState = MaterialSkin.MouseState.OUT;
             Valores_MaterialTextBox.Name = "Valores_MaterialTextBox";
@@ -493,7 +494,7 @@ namespace CaixaIntegrador
             Valores_MaterialTextBox.SelectionLength = 0;
             Valores_MaterialTextBox.SelectionStart = 0;
             Valores_MaterialTextBox.ShortcutsEnabled = true;
-            Valores_MaterialTextBox.Size = new Size(269, 48);
+            Valores_MaterialTextBox.Size = new Size(266, 48);
             Valores_MaterialTextBox.TabIndex = 9;
             Valores_MaterialTextBox.TabStop = false;
             Valores_MaterialTextBox.TextAlign = HorizontalAlignment.Left;
@@ -510,7 +511,7 @@ namespace CaixaIntegrador
             btn_FinalizarPedido.Depth = 0;
             btn_FinalizarPedido.HighEmphasis = true;
             btn_FinalizarPedido.Icon = null;
-            btn_FinalizarPedido.Location = new Point(65, 614);
+            btn_FinalizarPedido.Location = new Point(23, 572);
             btn_FinalizarPedido.Margin = new Padding(4, 6, 4, 6);
             btn_FinalizarPedido.MouseState = MaterialSkin.MouseState.HOVER;
             btn_FinalizarPedido.Name = "btn_FinalizarPedido";
@@ -529,7 +530,7 @@ namespace CaixaIntegrador
             lblTotal_Text.Depth = 0;
             lblTotal_Text.Font = new Font("Roboto", 34F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblTotal_Text.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
-            lblTotal_Text.Location = new Point(6, 406);
+            lblTotal_Text.Location = new Point(18, 395);
             lblTotal_Text.MouseState = MaterialSkin.MouseState.HOVER;
             lblTotal_Text.Name = "lblTotal_Text";
             lblTotal_Text.Size = new Size(86, 41);
@@ -543,12 +544,12 @@ namespace CaixaIntegrador
             panelPrincipal.Depth = 0;
             panelPrincipal.Dock = DockStyle.Fill;
             panelPrincipal.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            panelPrincipal.Location = new Point(325, 24);
+            panelPrincipal.Location = new Point(322, 24);
             panelPrincipal.Margin = new Padding(14);
             panelPrincipal.MouseState = MaterialSkin.MouseState.HOVER;
             panelPrincipal.Name = "panelPrincipal";
             panelPrincipal.Padding = new Padding(14);
-            panelPrincipal.Size = new Size(667, 654);
+            panelPrincipal.Size = new Size(673, 657);
             panelPrincipal.TabIndex = 2;
             // 
             // Form1
@@ -561,10 +562,9 @@ namespace CaixaIntegrador
             Controls.Add(groupBox1);
             FormStyle = FormStyles.ActionBar_None;
             Name = "Form1";
-            Padding = new Padding(3, 24, 3, 3);
+            Padding = new Padding(0, 24, 0, 0);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
-            Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)DataGrid_Produtos).EndInit();

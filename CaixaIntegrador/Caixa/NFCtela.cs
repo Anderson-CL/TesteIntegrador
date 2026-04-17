@@ -1,4 +1,5 @@
 ﻿using CaixaIntegrador.Classes;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace CaixaIntegrador.Caixa
 {
-    public partial class NFCtela : Form
+    public partial class NFCtela : MaterialForm
     {
         private Pedido NFCpedido;
         private ImpressoraBase NFCimpressora;

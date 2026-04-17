@@ -1,5 +1,6 @@
 ﻿using CaixaIntegrador.Caixa;
 using CaixaIntegrador.Classes;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace CaixaIntegrador
 {
-    public partial class Order : Form
+    public partial class Order : MaterialForm
     {
         // Armazena a lista de pedidos finalizados
         private List<Pedido> pedidosFinalizados = new List<Pedido>();

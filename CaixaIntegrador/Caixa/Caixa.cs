@@ -1,50 +1,32 @@
 using CaixaIntegrador.Classes;
-using Google.Protobuf.WellKnownTypes;
-using Org.BouncyCastle.Math.EC;
-using MaterialSkin.Controls;
+using CaixaIntegrador.Data;
 using MaterialSkin;
+using MaterialSkin.Controls;
 namespace CaixaIntegrador
 {
     public partial class Form1 : MaterialForm
-    {   //Puxa as listas de categorias, subcategorias, produtos e carrinho
-        private List<Categoria> categorias;
-        private List<SubCategoria> subCategorias;
-        private List<Produto> produtos;
+    {
+        // Puxa as listas de categorias, subcategorias, produtos e carrinho
         private List<CarrinhoCompra> carrinho = new List<CarrinhoCompra>();
         private List<Pedido> pedidos = new List<Pedido>();
-        // Armazena os pagamentos do pedido atual
         private List<Pagamento> pagamentosAtuais = new List<Pagamento>();
-        //puxa os user controls
+
+        // Puxa os user controls
         private UCCategorias ucCategorias = new UCCategorias();
         private UCSubCategorias ucSubCategorias = new UCSubCategorias();
         private UCProdutos ucProdutos = new UCProdutos();
 
-        //métodos adicionados na inicialização do form
+        // Métodos adicionados na inicialização do form
         public Form1()
         {
             InitializeComponent();
             InicializarEventos();
-            CarregarDados();
+            CarregarDadosIniciais();
             AdicionarUserControlPrincipal();
-
-            var materialSkinManager = MaterialSkinManager.Instance;
-
-            // 2. Adiciona o formulário atual para ser gerenciado
-            materialSkinManager.AddFormToManage(this);
-
-            // 3. Define o tema (LIGHT ou DARK)
-            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-            
-            materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.Red700,    // Bordô Profundo — cor principal  (#8B2635 aprox.)
-                Primary.Red900,    // Vinho Escuro — bordas e detalhes (#5C1A28 aprox.)
-                Primary.Red100,    // Creme Marfim — tom claro de apoio
-                Accent.Orange400,  // Âmbar Dourado — destaque/botões (#C8862A aprox.)
-                TextShade.WHITE    // Texto sobre as cores principais
-            );
+            TemaFormSkin();
         }
 
-        // Conecta os eventos dos user controls 
+        // Conecta os eventos dos user controls
         private void InicializarEventos()
         {
             ucCategorias.CategoriaSelecionada += CategoriaSelecionada;
@@ -61,65 +43,59 @@ namespace CaixaIntegrador
             ucCategorias.Dock = DockStyle.Fill;
         }
 
-        // Carrega todos os dados dos métodos  e caarega o usercontrol de categorias
-        private void CarregarDados()
+        private void TemaFormSkin()
         {
-            CarregarCategorias();
-            CarregarSubCategorias();
-            CarregarProdutos();
-            ucCategorias.CarregarCategorias(categorias);
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Red900,    // Cor Principal: Vinho bem escuro (fundo de botões/barras)
+                Primary.BlueGrey900, // Tom de contraste profundo para barras de título
+                Primary.Red600,    // Tom médio para destaques suaves
+                Accent.Orange400,  // Âmbar Pastel (Destaque que não "agride" no escuro)
+                TextShade.WHITE    // Texto branco puro
+            );
+        }
+        private void CarregarDadosIniciais()
+        {
+            try
+            {
+                using (var db = new AppDbContext())
+                {
+                    var categorias = db.Categorias.ToList();
+                    ucCategorias.CarregarCategorias(categorias);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar banco: {ex.Message}", "Erro Crítico");
+            }
         }
 
-        // método de categorias
-        private void CarregarCategorias()
+        // Filtra e exibe as subcategorias para categoria selecionada
+        private void CategoriaSelecionada(int categoriaId)
         {
-            categorias = new List<Categoria>()
+            using (var db = new AppDbContext())
             {
-                new Categoria { Id = 1, Nome = "Bebidas" },
-                new Categoria { Id = 2, Nome = "Tabacaria" },
-                new Categoria { Id = 3, Nome = "Doces" }
-            };
+                var listaFiltrada = db.SubCategorias
+                                      .Where(x => x.CategoriaId == categoriaId)
+                                      .ToList();
+                ExibirUserControl(ucSubCategorias);
+                ucSubCategorias.CarregarSubCategorias(listaFiltrada);
+            }
         }
 
-        // método de lista de subcategorias
-        private void CarregarSubCategorias()
+        // Filtra e exibe os produtos para subcategoria selecionada
+        private void SubCategoriaSelecionada(int subId)
         {
-            subCategorias = new List<SubCategoria>()
+            using (var db = new AppDbContext())
             {
-                new SubCategoria { Id = 1, Nome = "Refrigerante", CategoriaId = 1 },
-                new SubCategoria { Id = 2, Nome = "Cerveja", CategoriaId = 1 },
-                new SubCategoria { Id = 3, Nome = "Agua", CategoriaId = 1 },
-                new SubCategoria { Id = 4, Nome = "Cigarros", CategoriaId = 2 },
-                new SubCategoria { Id = 5, Nome = "carvão", CategoriaId = 2 },
-                new SubCategoria { Id = 6, Nome = "Bolachas", CategoriaId = 3 },
-                new SubCategoria { Id = 7, Nome = "Balas", CategoriaId = 3 },
-                new SubCategoria { Id = 8, Nome = "Chocolates", CategoriaId = 3 }
-            };
-        }
-
-
-        // método da lista de produtos
-        private void CarregarProdutos()
-        {
-            produtos = new List<Produto>()
-            {
-                new Produto { Id = 1, Nome = "Coca Cola", SubCategoriaId = 1, Preco = 6 },
-                new Produto { Id = 2, Nome = "Pepsi", SubCategoriaId = 1, Preco = 5 },
-                new Produto { Id = 3, Nome = "Fanta", SubCategoriaId = 1, Preco = 5 },
-                new Produto { Id = 4, Nome = "Heineken", SubCategoriaId = 2, Preco = 10 },
-                new Produto { Id = 5, Nome = "Skol", SubCategoriaId = 2, Preco = 8 },
-                new Produto { Id = 6, Nome = "Água sem gás", SubCategoriaId = 3, Preco = 3.75m },
-                new Produto { Id = 7, Nome = "Malboro", SubCategoriaId = 4, Preco = 8.75m },
-                new Produto { Id = 8, Nome = "Rotmans", SubCategoriaId = 4, Preco = 7.75m },
-                new Produto { Id = 9, Nome = "Coco Bass", SubCategoriaId = 5, Preco = 5.75m },
-                new Produto { Id = 10, Nome = "Zomo", SubCategoriaId = 5, Preco = 5.75m },
-                new Produto { Id = 11, Nome = "Trakinas", SubCategoriaId = 6, Preco = 4.75m },
-                new Produto { Id = 12, Nome = "Passa-tempo", SubCategoriaId = 6, Preco = 2.75m },
-                new Produto { Id = 13, Nome = "Halls", SubCategoriaId = 7, Preco = 3.75m },
-                new Produto { Id = 14, Nome = "Bubbalo", SubCategoriaId = 7, Preco = 0.75m },
-                new Produto { Id = 15, Nome = "Laka", SubCategoriaId = 8, Preco = 4.25m },
-                new Produto { Id = 16, Nome = "Bis", SubCategoriaId = 8, Preco = 4.50m }
-            };
+                var listaFiltrada = db.Produtos
+                                      .Where(x => x.SubCategoriaId == subId)
+                                      .ToList();
+                ExibirUserControl(ucProdutos);
+                ucProdutos.CarregarProdutos(listaFiltrada);
+            }
         }
 
         // Volta para a tela de categorias
@@ -138,31 +114,8 @@ namespace CaixaIntegrador
         private void ExibirUserControl(Control userControl)
         {
             panelPrincipal.Controls.Clear();
-
             panelPrincipal.Controls.Add(userControl);
             userControl.Dock = DockStyle.Fill;
-        }
-
-        // Filtra e exibe as subcategorias para categoria selecionada
-        private void CategoriaSelecionada(int categoriaId)
-        {
-            var lista = subCategorias
-                .Where(x => x.CategoriaId == categoriaId)
-                .ToList();
-
-            ExibirUserControl(ucSubCategorias);
-            ucSubCategorias.CarregarSubCategorias(lista);
-        }
-
-        // Filtra e exibe os produtos para subcategoria selecionada
-        private void SubCategoriaSelecionada(int subId)
-        {
-            var lista = produtos
-                .Where(x => x.SubCategoriaId == subId)
-                .ToList();
-
-            ExibirUserControl(ucProdutos);
-            ucProdutos.CarregarProdutos(lista);
         }
 
         // Adiciona um produto no carrinho ou aumenta sua quantidade se já tem
@@ -209,6 +162,7 @@ namespace CaixaIntegrador
             DataGrid_Produtos.DataSource = carrinho;
             AtualizarTotal();
         }
+
         // Calcula e exibe o valor total do carrinho
         private void AtualizarTotal()
         {
@@ -233,7 +187,8 @@ namespace CaixaIntegrador
                 }
             }
         }
-        //Abre o form de pedidos
+
+        // Abre o form de pedidos
         private void btn_Pedido_Click(object sender, EventArgs e)
         {
             Order tabOrder = new Order();
@@ -259,10 +214,8 @@ namespace CaixaIntegrador
             }
 
             // Calcula o total do pedido
-
             decimal totalPedido = carrinho.Sum(c => c.Total);
             decimal totalPago = pagamentosAtuais.Sum(p => p.Valor);
-            decimal saldo = totalPedido - totalPago;
             var troco = totalPago - totalPedido;
 
             // Valida se o total foi pago
@@ -288,12 +241,12 @@ namespace CaixaIntegrador
             pedidos.Add(novoPedido);
 
             // Exibe mensagem de sucesso
-            string formasPagamento = string.Join(" + ", novoPedido.Pagamentos.Select(p => $"{p.Forma} (R$ {p.Valor:F2})"));
+            string formasPagamento = string.Join(" + ", novoPedido.Pagamentos.Select(p =>
+                $"{p.Forma} (R$ {p.Valor:F2})"));
             MessageBox.Show(
                 $"Pedido #{novoPedido.Id} finalizado com sucesso!\n\n" +
                 $"Total: R$ {novoPedido.Total:F2}\n" +
                 $"Pagamentos: {formasPagamento}\n" +
-                //$"Troco: {troco}",
                 (novoPedido.Troco != 0 ? $"Troco: R$ {novoPedido.Troco:F2}" : ""),
                 $"Pedido Finalizado");
 
@@ -302,8 +255,8 @@ namespace CaixaIntegrador
                 "Nota Fiscal",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
-                );
-          
+            );
+
             if (resultado == DialogResult.Yes)
             {
                 var impressora = new ImpressoraNormal();
@@ -316,29 +269,29 @@ namespace CaixaIntegrador
             AtualizarCarrinhoUI();
             AtualizarLabelPagamentos();
             LimparFormularioPagamento();
-            troco_label.Text = ""; // Limpa o troco após finalizar o pedido
+            troco_label.Text = "";
 
             // Volta para a tela de categorias
             ExibirUserControl(ucCategorias);
         }
+
         private void materialTextBox21_Leave(object sender, EventArgs e)
         {
             AtualizarValorPadrao();
         }
+
         private void materialTextBox21_Enter(object sender, EventArgs e)
         {
-
             decimal totalPedido = carrinho.Sum(c => c.Total);
             decimal valorPago = pagamentosAtuais.Sum(p => p.Valor);
             decimal saldo = totalPedido - valorPago;
 
-            if (Valores_MaterialTextBox.Text == saldo.ToString("F2")
-                && Valores_MaterialTextBox.ForeColor == Color.Gray)
+            if (Valores_MaterialTextBox.Text == saldo.ToString("F2") &&
+                Valores_MaterialTextBox.ForeColor == Color.Gray)
             {
                 Valores_MaterialTextBox.Text = "";
                 Valores_MaterialTextBox.ForeColor = Color.Black;
             }
-
         }
 
         // Adiciona um pagamento à lista de pagamentos do pedido
@@ -346,12 +299,11 @@ namespace CaixaIntegrador
         {
             PagamentoGeral();
         }
+
         private void materialTextBox21_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-            {
                 PagamentoGeral();
-            }
         }
 
         private void PagamentoGeral()
@@ -379,7 +331,7 @@ namespace CaixaIntegrador
                 return;
             }
 
-            // Tenta converter o valor, aceitando "50" ou "50,00"
+            // Tenta converter o valor
             if (!decimal.TryParse(valorTexto, out decimal valorPagamento) || valorPagamento <= 0)
             {
                 MessageBox.Show("Digite um valor numérico válido! (Ex: 50 ou 50,50)", "Erro");
@@ -394,8 +346,6 @@ namespace CaixaIntegrador
             {
                 if (valorPagamento >= saldo)
                 {
-                    var troco = valorPagamento - saldo;
-
                     var novoPagamento = new Pagamento
                     {
                         Forma = FormaPagamento.Dinheiro,
@@ -405,7 +355,7 @@ namespace CaixaIntegrador
 
                     AtualizarLabelPagamentos();
 
-                    // Calcula o troco total após adicionar o pagamento (considera pagamentos anteriores)
+                    // Calcula o troco total após adicionar o pagamento
                     decimal trocoTotal = pagamentosAtuais.Sum(p => p.Valor) - totalPedido;
 
                     // Exibe o troco ANTES de limpar o formulário
@@ -443,8 +393,9 @@ namespace CaixaIntegrador
                     LimparFormularioPagamento();
                 }
             }
-            else // outras formas de pagamento
+            else
             {
+                // Outras formas de pagamento
                 if (valorPagamento > saldo)
                 {
                     MessageBox.Show($"Valor não pode ser superior ao saldo de R$ {saldo:F2}!", "Erro");
@@ -502,7 +453,6 @@ namespace CaixaIntegrador
                 Valores_MaterialTextBox.Text = saldo.ToString("F2");
                 Valores_MaterialTextBox.ForeColor = Color.Gray;
             }
-
         }
 
         // Limpa o formulário de pagamento
@@ -526,12 +476,6 @@ namespace CaixaIntegrador
 
             // Limpa o textbox
             Valores_MaterialTextBox.Text = "";
-         
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void materialRadioButton5_CheckedChanged(object sender, EventArgs e)
@@ -564,8 +508,6 @@ namespace CaixaIntegrador
             LimparFormularioPagamento();
             lblValorPago.Text = "";
             pagamentosAtuais.Clear();
-           // lblTotal_Text.Text = "";
-
         }
     }
     public interface IImpressora

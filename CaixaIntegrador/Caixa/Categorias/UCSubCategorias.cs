@@ -28,10 +28,12 @@ namespace CaixaIntegrador
                 btn.Text = sub.Nome;
                 btn.Width = 120;
                 btn.Height = 120;
-                btn.Font = new Font("Arial Black", 12);
-                btn.BorderRadius = 13;
+                btn.Font = new Font("Roboto", 12, FontStyle.Regular);
+                btn.BorderRadius = 8;
                 btn.BorderThickness = 2;
-                btn.BorderColor = Color.Black;
+                btn.Animated = true;
+                btn.FillColor = Color.FromArgb(130, 35, 35);
+                btn.ShadowDecoration.Enabled = false;
 
                 btn.Click += (s, e) =>
                 {

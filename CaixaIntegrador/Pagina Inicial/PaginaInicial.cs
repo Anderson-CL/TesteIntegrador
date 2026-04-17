@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace CaixaIntegrador
 {
-    public partial class PaginaInicial : Form
+    public partial class PaginaInicial : MaterialForm
     {
         public PaginaInicial()
         {

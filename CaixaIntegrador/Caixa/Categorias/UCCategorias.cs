@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace CaixaIntegrador
+﻿namespace CaixaIntegrador
 {
     using CaixaIntegrador.Classes;
     using Guna.UI2.WinForms;
@@ -23,12 +13,12 @@ namespace CaixaIntegrador
             //Limpar controles
             FlowCategorias.Controls.Clear();
             // botão invisivel para manter o layout
-            Button btnw = new Button();
-            btnw.Enabled = false;
-            btnw.BackColor = Color.Red;
-            btnw.Width = 120;
-            btnw.Height = 120;
-            FlowCategorias.Controls.Add(btnw);
+            //Button btnw = new Button();
+            //btnw.Enabled = false;
+            //btnw.BackColor = Color.Red;
+            //btnw.Width = 120;
+            //btnw.Height = 120;
+            //FlowCategorias.Controls.Add(btnw);
 
             //Foreach para criar botões automaticamente
             foreach (var cat in categorias)
@@ -37,10 +27,12 @@ namespace CaixaIntegrador
                 btn.Text = cat.Nome;
                 btn.Width = 120;
                 btn.Height = 120;
-                btn.Font = new Font("Arial Black", 12);
-                btn.BorderRadius = 13;
+                btn.Font = new Font("Roboto", 12    , FontStyle.Regular);
+                btn.BorderRadius = 8;
                 btn.BorderThickness = 2;
-                btn.BorderColor = Color.Black;
+                btn.Animated = true;
+                btn.FillColor = Color.FromArgb(60, 20, 25);
+                btn.ShadowDecoration.Enabled = false;
                 //Evento para o botão quando clicado
                 btn.Click += (s, e) =>
                 {
