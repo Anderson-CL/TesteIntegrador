@@ -20,7 +20,7 @@ namespace CaixaIntegrador
         public void CarregarSubCategorias(List<SubCategoria> lista)
         {
             FlowSubCategorias.Controls.Clear();
-            FlowSubCategorias.Controls.Add(btnVoltar);
+           // FlowSubCategorias.Controls.Add(btnVoltar);
 
             foreach (var sub in lista)
             {

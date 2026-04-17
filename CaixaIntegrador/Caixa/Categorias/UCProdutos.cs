@@ -24,7 +24,7 @@ namespace CaixaIntegrador
         public void CarregarProdutos(List<Produto> produtos)
         {
             FlowProdutos.Controls.Clear();
-            FlowProdutos.Controls.Add(btnVoltar);
+           // FlowProdutos.Controls.Add(btnVoltar);
             foreach (var prod in produtos)
            
             {

@@ -9,11 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CaixaIntegrador.LOGIN_REGISTRO;
+using MaterialSkin.Controls;
 
 namespace CaixaIntegrador.LOGIN_REGISTRO
 {
 
-    public partial class TelaRegistro : Form
+    public partial class TelaRegistro : MaterialForm
     {
         private bool MostrarSenha1 = false;
         private bool MostrarSenha2 = false;

@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using MaterialSkin.Controls;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace CaixaIntegrador.LOGIN_REGISTRO
 {
-    public partial class TelaLogin : Form
+    public partial class TelaLogin : MaterialForm
     {
         private bool MostrarSenha = false;
 

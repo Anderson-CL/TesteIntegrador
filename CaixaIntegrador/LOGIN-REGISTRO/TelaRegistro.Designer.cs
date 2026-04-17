@@ -57,7 +57,7 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
             // panel1
             // 
             panel1.AutoSize = true;
-            panel1.BackColor = Color.White;
+            panel1.BackColor = Color.FromArgb(255, 255, 255);
             panel1.Controls.Add(MostrarOcultar2);
             panel1.Controls.Add(MostrarOcultar1);
             panel1.Controls.Add(txtRegistroSenha2);
@@ -71,9 +71,13 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
             panel1.Controls.Add(pictureBox3);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(245, 103);
+            panel1.Depth = 0;
+            panel1.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            panel1.Location = new Point(245, 63);
             panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.MouseState = MaterialSkin.MouseState.HOVER;
             panel1.Name = "panel1";
+            panel1.Padding = new Padding(14);
             panel1.Size = new Size(457, 380);
             panel1.TabIndex = 0;
             // 
@@ -101,12 +105,33 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
             // 
             // txtRegistroSenha2
             // 
+            txtRegistroSenha2.AnimateReadOnly = false;
+            txtRegistroSenha2.BackgroundImageLayout = ImageLayout.None;
+            txtRegistroSenha2.CharacterCasing = CharacterCasing.Normal;
             txtRegistroSenha2.Cursor = Cursors.IBeam;
+            txtRegistroSenha2.Depth = 0;
+            txtRegistroSenha2.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtRegistroSenha2.HideSelection = true;
+            txtRegistroSenha2.LeadingIcon = null;
             txtRegistroSenha2.Location = new Point(183, 204);
             txtRegistroSenha2.Margin = new Padding(3, 2, 3, 2);
+            txtRegistroSenha2.MaxLength = 32767;
+            txtRegistroSenha2.MouseState = MaterialSkin.MouseState.OUT;
             txtRegistroSenha2.Name = "txtRegistroSenha2";
-            txtRegistroSenha2.Size = new Size(110, 23);
+            txtRegistroSenha2.PasswordChar = '\0';
+            txtRegistroSenha2.PrefixSuffixText = null;
+            txtRegistroSenha2.ReadOnly = false;
+            txtRegistroSenha2.RightToLeft = RightToLeft.No;
+            txtRegistroSenha2.SelectedText = "";
+            txtRegistroSenha2.SelectionLength = 0;
+            txtRegistroSenha2.SelectionStart = 0;
+            txtRegistroSenha2.ShortcutsEnabled = true;
+            txtRegistroSenha2.Size = new Size(110, 48);
             txtRegistroSenha2.TabIndex = 3;
+            txtRegistroSenha2.TabStop = false;
+            txtRegistroSenha2.TextAlign = HorizontalAlignment.Left;
+            txtRegistroSenha2.TrailingIcon = null;
+            txtRegistroSenha2.UseSystemPasswordChar = false;
             txtRegistroSenha2.TextChanged += txtRegistroSenha2_TextChanged;
             // 
             // pictureBox4
@@ -122,43 +147,97 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
             // 
             // btnRegistro
             // 
+            btnRegistro.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnRegistro.Cursor = Cursors.Hand;
+            btnRegistro.Density = MaterialButton.MaterialButtonDensity.Default;
+            btnRegistro.Depth = 0;
+            btnRegistro.HighEmphasis = true;
+            btnRegistro.Icon = null;
             btnRegistro.Location = new Point(193, 244);
             btnRegistro.Margin = new Padding(3, 2, 3, 2);
+            btnRegistro.MouseState = MaterialSkin.MouseState.HOVER;
             btnRegistro.Name = "btnRegistro";
-            btnRegistro.Size = new Size(82, 22);
+            btnRegistro.NoAccentTextColor = Color.Empty;
+            btnRegistro.Size = new Size(99, 36);
             btnRegistro.TabIndex = 4;
             btnRegistro.Text = "REGISTRAR";
+            btnRegistro.Type = MaterialButton.MaterialButtonType.Contained;
+            btnRegistro.UseAccentColor = false;
             btnRegistro.UseVisualStyleBackColor = true;
             btnRegistro.Click += btnRegistro_Click;
             // 
             // txtRegistroSenha1
             // 
+            txtRegistroSenha1.AnimateReadOnly = false;
+            txtRegistroSenha1.BackgroundImageLayout = ImageLayout.None;
+            txtRegistroSenha1.CharacterCasing = CharacterCasing.Normal;
             txtRegistroSenha1.Cursor = Cursors.IBeam;
+            txtRegistroSenha1.Depth = 0;
+            txtRegistroSenha1.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtRegistroSenha1.HideSelection = true;
+            txtRegistroSenha1.LeadingIcon = null;
             txtRegistroSenha1.Location = new Point(183, 155);
             txtRegistroSenha1.Margin = new Padding(3, 2, 3, 2);
+            txtRegistroSenha1.MaxLength = 32767;
+            txtRegistroSenha1.MouseState = MaterialSkin.MouseState.OUT;
             txtRegistroSenha1.Name = "txtRegistroSenha1";
-            txtRegistroSenha1.Size = new Size(110, 23);
+            txtRegistroSenha1.PasswordChar = '\0';
+            txtRegistroSenha1.PrefixSuffixText = null;
+            txtRegistroSenha1.ReadOnly = false;
+            txtRegistroSenha1.RightToLeft = RightToLeft.No;
+            txtRegistroSenha1.SelectedText = "";
+            txtRegistroSenha1.SelectionLength = 0;
+            txtRegistroSenha1.SelectionStart = 0;
+            txtRegistroSenha1.ShortcutsEnabled = true;
+            txtRegistroSenha1.Size = new Size(110, 48);
             txtRegistroSenha1.TabIndex = 2;
+            txtRegistroSenha1.TabStop = false;
+            txtRegistroSenha1.TextAlign = HorizontalAlignment.Left;
+            txtRegistroSenha1.TrailingIcon = null;
+            txtRegistroSenha1.UseSystemPasswordChar = false;
             txtRegistroSenha1.TextChanged += txtRegistroSenha1_TextChanged;
             // 
             // txtRegistroLogin
             // 
+            txtRegistroLogin.AnimateReadOnly = false;
+            txtRegistroLogin.BackgroundImageLayout = ImageLayout.None;
+            txtRegistroLogin.CharacterCasing = CharacterCasing.Normal;
             txtRegistroLogin.Cursor = Cursors.IBeam;
+            txtRegistroLogin.Depth = 0;
+            txtRegistroLogin.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtRegistroLogin.HideSelection = true;
+            txtRegistroLogin.LeadingIcon = null;
             txtRegistroLogin.Location = new Point(183, 111);
             txtRegistroLogin.Margin = new Padding(3, 2, 3, 2);
+            txtRegistroLogin.MaxLength = 32767;
+            txtRegistroLogin.MouseState = MaterialSkin.MouseState.OUT;
             txtRegistroLogin.Name = "txtRegistroLogin";
-            txtRegistroLogin.Size = new Size(110, 23);
+            txtRegistroLogin.PasswordChar = '\0';
+            txtRegistroLogin.PrefixSuffixText = null;
+            txtRegistroLogin.ReadOnly = false;
+            txtRegistroLogin.RightToLeft = RightToLeft.No;
+            txtRegistroLogin.SelectedText = "";
+            txtRegistroLogin.SelectionLength = 0;
+            txtRegistroLogin.SelectionStart = 0;
+            txtRegistroLogin.ShortcutsEnabled = true;
+            txtRegistroLogin.Size = new Size(110, 48);
             txtRegistroLogin.TabIndex = 1;
+            txtRegistroLogin.TabStop = false;
+            txtRegistroLogin.TextAlign = HorizontalAlignment.Left;
+            txtRegistroLogin.TrailingIcon = null;
+            txtRegistroLogin.UseSystemPasswordChar = false;
             // 
             // lblRegistro
             // 
             lblRegistro.AutoSize = true;
             lblRegistro.Cursor = Cursors.Hand;
+            lblRegistro.Depth = 0;
+            lblRegistro.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblRegistro.ForeColor = Color.RoyalBlue;
             lblRegistro.Location = new Point(270, 292);
+            lblRegistro.MouseState = MaterialSkin.MouseState.HOVER;
             lblRegistro.Name = "lblRegistro";
-            lblRegistro.Size = new Size(38, 15);
+            lblRegistro.Size = new Size(43, 19);
             lblRegistro.TabIndex = 5;
             lblRegistro.Text = "Entrar";
             lblRegistro.Click += lblRegistro_Click;
@@ -166,18 +245,24 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
             // lblEsqueceu
             // 
             lblEsqueceu.AutoSize = true;
+            lblEsqueceu.Depth = 0;
+            lblEsqueceu.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblEsqueceu.Location = new Point(121, 292);
+            lblEsqueceu.MouseState = MaterialSkin.MouseState.HOVER;
             lblEsqueceu.Name = "lblEsqueceu";
-            lblEsqueceu.Size = new Size(106, 15);
+            lblEsqueceu.Size = new Size(138, 19);
             lblEsqueceu.TabIndex = 6;
             lblEsqueceu.Text = "Já tem uma conta?";
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.Depth = 0;
+            label1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             label1.Location = new Point(183, 70);
+            label1.MouseState = MaterialSkin.MouseState.HOVER;
             label1.Name = "label1";
-            label1.Size = new Size(107, 15);
+            label1.Size = new Size(142, 19);
             label1.TabIndex = 0;
             label1.Text = "TELA DE REGISTRO";
             // 
@@ -221,8 +306,10 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(949, 594);
             Controls.Add(panel1);
+            FormStyle = FormStyles.ActionBar_None;
             Margin = new Padding(3, 2, 3, 2);
             Name = "TelaRegistro";
+            Padding = new Padding(3, 24, 3, 3);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "8";
             Load += TelaRegistro_Load;

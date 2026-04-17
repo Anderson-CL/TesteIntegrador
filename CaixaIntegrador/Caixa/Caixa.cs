@@ -15,6 +15,7 @@ namespace CaixaIntegrador
         private UCCategorias ucCategorias = new UCCategorias();
         private UCSubCategorias ucSubCategorias = new UCSubCategorias();
         private UCProdutos ucProdutos = new UCProdutos();
+        private AppDbContext db = new AppDbContext();
 
         // Métodos adicionados na inicialização do form
         public Form1()
@@ -52,7 +53,7 @@ namespace CaixaIntegrador
                 Primary.Red900,    // Cor Principal: Vinho bem escuro (fundo de botões/barras)
                 Primary.BlueGrey900, // Tom de contraste profundo para barras de título
                 Primary.Red600,    // Tom médio para destaques suaves
-                Accent.Orange400,  // Âmbar Pastel (Destaque que não "agride" no escuro)
+                Accent.Blue700,  
                 TextShade.WHITE    // Texto branco puro
             );
         }
@@ -60,7 +61,7 @@ namespace CaixaIntegrador
         {
             try
             {
-                using (var db = new AppDbContext())
+                //using (var db = new AppDbContext())
                 {
                     var categorias = db.Categorias.ToList();
                     ucCategorias.CarregarCategorias(categorias);
@@ -75,7 +76,7 @@ namespace CaixaIntegrador
         // Filtra e exibe as subcategorias para categoria selecionada
         private void CategoriaSelecionada(int categoriaId)
         {
-            using (var db = new AppDbContext())
+           // using (var db = new AppDbContext())
             {
                 var listaFiltrada = db.SubCategorias
                                       .Where(x => x.CategoriaId == categoriaId)
@@ -88,7 +89,7 @@ namespace CaixaIntegrador
         // Filtra e exibe os produtos para subcategoria selecionada
         private void SubCategoriaSelecionada(int subId)
         {
-            using (var db = new AppDbContext())
+            //using (var db = new AppDbContext())
             {
                 var listaFiltrada = db.Produtos
                                       .Where(x => x.SubCategoriaId == subId)
@@ -96,6 +97,11 @@ namespace CaixaIntegrador
                 ExibirUserControl(ucProdutos);
                 ucProdutos.CarregarProdutos(listaFiltrada);
             }
+        }
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            db.Dispose();
+            base.OnFormClosing(e);
         }
 
         // Volta para a tela de categorias
@@ -160,6 +166,12 @@ namespace CaixaIntegrador
         {
             DataGrid_Produtos.DataSource = null;
             DataGrid_Produtos.DataSource = carrinho;
+
+            if (DataGrid_Produtos.Columns["Preco"] != null)
+                DataGrid_Produtos.Columns["Preco"].DefaultCellStyle.Format = "C2";
+
+            if (DataGrid_Produtos.Columns["Total"] != null)
+                DataGrid_Produtos.Columns["Total"].DefaultCellStyle.Format = "C2";
             AtualizarTotal();
         }
 
