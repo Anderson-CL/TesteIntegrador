@@ -26,7 +26,20 @@ namespace CaixaIntegrador
             AdicionarUserControlPrincipal();
             TemaFormSkin();
         }
-
+        private void TemaFormSkin()
+        {
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Red900,    // Cor Principal: Vinho bem escuro (fundo de botões/barras)
+                Primary.BlueGrey900, // Tom de contraste profundo para barras de título
+                Primary.Red600,    // Tom médio para destaques suaves
+                Accent.Blue700,
+                TextShade.WHITE    // Texto branco puro
+            );
+        }
+        #region User Controls e navegação
         // Conecta os eventos dos user controls
         private void InicializarEventos()
         {
@@ -42,21 +55,28 @@ namespace CaixaIntegrador
         {
             panelPrincipal.Controls.Add(ucCategorias);
             ucCategorias.Dock = DockStyle.Fill;
+        } 
+        // Volta para a tela de categorias
+        private void VoltarCategorias()
+        {
+            ExibirUserControl(ucCategorias);
         }
 
-        private void TemaFormSkin()
+        // Volta para a tela de subcategorias
+        private void VoltarSubCategorias()
         {
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-            materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.Red900,    // Cor Principal: Vinho bem escuro (fundo de botões/barras)
-                Primary.BlueGrey900, // Tom de contraste profundo para barras de título
-                Primary.Red600,    // Tom médio para destaques suaves
-                Accent.Blue700,  
-                TextShade.WHITE    // Texto branco puro
-            );
+            ExibirUserControl(ucSubCategorias);
         }
+
+        // Limpa o painel principal e mostra o usercontrol
+        private void ExibirUserControl(Control userControl)
+        {
+            panelPrincipal.Controls.Clear();
+            panelPrincipal.Controls.Add(userControl);
+            userControl.Dock = DockStyle.Fill;
+        }
+        #endregion
+        #region Bando de Dados
         private void CarregarDadosIniciais()
         {
             try
@@ -76,7 +96,7 @@ namespace CaixaIntegrador
         // Filtra e exibe as subcategorias para categoria selecionada
         private void CategoriaSelecionada(int categoriaId)
         {
-           // using (var db = new AppDbContext())
+            // using (var db = new AppDbContext())
             {
                 var listaFiltrada = db.SubCategorias
                                       .Where(x => x.CategoriaId == categoriaId)
@@ -103,27 +123,8 @@ namespace CaixaIntegrador
             db.Dispose();
             base.OnFormClosing(e);
         }
-
-        // Volta para a tela de categorias
-        private void VoltarCategorias()
-        {
-            ExibirUserControl(ucCategorias);
-        }
-
-        // Volta para a tela de subcategorias
-        private void VoltarSubCategorias()
-        {
-            ExibirUserControl(ucSubCategorias);
-        }
-
-        // Limpa o painel principal e mostra o usercontrol
-        private void ExibirUserControl(Control userControl)
-        {
-            panelPrincipal.Controls.Clear();
-            panelPrincipal.Controls.Add(userControl);
-            userControl.Dock = DockStyle.Fill;
-        }
-
+        #endregion
+        #region Datagrid de carrinho
         // Adiciona um produto no carrinho ou aumenta sua quantidade se já tem
         private void AdicionarAoCarrinho(Produto produto)
         {
@@ -199,7 +200,7 @@ namespace CaixaIntegrador
                 }
             }
         }
-
+        #endregion
         // Abre o form de pedidos
         private void btn_Pedido_Click(object sender, EventArgs e)
         {
@@ -286,7 +287,7 @@ namespace CaixaIntegrador
             // Volta para a tela de categorias
             ExibirUserControl(ucCategorias);
         }
-
+        #region evento de botoes e textbox para atualizar o valor padrão
         private void materialTextBox21_Leave(object sender, EventArgs e)
         {
             AtualizarValorPadrao();
@@ -317,7 +318,7 @@ namespace CaixaIntegrador
             if (e.KeyCode == Keys.Enter)
                 PagamentoGeral();
         }
-
+        #endregion
         private void PagamentoGeral()
         {
             // Valida se um radio button foi selecionado
@@ -383,13 +384,7 @@ namespace CaixaIntegrador
                     }
 
                     LimparFormularioPagamento();
-                    PanelBtnPag.Enabled = false;
-                    btnAdicionarPagamento.Enabled = false;
-                    Valores_MaterialTextBox.Enabled = false;
-                    panelPrincipal.Enabled = false;
-                    btnDeletarMarcados.Enabled = false;
-                    btnLimparCarrinho.Enabled = false;
-                    DataGrid_Produtos.Enabled = false;
+                    DesativarCampos();
                 }
                 else
                 {
@@ -427,17 +422,11 @@ namespace CaixaIntegrador
                 if (saldo - valorPagamento <= 0)
                 {
                     MessageBox.Show("Pagamento completo! Clique em 'Finalizar Pedido'.", "Sucesso");
-                    btnAdicionarPagamento.Enabled = false;
-                    Valores_MaterialTextBox.Enabled = false;
-                    panelPrincipal.Enabled = false;
-                    btnDeletarMarcados.Enabled = false;
-                    btnLimparCarrinho.Enabled = false;
-                    DataGrid_Produtos.Enabled = false;
-                    PanelBtnPag.Enabled = false;
+                    DesativarCampos();
                 }
             }
         }
-
+        #region atualização de valor e label de pagamentos
         // Atualiza o label com o valor total de pagamentos
         private void AtualizarLabelPagamentos()
         {
@@ -466,7 +455,18 @@ namespace CaixaIntegrador
                 Valores_MaterialTextBox.ForeColor = Color.Gray;
             }
         }
-
+        #endregion
+        #region Desativa e ativar campos de pagamento
+        private void DesativarCampos()
+        {
+            panelPrincipal.Enabled = false;
+            btnAdicionarPagamento.Enabled = false;
+            Valores_MaterialTextBox.Enabled = false;
+            btnDeletarMarcados.Enabled = false;
+            btnLimparCarrinho.Enabled = false;
+            DataGrid_Produtos.Enabled = false;
+            PanelBtnPag.Enabled = false;
+        }
         // Limpa o formulário de pagamento
         private void LimparFormularioPagamento()
         {
@@ -489,7 +489,14 @@ namespace CaixaIntegrador
             // Limpa o textbox
             Valores_MaterialTextBox.Text = "";
         }
-
+        private void btn_Limparpag_Click(object sender, EventArgs e)
+        {
+            LimparFormularioPagamento();
+            lblValorPago.Text = "";
+            pagamentosAtuais.Clear();
+        }
+        #endregion
+        #region radiobuttons para atualizar o valor padrão
         private void materialRadioButton5_CheckedChanged(object sender, EventArgs e)
         {
             AtualizarValorPadrao();
@@ -514,18 +521,13 @@ namespace CaixaIntegrador
         {
             AtualizarValorPadrao();
         }
-
-        private void btn_Limparpag_Click(object sender, EventArgs e)
-        {
-            LimparFormularioPagamento();
-            lblValorPago.Text = "";
-            pagamentosAtuais.Clear();
-        }
+        #endregion
     }
     public interface IImpressora
     {
         void ImprimirNFC(Pedido pedido);
     }
 }
+
 
 
