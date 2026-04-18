@@ -1,4 +1,5 @@
-﻿namespace CaixaIntegrador
+﻿namespace CaixaIntegrador.estoque
+
 {
     partial class Estoque
     {

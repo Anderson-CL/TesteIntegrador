@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
-namespace CaixaIntegrador
+namespace CaixaIntegrador.estoque
 {
     public partial class Estoque : MaterialForm
     {
