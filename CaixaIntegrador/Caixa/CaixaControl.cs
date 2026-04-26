@@ -1,46 +1,36 @@
-using CaixaIntegrador.Classes;
+﻿using CaixaIntegrador.Classes;
 using CaixaIntegrador.Data;
-using MaterialSkin;
-using MaterialSkin.Controls;
-namespace CaixaIntegrador
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
+
+namespace CaixaIntegrador.Caixa
 {
-    public partial class Form1 : MaterialForm
+    public partial class CaixaControl : UserControl
     {
-        // Puxa as listas de categorias, subcategorias, produtos e carrinho
+        // Listas de dados
         private List<CarrinhoCompra> carrinho = new List<CarrinhoCompra>();
         private List<Pedido> pedidos = new List<Pedido>();
         private List<Pagamento> pagamentosAtuais = new List<Pagamento>();
 
-        // Puxa os user controls
+        // UserControls auxiliares
         private UCCategorias ucCategorias = new UCCategorias();
         private UCSubCategorias ucSubCategorias = new UCSubCategorias();
         private UCProdutos ucProdutos = new UCProdutos();
         private AppDbContext db = new AppDbContext();
 
-        // Métodos adicionados na inicialização do form
-        public Form1()
+        public CaixaControl()
         {
             InitializeComponent();
             InicializarEventos();
             CarregarDadosIniciais();
             AdicionarUserControlPrincipal();
-            TemaFormSkin();
         }
-        private void TemaFormSkin()
-        {
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-            materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.Red900,    // Cor Principal: Vinho bem escuro (fundo de botões/barras)
-                Primary.BlueGrey900, // Tom de contraste profundo para barras de título
-                Primary.Red600,    // Tom médio para destaques suaves
-                Accent.Blue700,
-                TextShade.WHITE    // Texto branco puro
-            );
-        }
+
         #region User Controls e navegação
-        // Conecta os eventos dos user controls
         private void InicializarEventos()
         {
             ucCategorias.CategoriaSelecionada += CategoriaSelecionada;
@@ -50,25 +40,22 @@ namespace CaixaIntegrador
             ucProdutos.VoltarClick += VoltarSubCategorias;
         }
 
-        // Adiciona o user control no painel
         private void AdicionarUserControlPrincipal()
         {
             panelPrincipal.Controls.Add(ucCategorias);
             ucCategorias.Dock = DockStyle.Fill;
-        } 
-        // Volta para a tela de categorias
+        }
+
         private void VoltarCategorias()
         {
             ExibirUserControl(ucCategorias);
         }
 
-        // Volta para a tela de subcategorias
         private void VoltarSubCategorias()
         {
             ExibirUserControl(ucSubCategorias);
         }
 
-        // Limpa o painel principal e mostra o usercontrol
         private void ExibirUserControl(Control userControl)
         {
             panelPrincipal.Controls.Clear();
@@ -76,16 +63,14 @@ namespace CaixaIntegrador
             userControl.Dock = DockStyle.Fill;
         }
         #endregion
-        #region Bando de Dados
+
+        #region Banco de Dados
         private void CarregarDadosIniciais()
         {
             try
             {
-                //using (var db = new AppDbContext())
-                {
-                    var categorias = db.Categorias.ToList();
-                    ucCategorias.CarregarCategorias(categorias);
-                }
+                var categorias = db.Categorias.ToList();
+                ucCategorias.CarregarCategorias(categorias);
             }
             catch (Exception ex)
             {
@@ -93,39 +78,26 @@ namespace CaixaIntegrador
             }
         }
 
-        // Filtra e exibe as subcategorias para categoria selecionada
         private void CategoriaSelecionada(int categoriaId)
         {
-            // using (var db = new AppDbContext())
-            {
-                var listaFiltrada = db.SubCategorias
-                                      .Where(x => x.CategoriaId == categoriaId)
-                                      .ToList();
-                ExibirUserControl(ucSubCategorias);
-                ucSubCategorias.CarregarSubCategorias(listaFiltrada);
-            }
+            var listaFiltrada = db.SubCategorias
+                                  .Where(x => x.CategoriaId == categoriaId)
+                                  .ToList();
+            ExibirUserControl(ucSubCategorias);
+            ucSubCategorias.CarregarSubCategorias(listaFiltrada);
         }
 
-        // Filtra e exibe os produtos para subcategoria selecionada
         private void SubCategoriaSelecionada(int subId)
         {
-            //using (var db = new AppDbContext())
-            {
-                var listaFiltrada = db.Produtos
-                                      .Where(x => x.SubCategoriaId == subId)
-                                      .ToList();
-                ExibirUserControl(ucProdutos);
-                ucProdutos.CarregarProdutos(listaFiltrada);
-            }
-        }
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            db.Dispose();
-            base.OnFormClosing(e);
+            var listaFiltrada = db.Produtos
+                                  .Where(x => x.SubCategoriaId == subId)
+                                  .ToList();
+            ExibirUserControl(ucProdutos);
+            ucProdutos.CarregarProdutos(listaFiltrada);
         }
         #endregion
-        #region Datagrid de carrinho
-        // Adiciona um produto no carrinho ou aumenta sua quantidade se já tem
+
+        #region Carrinho
         private void AdicionarAoCarrinho(Produto produto)
         {
             var itemExistente = carrinho.FirstOrDefault(c => c.Produto == produto.Nome);
@@ -140,7 +112,6 @@ namespace CaixaIntegrador
             AtualizarCarrinhoUI();
         }
 
-        // Deleta os itens do carrinho que estão marcados na checkbox
         private void BtnDeletarMarcados_Click(object sender, EventArgs e)
         {
             var itensDeletar = DataGrid_Produtos.Rows
@@ -155,14 +126,12 @@ namespace CaixaIntegrador
             AtualizarCarrinhoUI();
         }
 
-        // Limpa todo o carrinho
         private void BtnLimparCarrinho_Click(object sender, EventArgs e)
         {
             carrinho.Clear();
             AtualizarCarrinhoUI();
         }
 
-        // Atualiza a exibição do carrinho na DataGrid
         private void AtualizarCarrinhoUI()
         {
             DataGrid_Produtos.DataSource = null;
@@ -176,14 +145,12 @@ namespace CaixaIntegrador
             AtualizarTotal();
         }
 
-        // Calcula e exibe o valor total do carrinho
         private void AtualizarTotal()
         {
             decimal totalGeral = carrinho.Sum(c => c.Total);
             lblTotal_Text.Text = $"Total: R$ {totalGeral}";
         }
 
-        // Atualiza a quantidade de um produto quando editado na DataGrid
         private void DataGrid_Produtos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if (DataGrid_Produtos.Columns[e.ColumnIndex].Name == "Qtd")
@@ -201,116 +168,14 @@ namespace CaixaIntegrador
             }
         }
         #endregion
-        // Abre o form de pedidos
+
+        #region Pedido e Pagamento
         private void btn_Pedido_Click(object sender, EventArgs e)
         {
+            // Se Order for um Form, pode manter ShowDialog, senão adapte para UserControl
             Order tabOrder = new Order();
             tabOrder.CarregarPedidos(pedidos);
             tabOrder.ShowDialog();
-        }
-
-        // Finaliza o pedido atual e o salva na lista de pedidos finalizados
-        private void btn_FinalizarPedido_Click(object sender, EventArgs e)
-        {
-            // Valida se o carrinho está vazio
-            if (carrinho.Count == 0)
-            {
-                MessageBox.Show("Adicione produtos ao carrinho!", "Carrinho vazio");
-                return;
-            }
-
-            // Valida se há pagamentos registrados
-            if (pagamentosAtuais.Count == 0)
-            {
-                MessageBox.Show("Adicione pelo menos uma forma de pagamento!", "Erro");
-                return;
-            }
-
-            // Calcula o total do pedido
-            decimal totalPedido = carrinho.Sum(c => c.Total);
-            decimal totalPago = pagamentosAtuais.Sum(p => p.Valor);
-            var troco = totalPago - totalPedido;
-
-            // Valida se o total foi pago
-            if (totalPago < totalPedido)
-            {
-                MessageBox.Show($"Pagamento incompleto. Total: R$ {totalPedido:F2}, Pago: R$ {totalPago:F2}", "Erro");
-                return;
-            }
-
-            // Cria um novo pedido com status finalizado
-            var novoPedido = new Pedido
-            {
-                Id = pedidos.Count > 0 ? pedidos.Max(p => p.Id) + 1 : 1,
-                DataCriacao = DateTime.Now,
-                Itens = new List<CarrinhoCompra>(carrinho),
-                Total = totalPedido,
-                Status = PedidoStatus.Finalizado,
-                Pagamentos = new List<Pagamento>(pagamentosAtuais),
-                Troco = troco
-            };
-
-            // Adiciona o pedido à lista
-            pedidos.Add(novoPedido);
-
-            // Exibe mensagem de sucesso
-            string formasPagamento = string.Join(" + ", novoPedido.Pagamentos.Select(p =>
-                $"{p.Forma} (R$ {p.Valor:F2})"));
-            MessageBox.Show(
-                $"Pedido #{novoPedido.Id} finalizado com sucesso!\n\n" +
-                $"Total: R$ {novoPedido.Total:F2}\n" +
-                $"Pagamentos: {formasPagamento}\n" +
-                (novoPedido.Troco != 0 ? $"Troco: R$ {novoPedido.Troco:F2}" : ""),
-                $"Pedido Finalizado");
-
-            var resultado = MessageBox.Show(
-                "Deseja Imprimir Nota Fiscal?",
-                "Nota Fiscal",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
-
-            if (resultado == DialogResult.Yes)
-            {
-                var impressora = new ImpressoraNormal();
-                impressora.ImprimirNFC(novoPedido);
-            }
-
-            // Limpa o carrinho e pagamentos após finalizar
-            carrinho.Clear();
-            pagamentosAtuais.Clear();
-            AtualizarCarrinhoUI();
-            AtualizarLabelPagamentos();
-            LimparFormularioPagamento();
-            troco_label.Text = "";
-
-            // Volta para a tela de categorias
-            ExibirUserControl(ucCategorias);
-        }
-        #region evento de botoes e textbox para atualizar o valor padrão
-        private void materialTextBox21_Leave(object sender, EventArgs e)
-        {
-            AtualizarValorPadrao();
-        }
-
-        private void materialTextBox21_Enter(object sender, EventArgs e)
-        {
-            decimal totalPedido = carrinho.Sum(c => c.Total);
-            decimal valorPago = pagamentosAtuais.Sum(p => p.Valor);
-            decimal saldo = totalPedido - valorPago;
-
-            if (Valores_MaterialTextBox.Text == saldo.ToString("F2") &&
-                Valores_MaterialTextBox.ForeColor == Color.Gray)
-            {
-                Valores_MaterialTextBox.Text = "";
-                Valores_MaterialTextBox.ForeColor = Color.Black;
-            }
-        }
-
-        // Adiciona um pagamento à lista de pagamentos do pedido
-        private void btnAdicionarPagamento_Click(object sender, EventArgs e)
-        {
-            PagamentoGeral();
         }
 
         private void materialTextBox21_KeyDown(object sender, KeyEventArgs e)
@@ -318,10 +183,9 @@ namespace CaixaIntegrador
             if (e.KeyCode == Keys.Enter)
                 PagamentoGeral();
         }
-        #endregion
+
         private void PagamentoGeral()
         {
-            // Valida se um radio button foi selecionado
             FormaPagamento? formaSelecionada = null;
 
             if (materialRadioButton1.Checked) formaSelecionada = FormaPagamento.Credito;
@@ -336,7 +200,6 @@ namespace CaixaIntegrador
                 return;
             }
 
-            // Valida se o valor é válido (aceita "50" ou "50,00")
             string valorTexto = Valores_MaterialTextBox.Text.Trim();
             if (string.IsNullOrEmpty(valorTexto))
             {
@@ -344,14 +207,12 @@ namespace CaixaIntegrador
                 return;
             }
 
-            // Tenta converter o valor
             if (!decimal.TryParse(valorTexto, out decimal valorPagamento) || valorPagamento <= 0)
             {
                 MessageBox.Show("Digite um valor numérico válido! (Ex: 50 ou 50,50)", "Erro");
                 return;
             }
 
-            // Valida se o valor não ultrapassa o saldo
             decimal totalPedido = carrinho.Sum(c => c.Total);
             decimal valorPago = pagamentosAtuais.Sum(p => p.Valor);
             decimal saldo = totalPedido - valorPago;
@@ -368,10 +229,8 @@ namespace CaixaIntegrador
 
                     AtualizarLabelPagamentos();
 
-                    // Calcula o troco total após adicionar o pagamento
                     decimal trocoTotal = pagamentosAtuais.Sum(p => p.Valor) - totalPedido;
 
-                    // Exibe o troco ANTES de limpar o formulário
                     if (trocoTotal > 0)
                     {
                         MessageBox.Show($"Troco de {trocoTotal.ToString("C")}", "Troco");
@@ -388,7 +247,6 @@ namespace CaixaIntegrador
                 }
                 else
                 {
-                    // Pagamento menor que saldo → adiciona normalmente
                     var novoPagamento = new Pagamento
                     {
                         Forma = FormaPagamento.Dinheiro,
@@ -402,7 +260,6 @@ namespace CaixaIntegrador
             }
             else
             {
-                // Outras formas de pagamento
                 if (valorPagamento > saldo)
                 {
                     MessageBox.Show($"Valor não pode ser superior ao saldo de R$ {saldo:F2}!", "Erro");
@@ -426,8 +283,9 @@ namespace CaixaIntegrador
                 }
             }
         }
-        #region atualização de valor e label de pagamentos
-        // Atualiza o label com o valor total de pagamentos
+        #endregion
+
+        #region Atualização de valores e labels
         private void AtualizarLabelPagamentos()
         {
             decimal totalPago = pagamentosAtuais.Sum(p => p.Valor);
@@ -440,7 +298,6 @@ namespace CaixaIntegrador
             decimal valorPago = pagamentosAtuais.Sum(p => p.Valor);
             decimal saldo = totalPedido - valorPago;
 
-            // Não mostra valores negativos (já foi pago)
             if (saldo <= 0)
             {
                 Valores_MaterialTextBox.Text = "";
@@ -456,7 +313,8 @@ namespace CaixaIntegrador
             }
         }
         #endregion
-        #region Desativa e ativar campos de pagamento
+
+        #region Ativar/Desativar campos de pagamento
         private void DesativarCampos()
         {
             panelPrincipal.Enabled = false;
@@ -467,17 +325,15 @@ namespace CaixaIntegrador
             DataGrid_Produtos.Enabled = false;
             PanelBtnPag.Enabled = false;
         }
-        // Limpa o formulário de pagamento
+
         private void LimparFormularioPagamento()
         {
-            // Desseleciona todos os radio buttons
             materialRadioButton1.Checked = false;
             materialRadioButton2.Checked = false;
             materialRadioButton3.Checked = false;
             materialRadioButton4.Checked = false;
             materialRadioButton5.Checked = false;
 
-            // Habilita o botão de adicionar pagamento
             panelPrincipal.Enabled = true;
             btnAdicionarPagamento.Enabled = true;
             Valores_MaterialTextBox.Enabled = true;
@@ -486,48 +342,189 @@ namespace CaixaIntegrador
             DataGrid_Produtos.Enabled = true;
             PanelBtnPag.Enabled = true;
 
-            // Limpa o textbox
             Valores_MaterialTextBox.Text = "";
         }
-        private void btn_Limparpag_Click(object sender, EventArgs e)
+        #endregion
+
+        private void btnLimparCarrinho_Click_1(object sender, EventArgs e)
+        {
+            carrinho.Clear();
+            AtualizarCarrinhoUI();
+        }
+
+        private void btnDeletarMarcados_Click_1(object sender, EventArgs e)
+        {
+            var itensDeletar = DataGrid_Produtos.Rows
+                  .Cast<DataGridViewRow>()
+                  .Where(r => r.Cells["Column5"].Value is bool marcado && marcado)
+                  .Select(r => r.Index)
+                  .OrderByDescending(i => i);
+
+            foreach (var i in itensDeletar)
+                carrinho.RemoveAt(i);
+
+            AtualizarCarrinhoUI();
+        }
+
+        private void btn_Pedido_Click_1(object sender, EventArgs e)
+        {
+            Order tabOrder = new Order();
+            tabOrder.CarregarPedidos(pedidos);
+            tabOrder.ShowDialog();
+        }
+
+        private void btn_Limparpag_Click_1(object sender, EventArgs e)
         {
             LimparFormularioPagamento();
             lblValorPago.Text = "";
             pagamentosAtuais.Clear();
         }
-        #endregion
-        #region radiobuttons para atualizar o valor padrão
-        private void materialRadioButton5_CheckedChanged(object sender, EventArgs e)
+
+        private void DataGrid_Produtos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void materialRadioButton1_CheckedChanged_1(object sender, EventArgs e)
         {
             AtualizarValorPadrao();
         }
 
-        private void materialRadioButton4_CheckedChanged(object sender, EventArgs e)
+        private void materialRadioButton2_CheckedChanged_1(object sender, EventArgs e)
         {
             AtualizarValorPadrao();
         }
 
-        private void materialRadioButton3_CheckedChanged(object sender, EventArgs e)
+        private void materialRadioButton3_CheckedChanged_1(object sender, EventArgs e)
         {
             AtualizarValorPadrao();
         }
 
-        private void materialRadioButton2_CheckedChanged(object sender, EventArgs e)
+        private void materialRadioButton4_CheckedChanged_1(object sender, EventArgs e)
         {
             AtualizarValorPadrao();
         }
 
-        private void materialRadioButton1_CheckedChanged(object sender, EventArgs e)
+        private void materialRadioButton5_CheckedChanged_1(object sender, EventArgs e)
         {
             AtualizarValorPadrao();
         }
-        #endregion
+
+        private void btnAdicionarPagamento_Click_1(object sender, EventArgs e)
+        {
+            PagamentoGeral();
+        }
+
+        private void btn_FinalizarPedido_Click_1(object sender, EventArgs e)
+        {
+            if (carrinho.Count == 0)
+            {
+                MessageBox.Show("Adicione produtos ao carrinho!", "Carrinho vazio");
+                return;
+            }
+
+            if (pagamentosAtuais.Count == 0)
+            {
+                MessageBox.Show("Adicione pelo menos uma forma de pagamento!", "Erro");
+                return;
+            }
+
+            decimal totalPedido = carrinho.Sum(c => c.Total);
+            decimal totalPago = pagamentosAtuais.Sum(p => p.Valor);
+            var troco = totalPago - totalPedido;
+
+            if (totalPago < totalPedido)
+            {
+                MessageBox.Show($"Pagamento incompleto. Total: R$ {totalPedido:F2}, Pago: R$ {totalPago:F2}", "Erro");
+                return;
+            }
+
+            var novoPedido = new Pedido
+            {
+                Id = pedidos.Count > 0 ? pedidos.Max(p => p.Id) + 1 : 1,
+                DataCriacao = DateTime.Now,
+                Itens = new List<CarrinhoCompra>(carrinho),
+                Total = totalPedido,
+                Status = PedidoStatus.Finalizado,
+                Pagamentos = new List<Pagamento>(pagamentosAtuais),
+                Troco = troco
+            };
+
+            pedidos.Add(novoPedido);
+
+            string formasPagamento = string.Join(" + ", novoPedido.Pagamentos.Select(p =>
+                $"{p.Forma} (R$ {p.Valor:F2})"));
+            MessageBox.Show(
+                $"Pedido #{novoPedido.Id} finalizado com sucesso!\n\n" +
+                $"Total: R$ {novoPedido.Total:F2}\n" +
+                $"Pagamentos: {formasPagamento}\n" +
+                (novoPedido.Troco != 0 ? $"Troco: R$ {novoPedido.Troco:F2}" : ""),
+                $"Pedido Finalizado");
+
+            var resultado = MessageBox.Show(
+                "Deseja Imprimir Nota Fiscal?",
+                "Nota Fiscal",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (resultado == DialogResult.Yes)
+            {
+                var impressora = new ImpressoraNormal();
+                impressora.ImprimirNFC(novoPedido);
+            }
+
+            carrinho.Clear();
+            pagamentosAtuais.Clear();
+            AtualizarCarrinhoUI();
+            AtualizarLabelPagamentos();
+            LimparFormularioPagamento();
+            troco_label.Text = "";
+
+            ExibirUserControl(ucCategorias);
+        }
+
+        private void materialTextBox21_Leave(object sender, EventArgs e)
+        {
+            AtualizarValorPadrao();
+        }
+
+        private void materialTextBox21_Enter(object sender, EventArgs e)
+        {
+            decimal totalPedido = carrinho.Sum(c => c.Total);
+            decimal valorPago = pagamentosAtuais.Sum(p => p.Valor);
+            decimal saldo = totalPedido - valorPago;
+
+            if (Valores_MaterialTextBox.Text == saldo.ToString("F2") &&
+                Valores_MaterialTextBox.ForeColor == Color.Gray)
+            {
+                Valores_MaterialTextBox.Text = "";
+                Valores_MaterialTextBox.ForeColor = Color.Black;
+            }
+        }
+
+        private void btn_PedidoAberto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelPrincipal_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void PanelBtnPag_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Valores_MaterialTextBox_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     public interface IImpressora
     {
         void ImprimirNFC(Pedido pedido);
     }
 }
-
-
-

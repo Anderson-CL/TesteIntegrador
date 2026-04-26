@@ -13,6 +13,7 @@ namespace CaixaIntegrador.Data
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<SubCategoria> SubCategorias { get; set; }
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
@@ -23,4 +24,4 @@ namespace CaixaIntegrador.Data
 
         }
     }
-    }
+}
