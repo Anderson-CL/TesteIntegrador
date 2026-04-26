@@ -83,6 +83,7 @@ namespace CaixaIntegrador.Pagina_Inicial
 
         private void txtSenha_KeyDown(object sender, KeyEventArgs e)
         {
+
             if (e.KeyCode == Keys.Enter)
             {
                 btnEntrar_Click(sender, e);
@@ -99,6 +100,26 @@ namespace CaixaIntegrador.Pagina_Inicial
         private void lblMensagem1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+            if (txtSenha.PasswordChar == '●') // senha está oculta
+            {
+                txtSenha.PasswordChar = '\0'; // mostra senha
+                olhinhoLogin.Image = Properties.Resources.visivel;
+            }
+            else
+            {
+                txtSenha.PasswordChar = '●'; // oculta senha
+                olhinhoLogin.Image = Properties.Resources.invisivel;
+            }
+        }
+
+        private void txtSenha_TextChanged(object sender, EventArgs e)
+        {
+            olhinhoLogin.Visible = txtSenha.Text.Length > 0;
         }
     }
 }

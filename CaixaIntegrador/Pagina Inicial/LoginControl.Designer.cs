@@ -30,7 +30,7 @@
         {
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
+            olhinhoLogin = new PictureBox();
             lblMensagem = new PictureBox();
             txtSenha = new MaterialSkin.Controls.MaterialTextBox2();
             txtLogin = new MaterialSkin.Controls.MaterialTextBox2();
@@ -42,7 +42,7 @@
             lblMensagem1 = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)olhinhoLogin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)lblMensagem).BeginInit();
             SuspendLayout();
             // 
@@ -66,14 +66,16 @@
             pictureBox3.TabIndex = 18;
             pictureBox3.TabStop = false;
             // 
-            // pictureBox2
+            // olhinhoLogin
             // 
-            pictureBox2.Image = Properties.Resources.invisivel;
-            pictureBox2.Location = new Point(429, 218);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(48, 48);
-            pictureBox2.TabIndex = 17;
-            pictureBox2.TabStop = false;
+            olhinhoLogin.Image = Properties.Resources.invisivel;
+            olhinhoLogin.Location = new Point(423, 218);
+            olhinhoLogin.Name = "olhinhoLogin";
+            olhinhoLogin.Size = new Size(48, 48);
+            olhinhoLogin.TabIndex = 17;
+            olhinhoLogin.TabStop = false;
+            olhinhoLogin.Visible = false;
+            olhinhoLogin.Click += pictureBox2_Click;
             // 
             // lblMensagem
             // 
@@ -98,7 +100,7 @@
             txtSenha.MaxLength = 32767;
             txtSenha.MouseState = MaterialSkin.MouseState.OUT;
             txtSenha.Name = "txtSenha";
-            txtSenha.PasswordChar = '\0';
+            txtSenha.PasswordChar = '●';
             txtSenha.PrefixSuffixText = null;
             txtSenha.ReadOnly = false;
             txtSenha.RightToLeft = RightToLeft.No;
@@ -113,6 +115,7 @@
             txtSenha.TrailingIcon = null;
             txtSenha.UseSystemPasswordChar = false;
             txtSenha.KeyDown += txtSenha_KeyDown;
+            txtSenha.TextChanged += txtSenha_TextChanged;
             // 
             // txtLogin
             // 
@@ -216,7 +219,7 @@
             // 
             lblMensagem1.AutoSize = true;
             lblMensagem1.Depth = 0;
-            lblMensagem1.Font = new Font("Microsoft Sans Serif", 20F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblMensagem1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblMensagem1.ForeColor = SystemColors.ControlText;
             lblMensagem1.Location = new Point(227, 329);
             lblMensagem1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -234,7 +237,7 @@
             Controls.Add(lblMensagem1);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
+            Controls.Add(olhinhoLogin);
             Controls.Add(lblMensagem);
             Controls.Add(txtSenha);
             Controls.Add(txtLogin);
@@ -247,7 +250,7 @@
             Load += LoginControl_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)olhinhoLogin).EndInit();
             ((System.ComponentModel.ISupportInitialize)lblMensagem).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -257,7 +260,7 @@
 
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
-        private PictureBox pictureBox2;
+        private PictureBox olhinhoLogin;
         private PictureBox lblMensagem;
         private MaterialSkin.Controls.MaterialTextBox2 txtSenha;
         private MaterialSkin.Controls.MaterialTextBox2 txtLogin;

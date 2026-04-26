@@ -30,7 +30,7 @@
         {
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
+            olhinhoRegistro2 = new PictureBox();
             pictureBox1 = new PictureBox();
             txtRegistroSenha1 = new MaterialSkin.Controls.MaterialTextBox2();
             txtRegistroLogin = new MaterialSkin.Controls.MaterialTextBox2();
@@ -39,14 +39,14 @@
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             btnRegistro = new MaterialSkin.Controls.MaterialButton();
             txtRegistroSenha2 = new MaterialSkin.Controls.MaterialTextBox2();
-            pictureBox5 = new PictureBox();
+            olinhoRegistro1 = new PictureBox();
             pictureBox6 = new PictureBox();
             lblMensagemRegistro = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)olhinhoRegistro2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)olinhoRegistro1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
@@ -70,14 +70,16 @@
             pictureBox3.TabIndex = 28;
             pictureBox3.TabStop = false;
             // 
-            // pictureBox2
+            // olhinhoRegistro2
             // 
-            pictureBox2.Image = Properties.Resources.invisivel;
-            pictureBox2.Location = new Point(455, 278);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(48, 48);
-            pictureBox2.TabIndex = 27;
-            pictureBox2.TabStop = false;
+            olhinhoRegistro2.Image = Properties.Resources.invisivel;
+            olhinhoRegistro2.Location = new Point(455, 278);
+            olhinhoRegistro2.Name = "olhinhoRegistro2";
+            olhinhoRegistro2.Size = new Size(48, 48);
+            olhinhoRegistro2.TabIndex = 27;
+            olhinhoRegistro2.TabStop = false;
+            olhinhoRegistro2.Visible = false;
+            olhinhoRegistro2.Click += olhinhoRegistro2_Click;
             // 
             // pictureBox1
             // 
@@ -102,7 +104,7 @@
             txtRegistroSenha1.MaxLength = 32767;
             txtRegistroSenha1.MouseState = MaterialSkin.MouseState.OUT;
             txtRegistroSenha1.Name = "txtRegistroSenha1";
-            txtRegistroSenha1.PasswordChar = '\0';
+            txtRegistroSenha1.PasswordChar = '●';
             txtRegistroSenha1.PrefixSuffixText = null;
             txtRegistroSenha1.ReadOnly = false;
             txtRegistroSenha1.RightToLeft = RightToLeft.No;
@@ -117,6 +119,7 @@
             txtRegistroSenha1.TrailingIcon = null;
             txtRegistroSenha1.UseSystemPasswordChar = false;
             txtRegistroSenha1.KeyDown += txtRegistroSenha1_KeyDown;
+            txtRegistroSenha1.TextChanged += txtRegistroSenha1_TextChanged;
             // 
             // txtRegistroLogin
             // 
@@ -217,7 +220,7 @@
             txtRegistroSenha2.MaxLength = 32767;
             txtRegistroSenha2.MouseState = MaterialSkin.MouseState.OUT;
             txtRegistroSenha2.Name = "txtRegistroSenha2";
-            txtRegistroSenha2.PasswordChar = '\0';
+            txtRegistroSenha2.PasswordChar = '●';
             txtRegistroSenha2.PrefixSuffixText = null;
             txtRegistroSenha2.ReadOnly = false;
             txtRegistroSenha2.RightToLeft = RightToLeft.No;
@@ -232,16 +235,19 @@
             txtRegistroSenha2.TrailingIcon = null;
             txtRegistroSenha2.UseSystemPasswordChar = false;
             txtRegistroSenha2.KeyDown += txtRegistroSenha2_KeyDown;
+            txtRegistroSenha2.TextChanged += txtRegistroSenha2_TextChanged;
             // 
-            // pictureBox5
+            // olinhoRegistro1
             // 
-            pictureBox5.Image = Properties.Resources.invisivel;
-            pictureBox5.Location = new Point(455, 212);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(48, 48);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 31;
-            pictureBox5.TabStop = false;
+            olinhoRegistro1.Image = Properties.Resources.invisivel;
+            olinhoRegistro1.Location = new Point(455, 212);
+            olinhoRegistro1.Name = "olinhoRegistro1";
+            olinhoRegistro1.Size = new Size(48, 48);
+            olinhoRegistro1.SizeMode = PictureBoxSizeMode.Zoom;
+            olinhoRegistro1.TabIndex = 31;
+            olinhoRegistro1.TabStop = false;
+            olinhoRegistro1.Visible = false;
+            olinhoRegistro1.Click += olinhoRegistro1_Click;
             // 
             // pictureBox6
             // 
@@ -272,11 +278,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(lblMensagemRegistro);
             Controls.Add(pictureBox6);
-            Controls.Add(pictureBox5);
+            Controls.Add(olinhoRegistro1);
             Controls.Add(txtRegistroSenha2);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
+            Controls.Add(olhinhoRegistro2);
             Controls.Add(pictureBox1);
             Controls.Add(txtRegistroSenha1);
             Controls.Add(txtRegistroLogin);
@@ -288,9 +294,9 @@
             Size = new Size(615, 481);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)olhinhoRegistro2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)olinhoRegistro1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -300,7 +306,7 @@
 
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
-        private PictureBox pictureBox2;
+        private PictureBox olhinhoRegistro2;
         private PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialTextBox2 txtRegistroSenha1;
         private MaterialSkin.Controls.MaterialTextBox2 txtRegistroLogin;
@@ -309,7 +315,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialButton btnRegistro;
         private MaterialSkin.Controls.MaterialTextBox2 txtRegistroSenha2;
-        private PictureBox pictureBox5;
+        private PictureBox olinhoRegistro1;
         private PictureBox pictureBox6;
         private MaterialSkin.Controls.MaterialLabel lblMensagemRegistro;
     }

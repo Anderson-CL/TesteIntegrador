@@ -122,5 +122,44 @@ namespace CaixaIntegrador.Pagina_Inicial
                 btnRegistro_Click(sender, e);
             }
         }
+
+        private void olinhoRegistro1_Click(object sender, EventArgs e)
+        {
+            if (txtRegistroSenha1.PasswordChar == '●') // senha está oculta
+            {
+                txtRegistroSenha1.PasswordChar = '\0'; // mostra senha
+                olinhoRegistro1.Image = Properties.Resources.visivel;
+            }
+            else
+            {
+                txtRegistroSenha1.PasswordChar = '●'; // oculta senha
+                olinhoRegistro1.Image = Properties.Resources.invisivel;
+            }
+        }
+
+        private void olhinhoRegistro2_Click(object sender, EventArgs e)
+        {
+            if (txtRegistroSenha2.PasswordChar == '●') // senha está oculta
+            {
+                txtRegistroSenha2.PasswordChar = '\0'; // mostra senha
+                olhinhoRegistro2.Image = Properties.Resources.visivel;
+            }
+            else
+            {
+                txtRegistroSenha2.PasswordChar = '●'; // oculta senha
+                olhinhoRegistro2.Image = Properties.Resources.invisivel;
+            }
+
+        }
+
+        private void txtRegistroSenha1_TextChanged(object sender, EventArgs e)
+        {
+            olinhoRegistro1.Visible = txtRegistroSenha1.Text.Length > 0;
+        }
+
+        private void txtRegistroSenha2_TextChanged(object sender, EventArgs e)
+        {
+            olhinhoRegistro2.Visible = txtRegistroSenha2.Text.Length > 0;
+        }
     }
 }
