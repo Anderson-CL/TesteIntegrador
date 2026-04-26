@@ -10,6 +10,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace CaixaIntegrador.Pagina_Inicial
 {
@@ -47,12 +48,17 @@ namespace CaixaIntegrador.Pagina_Inicial
 
                     if (usuario != null)
                     {
-                        MessageBox.Show("Login realizado com sucesso!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        principal.CarregarCaixa(); // troca para tela de login ou menu inicial
+                        MostrarMensagem("Login realizado com sucesso!", true);
+
+                        // Aguarda 1 segundo antes de trocar de tela
+                        Task.Delay(1000).ContinueWith(_ =>
+                        {
+                            this.Invoke((Action)(() => principal.CarregarCaixa()));
+                        });
                     }
                     else
                     {
-                        MessageBox.Show("Usuário ou senha incorretos", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MostrarMensagem("Usuário ou senha incorretos", false);
                     }
                 }
                 catch (Exception ex)
@@ -65,6 +71,34 @@ namespace CaixaIntegrador.Pagina_Inicial
         private void lblRegistro_Click(object sender, EventArgs e)
         {
             principal.MostrarRegistro();
+        }
+
+        private void txtLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnEntrar_Click(sender, e);
+            }
+        }
+
+        private void txtSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnEntrar_Click(sender, e);
+            }
+        }
+
+        private void MostrarMensagem(string texto, bool sucesso)
+        {
+            lblMensagem1.Text = texto;
+            lblMensagem1.ForeColor = sucesso ? Color.Green : Color.Red;
+            lblMensagem1.Visible = true;
+        }
+
+        private void lblMensagem1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

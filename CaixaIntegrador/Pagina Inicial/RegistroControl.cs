@@ -30,17 +30,17 @@ namespace CaixaIntegrador.Pagina_Inicial
 
             if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(senha) || string.IsNullOrEmpty(confirmarSenha))
             {
-                MessageBox.Show("Por favor, preencha todos os campos vazios", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MostrarMensagem("Por favor, preencha todos os campos vazios", false);
                 return;
             }
             else if (senha != confirmarSenha)
             {
-                MessageBox.Show("As senhas não coincidem!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MostrarMensagem("As senhas não coincidem!", false);
                 return;
             }
             else if (senha.Length < 8)
             {
-                MessageBox.Show("A senha tem menos de 8 caracteres, por favor crie outra", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MostrarMensagem("A senha tem menos de 8 caracteres, por favor crie outra", false);
                 return;
             }
 
@@ -52,7 +52,7 @@ namespace CaixaIntegrador.Pagina_Inicial
                     var existente = db.Usuarios.FirstOrDefault(u => u.Login == login);
                     if (existente != null)
                     {
-                        MessageBox.Show("Este usuário já está registrado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MostrarMensagem("Este usuário já está registrado!", false);
                         return;
                     }
 
@@ -71,9 +71,13 @@ namespace CaixaIntegrador.Pagina_Inicial
                     db.Usuarios.Add(usuario);
                     db.SaveChanges();
 
-                    MessageBox.Show("Registro feito com sucesso!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MostrarMensagem("Registro feito com sucesso!", true);
 
-                    principal.MostrarLogin(); // volta para login
+                    // Aguarda 1 segundo antes de voltar para login
+                    Task.Delay(1000).ContinueWith(_ =>
+                    {
+                        this.Invoke((Action)(() => principal.MostrarLogin()));
+                    });
                 }
             }
             catch (Exception ex)
@@ -82,9 +86,41 @@ namespace CaixaIntegrador.Pagina_Inicial
             }
         }
 
+        private void MostrarMensagem(string texto, bool sucesso)
+        {
+            lblMensagemRegistro.Text = texto;
+            lblMensagemRegistro.ForeColor = sucesso ? Color.Green : Color.Red;
+            lblMensagemRegistro.Visible = true;
+        }
+
+
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             principal.MostrarLogin();
+        }
+
+        private void txtRegistroLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnRegistro_Click(sender, e);
+            }
+        }
+
+        private void txtRegistroSenha1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnRegistro_Click(sender, e);
+            }
+        }
+
+        private void txtRegistroSenha2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnRegistro_Click(sender, e);
+            }
         }
     }
 }

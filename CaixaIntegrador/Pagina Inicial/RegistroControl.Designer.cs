@@ -41,6 +41,7 @@
             txtRegistroSenha2 = new MaterialSkin.Controls.MaterialTextBox2();
             pictureBox5 = new PictureBox();
             pictureBox6 = new PictureBox();
+            lblMensagemRegistro = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -51,22 +52,27 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.Location = new Point(258, 9);
+            pictureBox4.Image = Properties.Resources.Mascote_elegante_par;
+            pictureBox4.Location = new Point(268, 3);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(70, 73);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 29;
             pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
+            pictureBox3.Image = Properties.Resources.login;
             pictureBox3.Location = new Point(124, 137);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(48, 48);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 28;
             pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
+            pictureBox2.Image = Properties.Resources.invisivel;
             pictureBox2.Location = new Point(455, 278);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(48, 48);
@@ -75,9 +81,11 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Image = Properties.Resources.senha3;
             pictureBox1.Location = new Point(124, 212);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(48, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 26;
             pictureBox1.TabStop = false;
             // 
@@ -105,10 +113,10 @@
             txtRegistroSenha1.Size = new Size(252, 48);
             txtRegistroSenha1.TabIndex = 25;
             txtRegistroSenha1.TabStop = false;
-            txtRegistroSenha1.Text = "materialTextBox22";
             txtRegistroSenha1.TextAlign = HorizontalAlignment.Left;
             txtRegistroSenha1.TrailingIcon = null;
             txtRegistroSenha1.UseSystemPasswordChar = false;
+            txtRegistroSenha1.KeyDown += txtRegistroSenha1_KeyDown;
             // 
             // txtRegistroLogin
             // 
@@ -134,10 +142,10 @@
             txtRegistroLogin.Size = new Size(248, 48);
             txtRegistroLogin.TabIndex = 24;
             txtRegistroLogin.TabStop = false;
-            txtRegistroLogin.Text = "materialTextBox21";
             txtRegistroLogin.TextAlign = HorizontalAlignment.Left;
             txtRegistroLogin.TrailingIcon = null;
             txtRegistroLogin.UseSystemPasswordChar = false;
+            txtRegistroLogin.KeyDown += txtRegistroLogin_KeyDown;
             // 
             // btnVoltar
             // 
@@ -147,9 +155,9 @@
             btnVoltar.Location = new Point(360, 420);
             btnVoltar.MouseState = MaterialSkin.MouseState.HOVER;
             btnVoltar.Name = "btnVoltar";
-            btnVoltar.Size = new Size(107, 19);
+            btnVoltar.Size = new Size(43, 19);
             btnVoltar.TabIndex = 23;
-            btnVoltar.Text = "materialLabel3";
+            btnVoltar.Text = "Entrar";
             btnVoltar.Click += btnVoltar_Click;
             // 
             // lblEsqueceu
@@ -160,9 +168,9 @@
             lblEsqueceu.Location = new Point(144, 420);
             lblEsqueceu.MouseState = MaterialSkin.MouseState.HOVER;
             lblEsqueceu.Name = "lblEsqueceu";
-            lblEsqueceu.Size = new Size(107, 19);
+            lblEsqueceu.Size = new Size(138, 19);
             lblEsqueceu.TabIndex = 22;
-            lblEsqueceu.Text = "materialLabel2";
+            lblEsqueceu.Text = "Já tem uma conta?";
             // 
             // materialLabel1
             // 
@@ -172,9 +180,9 @@
             materialLabel1.Location = new Point(246, 96);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
-            materialLabel1.Size = new Size(107, 19);
+            materialLabel1.Size = new Size(104, 19);
             materialLabel1.TabIndex = 21;
-            materialLabel1.Text = "materialLabel1";
+            materialLabel1.Text = "Crie sua Conta";
             // 
             // btnRegistro
             // 
@@ -183,14 +191,14 @@
             btnRegistro.Depth = 0;
             btnRegistro.HighEmphasis = true;
             btnRegistro.Icon = null;
-            btnRegistro.Location = new Point(228, 335);
+            btnRegistro.Location = new Point(258, 351);
             btnRegistro.Margin = new Padding(4, 6, 4, 6);
             btnRegistro.MouseState = MaterialSkin.MouseState.HOVER;
             btnRegistro.Name = "btnRegistro";
             btnRegistro.NoAccentTextColor = Color.Empty;
-            btnRegistro.Size = new Size(158, 36);
+            btnRegistro.Size = new Size(99, 36);
             btnRegistro.TabIndex = 20;
-            btnRegistro.Text = "materialButton1";
+            btnRegistro.Text = "REGISTRAR";
             btnRegistro.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btnRegistro.UseAccentColor = false;
             btnRegistro.UseVisualStyleBackColor = true;
@@ -220,31 +228,49 @@
             txtRegistroSenha2.Size = new Size(248, 48);
             txtRegistroSenha2.TabIndex = 30;
             txtRegistroSenha2.TabStop = false;
-            txtRegistroSenha2.Text = "materialTextBox23";
             txtRegistroSenha2.TextAlign = HorizontalAlignment.Left;
             txtRegistroSenha2.TrailingIcon = null;
             txtRegistroSenha2.UseSystemPasswordChar = false;
+            txtRegistroSenha2.KeyDown += txtRegistroSenha2_KeyDown;
             // 
             // pictureBox5
             // 
+            pictureBox5.Image = Properties.Resources.invisivel;
             pictureBox5.Location = new Point(455, 212);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(48, 48);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 31;
             pictureBox5.TabStop = false;
             // 
             // pictureBox6
             // 
+            pictureBox6.Image = Properties.Resources.senha3;
             pictureBox6.Location = new Point(124, 278);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(48, 48);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 32;
             pictureBox6.TabStop = false;
+            // 
+            // lblMensagemRegistro
+            // 
+            lblMensagemRegistro.AutoSize = true;
+            lblMensagemRegistro.Depth = 0;
+            lblMensagemRegistro.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblMensagemRegistro.Location = new Point(250, 393);
+            lblMensagemRegistro.MouseState = MaterialSkin.MouseState.HOVER;
+            lblMensagemRegistro.Name = "lblMensagemRegistro";
+            lblMensagemRegistro.Size = new Size(107, 19);
+            lblMensagemRegistro.TabIndex = 33;
+            lblMensagemRegistro.Text = "materialLabel2";
+            lblMensagemRegistro.Visible = false;
             // 
             // RegistroControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(lblMensagemRegistro);
             Controls.Add(pictureBox6);
             Controls.Add(pictureBox5);
             Controls.Add(txtRegistroSenha2);
@@ -285,5 +311,6 @@
         private MaterialSkin.Controls.MaterialTextBox2 txtRegistroSenha2;
         private PictureBox pictureBox5;
         private PictureBox pictureBox6;
+        private MaterialSkin.Controls.MaterialLabel lblMensagemRegistro;
     }
 }

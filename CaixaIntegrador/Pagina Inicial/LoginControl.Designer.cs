@@ -31,50 +31,59 @@
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
-            pictureBox1 = new PictureBox();
+            lblMensagem = new PictureBox();
             txtSenha = new MaterialSkin.Controls.MaterialTextBox2();
             txtLogin = new MaterialSkin.Controls.MaterialTextBox2();
             lblRegistro = new MaterialSkin.Controls.MaterialLabel();
             lblEsqueceu = new MaterialSkin.Controls.MaterialLabel();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             btnEntrar = new MaterialSkin.Controls.MaterialButton();
+            materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            lblMensagem1 = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)lblMensagem).BeginInit();
             SuspendLayout();
             // 
             // pictureBox4
             // 
+            pictureBox4.Image = Properties.Resources.Mascote_elegante_par;
             pictureBox4.Location = new Point(245, 15);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(70, 73);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 19;
             pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
+            pictureBox3.Image = Properties.Resources.login;
             pictureBox3.Location = new Point(91, 143);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(48, 48);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 18;
             pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
+            pictureBox2.Image = Properties.Resources.invisivel;
             pictureBox2.Location = new Point(429, 218);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(48, 48);
             pictureBox2.TabIndex = 17;
             pictureBox2.TabStop = false;
             // 
-            // pictureBox1
+            // lblMensagem
             // 
-            pictureBox1.Location = new Point(91, 218);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(48, 48);
-            pictureBox1.TabIndex = 16;
-            pictureBox1.TabStop = false;
+            lblMensagem.Image = Properties.Resources.senha3;
+            lblMensagem.Location = new Point(91, 218);
+            lblMensagem.Name = "lblMensagem";
+            lblMensagem.Size = new Size(48, 48);
+            lblMensagem.SizeMode = PictureBoxSizeMode.Zoom;
+            lblMensagem.TabIndex = 16;
+            lblMensagem.TabStop = false;
             // 
             // txtSenha
             // 
@@ -100,10 +109,10 @@
             txtSenha.Size = new Size(252, 48);
             txtSenha.TabIndex = 15;
             txtSenha.TabStop = false;
-            txtSenha.Text = "materialTextBox22";
             txtSenha.TextAlign = HorizontalAlignment.Left;
             txtSenha.TrailingIcon = null;
             txtSenha.UseSystemPasswordChar = false;
+            txtSenha.KeyDown += txtSenha_KeyDown;
             // 
             // txtLogin
             // 
@@ -129,10 +138,10 @@
             txtLogin.Size = new Size(248, 48);
             txtLogin.TabIndex = 14;
             txtLogin.TabStop = false;
-            txtLogin.Text = "materialTextBox21";
             txtLogin.TextAlign = HorizontalAlignment.Left;
             txtLogin.TrailingIcon = null;
             txtLogin.UseSystemPasswordChar = false;
+            txtLogin.KeyDown += txtLogin_KeyDown;
             // 
             // lblRegistro
             // 
@@ -155,21 +164,21 @@
             lblEsqueceu.Location = new Point(139, 360);
             lblEsqueceu.MouseState = MaterialSkin.MouseState.HOVER;
             lblEsqueceu.Name = "lblEsqueceu";
-            lblEsqueceu.Size = new Size(107, 19);
+            lblEsqueceu.Size = new Size(139, 19);
             lblEsqueceu.TabIndex = 12;
-            lblEsqueceu.Text = "materialLabel2";
+            lblEsqueceu.Text = "Esqueceu a Senha?";
             // 
             // materialLabel1
             // 
             materialLabel1.AutoSize = true;
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel1.Location = new Point(233, 102);
+            materialLabel1.Location = new Point(208, 105);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
-            materialLabel1.Size = new Size(107, 19);
+            materialLabel1.Size = new Size(126, 19);
             materialLabel1.TabIndex = 11;
-            materialLabel1.Text = "materialLabel1";
+            materialLabel1.Text = "Adega do Alemão";
             // 
             // btnEntrar
             // 
@@ -178,27 +187,55 @@
             btnEntrar.Depth = 0;
             btnEntrar.HighEmphasis = true;
             btnEntrar.Icon = null;
-            btnEntrar.Location = new Point(223, 275);
+            btnEntrar.Location = new Point(238, 275);
             btnEntrar.Margin = new Padding(4, 6, 4, 6);
             btnEntrar.MouseState = MaterialSkin.MouseState.HOVER;
             btnEntrar.Name = "btnEntrar";
             btnEntrar.NoAccentTextColor = Color.Empty;
-            btnEntrar.Size = new Size(158, 36);
+            btnEntrar.Size = new Size(77, 36);
             btnEntrar.TabIndex = 10;
-            btnEntrar.Text = "materialButton1";
+            btnEntrar.Text = "ENTRAR";
             btnEntrar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btnEntrar.UseAccentColor = false;
             btnEntrar.UseVisualStyleBackColor = true;
             btnEntrar.Click += btnEntrar_Click;
             // 
+            // materialLabel2
+            // 
+            materialLabel2.AutoSize = true;
+            materialLabel2.Depth = 0;
+            materialLabel2.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel2.Location = new Point(227, 194);
+            materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel2.Name = "materialLabel2";
+            materialLabel2.Size = new Size(107, 19);
+            materialLabel2.TabIndex = 21;
+            materialLabel2.Text = "materialLabel2";
+            // 
+            // lblMensagem1
+            // 
+            lblMensagem1.AutoSize = true;
+            lblMensagem1.Depth = 0;
+            lblMensagem1.Font = new Font("Microsoft Sans Serif", 20F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblMensagem1.ForeColor = SystemColors.ControlText;
+            lblMensagem1.Location = new Point(227, 329);
+            lblMensagem1.MouseState = MaterialSkin.MouseState.HOVER;
+            lblMensagem1.Name = "lblMensagem1";
+            lblMensagem1.Size = new Size(107, 19);
+            lblMensagem1.TabIndex = 20;
+            lblMensagem1.Text = "materialLabel3";
+            lblMensagem1.Visible = false;
+            lblMensagem1.Click += lblMensagem1_Click;
+            // 
             // LoginControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(lblMensagem1);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
+            Controls.Add(lblMensagem);
             Controls.Add(txtSenha);
             Controls.Add(txtLogin);
             Controls.Add(lblRegistro);
@@ -211,7 +248,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)lblMensagem).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -221,12 +258,14 @@
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
-        private PictureBox pictureBox1;
+        private PictureBox lblMensagem;
         private MaterialSkin.Controls.MaterialTextBox2 txtSenha;
         private MaterialSkin.Controls.MaterialTextBox2 txtLogin;
         private MaterialSkin.Controls.MaterialLabel lblRegistro;
         private MaterialSkin.Controls.MaterialLabel lblEsqueceu;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialButton btnEntrar;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialLabel lblMensagem1;
     }
 }

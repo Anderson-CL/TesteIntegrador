@@ -23,31 +23,37 @@ namespace CaixaIntegrador
 
         private void PaginaInicial_Load(object sender, EventArgs e)
         {
-           CarregarCaixa();
+           MostrarLogin();
+        }
+
+        private void CentralizarControl(UserControl control)
+        {
+            control.Left = (this.ClientSize.Width - control.Width) / 2;
+            control.Top = (this.ClientSize.Height - control.Height) / 2;
         }
 
         public void MostrarLogin()
         {
             panelPrincipal.Controls.Clear();
             var login = new LoginControl(this);
-            login.Dock = DockStyle.Fill;
             panelPrincipal.Controls.Add(login);
+            CentralizarControl(login);
         }
 
         public void MostrarRegistro()
         {
             panelPrincipal.Controls.Clear();
             var registro = new RegistroControl(this);
-            registro.Dock = DockStyle.Fill;
             panelPrincipal.Controls.Add(registro);
+            CentralizarControl(registro);
         }
 
         public void CarregarCaixa()
         {
             panelPrincipal.Controls.Clear();
             var caixaControl = new CaixaControl();
-            caixaControl.Dock = DockStyle.Fill;
             panelPrincipal.Controls.Add(caixaControl);
+            CentralizarControl(caixaControl);
         }
 
         private void panelPrincipal_Paint(object sender, PaintEventArgs e)
