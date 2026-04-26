@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CaixaIntegrador.Pagina_Inicial
+namespace CaixaIntegrador.Estoque
 {
-    public partial class MenuInicialControl : UserControl
+    public partial class EstoqueControl : UserControl
     {
-        public MenuInicialControl()
+        public EstoqueControl()
         {
             InitializeComponent();
         }

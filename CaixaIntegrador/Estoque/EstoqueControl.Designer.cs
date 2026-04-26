@@ -1,6 +1,6 @@
-﻿namespace CaixaIntegrador.Pagina_Inicial
+﻿namespace CaixaIntegrador.Estoque
 {
-    partial class MenuInicialControl
+    partial class EstoqueControl
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -28,15 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SuspendLayout();
-            // 
-            // MenuInicialControl
-            // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            Name = "MenuInicialControl";
-            Size = new Size(606, 457);
-            ResumeLayout(false);
+            components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         }
 
         #endregion

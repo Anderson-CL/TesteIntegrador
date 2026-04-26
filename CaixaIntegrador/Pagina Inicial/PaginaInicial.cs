@@ -56,6 +56,14 @@ namespace CaixaIntegrador
             CentralizarControl(caixaControl);
         }
 
+        public void MostrarTelaInicial()
+        {
+            panelPrincipal.Controls.Clear();
+            var telaInicial = new TelaInicialControl(this);
+            panelPrincipal.Controls.Add(telaInicial);
+            CentralizarControl(telaInicial);
+        }
+
         private void panelPrincipal_Paint(object sender, PaintEventArgs e)
         {
 

@@ -53,7 +53,7 @@ namespace CaixaIntegrador.Pagina_Inicial
                         // Aguarda 1 segundo antes de trocar de tela
                         Task.Delay(1000).ContinueWith(_ =>
                         {
-                            this.Invoke((Action)(() => principal.CarregarCaixa()));
+                            this.Invoke((Action)(() => principal.MostrarTelaInicial()));
                         });
                     }
                     else
