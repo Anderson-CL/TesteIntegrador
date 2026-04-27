@@ -64,6 +64,15 @@ namespace CaixaIntegrador
             CentralizarControl(telaInicial);
         }
 
+        public void CarregarEstoque()
+        {
+            panelPrincipal.Controls.Clear();
+            var estoqueControl = new Estoque.EstoqueControl();
+            panelPrincipal.Controls.Add(estoqueControl);
+            CentralizarControl(estoqueControl);
+        }
+
+
         private void panelPrincipal_Paint(object sender, PaintEventArgs e)
         {
 

@@ -23,7 +23,7 @@ namespace CaixaIntegrador.Pagina_Inicial
 
         private void btnEstoque_Click(object sender, EventArgs e)
         {
-
+            principal.CarregarEstoque();
         }
 
         private void btnCaixa_Click(object sender, EventArgs e)
