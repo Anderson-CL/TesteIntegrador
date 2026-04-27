@@ -15,15 +15,16 @@ namespace CaixaIntegrador
 {
     public partial class PaginaInicial : MaterialForm
     {
+        public string UsuarioLogado { get; set; }
         public PaginaInicial()
         {
             InitializeComponent();
-            
+
         }
 
         private void PaginaInicial_Load(object sender, EventArgs e)
         {
-           MostrarLogin();
+            MostrarLogin();
         }
 
         private void CentralizarControl(UserControl control)
@@ -54,6 +55,7 @@ namespace CaixaIntegrador
             var caixaControl = new CaixaControl();
             panelPrincipal.Controls.Add(caixaControl);
             CentralizarControl(caixaControl);
+           
         }
 
         public void MostrarTelaInicial()
@@ -62,6 +64,7 @@ namespace CaixaIntegrador
             var telaInicial = new TelaInicialControl(this);
             panelPrincipal.Controls.Add(telaInicial);
             CentralizarControl(telaInicial);
+           
         }
 
         public void CarregarEstoque()
@@ -73,9 +76,35 @@ namespace CaixaIntegrador
         }
 
 
+        public void CarregarRelatorio() //Dessa forma o relatório abre em uma janela separada, sem substituir o conteúdo do painel principal
+        {
+            var relatorio = new Relatorios.RelatorioVendasForm();
+            relatorio.Show(); // abre como janela separada
+        }
+
+        /*
+         
+         
+        public void CarregarRelatorio() //Dessa forma o relatório é carregado dentro do painel principal, substituindo o conteúdo atual
+        {
+            panelPrincipal.Controls.Clear();
+            var relatorio = new Relatorios.RelatorioVendasForm();
+            relatorio.TopLevel = false;          // importante: não será janela independente
+            relatorio.FormBorderStyle = FormBorderStyle.None;
+            relatorio.Dock = DockStyle.Fill;     // ocupa todo o painel
+            panelPrincipal.Controls.Add(relatorio);
+            relatorio.Show();
+        }
+        
+         */
+
+
+
         private void panelPrincipal_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+       
     }
 }

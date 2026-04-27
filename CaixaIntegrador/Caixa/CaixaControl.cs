@@ -1,5 +1,6 @@
 ﻿using CaixaIntegrador.Classes;
 using CaixaIntegrador.Data;
+using CaixaIntegrador.Pagina_Inicial;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -522,6 +523,8 @@ namespace CaixaIntegrador.Caixa
         {
 
         }
+
+      
     }
     public interface IImpressora
     {

@@ -96,5 +96,15 @@ namespace CaixaIntegrador.Estoque
         {
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void materialCard2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

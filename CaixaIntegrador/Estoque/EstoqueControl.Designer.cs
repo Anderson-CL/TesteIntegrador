@@ -28,39 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            materialCard1 = new MaterialSkin.Controls.MaterialCard();
             btnFiltrar = new MaterialSkin.Controls.MaterialButton();
             cmbFiltrar = new MaterialSkin.Controls.MaterialComboBox();
             btbBuscar = new MaterialSkin.Controls.MaterialButton();
             txtBuscar = new MaterialSkin.Controls.MaterialMaskedTextBox();
             BtnAtualizarQtd = new MaterialSkin.Controls.MaterialButton();
-            materialCard2 = new MaterialSkin.Controls.MaterialCard();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             txtQuantidade = new MaterialSkin.Controls.MaterialTextBox();
             btnRemover = new MaterialSkin.Controls.MaterialButton();
             btnAdicionar = new MaterialSkin.Controls.MaterialButton();
             dataGridView1 = new DataGridView();
-            materialCard1.SuspendLayout();
-            materialCard2.SuspendLayout();
+            panelCabecalho = new Panel();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panelCabecalho.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // materialCard1
-            // 
-            materialCard1.BackColor = Color.FromArgb(255, 255, 255);
-            materialCard1.Controls.Add(btnFiltrar);
-            materialCard1.Controls.Add(cmbFiltrar);
-            materialCard1.Controls.Add(btbBuscar);
-            materialCard1.Controls.Add(txtBuscar);
-            materialCard1.Depth = 0;
-            materialCard1.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard1.Location = new Point(3, 32);
-            materialCard1.Margin = new Padding(16, 19, 16, 19);
-            materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialCard1.Name = "materialCard1";
-            materialCard1.Padding = new Padding(16, 19, 16, 19);
-            materialCard1.Size = new Size(908, 81);
-            materialCard1.TabIndex = 2;
             // 
             // btnFiltrar
             // 
@@ -70,7 +53,7 @@
             btnFiltrar.Depth = 0;
             btnFiltrar.HighEmphasis = true;
             btnFiltrar.Icon = null;
-            btnFiltrar.Location = new Point(778, 8);
+            btnFiltrar.Location = new Point(725, 8);
             btnFiltrar.Margin = new Padding(5, 8, 5, 8);
             btnFiltrar.MouseState = MaterialSkin.MouseState.HOVER;
             btnFiltrar.Name = "btnFiltrar";
@@ -97,7 +80,7 @@
             cmbFiltrar.FormattingEnabled = true;
             cmbFiltrar.IntegralHeight = false;
             cmbFiltrar.ItemHeight = 43;
-            cmbFiltrar.Location = new Point(574, 9);
+            cmbFiltrar.Location = new Point(513, 24);
             cmbFiltrar.Margin = new Padding(3, 4, 3, 4);
             cmbFiltrar.MaxDropDownItems = 4;
             cmbFiltrar.MouseState = MaterialSkin.MouseState.OUT;
@@ -115,7 +98,7 @@
             btbBuscar.Depth = 0;
             btbBuscar.HighEmphasis = true;
             btbBuscar.Icon = null;
-            btbBuscar.Location = new Point(187, 8);
+            btbBuscar.Location = new Point(177, 8);
             btbBuscar.Margin = new Padding(5, 8, 5, 8);
             btbBuscar.MouseState = MaterialSkin.MouseState.HOVER;
             btbBuscar.Name = "btbBuscar";
@@ -142,7 +125,7 @@
             txtBuscar.HideSelection = true;
             txtBuscar.InsertKeyMode = InsertKeyMode.Default;
             txtBuscar.LeadingIcon = null;
-            txtBuscar.Location = new Point(19, 10);
+            txtBuscar.Location = new Point(13, 24);
             txtBuscar.Margin = new Padding(3, 4, 3, 4);
             txtBuscar.Mask = "";
             txtBuscar.MaxLength = 32767;
@@ -178,7 +161,7 @@
             BtnAtualizarQtd.Depth = 0;
             BtnAtualizarQtd.HighEmphasis = true;
             BtnAtualizarQtd.Icon = null;
-            BtnAtualizarQtd.Location = new Point(767, 17);
+            BtnAtualizarQtd.Location = new Point(781, 20);
             BtnAtualizarQtd.Margin = new Padding(5, 8, 5, 8);
             BtnAtualizarQtd.MouseState = MaterialSkin.MouseState.HOVER;
             BtnAtualizarQtd.Name = "BtnAtualizarQtd";
@@ -191,31 +174,12 @@
             BtnAtualizarQtd.UseVisualStyleBackColor = true;
             BtnAtualizarQtd.Click += BtnAtualizarQtd_Click;
             // 
-            // materialCard2
-            // 
-            materialCard2.BackColor = Color.FromArgb(255, 255, 255);
-            materialCard2.Controls.Add(materialLabel1);
-            materialCard2.Controls.Add(txtQuantidade);
-            materialCard2.Controls.Add(btnRemover);
-            materialCard2.Controls.Add(BtnAtualizarQtd);
-            materialCard2.Controls.Add(btnAdicionar);
-            materialCard2.Depth = 0;
-            materialCard2.Dock = DockStyle.Bottom;
-            materialCard2.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard2.Location = new Point(0, 528);
-            materialCard2.Margin = new Padding(16, 19, 16, 19);
-            materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
-            materialCard2.Name = "materialCard2";
-            materialCard2.Padding = new Padding(16, 19, 16, 19);
-            materialCard2.Size = new Size(914, 72);
-            materialCard2.TabIndex = 3;
-            // 
             // materialLabel1
             // 
             materialLabel1.AutoSize = true;
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel1.Location = new Point(469, 28);
+            materialLabel1.Location = new Point(483, 31);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
             materialLabel1.Size = new Size(128, 19);
@@ -229,7 +193,7 @@
             txtQuantidade.Depth = 0;
             txtQuantidade.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtQuantidade.LeadingIcon = null;
-            txtQuantidade.Location = new Point(613, 13);
+            txtQuantidade.Location = new Point(627, 16);
             txtQuantidade.MaxLength = 50;
             txtQuantidade.MouseState = MaterialSkin.MouseState.OUT;
             txtQuantidade.Multiline = false;
@@ -246,7 +210,7 @@
             btnRemover.Depth = 0;
             btnRemover.HighEmphasis = true;
             btnRemover.Icon = null;
-            btnRemover.Location = new Point(190, 17);
+            btnRemover.Location = new Point(219, 20);
             btnRemover.Margin = new Padding(5, 8, 5, 8);
             btnRemover.MouseState = MaterialSkin.MouseState.HOVER;
             btnRemover.Name = "btnRemover";
@@ -266,7 +230,7 @@
             btnAdicionar.Depth = 0;
             btnAdicionar.HighEmphasis = true;
             btnAdicionar.Icon = null;
-            btnAdicionar.Location = new Point(7, 17);
+            btnAdicionar.Location = new Point(36, 20);
             btnAdicionar.Margin = new Padding(5, 8, 5, 8);
             btnAdicionar.MouseState = MaterialSkin.MouseState.HOVER;
             btnAdicionar.Name = "btnAdicionar";
@@ -283,7 +247,7 @@
             // 
             dataGridView1.BackgroundColor = SystemColors.Control;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 116);
+            dataGridView1.Location = new Point(6, 106);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
@@ -291,36 +255,60 @@
             dataGridView1.Size = new Size(908, 405);
             dataGridView1.TabIndex = 4;
             // 
+            // panelCabecalho
+            // 
+            panelCabecalho.BackColor = SystemColors.Control;
+            panelCabecalho.Controls.Add(btnFiltrar);
+            panelCabecalho.Controls.Add(cmbFiltrar);
+            panelCabecalho.Controls.Add(txtBuscar);
+            panelCabecalho.Controls.Add(btbBuscar);
+            panelCabecalho.Location = new Point(7, 22);
+            panelCabecalho.Name = "panelCabecalho";
+            panelCabecalho.Size = new Size(904, 85);
+            panelCabecalho.TabIndex = 5;
+            panelCabecalho.Paint += panel1_Paint;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(materialLabel1);
+            panel1.Controls.Add(BtnAtualizarQtd);
+            panel1.Controls.Add(txtQuantidade);
+            panel1.Controls.Add(btnRemover);
+            panel1.Controls.Add(btnAdicionar);
+            panel1.Location = new Point(7, 517);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(904, 72);
+            panel1.TabIndex = 6;
+            // 
             // EstoqueControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(panel1);
+            Controls.Add(panelCabecalho);
             Controls.Add(dataGridView1);
-            Controls.Add(materialCard2);
-            Controls.Add(materialCard1);
             Name = "EstoqueControl";
             Size = new Size(914, 600);
             Load += EstoqueControl_Load;
-            materialCard1.ResumeLayout(false);
-            materialCard2.ResumeLayout(false);
-            materialCard2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panelCabecalho.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private MaterialSkin.Controls.MaterialCard materialCard1;
         private MaterialSkin.Controls.MaterialButton btnFiltrar;
         private MaterialSkin.Controls.MaterialComboBox cmbFiltrar;
         private MaterialSkin.Controls.MaterialButton btbBuscar;
         private MaterialSkin.Controls.MaterialMaskedTextBox txtBuscar;
-        private MaterialSkin.Controls.MaterialCard materialCard2;
         private MaterialSkin.Controls.MaterialButton btnRemover;
         private MaterialSkin.Controls.MaterialButton btnAdicionar;
         private DataGridView dataGridView1;
         private MaterialSkin.Controls.MaterialButton BtnAtualizarQtd;
         private MaterialSkin.Controls.MaterialTextBox txtQuantidade;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private Panel panelCabecalho;
+        private Panel panel1;
     }
 }
