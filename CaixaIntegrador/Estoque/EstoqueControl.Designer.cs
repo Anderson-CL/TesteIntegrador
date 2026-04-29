@@ -133,7 +133,6 @@
             txtBuscar.Name = "txtBuscar";
             txtBuscar.PasswordChar = '\0';
             txtBuscar.PrefixSuffixText = null;
-            txtBuscar.PromptChar = '_';
             txtBuscar.ReadOnly = false;
             txtBuscar.RejectInputOnFirstFailure = false;
             txtBuscar.ResetOnPrompt = true;
@@ -288,6 +287,7 @@
             Controls.Add(panelCabecalho);
             Controls.Add(dataGridView1);
             Name = "EstoqueControl";
+            Dock = DockStyle.Fill;
             Size = new Size(914, 600);
             Load += EstoqueControl_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

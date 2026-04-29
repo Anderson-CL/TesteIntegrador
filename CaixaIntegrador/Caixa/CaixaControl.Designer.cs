@@ -572,6 +572,7 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "CaixaControl";
+            Dock = DockStyle.Fill;
             Padding = new Padding(0, 32, 0, 0);
             Size = new Size(1445, 908);
             groupBox1.ResumeLayout(false);

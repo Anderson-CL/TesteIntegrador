@@ -1,5 +1,6 @@
 ﻿using CaixaIntegrador.Caixa;
 using CaixaIntegrador.Pagina_Inicial;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace CaixaIntegrador
         public PaginaInicial()
         {
             InitializeComponent();
-
+            TemaFormSkin();
         }
 
         private void PaginaInicial_Load(object sender, EventArgs e)
@@ -38,7 +39,9 @@ namespace CaixaIntegrador
             panelPrincipal.Controls.Clear();
             var login = new LoginControl(this);
             panelPrincipal.Controls.Add(login);
-            CentralizarControl(login);
+          // CentralizarControl(login);
+            Anchor = AnchorStyles.None;
+            //Dock = DockStyle.Fill;
         }
 
         public void MostrarRegistro()
@@ -98,7 +101,19 @@ namespace CaixaIntegrador
         
          */
 
-
+        private void TemaFormSkin()
+        {
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Red900,    // Cor Principal: Vinho bem escuro (fundo de botões/barras)
+                Primary.BlueGrey900, // Tom de contraste profundo para barras de título
+                Primary.Red600,    // Tom médio para destaques suaves
+                Accent.Blue700,
+                TextShade.WHITE    // Texto branco puro
+            );
+        }
 
         private void panelPrincipal_Paint(object sender, PaintEventArgs e)
         {

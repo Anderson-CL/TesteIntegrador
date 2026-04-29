@@ -267,6 +267,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "TelaInicialControl";
+            Dock = DockStyle.Fill;
             Size = new Size(1445, 908);
             Load += TelaInicialControl_Load;
             panel1.ResumeLayout(false);

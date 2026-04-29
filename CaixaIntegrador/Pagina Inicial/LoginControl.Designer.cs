@@ -40,18 +40,21 @@
             btnEntrar = new MaterialSkin.Controls.MaterialButton();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             lblMensagem1 = new MaterialSkin.Controls.MaterialLabel();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)olhinhoLogin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)lblMensagem).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox4
             // 
             pictureBox4.Image = Properties.Resources.Mascote_elegante_par;
-            pictureBox4.Location = new Point(245, 15);
+            pictureBox4.Location = new Point(594, 202);
+            pictureBox4.Margin = new Padding(3, 2, 3, 2);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(70, 73);
+            pictureBox4.Size = new Size(61, 55);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 19;
             pictureBox4.TabStop = false;
@@ -59,9 +62,10 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.login;
-            pictureBox3.Location = new Point(91, 143);
+            pictureBox3.Location = new Point(460, 298);
+            pictureBox3.Margin = new Padding(3, 2, 3, 2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(48, 48);
+            pictureBox3.Size = new Size(42, 36);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 18;
             pictureBox3.TabStop = false;
@@ -69,9 +73,10 @@
             // olhinhoLogin
             // 
             olhinhoLogin.Image = Properties.Resources.invisivel;
-            olhinhoLogin.Location = new Point(423, 218);
+            olhinhoLogin.Location = new Point(750, 355);
+            olhinhoLogin.Margin = new Padding(3, 2, 3, 2);
             olhinhoLogin.Name = "olhinhoLogin";
-            olhinhoLogin.Size = new Size(48, 48);
+            olhinhoLogin.Size = new Size(42, 36);
             olhinhoLogin.TabIndex = 17;
             olhinhoLogin.TabStop = false;
             olhinhoLogin.Visible = false;
@@ -80,9 +85,10 @@
             // lblMensagem
             // 
             lblMensagem.Image = Properties.Resources.senha3;
-            lblMensagem.Location = new Point(91, 218);
+            lblMensagem.Location = new Point(460, 355);
+            lblMensagem.Margin = new Padding(3, 2, 3, 2);
             lblMensagem.Name = "lblMensagem";
-            lblMensagem.Size = new Size(48, 48);
+            lblMensagem.Size = new Size(42, 36);
             lblMensagem.SizeMode = PictureBoxSizeMode.Zoom;
             lblMensagem.TabIndex = 16;
             lblMensagem.TabStop = false;
@@ -96,7 +102,8 @@
             txtSenha.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtSenha.HideSelection = true;
             txtSenha.LeadingIcon = null;
-            txtSenha.Location = new Point(165, 218);
+            txtSenha.Location = new Point(524, 355);
+            txtSenha.Margin = new Padding(3, 2, 3, 2);
             txtSenha.MaxLength = 32767;
             txtSenha.MouseState = MaterialSkin.MouseState.OUT;
             txtSenha.Name = "txtSenha";
@@ -108,7 +115,7 @@
             txtSenha.SelectionLength = 0;
             txtSenha.SelectionStart = 0;
             txtSenha.ShortcutsEnabled = true;
-            txtSenha.Size = new Size(252, 48);
+            txtSenha.Size = new Size(220, 48);
             txtSenha.TabIndex = 15;
             txtSenha.TabStop = false;
             txtSenha.TextAlign = HorizontalAlignment.Left;
@@ -126,7 +133,8 @@
             txtLogin.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtLogin.HideSelection = true;
             txtLogin.LeadingIcon = null;
-            txtLogin.Location = new Point(169, 143);
+            txtLogin.Location = new Point(528, 298);
+            txtLogin.Margin = new Padding(3, 2, 3, 2);
             txtLogin.MaxLength = 32767;
             txtLogin.MouseState = MaterialSkin.MouseState.OUT;
             txtLogin.Name = "txtLogin";
@@ -138,7 +146,7 @@
             txtLogin.SelectionLength = 0;
             txtLogin.SelectionStart = 0;
             txtLogin.ShortcutsEnabled = true;
-            txtLogin.Size = new Size(248, 48);
+            txtLogin.Size = new Size(217, 48);
             txtLogin.TabIndex = 14;
             txtLogin.TabStop = false;
             txtLogin.TextAlign = HorizontalAlignment.Left;
@@ -151,7 +159,7 @@
             lblRegistro.AutoSize = true;
             lblRegistro.Depth = 0;
             lblRegistro.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            lblRegistro.Location = new Point(355, 360);
+            lblRegistro.Location = new Point(691, 461);
             lblRegistro.MouseState = MaterialSkin.MouseState.HOVER;
             lblRegistro.Name = "lblRegistro";
             lblRegistro.Size = new Size(59, 19);
@@ -164,7 +172,7 @@
             lblEsqueceu.AutoSize = true;
             lblEsqueceu.Depth = 0;
             lblEsqueceu.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            lblEsqueceu.Location = new Point(139, 360);
+            lblEsqueceu.Location = new Point(502, 461);
             lblEsqueceu.MouseState = MaterialSkin.MouseState.HOVER;
             lblEsqueceu.Name = "lblEsqueceu";
             lblEsqueceu.Size = new Size(139, 19);
@@ -176,7 +184,7 @@
             materialLabel1.AutoSize = true;
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel1.Location = new Point(208, 105);
+            materialLabel1.Location = new Point(562, 270);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
             materialLabel1.Size = new Size(126, 19);
@@ -190,8 +198,8 @@
             btnEntrar.Depth = 0;
             btnEntrar.HighEmphasis = true;
             btnEntrar.Icon = null;
-            btnEntrar.Location = new Point(238, 275);
-            btnEntrar.Margin = new Padding(4, 6, 4, 6);
+            btnEntrar.Location = new Point(588, 397);
+            btnEntrar.Margin = new Padding(4);
             btnEntrar.MouseState = MaterialSkin.MouseState.HOVER;
             btnEntrar.Name = "btnEntrar";
             btnEntrar.NoAccentTextColor = Color.Empty;
@@ -221,7 +229,7 @@
             lblMensagem1.Depth = 0;
             lblMensagem1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblMensagem1.ForeColor = SystemColors.ControlText;
-            lblMensagem1.Location = new Point(227, 329);
+            lblMensagem1.Location = new Point(579, 438);
             lblMensagem1.MouseState = MaterialSkin.MouseState.HOVER;
             lblMensagem1.Name = "lblMensagem1";
             lblMensagem1.Size = new Size(107, 19);
@@ -230,30 +238,40 @@
             lblMensagem1.Visible = false;
             lblMensagem1.Click += lblMensagem1_Click;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(pictureBox4);
+            panel1.Controls.Add(lblMensagem1);
+            panel1.Controls.Add(btnEntrar);
+            panel1.Controls.Add(materialLabel1);
+            panel1.Controls.Add(pictureBox3);
+            panel1.Controls.Add(lblEsqueceu);
+            panel1.Controls.Add(olhinhoLogin);
+            panel1.Controls.Add(lblRegistro);
+            panel1.Controls.Add(lblMensagem);
+            panel1.Controls.Add(txtLogin);
+            panel1.Controls.Add(txtSenha);
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1154, 717);
+            panel1.TabIndex = 21;
+            // 
             // LoginControl
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(lblMensagem1);
-            Controls.Add(pictureBox4);
-            Controls.Add(pictureBox3);
-            Controls.Add(olhinhoLogin);
-            Controls.Add(lblMensagem);
-            Controls.Add(txtSenha);
-            Controls.Add(txtLogin);
-            Controls.Add(lblRegistro);
-            Controls.Add(lblEsqueceu);
-            Controls.Add(materialLabel1);
-            Controls.Add(btnEntrar);
+            Controls.Add(panel1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "LoginControl";
-            Size = new Size(595, 466);
+            Size = new Size(1233, 717);
             Load += LoginControl_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)olhinhoLogin).EndInit();
             ((System.ComponentModel.ISupportInitialize)lblMensagem).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -270,5 +288,6 @@
         private MaterialSkin.Controls.MaterialButton btnEntrar;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel lblMensagem1;
+        private Panel panel1;
     }
 }

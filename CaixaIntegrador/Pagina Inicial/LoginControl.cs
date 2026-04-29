@@ -20,7 +20,9 @@ namespace CaixaIntegrador.Pagina_Inicial
         public LoginControl(PaginaInicial principal)
         {
             InitializeComponent();
+          
             this.principal = principal;
+        
         }
 
         private void LoginControl_Load(object sender, EventArgs e)

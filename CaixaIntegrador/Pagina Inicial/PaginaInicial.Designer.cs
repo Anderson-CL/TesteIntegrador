@@ -33,22 +33,23 @@
             // 
             // panelPrincipal
             // 
-            panelPrincipal.Location = new Point(6, 24);
+            panelPrincipal.Dock = DockStyle.Fill;
+            panelPrincipal.Location = new Point(3, 24);
+            panelPrincipal.Margin = new Padding(3, 2, 3, 2);
             panelPrincipal.Name = "panelPrincipal";
-            panelPrincipal.Size = new Size(1442, 887);
+            panelPrincipal.Size = new Size(1258, 654);
             panelPrincipal.TabIndex = 0;
             panelPrincipal.Paint += panelPrincipal_Paint;
             // 
             // PaginaInicial
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1445, 908);
+            ClientSize = new Size(1264, 681);
             Controls.Add(panelPrincipal);
             FormStyle = FormStyles.ActionBar_None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "PaginaInicial";
-            Padding = new Padding(3, 32, 3, 4);
+            Padding = new Padding(3, 24, 3, 3);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "PaginaInicial";
             Load += PaginaInicial_Load;
