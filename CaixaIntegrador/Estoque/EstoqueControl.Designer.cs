@@ -53,12 +53,12 @@
             btnFiltrar.Depth = 0;
             btnFiltrar.HighEmphasis = true;
             btnFiltrar.Icon = null;
-            btnFiltrar.Location = new Point(725, 8);
-            btnFiltrar.Margin = new Padding(5, 8, 5, 8);
+            btnFiltrar.Location = new Point(634, 6);
+            btnFiltrar.Margin = new Padding(4, 6, 4, 6);
             btnFiltrar.MouseState = MaterialSkin.MouseState.HOVER;
             btnFiltrar.Name = "btnFiltrar";
             btnFiltrar.NoAccentTextColor = Color.Empty;
-            btnFiltrar.Size = new Size(109, 65);
+            btnFiltrar.Size = new Size(95, 49);
             btnFiltrar.TabIndex = 3;
             btnFiltrar.Text = "Filtrar";
             btnFiltrar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -80,12 +80,11 @@
             cmbFiltrar.FormattingEnabled = true;
             cmbFiltrar.IntegralHeight = false;
             cmbFiltrar.ItemHeight = 43;
-            cmbFiltrar.Location = new Point(513, 24);
-            cmbFiltrar.Margin = new Padding(3, 4, 3, 4);
+            cmbFiltrar.Location = new Point(449, 18);
             cmbFiltrar.MaxDropDownItems = 4;
             cmbFiltrar.MouseState = MaterialSkin.MouseState.OUT;
             cmbFiltrar.Name = "cmbFiltrar";
-            cmbFiltrar.Size = new Size(180, 49);
+            cmbFiltrar.Size = new Size(158, 49);
             cmbFiltrar.StartIndex = 0;
             cmbFiltrar.TabIndex = 2;
             cmbFiltrar.SelectedIndexChanged += cmbFiltrar_SelectedIndexChanged;
@@ -98,12 +97,12 @@
             btbBuscar.Depth = 0;
             btbBuscar.HighEmphasis = true;
             btbBuscar.Icon = null;
-            btbBuscar.Location = new Point(177, 8);
-            btbBuscar.Margin = new Padding(5, 8, 5, 8);
+            btbBuscar.Location = new Point(155, 6);
+            btbBuscar.Margin = new Padding(4, 6, 4, 6);
             btbBuscar.MouseState = MaterialSkin.MouseState.HOVER;
             btbBuscar.Name = "btbBuscar";
             btbBuscar.NoAccentTextColor = Color.Empty;
-            btbBuscar.Size = new Size(111, 64);
+            btbBuscar.Size = new Size(97, 48);
             btbBuscar.TabIndex = 1;
             btbBuscar.Text = "Buscar";
             btbBuscar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -125,14 +124,14 @@
             txtBuscar.HideSelection = true;
             txtBuscar.InsertKeyMode = InsertKeyMode.Default;
             txtBuscar.LeadingIcon = null;
-            txtBuscar.Location = new Point(13, 24);
-            txtBuscar.Margin = new Padding(3, 4, 3, 4);
+            txtBuscar.Location = new Point(11, 18);
             txtBuscar.Mask = "";
             txtBuscar.MaxLength = 32767;
             txtBuscar.MouseState = MaterialSkin.MouseState.OUT;
             txtBuscar.Name = "txtBuscar";
             txtBuscar.PasswordChar = '\0';
             txtBuscar.PrefixSuffixText = null;
+            txtBuscar.PromptChar = '_';
             txtBuscar.ReadOnly = false;
             txtBuscar.RejectInputOnFirstFailure = false;
             txtBuscar.ResetOnPrompt = true;
@@ -142,7 +141,7 @@
             txtBuscar.SelectionLength = 0;
             txtBuscar.SelectionStart = 0;
             txtBuscar.ShortcutsEnabled = true;
-            txtBuscar.Size = new Size(156, 48);
+            txtBuscar.Size = new Size(136, 48);
             txtBuscar.SkipLiterals = true;
             txtBuscar.TabIndex = 0;
             txtBuscar.TabStop = false;
@@ -160,8 +159,8 @@
             BtnAtualizarQtd.Depth = 0;
             BtnAtualizarQtd.HighEmphasis = true;
             BtnAtualizarQtd.Icon = null;
-            BtnAtualizarQtd.Location = new Point(781, 20);
-            BtnAtualizarQtd.Margin = new Padding(5, 8, 5, 8);
+            BtnAtualizarQtd.Location = new Point(683, 15);
+            BtnAtualizarQtd.Margin = new Padding(4, 6, 4, 6);
             BtnAtualizarQtd.MouseState = MaterialSkin.MouseState.HOVER;
             BtnAtualizarQtd.Name = "BtnAtualizarQtd";
             BtnAtualizarQtd.NoAccentTextColor = Color.Empty;
@@ -178,7 +177,7 @@
             materialLabel1.AutoSize = true;
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel1.Location = new Point(483, 31);
+            materialLabel1.Location = new Point(423, 23);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
             materialLabel1.Size = new Size(128, 19);
@@ -192,12 +191,13 @@
             txtQuantidade.Depth = 0;
             txtQuantidade.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtQuantidade.LeadingIcon = null;
-            txtQuantidade.Location = new Point(627, 16);
+            txtQuantidade.Location = new Point(549, 12);
+            txtQuantidade.Margin = new Padding(3, 2, 3, 2);
             txtQuantidade.MaxLength = 50;
             txtQuantidade.MouseState = MaterialSkin.MouseState.OUT;
             txtQuantidade.Multiline = false;
             txtQuantidade.Name = "txtQuantidade";
-            txtQuantidade.Size = new Size(125, 50);
+            txtQuantidade.Size = new Size(109, 50);
             txtQuantidade.TabIndex = 4;
             txtQuantidade.Text = "";
             txtQuantidade.TrailingIcon = null;
@@ -209,8 +209,8 @@
             btnRemover.Depth = 0;
             btnRemover.HighEmphasis = true;
             btnRemover.Icon = null;
-            btnRemover.Location = new Point(219, 20);
-            btnRemover.Margin = new Padding(5, 8, 5, 8);
+            btnRemover.Location = new Point(192, 15);
+            btnRemover.Margin = new Padding(4, 6, 4, 6);
             btnRemover.MouseState = MaterialSkin.MouseState.HOVER;
             btnRemover.Name = "btnRemover";
             btnRemover.NoAccentTextColor = Color.Empty;
@@ -229,8 +229,8 @@
             btnAdicionar.Depth = 0;
             btnAdicionar.HighEmphasis = true;
             btnAdicionar.Icon = null;
-            btnAdicionar.Location = new Point(36, 20);
-            btnAdicionar.Margin = new Padding(5, 8, 5, 8);
+            btnAdicionar.Location = new Point(32, 15);
+            btnAdicionar.Margin = new Padding(4, 6, 4, 6);
             btnAdicionar.MouseState = MaterialSkin.MouseState.HOVER;
             btnAdicionar.Name = "btnAdicionar";
             btnAdicionar.NoAccentTextColor = Color.Empty;
@@ -246,12 +246,13 @@
             // 
             dataGridView1.BackgroundColor = SystemColors.Control;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(6, 106);
+            dataGridView1.Location = new Point(254, 84);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(908, 405);
+            dataGridView1.Size = new Size(794, 304);
             dataGridView1.TabIndex = 4;
             // 
             // panelCabecalho
@@ -261,9 +262,10 @@
             panelCabecalho.Controls.Add(cmbFiltrar);
             panelCabecalho.Controls.Add(txtBuscar);
             panelCabecalho.Controls.Add(btbBuscar);
-            panelCabecalho.Location = new Point(7, 22);
+            panelCabecalho.Location = new Point(257, 16);
+            panelCabecalho.Margin = new Padding(3, 2, 3, 2);
             panelCabecalho.Name = "panelCabecalho";
-            panelCabecalho.Size = new Size(904, 85);
+            panelCabecalho.Size = new Size(791, 64);
             panelCabecalho.TabIndex = 5;
             panelCabecalho.Paint += panel1_Paint;
             // 
@@ -274,21 +276,22 @@
             panel1.Controls.Add(txtQuantidade);
             panel1.Controls.Add(btnRemover);
             panel1.Controls.Add(btnAdicionar);
-            panel1.Location = new Point(7, 517);
+            panel1.Location = new Point(251, 388);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(904, 72);
+            panel1.Size = new Size(791, 54);
             panel1.TabIndex = 6;
             // 
             // EstoqueControl
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel1);
             Controls.Add(panelCabecalho);
             Controls.Add(dataGridView1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "EstoqueControl";
-            Dock = DockStyle.Fill;
-            Size = new Size(914, 600);
+            Size = new Size(1502, 710);
             Load += EstoqueControl_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panelCabecalho.ResumeLayout(false);

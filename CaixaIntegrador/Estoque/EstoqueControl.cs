@@ -43,16 +43,16 @@ namespace CaixaIntegrador.Estoque
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            var novo = new Produto
-            {
-                Nome = "Novo Produto",
-                SubCategoriaId = 1, // exemplo
-                Preco = 10.00M,
-                Quantidade = 100
-            };
 
-            controle.Adicionar(novo);
-            AtualizarGrid();
+            using (var form = new FrmAdicionarProduto())
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    controle.Adicionar(form.ProdutoCriado);
+                    AtualizarGrid();
+                }
+            }
+
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
@@ -67,8 +67,24 @@ namespace CaixaIntegrador.Estoque
 
         private void AtualizarGrid()
         {
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = controle.Listar();
+
+            using var db = new AppDbContext();
+
+            var dados = db.Produtos
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Nome,
+                    SubCategoria = p.SubCategoria.Nome,
+                    Categoria = p.SubCategoria.Categoria.Nome,
+                    p.Preco,
+                    p.Quantidade
+                })
+                .ToList();
+
+            dataGridView1.AutoGenerateColumns = true;
+            dataGridView1.DataSource = dados;
+
         }
 
         private void BtnAtualizarQtd_Click(object sender, EventArgs e)
