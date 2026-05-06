@@ -31,8 +31,6 @@ namespace CaixaIntegrador
 
         private void CentralizarControl(UserControl control)
         {
-            
-            control.Dock = DockStyle.None;
             panelPrincipal.Controls.Clear();
             panelPrincipal.Controls.Add(control);
             this.ClientSize = new Size(control.Width, control.Height);
@@ -42,7 +40,7 @@ namespace CaixaIntegrador
         public void MostrarLogin()
         {
             var login = new LoginControl(this);
-          //  this.ClientSize = new Size(login.Width, login.Height);
+            login.Dock = DockStyle.None;
             CentralizarControl(login);
             this.MaximizeBox = false;
             this.Sizable = false;
@@ -51,6 +49,7 @@ namespace CaixaIntegrador
         public void MostrarRegistro()
         {
             var registro = new RegistroControl(this);
+            registro.Dock = DockStyle.None;
             CentralizarControl(registro);
             this.MaximizeBox = false;
             this.Sizable = false;
@@ -58,20 +57,18 @@ namespace CaixaIntegrador
 
         public void CarregarCaixa()
         {
-            panelPrincipal.Controls.Clear();
             var caixaControl = new CaixaControl();
-            panelPrincipal.Controls.Add(caixaControl);
+            caixaControl.Dock = DockStyle.Fill;
             CentralizarControl(caixaControl);
+            this.MaximizeBox = true;
            
         }
 
         public void MostrarTelaInicial()
         {
             var telaInicial = new TelaInicialControl(this);
-            this.ClientSize = new Size(telaInicial.Width, telaInicial.Height);
-            CentralizarControl(telaInicial);
-            
 
+            CentralizarControl(telaInicial);
         }
 
         public void CarregarEstoque()

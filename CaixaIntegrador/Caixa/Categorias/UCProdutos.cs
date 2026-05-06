@@ -36,7 +36,7 @@ namespace CaixaIntegrador
                 btn.BorderRadius = 8;
                 btn.BorderThickness = 2;
                 btn.Animated = true;
-                btn.FillColor = Color.FromArgb(160, 120, 58);
+                btn.FillColor = Color.FromArgb(25, 118, 210);
                 btn.ShadowDecoration.Enabled = false;
                 
                 btn.Click += (s, e) =>

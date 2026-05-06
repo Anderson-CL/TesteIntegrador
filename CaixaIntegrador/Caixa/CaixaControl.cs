@@ -115,6 +115,10 @@ namespace CaixaIntegrador.Caixa
 
         private void BtnDeletarMarcados_Click(object sender, EventArgs e)
         {
+            // garantir que qualquer edição pendente (checkbox sendo editado) seja confirmada
+            DataGrid_Produtos.EndEdit();
+            DataGrid_Produtos.CommitEdit(DataGridViewDataErrorContexts.Commit);
+
             var itensDeletar = DataGrid_Produtos.Rows
                 .Cast<DataGridViewRow>()
                 .Where(r => r.Cells["Column5"].Value is bool marcado && marcado)
@@ -143,6 +147,16 @@ namespace CaixaIntegrador.Caixa
 
             if (DataGrid_Produtos.Columns["Total"] != null)
                 DataGrid_Produtos.Columns["Total"].DefaultCellStyle.Format = "C2";
+            // Garantir que a coluna de checkbox tenha valores padrão (false) após rebind
+            if (DataGrid_Produtos.Columns.Contains("Column5"))
+            {
+                DataGrid_Produtos.Columns["Column5"].DefaultCellStyle.NullValue = false;
+                foreach (DataGridViewRow row in DataGrid_Produtos.Rows)
+                {
+                    if (row.Cells["Column5"].Value == null)
+                        row.Cells["Column5"].Value = false;
+                }
+            }
             AtualizarTotal();
         }
 
@@ -355,6 +369,10 @@ namespace CaixaIntegrador.Caixa
 
         private void btnDeletarMarcados_Click_1(object sender, EventArgs e)
         {
+            // confirmar edição pendente de checkbox
+            DataGrid_Produtos.EndEdit();
+            DataGrid_Produtos.CommitEdit(DataGridViewDataErrorContexts.Commit);
+
             var itensDeletar = DataGrid_Produtos.Rows
                   .Cast<DataGridViewRow>()
                   .Where(r => r.Cells["Column5"].Value is bool marcado && marcado)

@@ -31,7 +31,7 @@
                 btn.BorderRadius = 8;
                 btn.BorderThickness = 2;
                 btn.Animated = true;
-                btn.FillColor = Color.FromArgb(50, 50, 50);
+                btn.FillColor = Color.FromArgb(183, 28, 28);
                 btn.ShadowDecoration.Enabled = false;
                 //Evento para o botão quando clicado
                 btn.Click += (s, e) =>
