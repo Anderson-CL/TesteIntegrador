@@ -72,10 +72,10 @@
             groupBox1.Controls.Add(btn_Pedido);
             groupBox1.Controls.Add(btnDeletarMarcados);
             groupBox1.Controls.Add(DataGrid_Produtos);
-            groupBox1.Location = new Point(0, 32);
-            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Location = new Point(0, 24);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(371, 876);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(325, 657);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
@@ -92,12 +92,12 @@
             btnLimparCarrinho.ForeColor = Color.White;
             btnLimparCarrinho.HighEmphasis = true;
             btnLimparCarrinho.Icon = null;
-            btnLimparCarrinho.Location = new Point(5, 697);
-            btnLimparCarrinho.Margin = new Padding(5, 8, 5, 8);
+            btnLimparCarrinho.Location = new Point(4, 523);
+            btnLimparCarrinho.Margin = new Padding(4, 6, 4, 6);
             btnLimparCarrinho.MouseState = MaterialSkin.MouseState.HOVER;
             btnLimparCarrinho.Name = "btnLimparCarrinho";
             btnLimparCarrinho.NoAccentTextColor = Color.Empty;
-            btnLimparCarrinho.Size = new Size(175, 67);
+            btnLimparCarrinho.Size = new Size(153, 50);
             btnLimparCarrinho.TabIndex = 5;
             btnLimparCarrinho.Text = "Limpar Carrinho";
             btnLimparCarrinho.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -114,12 +114,12 @@
             btn_Pedido.Depth = 0;
             btn_Pedido.HighEmphasis = false;
             btn_Pedido.Icon = null;
-            btn_Pedido.Location = new Point(5, 793);
-            btn_Pedido.Margin = new Padding(5, 8, 5, 8);
+            btn_Pedido.Location = new Point(4, 595);
+            btn_Pedido.Margin = new Padding(4, 6, 4, 6);
             btn_Pedido.MouseState = MaterialSkin.MouseState.HOVER;
             btn_Pedido.Name = "btn_Pedido";
             btn_Pedido.NoAccentTextColor = Color.Empty;
-            btn_Pedido.Size = new Size(346, 67);
+            btn_Pedido.Size = new Size(303, 50);
             btn_Pedido.TabIndex = 6;
             btn_Pedido.Text = "Pedidos";
             btn_Pedido.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -139,12 +139,12 @@
             btnDeletarMarcados.ForeColor = Color.White;
             btnDeletarMarcados.HighEmphasis = true;
             btnDeletarMarcados.Icon = null;
-            btnDeletarMarcados.Location = new Point(192, 697);
-            btnDeletarMarcados.Margin = new Padding(5, 8, 5, 8);
+            btnDeletarMarcados.Location = new Point(168, 523);
+            btnDeletarMarcados.Margin = new Padding(4, 6, 4, 6);
             btnDeletarMarcados.MouseState = MaterialSkin.MouseState.HOVER;
             btnDeletarMarcados.Name = "btnDeletarMarcados";
             btnDeletarMarcados.NoAccentTextColor = Color.Empty;
-            btnDeletarMarcados.Size = new Size(175, 67);
+            btnDeletarMarcados.Size = new Size(153, 50);
             btnDeletarMarcados.TabIndex = 4;
             btnDeletarMarcados.Text = "Deletar";
             btnDeletarMarcados.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -183,7 +183,6 @@
             DataGrid_Produtos.EnableHeadersVisualStyles = false;
             DataGrid_Produtos.GridColor = Color.FromArgb(80, 80, 80);
             DataGrid_Produtos.Location = new Point(0, 0);
-            DataGrid_Produtos.Margin = new Padding(3, 4, 3, 4);
             DataGrid_Produtos.Name = "DataGrid_Produtos";
             DataGrid_Produtos.RowHeadersVisible = false;
             DataGrid_Produtos.RowHeadersWidth = 35;
@@ -191,7 +190,7 @@
             DataGrid_Produtos.RowTemplate.Resizable = DataGridViewTriState.False;
             DataGrid_Produtos.ScrollBars = ScrollBars.Vertical;
             DataGrid_Produtos.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            DataGrid_Produtos.Size = new Size(368, 685);
+            DataGrid_Produtos.Size = new Size(322, 514);
             DataGrid_Produtos.TabIndex = 1;
             DataGrid_Produtos.CellContentClick += DataGrid_Produtos_CellContentClick;
             // 
@@ -267,10 +266,10 @@
             groupBox2.Controls.Add(lblTotal_Text);
             groupBox2.Controls.Add(Valores_MaterialTextBox);
             groupBox2.Controls.Add(PanelBtnPag);
-            groupBox2.Location = new Point(1136, 32);
-            groupBox2.Margin = new Padding(3, 4, 3, 4);
+            groupBox2.Location = new Point(994, 24);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(309, 876);
+            groupBox2.Padding = new Padding(3, 2, 3, 2);
+            groupBox2.Size = new Size(270, 657);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "groupBox2";
@@ -284,12 +283,12 @@
             btn_FinalizarPedido.Depth = 0;
             btn_FinalizarPedido.HighEmphasis = true;
             btn_FinalizarPedido.Icon = null;
-            btn_FinalizarPedido.Location = new Point(11, 740);
-            btn_FinalizarPedido.Margin = new Padding(5, 8, 5, 8);
+            btn_FinalizarPedido.Location = new Point(10, 555);
+            btn_FinalizarPedido.Margin = new Padding(4, 6, 4, 6);
             btn_FinalizarPedido.MouseState = MaterialSkin.MouseState.HOVER;
             btn_FinalizarPedido.Name = "btn_FinalizarPedido";
             btn_FinalizarPedido.NoAccentTextColor = Color.Empty;
-            btn_FinalizarPedido.Size = new Size(289, 67);
+            btn_FinalizarPedido.Size = new Size(253, 50);
             btn_FinalizarPedido.TabIndex = 14;
             btn_FinalizarPedido.Text = "Finalizar Pedido";
             btn_FinalizarPedido.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -307,12 +306,12 @@
             btn_Limparpag.FlatStyle = FlatStyle.Popup;
             btn_Limparpag.HighEmphasis = true;
             btn_Limparpag.Icon = null;
-            btn_Limparpag.Location = new Point(176, 657);
-            btn_Limparpag.Margin = new Padding(5, 8, 5, 8);
+            btn_Limparpag.Location = new Point(154, 493);
+            btn_Limparpag.Margin = new Padding(4, 6, 4, 6);
             btn_Limparpag.MouseState = MaterialSkin.MouseState.HOVER;
             btn_Limparpag.Name = "btn_Limparpag";
             btn_Limparpag.NoAccentTextColor = Color.Empty;
-            btn_Limparpag.Size = new Size(129, 67);
+            btn_Limparpag.Size = new Size(113, 50);
             btn_Limparpag.TabIndex = 19;
             btn_Limparpag.Text = "Limpar";
             btn_Limparpag.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -329,12 +328,12 @@
             btn_PedidoAberto.Depth = 0;
             btn_PedidoAberto.HighEmphasis = false;
             btn_PedidoAberto.Icon = null;
-            btn_PedidoAberto.Location = new Point(11, 820);
-            btn_PedidoAberto.Margin = new Padding(5, 8, 5, 8);
+            btn_PedidoAberto.Location = new Point(10, 615);
+            btn_PedidoAberto.Margin = new Padding(4, 6, 4, 6);
             btn_PedidoAberto.MouseState = MaterialSkin.MouseState.HOVER;
             btn_PedidoAberto.Name = "btn_PedidoAberto";
             btn_PedidoAberto.NoAccentTextColor = Color.Empty;
-            btn_PedidoAberto.Size = new Size(289, 48);
+            btn_PedidoAberto.Size = new Size(253, 36);
             btn_PedidoAberto.TabIndex = 16;
             btn_PedidoAberto.Text = "Pedido em Aberto";
             btn_PedidoAberto.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -355,12 +354,12 @@
             btnAdicionarPagamento.ForeColor = Color.White;
             btnAdicionarPagamento.HighEmphasis = true;
             btnAdicionarPagamento.Icon = null;
-            btnAdicionarPagamento.Location = new Point(11, 657);
-            btnAdicionarPagamento.Margin = new Padding(5, 8, 5, 8);
+            btnAdicionarPagamento.Location = new Point(10, 493);
+            btnAdicionarPagamento.Margin = new Padding(4, 6, 4, 6);
             btnAdicionarPagamento.MouseState = MaterialSkin.MouseState.HOVER;
             btnAdicionarPagamento.Name = "btnAdicionarPagamento";
             btnAdicionarPagamento.NoAccentTextColor = Color.Empty;
-            btnAdicionarPagamento.Size = new Size(153, 67);
+            btnAdicionarPagamento.Size = new Size(134, 50);
             btnAdicionarPagamento.TabIndex = 17;
             btnAdicionarPagamento.Text = "Adicionar Pag";
             btnAdicionarPagamento.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -375,7 +374,7 @@
             troco_label.Depth = 0;
             troco_label.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             troco_label.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle1;
-            troco_label.Location = new Point(3, 569);
+            troco_label.Location = new Point(3, 427);
             troco_label.MouseState = MaterialSkin.MouseState.HOVER;
             troco_label.Name = "troco_label";
             troco_label.Size = new Size(46, 19);
@@ -390,7 +389,7 @@
             lblTotal_Text.Depth = 0;
             lblTotal_Text.Font = new Font("Roboto", 34F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblTotal_Text.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
-            lblTotal_Text.Location = new Point(3, 515);
+            lblTotal_Text.Location = new Point(3, 386);
             lblTotal_Text.MouseState = MaterialSkin.MouseState.HOVER;
             lblTotal_Text.Name = "lblTotal_Text";
             lblTotal_Text.Size = new Size(86, 41);
@@ -408,8 +407,7 @@
             Valores_MaterialTextBox.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             Valores_MaterialTextBox.HideSelection = true;
             Valores_MaterialTextBox.LeadingIcon = null;
-            Valores_MaterialTextBox.Location = new Point(3, 447);
-            Valores_MaterialTextBox.Margin = new Padding(3, 4, 3, 4);
+            Valores_MaterialTextBox.Location = new Point(3, 335);
             Valores_MaterialTextBox.MaxLength = 32767;
             Valores_MaterialTextBox.MouseState = MaterialSkin.MouseState.OUT;
             Valores_MaterialTextBox.Name = "Valores_MaterialTextBox";
@@ -421,7 +419,7 @@
             Valores_MaterialTextBox.SelectionLength = 0;
             Valores_MaterialTextBox.SelectionStart = 0;
             Valores_MaterialTextBox.ShortcutsEnabled = true;
-            Valores_MaterialTextBox.Size = new Size(305, 48);
+            Valores_MaterialTextBox.Size = new Size(267, 48);
             Valores_MaterialTextBox.TabIndex = 10;
             Valores_MaterialTextBox.TabStop = false;
             Valores_MaterialTextBox.TextAlign = HorizontalAlignment.Left;
@@ -439,9 +437,8 @@
             PanelBtnPag.Controls.Add(materialRadioButton2);
             PanelBtnPag.Controls.Add(lblValorPago);
             PanelBtnPag.Location = new Point(0, 0);
-            PanelBtnPag.Margin = new Padding(3, 4, 3, 4);
             PanelBtnPag.Name = "PanelBtnPag";
-            PanelBtnPag.Size = new Size(305, 449);
+            PanelBtnPag.Size = new Size(267, 337);
             PanelBtnPag.TabIndex = 1;
             PanelBtnPag.Paint += PanelBtnPag_Paint;
             // 
@@ -449,7 +446,7 @@
             // 
             materialRadioButton3.AutoSize = true;
             materialRadioButton3.Depth = 0;
-            materialRadioButton3.Location = new Point(18, 200);
+            materialRadioButton3.Location = new Point(16, 150);
             materialRadioButton3.Margin = new Padding(0);
             materialRadioButton3.MouseLocation = new Point(-1, -1);
             materialRadioButton3.MouseState = MaterialSkin.MouseState.HOVER;
@@ -468,7 +465,7 @@
             label1.Depth = 0;
             label1.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             label1.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            label1.Location = new Point(29, 13);
+            label1.Location = new Point(25, 10);
             label1.MouseState = MaterialSkin.MouseState.HOVER;
             label1.Name = "label1";
             label1.Size = new Size(203, 24);
@@ -479,7 +476,7 @@
             // 
             materialRadioButton5.AutoSize = true;
             materialRadioButton5.Depth = 0;
-            materialRadioButton5.Location = new Point(18, 333);
+            materialRadioButton5.Location = new Point(16, 250);
             materialRadioButton5.Margin = new Padding(0);
             materialRadioButton5.MouseLocation = new Point(-1, -1);
             materialRadioButton5.MouseState = MaterialSkin.MouseState.HOVER;
@@ -496,7 +493,7 @@
             // 
             materialRadioButton1.AutoSize = true;
             materialRadioButton1.Depth = 0;
-            materialRadioButton1.Location = new Point(18, 67);
+            materialRadioButton1.Location = new Point(16, 50);
             materialRadioButton1.Margin = new Padding(0);
             materialRadioButton1.MouseLocation = new Point(-1, -1);
             materialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -513,7 +510,7 @@
             // 
             materialRadioButton4.AutoSize = true;
             materialRadioButton4.Depth = 0;
-            materialRadioButton4.Location = new Point(18, 267);
+            materialRadioButton4.Location = new Point(16, 200);
             materialRadioButton4.Margin = new Padding(0);
             materialRadioButton4.MouseLocation = new Point(-1, -1);
             materialRadioButton4.MouseState = MaterialSkin.MouseState.HOVER;
@@ -530,7 +527,7 @@
             // 
             materialRadioButton2.AutoSize = true;
             materialRadioButton2.Depth = 0;
-            materialRadioButton2.Location = new Point(18, 133);
+            materialRadioButton2.Location = new Point(16, 100);
             materialRadioButton2.Margin = new Padding(0);
             materialRadioButton2.MouseLocation = new Point(-1, -1);
             materialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER;
@@ -548,7 +545,7 @@
             lblValorPago.AutoSize = true;
             lblValorPago.Depth = 0;
             lblValorPago.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            lblValorPago.Location = new Point(128, 417);
+            lblValorPago.Location = new Point(112, 313);
             lblValorPago.MouseState = MaterialSkin.MouseState.HOVER;
             lblValorPago.Name = "lblValorPago";
             lblValorPago.Size = new Size(152, 19);
@@ -557,24 +554,23 @@
             // 
             // panelPrincipal
             // 
-            panelPrincipal.Location = new Point(371, 32);
-            panelPrincipal.Margin = new Padding(3, 4, 3, 4);
+            panelPrincipal.Location = new Point(325, 24);
             panelPrincipal.Name = "panelPrincipal";
-            panelPrincipal.Size = new Size(765, 876);
+            panelPrincipal.Size = new Size(669, 657);
             panelPrincipal.TabIndex = 2;
             panelPrincipal.Paint += panelPrincipal_Paint;
             // 
             // CaixaControl
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panelPrincipal);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "CaixaControl";
-            Dock = DockStyle.Fill;
-            Padding = new Padding(0, 32, 0, 0);
-            Size = new Size(1445, 908);
+            Padding = new Padding(0, 24, 0, 0);
+            Size = new Size(1421, 747);
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)DataGrid_Produtos).EndInit();
             groupBox2.ResumeLayout(false);

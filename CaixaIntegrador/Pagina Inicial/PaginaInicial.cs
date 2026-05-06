@@ -2,6 +2,7 @@
 using CaixaIntegrador.Pagina_Inicial;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using Microsoft.VisualBasic.Logging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,16 +31,18 @@ namespace CaixaIntegrador
 
         private void CentralizarControl(UserControl control)
         {
+            
+            control.Dock = DockStyle.None;
             panelPrincipal.Controls.Clear();
             panelPrincipal.Controls.Add(control);
-            control.Dock = DockStyle.None;
+            this.ClientSize = new Size(control.Width, control.Height);
             this.CenterToScreen();
         }
 
         public void MostrarLogin()
         {
             var login = new LoginControl(this);
-            this.ClientSize = new Size(login.Width, login.Height);
+          //  this.ClientSize = new Size(login.Width, login.Height);
             CentralizarControl(login);
             this.MaximizeBox = false;
             this.Sizable = false;
