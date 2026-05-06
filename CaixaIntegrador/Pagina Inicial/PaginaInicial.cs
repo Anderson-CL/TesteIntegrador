@@ -32,7 +32,6 @@ namespace CaixaIntegrador
         {
             panelPrincipal.Controls.Clear();
             panelPrincipal.Controls.Add(control);
-            this.ClientSize = new Size(control.Width, control.Height);
             control.Dock = DockStyle.None;
             this.CenterToScreen();
         }
@@ -40,6 +39,7 @@ namespace CaixaIntegrador
         public void MostrarLogin()
         {
             var login = new LoginControl(this);
+            this.ClientSize = new Size(login.Width, login.Height);
             CentralizarControl(login);
             this.MaximizeBox = false;
             this.Sizable = false;
@@ -64,11 +64,11 @@ namespace CaixaIntegrador
 
         public void MostrarTelaInicial()
         {
-            panelPrincipal.Controls.Clear();
             var telaInicial = new TelaInicialControl(this);
-            panelPrincipal.Controls.Add(telaInicial);
+            this.ClientSize = new Size(telaInicial.Width, telaInicial.Height);
             CentralizarControl(telaInicial);
-           
+            
+
         }
 
         public void CarregarEstoque()
