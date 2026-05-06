@@ -128,12 +128,12 @@ namespace CaixaIntegrador.Pagina_Inicial
             if (txtRegistroSenha1.PasswordChar == '●') // senha está oculta
             {
                 txtRegistroSenha1.PasswordChar = '\0'; // mostra senha
-                olinhoRegistro1.Image = Properties.Resources.visivel;
+                olinhoRegistro1.Image = Properties.Resources.olhar;
             }
             else
             {
                 txtRegistroSenha1.PasswordChar = '●'; // oculta senha
-                olinhoRegistro1.Image = Properties.Resources.invisivel;
+                olinhoRegistro1.Image = Properties.Resources.OlharNo;
             }
         }
 
@@ -142,12 +142,12 @@ namespace CaixaIntegrador.Pagina_Inicial
             if (txtRegistroSenha2.PasswordChar == '●') // senha está oculta
             {
                 txtRegistroSenha2.PasswordChar = '\0'; // mostra senha
-                olhinhoRegistro2.Image = Properties.Resources.visivel;
+                olhinhoRegistro2.Image = Properties.Resources.olhar;
             }
             else
             {
                 txtRegistroSenha2.PasswordChar = '●'; // oculta senha
-                olhinhoRegistro2.Image = Properties.Resources.invisivel;
+                olhinhoRegistro2.Image = Properties.Resources.OlharNo;
             }
 
         }
@@ -160,6 +160,16 @@ namespace CaixaIntegrador.Pagina_Inicial
         private void txtRegistroSenha2_TextChanged(object sender, EventArgs e)
         {
             olhinhoRegistro2.Visible = txtRegistroSenha2.Text.Length > 0;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtRegistroLogin_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

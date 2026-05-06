@@ -30,26 +30,27 @@ namespace CaixaIntegrador
 
         private void CentralizarControl(UserControl control)
         {
-            control.Left = (this.ClientSize.Width - control.Width) / 2;
-            control.Top = (this.ClientSize.Height - control.Height) / 2;
+            panelPrincipal.Controls.Clear();
+            panelPrincipal.Controls.Add(control);
+            this.ClientSize = new Size(control.Width, control.Height);
+            control.Dock = DockStyle.None;
+            this.CenterToScreen();
         }
 
         public void MostrarLogin()
         {
-            panelPrincipal.Controls.Clear();
             var login = new LoginControl(this);
-            panelPrincipal.Controls.Add(login);
-          // CentralizarControl(login);
-            Anchor = AnchorStyles.None;
-            //Dock = DockStyle.Fill;
+            CentralizarControl(login);
+            this.MaximizeBox = false;
+            this.Sizable = false;
         }
 
         public void MostrarRegistro()
         {
-            panelPrincipal.Controls.Clear();
             var registro = new RegistroControl(this);
-            panelPrincipal.Controls.Add(registro);
             CentralizarControl(registro);
+            this.MaximizeBox = false;
+            this.Sizable = false;
         }
 
         public void CarregarCaixa()
