@@ -22,7 +22,10 @@ namespace CaixaIntegrador.Pagina_Inicial
             InitializeComponent();
           
             this.principal = principal;
-        
+
+            txtLogin.Hint = "Usuário ou Email";
+            txtSenha.Hint = "Insira aqui sua senha";
+
         }
 
         private void LoginControl_Load(object sender, EventArgs e)
@@ -43,10 +46,12 @@ namespace CaixaIntegrador.Pagina_Inicial
 
                 try
                 {
-                    string login = txtLogin.Text.Trim();
+                    string loginOuEmail = txtLogin.Text.Trim();
                     string senhaCriptografada = Criptografia.CriptografarSenha(txtSenha.Text.Trim());
 
-                    var usuario = db.Usuarios.FirstOrDefault(u => u.Login == login && u.Senha == senhaCriptografada);
+                    var usuario = db.Usuarios.FirstOrDefault(u =>
+                    (u.Login == loginOuEmail || u.Email == loginOuEmail)
+                    && u.Senha == senhaCriptografada);
 
                     if (usuario != null)
                     {
@@ -98,7 +103,11 @@ namespace CaixaIntegrador.Pagina_Inicial
         private void MostrarMensagem(string texto, bool sucesso)
         {
             lblMensagem1.Text = texto;
-            lblMensagem1.ForeColor = sucesso ? Color.Green : Color.Red;
+
+            lblMensagem1.ForeColor = sucesso
+                ? MaterialSkin.MaterialSkinManager.Instance.ColorScheme.AccentColor
+                 : Color.Red;
+
             lblMensagem1.Visible = true;
         }
 

@@ -43,6 +43,8 @@
             pictureBox6 = new PictureBox();
             lblMensagemRegistro = new MaterialSkin.Controls.MaterialLabel();
             panel1 = new Panel();
+            txtRegistroEmail = new MaterialSkin.Controls.MaterialTextBox2();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)olhinhoRegistro2).BeginInit();
@@ -50,6 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)olinhoRegistro1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // pictureBox4
@@ -77,7 +80,7 @@
             // olhinhoRegistro2
             // 
             olhinhoRegistro2.Image = Properties.Resources.OlharNo;
-            olhinhoRegistro2.Location = new Point(487, 294);
+            olhinhoRegistro2.Location = new Point(487, 324);
             olhinhoRegistro2.Margin = new Padding(3, 2, 3, 2);
             olhinhoRegistro2.Name = "olhinhoRegistro2";
             olhinhoRegistro2.Size = new Size(42, 36);
@@ -90,7 +93,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.cadeado;
-            pictureBox1.Location = new Point(215, 245);
+            pictureBox1.Location = new Point(215, 275);
             pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(42, 36);
@@ -107,7 +110,7 @@
             txtRegistroSenha1.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtRegistroSenha1.HideSelection = true;
             txtRegistroSenha1.LeadingIcon = null;
-            txtRegistroSenha1.Location = new Point(263, 245);
+            txtRegistroSenha1.Location = new Point(263, 275);
             txtRegistroSenha1.Margin = new Padding(3, 2, 3, 2);
             txtRegistroSenha1.MaxLength = 32767;
             txtRegistroSenha1.MouseState = MaterialSkin.MouseState.OUT;
@@ -121,7 +124,7 @@
             txtRegistroSenha1.SelectionStart = 0;
             txtRegistroSenha1.ShortcutsEnabled = true;
             txtRegistroSenha1.Size = new Size(220, 36);
-            txtRegistroSenha1.TabIndex = 25;
+            txtRegistroSenha1.TabIndex = 26;
             txtRegistroSenha1.TabStop = false;
             txtRegistroSenha1.TextAlign = HorizontalAlignment.Left;
             txtRegistroSenha1.TrailingIcon = null;
@@ -168,7 +171,7 @@
             btnVoltar.Depth = 0;
             btnVoltar.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             btnVoltar.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            btnVoltar.Location = new Point(487, 394);
+            btnVoltar.Location = new Point(487, 437);
             btnVoltar.MouseState = MaterialSkin.MouseState.HOVER;
             btnVoltar.Name = "btnVoltar";
             btnVoltar.Size = new Size(55, 24);
@@ -182,7 +185,7 @@
             lblEsqueceu.Depth = 0;
             lblEsqueceu.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblEsqueceu.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            lblEsqueceu.Location = new Point(130, 394);
+            lblEsqueceu.Location = new Point(130, 437);
             lblEsqueceu.MouseState = MaterialSkin.MouseState.HOVER;
             lblEsqueceu.Name = "lblEsqueceu";
             lblEsqueceu.Size = new Size(172, 24);
@@ -211,13 +214,13 @@
             btnRegistro.Depth = 0;
             btnRegistro.HighEmphasis = true;
             btnRegistro.Icon = null;
-            btnRegistro.Location = new Point(384, 336);
+            btnRegistro.Location = new Point(384, 366);
             btnRegistro.Margin = new Padding(4);
             btnRegistro.MouseState = MaterialSkin.MouseState.HOVER;
             btnRegistro.Name = "btnRegistro";
             btnRegistro.NoAccentTextColor = Color.Empty;
             btnRegistro.Size = new Size(99, 36);
-            btnRegistro.TabIndex = 20;
+            btnRegistro.TabIndex = 28;
             btnRegistro.Text = "REGISTRAR";
             btnRegistro.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btnRegistro.UseAccentColor = false;
@@ -233,7 +236,7 @@
             txtRegistroSenha2.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtRegistroSenha2.HideSelection = true;
             txtRegistroSenha2.LeadingIcon = null;
-            txtRegistroSenha2.Location = new Point(263, 294);
+            txtRegistroSenha2.Location = new Point(263, 324);
             txtRegistroSenha2.Margin = new Padding(3, 2, 3, 2);
             txtRegistroSenha2.MaxLength = 32767;
             txtRegistroSenha2.MouseState = MaterialSkin.MouseState.OUT;
@@ -247,7 +250,7 @@
             txtRegistroSenha2.SelectionStart = 0;
             txtRegistroSenha2.ShortcutsEnabled = true;
             txtRegistroSenha2.Size = new Size(220, 36);
-            txtRegistroSenha2.TabIndex = 30;
+            txtRegistroSenha2.TabIndex = 27;
             txtRegistroSenha2.TabStop = false;
             txtRegistroSenha2.TextAlign = HorizontalAlignment.Left;
             txtRegistroSenha2.TrailingIcon = null;
@@ -259,7 +262,7 @@
             // olinhoRegistro1
             // 
             olinhoRegistro1.Image = Properties.Resources.OlharNo;
-            olinhoRegistro1.Location = new Point(487, 245);
+            olinhoRegistro1.Location = new Point(487, 275);
             olinhoRegistro1.Margin = new Padding(3, 2, 3, 2);
             olinhoRegistro1.Name = "olinhoRegistro1";
             olinhoRegistro1.Size = new Size(42, 36);
@@ -272,7 +275,7 @@
             // pictureBox6
             // 
             pictureBox6.Image = Properties.Resources.cadeado;
-            pictureBox6.Location = new Point(215, 294);
+            pictureBox6.Location = new Point(215, 324);
             pictureBox6.Margin = new Padding(3, 2, 3, 2);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(42, 36);
@@ -285,7 +288,7 @@
             lblMensagemRegistro.AutoSize = true;
             lblMensagemRegistro.Depth = 0;
             lblMensagemRegistro.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            lblMensagemRegistro.Location = new Point(260, 336);
+            lblMensagemRegistro.Location = new Point(260, 366);
             lblMensagemRegistro.MouseState = MaterialSkin.MouseState.HOVER;
             lblMensagemRegistro.Name = "lblMensagemRegistro";
             lblMensagemRegistro.Size = new Size(107, 19);
@@ -296,6 +299,8 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(txtRegistroEmail);
+            panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(pictureBox4);
             panel1.Controls.Add(lblMensagemRegistro);
             panel1.Controls.Add(btnRegistro);
@@ -317,6 +322,47 @@
             panel1.TabIndex = 34;
             panel1.Paint += panel1_Paint;
             // 
+            // txtRegistroEmail
+            // 
+            txtRegistroEmail.AnimateReadOnly = false;
+            txtRegistroEmail.BackgroundImageLayout = ImageLayout.None;
+            txtRegistroEmail.CharacterCasing = CharacterCasing.Normal;
+            txtRegistroEmail.Depth = 0;
+            txtRegistroEmail.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtRegistroEmail.HideSelection = true;
+            txtRegistroEmail.LeadingIcon = null;
+            txtRegistroEmail.Location = new Point(266, 235);
+            txtRegistroEmail.Margin = new Padding(3, 2, 3, 2);
+            txtRegistroEmail.MaxLength = 32767;
+            txtRegistroEmail.MouseState = MaterialSkin.MouseState.OUT;
+            txtRegistroEmail.Name = "txtRegistroEmail";
+            txtRegistroEmail.PasswordChar = '\0';
+            txtRegistroEmail.PrefixSuffixText = null;
+            txtRegistroEmail.ReadOnly = false;
+            txtRegistroEmail.RightToLeft = RightToLeft.No;
+            txtRegistroEmail.SelectedText = "";
+            txtRegistroEmail.SelectionLength = 0;
+            txtRegistroEmail.SelectionStart = 0;
+            txtRegistroEmail.ShortcutsEnabled = true;
+            txtRegistroEmail.Size = new Size(217, 36);
+            txtRegistroEmail.TabIndex = 25;
+            txtRegistroEmail.TabStop = false;
+            txtRegistroEmail.TextAlign = HorizontalAlignment.Left;
+            txtRegistroEmail.TrailingIcon = null;
+            txtRegistroEmail.UseSystemPasswordChar = false;
+            txtRegistroEmail.UseTallSize = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.face_13896971;
+            pictureBox2.Location = new Point(215, 235);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(42, 36);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 35;
+            pictureBox2.TabStop = false;
+            // 
             // RegistroControl
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -332,6 +378,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -352,5 +399,7 @@
         private PictureBox pictureBox6;
         private MaterialSkin.Controls.MaterialLabel lblMensagemRegistro;
         private Panel panel1;
+        private MaterialSkin.Controls.MaterialTextBox2 txtRegistroEmail;
+        private PictureBox pictureBox2;
     }
 }

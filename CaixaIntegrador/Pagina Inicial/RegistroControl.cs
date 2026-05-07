@@ -20,17 +20,28 @@ namespace CaixaIntegrador.Pagina_Inicial
         {
             InitializeComponent();
             this.principal = principal;
+
+            txtRegistroLogin.Hint = "Insira aqui seu usuário";
+            txtRegistroEmail.Hint = "Insira aqui seu email";
+            txtRegistroSenha1.Hint = "Insira aqui sua senha";
+            txtRegistroSenha2.Hint = "Confirme sua senha";
         }
 
         private void btnRegistro_Click(object sender, EventArgs e)
         {
             string login = txtRegistroLogin.Text.Trim();
+            string email = txtRegistroEmail.Text.Trim();
             string senha = txtRegistroSenha1.Text.Trim();
             string confirmarSenha = txtRegistroSenha2.Text.Trim();
 
             if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(senha) || string.IsNullOrEmpty(confirmarSenha))
             {
                 MostrarMensagem("Por favor, preencha todos os campos vazios", false);
+                return;
+            }
+            else if (!email.Contains("@") || !email.Contains("."))
+            {
+                MostrarMensagem("Email inválido!", false);
                 return;
             }
             else if (senha != confirmarSenha)
@@ -49,10 +60,10 @@ namespace CaixaIntegrador.Pagina_Inicial
                 using (var db = new AppDbContext())
                 {
                     // Verifica se já existe usuário com esse login
-                    var existente = db.Usuarios.FirstOrDefault(u => u.Login == login);
+                    var existente = db.Usuarios.FirstOrDefault(u => u.Login == login || u.Email == email);
                     if (existente != null)
                     {
-                        MostrarMensagem("Este usuário já está registrado!", false);
+                        MostrarMensagem("Este usuário ou email já está registrado!", false);
                         return;
                     }
 
@@ -62,6 +73,7 @@ namespace CaixaIntegrador.Pagina_Inicial
                     var usuario = new Usuario
                     {
                         Login = login,
+                        Email = email,
                         Senha = senhaCriptografada,
                         Privilegio = "Admin",
                         Status = "Ativo",
@@ -89,7 +101,11 @@ namespace CaixaIntegrador.Pagina_Inicial
         private void MostrarMensagem(string texto, bool sucesso)
         {
             lblMensagemRegistro.Text = texto;
-            lblMensagemRegistro.ForeColor = sucesso ? Color.Green : Color.Red;
+
+            lblMensagemRegistro.ForeColor = sucesso 
+                ? MaterialSkin.MaterialSkinManager.Instance.ColorScheme.AccentColor: 
+                Color.Red;
+
             lblMensagemRegistro.Visible = true;
         }
 
