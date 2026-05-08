@@ -171,7 +171,7 @@
             btnVoltar.Depth = 0;
             btnVoltar.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             btnVoltar.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            btnVoltar.Location = new Point(487, 437);
+            btnVoltar.Location = new Point(532, 411);
             btnVoltar.MouseState = MaterialSkin.MouseState.HOVER;
             btnVoltar.Name = "btnVoltar";
             btnVoltar.Size = new Size(55, 24);
@@ -185,7 +185,7 @@
             lblEsqueceu.Depth = 0;
             lblEsqueceu.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblEsqueceu.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            lblEsqueceu.Location = new Point(130, 437);
+            lblEsqueceu.Location = new Point(130, 411);
             lblEsqueceu.MouseState = MaterialSkin.MouseState.HOVER;
             lblEsqueceu.Name = "lblEsqueceu";
             lblEsqueceu.Size = new Size(172, 24);

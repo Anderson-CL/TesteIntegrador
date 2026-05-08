@@ -50,8 +50,8 @@ namespace CaixaIntegrador.Estoque
             ProdutoCriado = new Produto
             {
                 Nome = txtNome.Text,
-                Preco = nudPreco.Value,
-                Quantidade = (int)nudQuantidade.Value,
+                Preco = decimal.Parse(txtPreco.Text),
+                Quantidade = int.Parse(txtQuantidade.Text),
                 SubCategoriaId = (int)cmbSubCategoria.SelectedValue
             };
 
@@ -68,5 +68,24 @@ namespace CaixaIntegrador.Estoque
 
         }
 
+        private void nudPreco1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nudQuantidade1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

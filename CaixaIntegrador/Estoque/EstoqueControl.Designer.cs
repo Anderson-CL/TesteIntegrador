@@ -192,6 +192,7 @@
             txtQuantidade.Text = "";
             txtQuantidade.TrailingIcon = null;
             txtQuantidade.UseTallSize = false;
+            txtQuantidade.TextChanged += txtQuantidade_TextChanged;
             // 
             // btnRemover
             // 

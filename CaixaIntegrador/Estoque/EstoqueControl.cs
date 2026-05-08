@@ -19,7 +19,7 @@ namespace CaixaIntegrador.Estoque
         public EstoqueControl()
         {
             InitializeComponent();
-            txtBuscar.Hint = "Digite aqui!" ;
+            txtBuscar.Hint = "Digite aqui!";
             txtQuantidade.Hint = "Nova Qantidade";
         }
 
@@ -28,7 +28,7 @@ namespace CaixaIntegrador.Estoque
             AtualizarGrid();
 
             dataGridView1.AutoGenerateColumns = true;
-           
+
             using var db = new AppDbContext();
             cmbFiltrar.DataSource = db.Categorias.ToList();
             dataGridView1.AllowUserToOrderColumns = false;
@@ -41,7 +41,7 @@ namespace CaixaIntegrador.Estoque
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.Columns["Id"].Visible = false;
             dataGridView1.Columns["nome"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-          //  dataGridView1.Columns["Preco"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //  dataGridView1.Columns["Preco"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["Quantidade"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["preco"].DefaultCellStyle.Format = "C2";
         }
@@ -111,7 +111,7 @@ namespace CaixaIntegrador.Estoque
                 AtualizarGrid();
             }
         }
-        
+
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
             if (cmbFiltrar.SelectedValue != null)
@@ -132,6 +132,11 @@ namespace CaixaIntegrador.Estoque
         }
 
         private void materialCard2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtQuantidade_TextChanged(object sender, EventArgs e)
         {
 
         }
