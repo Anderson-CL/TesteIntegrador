@@ -73,10 +73,11 @@ namespace CaixaIntegrador
 
         public void CarregarEstoque()
         {
-            panelPrincipal.Controls.Clear();
             var estoqueControl = new Estoque.EstoqueControl();
-            panelPrincipal.Controls.Add(estoqueControl);
+            estoqueControl.Dock = DockStyle.None;
             CentralizarControl(estoqueControl);
+            this.MaximizeBox = false;
+            this.Sizable = false;
         }
 
 

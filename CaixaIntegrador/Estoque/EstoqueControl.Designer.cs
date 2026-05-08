@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             btnFiltrar = new MaterialSkin.Controls.MaterialButton();
             cmbFiltrar = new MaterialSkin.Controls.MaterialComboBox();
             btbBuscar = new MaterialSkin.Controls.MaterialButton();
             txtBuscar = new MaterialSkin.Controls.MaterialMaskedTextBox();
             BtnAtualizarQtd = new MaterialSkin.Controls.MaterialButton();
-            materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             txtQuantidade = new MaterialSkin.Controls.MaterialTextBox();
             btnRemover = new MaterialSkin.Controls.MaterialButton();
             btnAdicionar = new MaterialSkin.Controls.MaterialButton();
@@ -53,7 +55,7 @@
             btnFiltrar.Depth = 0;
             btnFiltrar.HighEmphasis = true;
             btnFiltrar.Icon = null;
-            btnFiltrar.Location = new Point(634, 6);
+            btnFiltrar.Location = new Point(604, 5);
             btnFiltrar.Margin = new Padding(4, 6, 4, 6);
             btnFiltrar.MouseState = MaterialSkin.MouseState.HOVER;
             btnFiltrar.Name = "btnFiltrar";
@@ -80,7 +82,7 @@
             cmbFiltrar.FormattingEnabled = true;
             cmbFiltrar.IntegralHeight = false;
             cmbFiltrar.ItemHeight = 43;
-            cmbFiltrar.Location = new Point(449, 18);
+            cmbFiltrar.Location = new Point(417, 6);
             cmbFiltrar.MaxDropDownItems = 4;
             cmbFiltrar.MouseState = MaterialSkin.MouseState.OUT;
             cmbFiltrar.Name = "cmbFiltrar";
@@ -141,15 +143,15 @@
             txtBuscar.SelectionLength = 0;
             txtBuscar.SelectionStart = 0;
             txtBuscar.ShortcutsEnabled = true;
-            txtBuscar.Size = new Size(136, 48);
+            txtBuscar.Size = new Size(136, 36);
             txtBuscar.SkipLiterals = true;
             txtBuscar.TabIndex = 0;
             txtBuscar.TabStop = false;
-            txtBuscar.Text = "Digite aqui";
             txtBuscar.TextAlign = HorizontalAlignment.Left;
             txtBuscar.TextMaskFormat = MaskFormat.IncludeLiterals;
             txtBuscar.TrailingIcon = null;
             txtBuscar.UseSystemPasswordChar = false;
+            txtBuscar.UseTallSize = false;
             txtBuscar.ValidatingType = null;
             // 
             // BtnAtualizarQtd
@@ -159,7 +161,7 @@
             BtnAtualizarQtd.Depth = 0;
             BtnAtualizarQtd.HighEmphasis = true;
             BtnAtualizarQtd.Icon = null;
-            BtnAtualizarQtd.Location = new Point(683, 15);
+            BtnAtualizarQtd.Location = new Point(604, 15);
             BtnAtualizarQtd.Margin = new Padding(4, 6, 4, 6);
             BtnAtualizarQtd.MouseState = MaterialSkin.MouseState.HOVER;
             BtnAtualizarQtd.Name = "BtnAtualizarQtd";
@@ -172,18 +174,6 @@
             BtnAtualizarQtd.UseVisualStyleBackColor = true;
             BtnAtualizarQtd.Click += BtnAtualizarQtd_Click;
             // 
-            // materialLabel1
-            // 
-            materialLabel1.AutoSize = true;
-            materialLabel1.Depth = 0;
-            materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel1.Location = new Point(423, 23);
-            materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel1.Name = "materialLabel1";
-            materialLabel1.Size = new Size(128, 19);
-            materialLabel1.TabIndex = 5;
-            materialLabel1.Text = "Nova Quantidade.";
-            // 
             // txtQuantidade
             // 
             txtQuantidade.AnimateReadOnly = false;
@@ -191,16 +181,17 @@
             txtQuantidade.Depth = 0;
             txtQuantidade.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtQuantidade.LeadingIcon = null;
-            txtQuantidade.Location = new Point(549, 12);
+            txtQuantidade.Location = new Point(464, 15);
             txtQuantidade.Margin = new Padding(3, 2, 3, 2);
             txtQuantidade.MaxLength = 50;
             txtQuantidade.MouseState = MaterialSkin.MouseState.OUT;
             txtQuantidade.Multiline = false;
             txtQuantidade.Name = "txtQuantidade";
-            txtQuantidade.Size = new Size(109, 50);
+            txtQuantidade.Size = new Size(122, 36);
             txtQuantidade.TabIndex = 4;
             txtQuantidade.Text = "";
             txtQuantidade.TrailingIcon = null;
+            txtQuantidade.UseTallSize = false;
             // 
             // btnRemover
             // 
@@ -244,42 +235,67 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.BackgroundColor = SystemColors.Control;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(70, 70, 70);
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.BackgroundColor = Color.FromArgb(50, 50, 50);
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(139, 38, 53);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(254, 84);
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(60, 60, 60);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(139, 38, 53);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.GridColor = Color.FromArgb(80, 80, 80);
+            dataGridView1.Location = new Point(0, 71);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(794, 304);
+            dataGridView1.Size = new Size(747, 305);
             dataGridView1.TabIndex = 4;
             // 
             // panelCabecalho
             // 
-            panelCabecalho.BackColor = SystemColors.Control;
+            panelCabecalho.BackColor = Color.FromArgb(50, 50, 50);
             panelCabecalho.Controls.Add(btnFiltrar);
             panelCabecalho.Controls.Add(cmbFiltrar);
             panelCabecalho.Controls.Add(txtBuscar);
             panelCabecalho.Controls.Add(btbBuscar);
-            panelCabecalho.Location = new Point(257, 16);
+            panelCabecalho.Dock = DockStyle.Top;
+            panelCabecalho.Location = new Point(0, 0);
             panelCabecalho.Margin = new Padding(3, 2, 3, 2);
             panelCabecalho.Name = "panelCabecalho";
-            panelCabecalho.Size = new Size(791, 64);
+            panelCabecalho.Size = new Size(720, 73);
             panelCabecalho.TabIndex = 5;
             panelCabecalho.Paint += panel1_Paint;
             // 
             // panel1
             // 
-            panel1.Controls.Add(materialLabel1);
+            panel1.BackColor = Color.FromArgb(50, 50, 50);
             panel1.Controls.Add(BtnAtualizarQtd);
             panel1.Controls.Add(txtQuantidade);
             panel1.Controls.Add(btnRemover);
             panel1.Controls.Add(btnAdicionar);
-            panel1.Location = new Point(251, 388);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 376);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(791, 54);
+            panel1.Size = new Size(720, 84);
             panel1.TabIndex = 6;
             // 
             // EstoqueControl
@@ -289,9 +305,9 @@
             Controls.Add(panel1);
             Controls.Add(panelCabecalho);
             Controls.Add(dataGridView1);
-            Margin = new Padding(3, 2, 3, 2);
+            Margin = new Padding(0);
             Name = "EstoqueControl";
-            Size = new Size(1502, 710);
+            Size = new Size(720, 460);
             Load += EstoqueControl_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panelCabecalho.ResumeLayout(false);
@@ -310,7 +326,6 @@
         private DataGridView dataGridView1;
         private MaterialSkin.Controls.MaterialButton BtnAtualizarQtd;
         private MaterialSkin.Controls.MaterialTextBox txtQuantidade;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private Panel panelCabecalho;
         private Panel panel1;
     }

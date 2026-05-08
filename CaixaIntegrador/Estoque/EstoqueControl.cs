@@ -19,6 +19,8 @@ namespace CaixaIntegrador.Estoque
         public EstoqueControl()
         {
             InitializeComponent();
+            txtBuscar.Hint = "Digite aqui!" ;
+            txtQuantidade.Hint = "Nova Qantidade";
         }
 
         private void EstoqueControl_Load(object sender, EventArgs e)
@@ -26,11 +28,22 @@ namespace CaixaIntegrador.Estoque
             AtualizarGrid();
 
             dataGridView1.AutoGenerateColumns = true;
-
+           
             using var db = new AppDbContext();
             cmbFiltrar.DataSource = db.Categorias.ToList();
+            dataGridView1.AllowUserToOrderColumns = false;
+            dataGridView1.ReadOnly = true;
+
             cmbFiltrar.DisplayMember = "Nome";   // o que aparece na lista
             cmbFiltrar.ValueMember = "Id";       // valor interno usado no filtro
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.Columns["Id"].Visible = false;
+            dataGridView1.Columns["nome"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+          //  dataGridView1.Columns["Preco"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns["Quantidade"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns["preco"].DefaultCellStyle.Format = "C2";
         }
 
 
@@ -98,7 +111,7 @@ namespace CaixaIntegrador.Estoque
                 AtualizarGrid();
             }
         }
-
+        
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
             if (cmbFiltrar.SelectedValue != null)
