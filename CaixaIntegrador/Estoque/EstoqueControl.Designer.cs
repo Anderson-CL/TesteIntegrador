@@ -267,7 +267,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(747, 305);
+            dataGridView1.Size = new Size(720, 305);
             dataGridView1.TabIndex = 4;
             // 
             // panelCabecalho

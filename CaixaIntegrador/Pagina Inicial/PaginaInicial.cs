@@ -1,4 +1,5 @@
 ﻿using CaixaIntegrador.Caixa;
+using CaixaIntegrador.Estoque;
 using CaixaIntegrador.Pagina_Inicial;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -18,9 +19,13 @@ namespace CaixaIntegrador
     public partial class PaginaInicial : MaterialForm
     {
         public string UsuarioLogado { get; set; }
+        private EstoqueControl estoqueControl = new EstoqueControl();
+
         public PaginaInicial()
         {
             InitializeComponent();
+            // quando EstoqueControl pedir para voltar, mostrar a tela inicial
+            estoqueControl.VoltarClick += MostrarTelaInicial;
             TemaFormSkin();
         }
 
@@ -78,6 +83,7 @@ namespace CaixaIntegrador
             CentralizarControl(estoqueControl);
             this.MaximizeBox = false;
             this.Sizable = false;
+           
         }
 
 

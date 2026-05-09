@@ -15,6 +15,7 @@ namespace CaixaIntegrador.Estoque
     public partial class EstoqueControl : UserControl
     {
         private ControleEstoque controle = new ControleEstoque();
+        public event Action VoltarClick;
 
         public EstoqueControl()
         {
@@ -142,5 +143,9 @@ namespace CaixaIntegrador.Estoque
         {
 
         }
+            private void btnVoltar_Click(object sender, EventArgs e)
+            {
+                VoltarClick?.Invoke();
+            }
     }
 }

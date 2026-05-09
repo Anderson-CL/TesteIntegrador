@@ -60,6 +60,7 @@
             panelPrincipal = new Panel();
             panel1 = new Panel();
             groupBox1 = new Panel();
+            btnVoltarPaginaInicial = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)DataGrid_Produtos).BeginInit();
             PanelBtnPag.SuspendLayout();
             panel1.SuspendLayout();
@@ -78,7 +79,7 @@
             btnLimparCarrinho.ForeColor = Color.White;
             btnLimparCarrinho.HighEmphasis = true;
             btnLimparCarrinho.Icon = null;
-            btnLimparCarrinho.Location = new Point(17, 572);
+            btnLimparCarrinho.Location = new Point(13, 571);
             btnLimparCarrinho.Margin = new Padding(4, 6, 4, 6);
             btnLimparCarrinho.MouseState = MaterialSkin.MouseState.HOVER;
             btnLimparCarrinho.Name = "btnLimparCarrinho";
@@ -100,12 +101,12 @@
             btn_Pedido.Depth = 0;
             btn_Pedido.HighEmphasis = false;
             btn_Pedido.Icon = null;
-            btn_Pedido.Location = new Point(17, 647);
+            btn_Pedido.Location = new Point(17, 652);
             btn_Pedido.Margin = new Padding(4, 6, 4, 6);
             btn_Pedido.MouseState = MaterialSkin.MouseState.HOVER;
             btn_Pedido.Name = "btn_Pedido";
             btn_Pedido.NoAccentTextColor = Color.Empty;
-            btn_Pedido.Size = new Size(303, 50);
+            btn_Pedido.Size = new Size(251, 50);
             btn_Pedido.TabIndex = 6;
             btn_Pedido.Text = "Pedidos";
             btn_Pedido.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -125,7 +126,7 @@
             btnDeletarMarcados.ForeColor = Color.White;
             btnDeletarMarcados.HighEmphasis = true;
             btnDeletarMarcados.Icon = null;
-            btnDeletarMarcados.Location = new Point(167, 572);
+            btnDeletarMarcados.Location = new Point(172, 571);
             btnDeletarMarcados.Margin = new Padding(4, 6, 4, 6);
             btnDeletarMarcados.MouseState = MaterialSkin.MouseState.HOVER;
             btnDeletarMarcados.Name = "btnDeletarMarcados";
@@ -538,6 +539,7 @@
             panel1.Controls.Add(btn_FinalizarPedido);
             panel1.Controls.Add(PanelBtnPag);
             panel1.Controls.Add(btn_Limparpag);
+            panel1.Controls.Add(btn_Pedido);
             panel1.Controls.Add(btn_PedidoAberto);
             panel1.Controls.Add(Valores_MaterialTextBox);
             panel1.Controls.Add(btnAdicionarPagamento);
@@ -554,11 +556,31 @@
             groupBox1.Controls.Add(btnLimparCarrinho);
             groupBox1.Controls.Add(DataGrid_Produtos);
             groupBox1.Controls.Add(btnDeletarMarcados);
-            groupBox1.Controls.Add(btn_Pedido);
-            groupBox1.Location = new Point(3, 3);
+            groupBox1.Location = new Point(3, 45);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(338, 714);
+            groupBox1.Size = new Size(338, 669);
             groupBox1.TabIndex = 3;
+            // 
+            // btnVoltarPaginaInicial
+            // 
+            btnVoltarPaginaInicial.AutoSize = false;
+            btnVoltarPaginaInicial.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnVoltarPaginaInicial.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnVoltarPaginaInicial.Depth = 0;
+            btnVoltarPaginaInicial.HighEmphasis = true;
+            btnVoltarPaginaInicial.Icon = null;
+            btnVoltarPaginaInicial.Location = new Point(3, 3);
+            btnVoltarPaginaInicial.Margin = new Padding(4, 6, 4, 6);
+            btnVoltarPaginaInicial.MouseState = MaterialSkin.MouseState.HOVER;
+            btnVoltarPaginaInicial.Name = "btnVoltarPaginaInicial";
+            btnVoltarPaginaInicial.NoAccentTextColor = Color.Empty;
+            btnVoltarPaginaInicial.Size = new Size(80, 36);
+            btnVoltarPaginaInicial.TabIndex = 7;
+            btnVoltarPaginaInicial.Text = "VOLTAR";
+            btnVoltarPaginaInicial.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnVoltarPaginaInicial.UseAccentColor = false;
+            btnVoltarPaginaInicial.UseVisualStyleBackColor = true;
+            btnVoltarPaginaInicial.Click += btnVoltarPaginaInicial_Click;
             // 
             // CaixaControl
             // 
@@ -566,6 +588,7 @@
             Controls.Add(groupBox1);
             Controls.Add(panel1);
             Controls.Add(panelPrincipal);
+            Controls.Add(btnVoltarPaginaInicial);
             Margin = new Padding(3, 2, 3, 2);
             Name = "CaixaControl";
             Size = new Size(1280, 720);
@@ -607,5 +630,6 @@
         private MaterialSkin.Controls.MaterialLabel lblTotal_Text;
         private Panel panel1;
         private Panel groupBox1;
+        private MaterialSkin.Controls.MaterialButton btnVoltarPaginaInicial;
     }
 }

@@ -434,6 +434,21 @@ namespace CaixaIntegrador.Caixa
             PagamentoGeral();
         }
 
+        private void btnVoltarPaginaInicial_Click(object sender, EventArgs e)
+        {
+            // tenta invocar a tela inicial a partir do Form pai
+            var parentForm = this.FindForm() as PaginaInicial;
+            if (parentForm != null)
+            {
+                parentForm.MostrarTelaInicial();
+                return;
+            }
+
+            // fallback: apenas remove este controle do pai
+            var p = this.Parent;
+            p?.Controls.Remove(this);
+        }
+
         private void btn_FinalizarPedido_Click_1(object sender, EventArgs e)
         {
             if (carrinho.Count == 0)
