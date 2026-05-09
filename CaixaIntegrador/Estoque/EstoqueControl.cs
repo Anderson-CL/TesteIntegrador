@@ -62,7 +62,9 @@ namespace CaixaIntegrador.Estoque
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     controle.Adicionar(form.ProdutoCriado);
+
                     AtualizarGrid();
+                  
                 }
             }
 

@@ -34,12 +34,12 @@
             btnSalvar = new MaterialSkin.Controls.MaterialButton();
             txtPreco = new MaterialSkin.Controls.MaterialTextBox2();
             txtQuantidade = new MaterialSkin.Controls.MaterialTextBox2();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            lblProduto = new Label();
             materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
-            label5 = new Label();
+            materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             SuspendLayout();
             // 
             // txtNome
@@ -51,7 +51,7 @@
             txtNome.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtNome.HideSelection = true;
             txtNome.LeadingIcon = null;
-            txtNome.Location = new Point(82, 68);
+            txtNome.Location = new Point(23, 60);
             txtNome.MaxLength = 32767;
             txtNome.MouseState = MaterialSkin.MouseState.OUT;
             txtNome.Name = "txtNome";
@@ -63,7 +63,7 @@
             txtNome.SelectionLength = 0;
             txtNome.SelectionStart = 0;
             txtNome.ShortcutsEnabled = true;
-            txtNome.Size = new Size(230, 48);
+            txtNome.Size = new Size(408, 48);
             txtNome.TabIndex = 0;
             txtNome.TabStop = false;
             txtNome.TextAlign = HorizontalAlignment.Left;
@@ -84,11 +84,11 @@
             cmbSubCategoria.FormattingEnabled = true;
             cmbSubCategoria.IntegralHeight = false;
             cmbSubCategoria.ItemHeight = 43;
-            cmbSubCategoria.Location = new Point(470, 68);
+            cmbSubCategoria.Location = new Point(23, 153);
             cmbSubCategoria.MaxDropDownItems = 4;
             cmbSubCategoria.MouseState = MaterialSkin.MouseState.OUT;
             cmbSubCategoria.Name = "cmbSubCategoria";
-            cmbSubCategoria.Size = new Size(161, 49);
+            cmbSubCategoria.Size = new Size(200, 49);
             cmbSubCategoria.StartIndex = 0;
             cmbSubCategoria.TabIndex = 3;
             cmbSubCategoria.SelectedIndexChanged += cbSubCategoria_SelectedIndexChanged;
@@ -100,7 +100,7 @@
             btnCancelar.Depth = 0;
             btnCancelar.HighEmphasis = true;
             btnCancelar.Icon = null;
-            btnCancelar.Location = new Point(350, 379);
+            btnCancelar.Location = new Point(23, 374);
             btnCancelar.Margin = new Padding(4, 6, 4, 6);
             btnCancelar.MouseState = MaterialSkin.MouseState.HOVER;
             btnCancelar.Name = "btnCancelar";
@@ -115,21 +115,22 @@
             // 
             // btnSalvar
             // 
+            btnSalvar.AutoSize = false;
             btnSalvar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnSalvar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             btnSalvar.Depth = 0;
             btnSalvar.HighEmphasis = true;
             btnSalvar.Icon = null;
-            btnSalvar.Location = new Point(174, 379);
+            btnSalvar.Location = new Point(316, 330);
             btnSalvar.Margin = new Padding(4, 6, 4, 6);
             btnSalvar.MouseState = MaterialSkin.MouseState.HOVER;
             btnSalvar.Name = "btnSalvar";
             btnSalvar.NoAccentTextColor = Color.Empty;
-            btnSalvar.Size = new Size(76, 36);
+            btnSalvar.Size = new Size(100, 80);
             btnSalvar.TabIndex = 5;
             btnSalvar.Text = "salvar";
             btnSalvar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnSalvar.UseAccentColor = false;
+            btnSalvar.UseAccentColor = true;
             btnSalvar.UseVisualStyleBackColor = true;
             btnSalvar.Click += btnSalvar_Click;
             // 
@@ -142,7 +143,7 @@
             txtPreco.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtPreco.HideSelection = true;
             txtPreco.LeadingIcon = null;
-            txtPreco.Location = new Point(82, 182);
+            txtPreco.Location = new Point(23, 264);
             txtPreco.MaxLength = 32767;
             txtPreco.MouseState = MaterialSkin.MouseState.OUT;
             txtPreco.Name = "txtPreco";
@@ -154,7 +155,7 @@
             txtPreco.SelectionLength = 0;
             txtPreco.SelectionStart = 0;
             txtPreco.ShortcutsEnabled = true;
-            txtPreco.Size = new Size(120, 36);
+            txtPreco.Size = new Size(100, 36);
             txtPreco.TabIndex = 10;
             txtPreco.TabStop = false;
             txtPreco.TextAlign = HorizontalAlignment.Left;
@@ -171,7 +172,7 @@
             txtQuantidade.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtQuantidade.HideSelection = true;
             txtQuantidade.LeadingIcon = null;
-            txtQuantidade.Location = new Point(482, 172);
+            txtQuantidade.Location = new Point(158, 264);
             txtQuantidade.MaxLength = 32767;
             txtQuantidade.MouseState = MaterialSkin.MouseState.OUT;
             txtQuantidade.Name = "txtQuantidade";
@@ -183,7 +184,7 @@
             txtQuantidade.SelectionLength = 0;
             txtQuantidade.SelectionStart = 0;
             txtQuantidade.ShortcutsEnabled = true;
-            txtQuantidade.Size = new Size(120, 36);
+            txtQuantidade.Size = new Size(100, 36);
             txtQuantidade.TabIndex = 10;
             txtQuantidade.TabStop = false;
             txtQuantidade.TextAlign = HorizontalAlignment.Left;
@@ -191,46 +192,6 @@
             txtQuantidade.UseSystemPasswordChar = false;
             txtQuantidade.UseTallSize = false;
             txtQuantidade.Click += nudQuantidade1_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(400, 182);
-            label1.Name = "label1";
-            label1.Size = new Size(69, 15);
-            label1.TabIndex = 11;
-            label1.Text = "Quantidade";
-            label1.Click += label1_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(40, 192);
-            label2.Name = "label2";
-            label2.Size = new Size(37, 15);
-            label2.TabIndex = 11;
-            label2.Text = "Preço";
-            label2.Click += label2_Click;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(408, 90);
-            label3.Name = "label3";
-            label3.Size = new Size(58, 15);
-            label3.TabIndex = 11;
-            label3.Text = "Categoria";
-            label3.Click += label1_Click;
-            // 
-            // lblProduto
-            // 
-            lblProduto.AutoSize = true;
-            lblProduto.Location = new Point(26, 90);
-            lblProduto.Name = "lblProduto";
-            lblProduto.Size = new Size(50, 15);
-            lblProduto.TabIndex = 11;
-            lblProduto.Text = "Produto";
-            lblProduto.Click += label2_Click;
             // 
             // materialComboBox1
             // 
@@ -241,41 +202,96 @@
             materialComboBox1.DropDownHeight = 174;
             materialComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             materialComboBox1.DropDownWidth = 121;
-            materialComboBox1.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialComboBox1.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialComboBox1.ForeColor = Color.FromArgb(222, 0, 0, 0);
             materialComboBox1.FormattingEnabled = true;
             materialComboBox1.IntegralHeight = false;
             materialComboBox1.ItemHeight = 43;
-            materialComboBox1.Location = new Point(492, 270);
+            materialComboBox1.Location = new Point(231, 153);
             materialComboBox1.MaxDropDownItems = 4;
             materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
             materialComboBox1.Name = "materialComboBox1";
-            materialComboBox1.Size = new Size(121, 49);
+            materialComboBox1.Size = new Size(200, 49);
             materialComboBox1.StartIndex = 0;
             materialComboBox1.TabIndex = 12;
             // 
-            // label5
+            // materialLabel1
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(391, 292);
-            label5.Name = "label5";
-            label5.Size = new Size(78, 15);
-            label5.TabIndex = 11;
-            label5.Text = "SubCategoria";
-            label5.Click += label1_Click;
+            materialLabel1.AutoSize = true;
+            materialLabel1.Depth = 0;
+            materialLabel1.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            materialLabel1.Location = new Point(23, 33);
+            materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel1.Name = "materialLabel1";
+            materialLabel1.Size = new Size(72, 24);
+            materialLabel1.TabIndex = 13;
+            materialLabel1.Text = "Produto";
+            // 
+            // materialLabel2
+            // 
+            materialLabel2.AutoSize = true;
+            materialLabel2.Depth = 0;
+            materialLabel2.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            materialLabel2.Location = new Point(23, 126);
+            materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel2.Name = "materialLabel2";
+            materialLabel2.Size = new Size(88, 24);
+            materialLabel2.TabIndex = 13;
+            materialLabel2.Text = "Categoria";
+            // 
+            // materialLabel3
+            // 
+            materialLabel3.AutoSize = true;
+            materialLabel3.Depth = 0;
+            materialLabel3.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel3.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            materialLabel3.Location = new Point(231, 126);
+            materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel3.Name = "materialLabel3";
+            materialLabel3.Size = new Size(119, 24);
+            materialLabel3.TabIndex = 13;
+            materialLabel3.Text = "Subcategoria";
+            // 
+            // materialLabel4
+            // 
+            materialLabel4.AutoSize = true;
+            materialLabel4.Depth = 0;
+            materialLabel4.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel4.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            materialLabel4.Location = new Point(23, 237);
+            materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel4.Name = "materialLabel4";
+            materialLabel4.Size = new Size(53, 24);
+            materialLabel4.TabIndex = 13;
+            materialLabel4.Text = "Preço";
+            // 
+            // materialLabel5
+            // 
+            materialLabel5.AutoSize = true;
+            materialLabel5.Depth = 0;
+            materialLabel5.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel5.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            materialLabel5.Location = new Point(158, 237);
+            materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel5.Name = "materialLabel5";
+            materialLabel5.Size = new Size(104, 24);
+            materialLabel5.TabIndex = 13;
+            materialLabel5.Text = "Quantidade";
             // 
             // FrmAdicionarProduto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(50, 50, 50);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(450, 450);
+            Controls.Add(materialLabel5);
+            Controls.Add(materialLabel4);
+            Controls.Add(materialLabel3);
+            Controls.Add(materialLabel2);
+            Controls.Add(materialLabel1);
             Controls.Add(materialComboBox1);
-            Controls.Add(lblProduto);
-            Controls.Add(label2);
-            Controls.Add(label3);
-            Controls.Add(label5);
-            Controls.Add(label1);
             Controls.Add(txtQuantidade);
             Controls.Add(txtPreco);
             Controls.Add(btnSalvar);
@@ -283,6 +299,7 @@
             Controls.Add(cmbSubCategoria);
             Controls.Add(txtNome);
             FormStyle = FormStyles.ActionBar_None;
+            MaximizeBox = false;
             Name = "FrmAdicionarProduto";
             Padding = new Padding(3, 24, 3, 3);
             Text = "FrmAdicionarProduto";
@@ -298,11 +315,11 @@
         private MaterialSkin.Controls.MaterialButton btnSalvar;
         private MaterialSkin.Controls.MaterialTextBox2 txtPreco;
         private MaterialSkin.Controls.MaterialTextBox2 txtQuantidade;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label lblProduto;
         private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
-        private Label label5;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private MaterialSkin.Controls.MaterialLabel materialLabel5;
     }
 }
