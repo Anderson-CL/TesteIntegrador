@@ -61,10 +61,12 @@
             panel1 = new Panel();
             groupBox1 = new Panel();
             btnVoltarPaginaInicial = new MaterialSkin.Controls.MaterialButton();
+            panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)DataGrid_Produtos).BeginInit();
             PanelBtnPag.SuspendLayout();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // btnLimparCarrinho
@@ -101,7 +103,7 @@
             btn_Pedido.Depth = 0;
             btn_Pedido.HighEmphasis = false;
             btn_Pedido.Icon = null;
-            btn_Pedido.Location = new Point(17, 652);
+            btn_Pedido.Location = new Point(25, 192);
             btn_Pedido.Margin = new Padding(4, 6, 4, 6);
             btn_Pedido.MouseState = MaterialSkin.MouseState.HOVER;
             btn_Pedido.Name = "btn_Pedido";
@@ -177,7 +179,7 @@
             DataGrid_Produtos.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             DataGrid_Produtos.RowTemplate.Resizable = DataGridViewTriState.False;
             DataGrid_Produtos.ScrollBars = ScrollBars.Vertical;
-            DataGrid_Produtos.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            DataGrid_Produtos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DataGrid_Produtos.Size = new Size(338, 555);
             DataGrid_Produtos.TabIndex = 1;
             DataGrid_Produtos.CellContentClick += DataGrid_Produtos_CellContentClick;
@@ -197,7 +199,7 @@
             Column1.DataPropertyName = "Produto";
             Column1.FillWeight = 89.42893F;
             Column1.HeaderText = "Produto";
-            Column1.MinimumWidth = 6;
+            Column1.MinimumWidth = 125;
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
             Column1.Resizable = DataGridViewTriState.False;
@@ -210,7 +212,7 @@
             Column2.DataPropertyName = "Qtd";
             Column2.FillWeight = 89.42893F;
             Column2.HeaderText = "Qtd";
-            Column2.MinimumWidth = 6;
+            Column2.MinimumWidth = 50;
             Column2.Name = "Column2";
             Column2.Resizable = DataGridViewTriState.False;
             Column2.Width = 50;
@@ -223,7 +225,7 @@
             Column3.DefaultCellStyle = dataGridViewCellStyle3;
             Column3.FillWeight = 89.42893F;
             Column3.HeaderText = "Preco";
-            Column3.MinimumWidth = 6;
+            Column3.MinimumWidth = 65;
             Column3.Name = "Column3";
             Column3.ReadOnly = true;
             Column3.Resizable = DataGridViewTriState.False;
@@ -237,7 +239,7 @@
             Column4.DefaultCellStyle = dataGridViewCellStyle4;
             Column4.FillWeight = 89.42893F;
             Column4.HeaderText = "Total";
-            Column4.MinimumWidth = 6;
+            Column4.MinimumWidth = 70;
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
             Column4.Resizable = DataGridViewTriState.False;
@@ -252,7 +254,7 @@
             btn_FinalizarPedido.Depth = 0;
             btn_FinalizarPedido.HighEmphasis = true;
             btn_FinalizarPedido.Icon = null;
-            btn_FinalizarPedido.Location = new Point(19, 542);
+            btn_FinalizarPedido.Location = new Point(27, 82);
             btn_FinalizarPedido.Margin = new Padding(4, 6, 4, 6);
             btn_FinalizarPedido.MouseState = MaterialSkin.MouseState.HOVER;
             btn_FinalizarPedido.Name = "btn_FinalizarPedido";
@@ -275,7 +277,7 @@
             btn_Limparpag.FlatStyle = FlatStyle.Popup;
             btn_Limparpag.HighEmphasis = true;
             btn_Limparpag.Icon = null;
-            btn_Limparpag.Location = new Point(159, 480);
+            btn_Limparpag.Location = new Point(167, 20);
             btn_Limparpag.Margin = new Padding(4, 6, 4, 6);
             btn_Limparpag.MouseState = MaterialSkin.MouseState.HOVER;
             btn_Limparpag.Name = "btn_Limparpag";
@@ -297,7 +299,7 @@
             btn_PedidoAberto.Depth = 0;
             btn_PedidoAberto.HighEmphasis = false;
             btn_PedidoAberto.Icon = null;
-            btn_PedidoAberto.Location = new Point(17, 604);
+            btn_PedidoAberto.Location = new Point(25, 144);
             btn_PedidoAberto.Margin = new Padding(4, 6, 4, 6);
             btn_PedidoAberto.MouseState = MaterialSkin.MouseState.HOVER;
             btn_PedidoAberto.Name = "btn_PedidoAberto";
@@ -323,7 +325,7 @@
             btnAdicionarPagamento.ForeColor = Color.White;
             btnAdicionarPagamento.HighEmphasis = true;
             btnAdicionarPagamento.Icon = null;
-            btnAdicionarPagamento.Location = new Point(17, 480);
+            btnAdicionarPagamento.Location = new Point(25, 20);
             btnAdicionarPagamento.Margin = new Padding(4, 6, 4, 6);
             btnAdicionarPagamento.MouseState = MaterialSkin.MouseState.HOVER;
             btnAdicionarPagamento.Name = "btnAdicionarPagamento";
@@ -526,7 +528,6 @@
             // panelPrincipal
             // 
             panelPrincipal.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panelPrincipal.AutoSize = true;
             panelPrincipal.Location = new Point(344, 0);
             panelPrincipal.Name = "panelPrincipal";
             panelPrincipal.Size = new Size(633, 720);
@@ -536,13 +537,10 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            panel1.Controls.Add(btn_FinalizarPedido);
+            panel1.AutoScroll = true;
+            panel1.Controls.Add(panel2);
             panel1.Controls.Add(PanelBtnPag);
-            panel1.Controls.Add(btn_Limparpag);
-            panel1.Controls.Add(btn_Pedido);
-            panel1.Controls.Add(btn_PedidoAberto);
             panel1.Controls.Add(Valores_MaterialTextBox);
-            panel1.Controls.Add(btnAdicionarPagamento);
             panel1.Controls.Add(lblTotal_Text);
             panel1.Controls.Add(troco_label);
             panel1.Location = new Point(980, 0);
@@ -582,6 +580,19 @@
             btnVoltarPaginaInicial.UseVisualStyleBackColor = true;
             btnVoltarPaginaInicial.Click += btnVoltarPaginaInicial_Click;
             // 
+            // panel2
+            // 
+            panel2.Controls.Add(btn_FinalizarPedido);
+            panel2.Controls.Add(btnAdicionarPagamento);
+            panel2.Controls.Add(btn_Pedido);
+            panel2.Controls.Add(btn_PedidoAberto);
+            panel2.Controls.Add(btn_Limparpag);
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(0, 467);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(300, 253);
+            panel2.TabIndex = 19;
+            // 
             // CaixaControl
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -598,8 +609,8 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             groupBox1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -631,5 +642,6 @@
         private Panel panel1;
         private Panel groupBox1;
         private MaterialSkin.Controls.MaterialButton btnVoltarPaginaInicial;
+        private Panel panel2;
     }
 }

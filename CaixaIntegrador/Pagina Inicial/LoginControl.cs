@@ -122,7 +122,7 @@ namespace CaixaIntegrador.Pagina_Inicial
             if (txtSenha.PasswordChar == '●') // senha está oculta
             {
                 txtSenha.PasswordChar = '\0'; // mostra senha
-                olhinhoLogin.Image = Properties.Resources.olhar;
+                olhinhoLogin.Image = Properties.Resources.Olhar;
             }
             else
             {

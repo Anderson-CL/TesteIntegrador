@@ -144,7 +144,7 @@ namespace CaixaIntegrador.Pagina_Inicial
             if (txtRegistroSenha1.PasswordChar == '●') // senha está oculta
             {
                 txtRegistroSenha1.PasswordChar = '\0'; // mostra senha
-                olinhoRegistro1.Image = Properties.Resources.olhar;
+                olinhoRegistro1.Image = Properties.Resources.Olhar;
             }
             else
             {
@@ -158,7 +158,7 @@ namespace CaixaIntegrador.Pagina_Inicial
             if (txtRegistroSenha2.PasswordChar == '●') // senha está oculta
             {
                 txtRegistroSenha2.PasswordChar = '\0'; // mostra senha
-                olhinhoRegistro2.Image = Properties.Resources.olhar;
+                olhinhoRegistro2.Image = Properties.Resources.Olhar;
             }
             else
             {

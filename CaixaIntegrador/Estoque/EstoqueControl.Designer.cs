@@ -42,6 +42,7 @@
             dataGridView1 = new DataGridView();
             panelCabecalho = new Panel();
             panel1 = new Panel();
+            btnVoltar = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panelCabecalho.SuspendLayout();
             panel1.SuspendLayout();
@@ -201,7 +202,7 @@
             btnRemover.Depth = 0;
             btnRemover.HighEmphasis = true;
             btnRemover.Icon = null;
-            btnRemover.Location = new Point(192, 15);
+            btnRemover.Location = new Point(316, 15);
             btnRemover.Margin = new Padding(4, 6, 4, 6);
             btnRemover.MouseState = MaterialSkin.MouseState.HOVER;
             btnRemover.Name = "btnRemover";
@@ -221,7 +222,7 @@
             btnAdicionar.Depth = 0;
             btnAdicionar.HighEmphasis = true;
             btnAdicionar.Icon = null;
-            btnAdicionar.Location = new Point(32, 15);
+            btnAdicionar.Location = new Point(198, 15);
             btnAdicionar.Margin = new Padding(4, 6, 4, 6);
             btnAdicionar.MouseState = MaterialSkin.MouseState.HOVER;
             btnAdicionar.Name = "btnAdicionar";
@@ -288,6 +289,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(50, 50, 50);
+            panel1.Controls.Add(btnVoltar);
             panel1.Controls.Add(BtnAtualizarQtd);
             panel1.Controls.Add(txtQuantidade);
             panel1.Controls.Add(btnRemover);
@@ -298,6 +300,27 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(720, 84);
             panel1.TabIndex = 6;
+            // 
+            // btnVoltar
+            // 
+            btnVoltar.AutoSize = false;
+            btnVoltar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnVoltar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnVoltar.Depth = 0;
+            btnVoltar.HighEmphasis = true;
+            btnVoltar.Icon = null;
+            btnVoltar.Location = new Point(11, 15);
+            btnVoltar.Margin = new Padding(4, 6, 4, 6);
+            btnVoltar.MouseState = MaterialSkin.MouseState.HOVER;
+            btnVoltar.Name = "btnVoltar";
+            btnVoltar.NoAccentTextColor = Color.Empty;
+            btnVoltar.Size = new Size(80, 36);
+            btnVoltar.TabIndex = 7;
+            btnVoltar.Text = "VOLTAR";
+            btnVoltar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnVoltar.UseAccentColor = true;
+            btnVoltar.UseVisualStyleBackColor = true;
+            btnVoltar.Click += btnVoltar_Click;
             // 
             // EstoqueControl
             // 
@@ -329,5 +352,6 @@
         private MaterialSkin.Controls.MaterialTextBox txtQuantidade;
         private Panel panelCabecalho;
         private Panel panel1;
+        private MaterialSkin.Controls.MaterialButton btnVoltar;
     }
 }

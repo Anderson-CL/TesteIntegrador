@@ -79,11 +79,11 @@ namespace CaixaIntegrador
         public void CarregarEstoque()
         {
             var estoqueControl = new Estoque.EstoqueControl();
+            estoqueControl.VoltarClick += MostrarTelaInicial;
             estoqueControl.Dock = DockStyle.None;
             CentralizarControl(estoqueControl);
             this.MaximizeBox = false;
             this.Sizable = false;
-           
         }
 
 
