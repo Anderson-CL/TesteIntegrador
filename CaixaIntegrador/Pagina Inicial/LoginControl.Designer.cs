@@ -183,6 +183,7 @@
             lblEsqueceu.Size = new Size(174, 24);
             lblEsqueceu.TabIndex = 12;
             lblEsqueceu.Text = "Esqueceu a Senha?";
+            lblEsqueceu.Click += lblEsqueceu_Click;
             // 
             // materialLabel1
             // 

@@ -37,24 +37,15 @@ namespace CaixaIntegrador.Pagina_Inicial
 
             try
             {
-                // Roda em background para não travar a UI
-                bool encontrado = await Task.Run(() =>
-                    ServicoDeRecuperacao.SolicitarRecuperacao(email));
+                bool encontrado = await ServicoDeRecuperacao.SolicitarRecuperacaoAsync(email);
 
-                if (!encontrado)
-                {
-                    // ⚠️ Segurança: não revelar se email existe ou não
-                    MostrarMensagem("Se o email existir, o código será enviado.", true);
-                }
-                else
-                {
-                    MostrarMensagem("Código enviado! Verifique seu email.", true);
-                }
+                // Resposta genérica por segurança (não revela se email existe)
+                MostrarMensagem("Se o email existir, o código será enviado.", true);
 
-                // Aguarda 1,5s e avança para a tela de verificação
-               // await Task.Delay(1500);
-               // this.Invoke((Action)(() =>
-               //     principal.MostrarVerificacaoCodigo(email))); 
+                await Task.Delay(1500);
+
+                // Avança para verificação independente — o usuário saberá se chegou ou não
+                principal.MostrarVerificacaoCodigo(email);
             }
             catch (Exception ex)
             {
@@ -73,5 +64,4 @@ namespace CaixaIntegrador.Pagina_Inicial
             lblMensagem.Visible = true;
         }
     }
-}
 }

@@ -20,7 +20,7 @@ namespace CaixaIntegrador.Pagina_Inicial
         public LoginControl(PaginaInicial principal)
         {
             InitializeComponent();
-          
+
             this.principal = principal;
 
             txtLogin.Hint = "Usuário ou Email";
@@ -60,7 +60,8 @@ namespace CaixaIntegrador.Pagina_Inicial
                         // Aguarda 1 segundo antes de trocar de tela
                         Task.Delay(1000).ContinueWith(_ =>
                         {
-                            this.Invoke((Action)(() => {
+                            this.Invoke((Action)(() =>
+                            {
                                 principal.UsuarioLogado = usuario.Login;
                                 principal.MostrarTelaInicial();
                             }));
@@ -134,6 +135,11 @@ namespace CaixaIntegrador.Pagina_Inicial
         private void txtSenha_TextChanged(object sender, EventArgs e)
         {
             olhinhoLogin.Visible = txtSenha.Text.Length > 0;
+        }
+
+        private void lblEsqueceu_Click(object sender, EventArgs e)
+        {
+            principal.MostrarEsqueciSenha();
         }
     }
 }
