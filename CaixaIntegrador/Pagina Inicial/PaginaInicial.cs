@@ -128,6 +128,32 @@ namespace CaixaIntegrador
 
         }
 
-       
+       /* 
+         
+        
+        public void MostrarEsqueciSenha()
+        {
+            LimparConteudo();
+            var tela = new EsqueciSenhaControl(this);
+            AdicionarConteudo(tela);
+        }
+
+        public void MostrarVerificacaoCodigo(string email)
+        {
+            LimparConteudo();
+            var tela = new VerificacaoCodigoControl(this, email);
+            AdicionarConteudo(tela);
+        }
+
+        public void MostrarRedefinirSenha(string email)
+        {
+            LimparConteudo();
+            var tela = new RedefinirSenhaControl(this, email);
+            AdicionarConteudo(tela);
+        }
+
+
+        */
+
     }
 }
