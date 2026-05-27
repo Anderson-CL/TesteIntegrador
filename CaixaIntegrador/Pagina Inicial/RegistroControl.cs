@@ -102,8 +102,8 @@ namespace CaixaIntegrador.Pagina_Inicial
         {
             lblMensagemRegistro.Text = texto;
 
-            lblMensagemRegistro.ForeColor = sucesso 
-                ? MaterialSkin.MaterialSkinManager.Instance.ColorScheme.AccentColor: 
+            lblMensagemRegistro.ForeColor = sucesso
+                ? MaterialSkin.MaterialSkinManager.Instance.ColorScheme.AccentColor :
                 Color.Red;
 
             lblMensagemRegistro.Visible = true;
@@ -184,6 +184,11 @@ namespace CaixaIntegrador.Pagina_Inicial
         }
 
         private void txtRegistroLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtRegistroSenha2_Click(object sender, EventArgs e)
         {
 
         }

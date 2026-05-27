@@ -256,6 +256,7 @@
             txtRegistroSenha2.TrailingIcon = null;
             txtRegistroSenha2.UseSystemPasswordChar = false;
             txtRegistroSenha2.UseTallSize = false;
+            txtRegistroSenha2.Click += txtRegistroSenha2_Click;
             txtRegistroSenha2.KeyDown += txtRegistroSenha2_KeyDown;
             txtRegistroSenha2.TextChanged += txtRegistroSenha2_TextChanged;
             // 

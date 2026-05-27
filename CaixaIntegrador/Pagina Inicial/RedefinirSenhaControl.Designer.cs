@@ -38,6 +38,10 @@
             btnVoltar = new MaterialSkin.Controls.MaterialButton();
             barProgresso = new MaterialSkin.Controls.MaterialProgressBar();
             lblMensagem = new MaterialSkin.Controls.MaterialLabel();
+            picNovaSenha = new PictureBox();
+            picConfirmar = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)picNovaSenha).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picConfirmar).BeginInit();
             SuspendLayout();
             // 
             // materialLabel1
@@ -116,6 +120,7 @@
             txtNovaSenha.TextAlign = HorizontalAlignment.Left;
             txtNovaSenha.TrailingIcon = null;
             txtNovaSenha.UseSystemPasswordChar = false;
+            txtNovaSenha.TextChanged += txtNovaSenha_TextChanged;
             // 
             // txtConfirmar
             // 
@@ -145,6 +150,7 @@
             txtConfirmar.TextAlign = HorizontalAlignment.Left;
             txtConfirmar.TrailingIcon = null;
             txtConfirmar.UseSystemPasswordChar = false;
+            txtConfirmar.TextChanged += txtConfirmar_TextChanged;
             // 
             // btnSalvar
             // 
@@ -208,10 +214,38 @@
             lblMensagem.Size = new Size(1, 0);
             lblMensagem.TabIndex = 9;
             // 
+            // picNovaSenha
+            // 
+            picNovaSenha.Image = Properties.Resources.OlharNo;
+            picNovaSenha.Location = new Point(356, 119);
+            picNovaSenha.Margin = new Padding(3, 2, 3, 2);
+            picNovaSenha.Name = "picNovaSenha";
+            picNovaSenha.Size = new Size(42, 36);
+            picNovaSenha.SizeMode = PictureBoxSizeMode.Zoom;
+            picNovaSenha.TabIndex = 32;
+            picNovaSenha.TabStop = false;
+            picNovaSenha.Visible = false;
+            picNovaSenha.Click += picNovaSenha_Click;
+            // 
+            // picConfirmar
+            // 
+            picConfirmar.Image = Properties.Resources.OlharNo;
+            picConfirmar.Location = new Point(356, 216);
+            picConfirmar.Margin = new Padding(3, 2, 3, 2);
+            picConfirmar.Name = "picConfirmar";
+            picConfirmar.Size = new Size(42, 36);
+            picConfirmar.SizeMode = PictureBoxSizeMode.Zoom;
+            picConfirmar.TabIndex = 33;
+            picConfirmar.TabStop = false;
+            picConfirmar.Visible = false;
+            picConfirmar.Click += picConfirmar_Click;
+            // 
             // RedefinirSenhaControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(picConfirmar);
+            Controls.Add(picNovaSenha);
             Controls.Add(lblMensagem);
             Controls.Add(barProgresso);
             Controls.Add(btnVoltar);
@@ -225,6 +259,8 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "RedefinirSenhaControl";
             Size = new Size(630, 360);
+            ((System.ComponentModel.ISupportInitialize)picNovaSenha).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picConfirmar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -241,5 +277,7 @@
         private MaterialSkin.Controls.MaterialButton btnVoltar;
         private MaterialSkin.Controls.MaterialProgressBar barProgresso;
         private MaterialSkin.Controls.MaterialLabel lblMensagem;
+        private PictureBox picNovaSenha;
+        private PictureBox picConfirmar;
     }
 }

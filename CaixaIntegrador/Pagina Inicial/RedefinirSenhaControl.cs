@@ -106,12 +106,49 @@ namespace CaixaIntegrador.Pagina_Inicial
                 }
                 else
                 {
-                    btnSalvar_Click_1(this, EventArgs.Empty); 
+                    btnSalvar_Click_1(this, EventArgs.Empty);
                 }
 
-                e.SuppressKeyPress = true; 
+                e.SuppressKeyPress = true;
             }
         }
 
+        private void txtNovaSenha_TextChanged(object sender, EventArgs e)
+        {
+            picNovaSenha.Visible = txtNovaSenha.Text.Length > 0;
+        }
+
+        private void txtConfirmar_TextChanged(object sender, EventArgs e)
+        {
+            picConfirmar.Visible = txtConfirmar.Text.Length > 0;
+        }
+
+        private void picNovaSenha_Click(object sender, EventArgs e)
+        {
+            if (txtNovaSenha.PasswordChar == '●') // senha está oculta
+            {
+                txtNovaSenha.PasswordChar = '\0'; // mostra senha
+                picNovaSenha.Image = Properties.Resources.Olhar;
+            }
+            else
+            {
+                txtNovaSenha.PasswordChar = '●'; // oculta senha
+                picNovaSenha.Image = Properties.Resources.OlharNo;
+            }
+        }
+
+        private void picConfirmar_Click(object sender, EventArgs e)
+        {
+            if (txtConfirmar.PasswordChar == '●') // senha está oculta
+            {
+                txtConfirmar.PasswordChar = '\0'; // mostra senha
+                picConfirmar.Image = Properties.Resources.Olhar;
+            }
+            else
+            {
+                txtConfirmar.PasswordChar = '●'; // oculta senha
+                picConfirmar.Image = Properties.Resources.OlharNo;
+            }
+        }
     }
 }
