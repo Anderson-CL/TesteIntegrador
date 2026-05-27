@@ -20,10 +20,18 @@ namespace CaixaIntegrador.Pagina_Inicial
             InitializeComponent();
             this.principal = principal;
             txtEmail.Hint = "Digite seu email cadastrado";
+
+            txtEmail.KeyDown += txtEmail_KeyDown;
         }
+
+        private bool enviando = false; 
 
         private async void btnEnviarCodigo_Click(object sender, EventArgs e)
         {
+
+            if (enviando) return; // ✅ bloqueia duplicação
+            enviando = true;
+
             string email = txtEmail.Text.Trim();
 
             if (string.IsNullOrEmpty(email) || !email.Contains("@"))
@@ -52,6 +60,12 @@ namespace CaixaIntegrador.Pagina_Inicial
                 MostrarMensagem("Erro ao enviar email: " + ex.Message, false);
                 btnEnviarCodigo.Enabled = true;
             }
+
+            finally
+            {
+                enviando = false; // ✅ libera novamente
+            }
+
         }
 
         private void btnVoltar_Click(object sender, EventArgs e) =>
@@ -62,6 +76,32 @@ namespace CaixaIntegrador.Pagina_Inicial
             lblMensagem.Text = texto;
             lblMensagem.ForeColor = sucesso ? Color.DodgerBlue : Color.Red;
             lblMensagem.Visible = true;
+        }
+
+        private void materialLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnEnviarCodigo_Click(this, EventArgs.Empty);
+                e.SuppressKeyPress = true;
+            }
+
+        }
+
+        private void EsqueciSenhaControl_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

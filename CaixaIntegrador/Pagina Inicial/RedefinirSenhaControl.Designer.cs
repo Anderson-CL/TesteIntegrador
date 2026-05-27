@@ -36,7 +36,7 @@
             txtConfirmar = new MaterialSkin.Controls.MaterialTextBox2();
             btnSalvar = new MaterialSkin.Controls.MaterialButton();
             btnVoltar = new MaterialSkin.Controls.MaterialButton();
-            materialProgressBar1 = new MaterialSkin.Controls.MaterialProgressBar();
+            barProgresso = new MaterialSkin.Controls.MaterialProgressBar();
             lblMensagem = new MaterialSkin.Controls.MaterialLabel();
             SuspendLayout();
             // 
@@ -69,7 +69,7 @@
             materialLabel3.AutoSize = true;
             materialLabel3.Depth = 0;
             materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel3.Location = new Point(72, 94);
+            materialLabel3.Location = new Point(73, 78);
             materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel3.Name = "materialLabel3";
             materialLabel3.Size = new Size(85, 19);
@@ -81,7 +81,7 @@
             materialLabel4.AutoSize = true;
             materialLabel4.Depth = 0;
             materialLabel4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel4.Location = new Point(72, 191);
+            materialLabel4.Location = new Point(73, 175);
             materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel4.Name = "materialLabel4";
             materialLabel4.Size = new Size(119, 19);
@@ -97,7 +97,7 @@
             txtNovaSenha.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtNovaSenha.HideSelection = true;
             txtNovaSenha.LeadingIcon = null;
-            txtNovaSenha.Location = new Point(72, 123);
+            txtNovaSenha.Location = new Point(73, 107);
             txtNovaSenha.Margin = new Padding(3, 2, 3, 2);
             txtNovaSenha.MaxLength = 32767;
             txtNovaSenha.MouseState = MaterialSkin.MouseState.OUT;
@@ -126,7 +126,7 @@
             txtConfirmar.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtConfirmar.HideSelection = true;
             txtConfirmar.LeadingIcon = null;
-            txtConfirmar.Location = new Point(72, 220);
+            txtConfirmar.Location = new Point(73, 204);
             txtConfirmar.Margin = new Padding(3, 2, 3, 2);
             txtConfirmar.MaxLength = 32767;
             txtConfirmar.MouseState = MaterialSkin.MouseState.OUT;
@@ -186,34 +186,34 @@
             btnVoltar.UseVisualStyleBackColor = true;
             btnVoltar.Click += btnVoltar_Click;
             // 
-            // materialProgressBar1
+            // barProgresso
             // 
-            materialProgressBar1.Depth = 0;
-            materialProgressBar1.Location = new Point(73, 176);
-            materialProgressBar1.Margin = new Padding(3, 2, 3, 2);
-            materialProgressBar1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialProgressBar1.Name = "materialProgressBar1";
-            materialProgressBar1.Size = new Size(273, 5);
-            materialProgressBar1.TabIndex = 8;
+            barProgresso.Depth = 0;
+            barProgresso.Location = new Point(73, 263);
+            barProgresso.Margin = new Padding(3, 2, 3, 2);
+            barProgresso.MouseState = MaterialSkin.MouseState.HOVER;
+            barProgresso.Name = "barProgresso";
+            barProgresso.Size = new Size(273, 5);
+            barProgresso.TabIndex = 8;
+            barProgresso.Click += barProgresso_Click;
             // 
             // lblMensagem
             // 
             lblMensagem.AutoSize = true;
             lblMensagem.Depth = 0;
             lblMensagem.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            lblMensagem.Location = new Point(240, 93);
+            lblMensagem.Location = new Point(289, 284);
             lblMensagem.MouseState = MaterialSkin.MouseState.HOVER;
             lblMensagem.Name = "lblMensagem";
-            lblMensagem.Size = new Size(107, 19);
+            lblMensagem.Size = new Size(1, 0);
             lblMensagem.TabIndex = 9;
-            lblMensagem.Text = "materialLabel5";
             // 
             // RedefinirSenhaControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(lblMensagem);
-            Controls.Add(materialProgressBar1);
+            Controls.Add(barProgresso);
             Controls.Add(btnVoltar);
             Controls.Add(btnSalvar);
             Controls.Add(txtConfirmar);
@@ -239,7 +239,7 @@
         private MaterialSkin.Controls.MaterialTextBox2 txtConfirmar;
         private MaterialSkin.Controls.MaterialButton btnSalvar;
         private MaterialSkin.Controls.MaterialButton btnVoltar;
-        private MaterialSkin.Controls.MaterialProgressBar materialProgressBar1;
+        private MaterialSkin.Controls.MaterialProgressBar barProgresso;
         private MaterialSkin.Controls.MaterialLabel lblMensagem;
     }
 }

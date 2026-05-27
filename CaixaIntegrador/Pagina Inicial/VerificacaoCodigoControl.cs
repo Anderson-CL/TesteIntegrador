@@ -19,6 +19,10 @@ namespace CaixaIntegrador.Pagina_Inicial
         private string emailRecuperacao;
         private MaterialTextBox[] _digitBoxes;
 
+        private System.Windows.Forms.Timer timerExpiracao;
+        private int tempoRestante = 15 * 60; // 15 minutos (em segundos)
+
+
         public VerificacaoCodigoControl(PaginaInicial principal, string email)
         {
             InitializeComponent();
@@ -43,7 +47,39 @@ namespace CaixaIntegrador.Pagina_Inicial
             }
 
             txtCodigo1.Focus();
+            timerExpiracao = new System.Windows.Forms.Timer();
+            timerExpiracao.Interval = 1000; // 1 segundo
+            timerExpiracao.Tick += TimerExpiracao_Tick;
+            timerExpiracao.Start();
+
+            AtualizarLabelTempo();
+
         }
+
+
+        private void TimerExpiracao_Tick(object sender, EventArgs e)
+        {
+            if (tempoRestante > 0)
+            {
+                tempoRestante--;
+                AtualizarLabelTempo();
+            }
+            else
+            {
+                timerExpiracao.Stop();
+                lblExpira.Text = "Código expirado!";
+            }
+        }
+
+        private void AtualizarLabelTempo()
+        {
+            int minutos = tempoRestante / 60;
+            int segundos = tempoRestante % 60;
+
+            lblExpira.Text = $"Expira em {minutos:D2}:{segundos:D2}";
+        }
+
+
 
         private void VerificacaoCodigoControl_Load(object sender, EventArgs e)
         {
@@ -120,6 +156,13 @@ namespace CaixaIntegrador.Pagina_Inicial
 
         private void btnValidar_Click_1(object sender, EventArgs e)
         {
+
+            if (tempoRestante <= 0)
+            {
+                MostrarMensagem("O código expirou. Solicite outro.", false);
+                return;
+            }
+
             string codigo = ObterCodigo();
 
             if (codigo.Length != 6)
@@ -168,6 +211,22 @@ namespace CaixaIntegrador.Pagina_Inicial
             {
                 btnReenviar.Enabled = true;
             }
+
+
+            tempoRestante = 15 * 60;
+            timerExpiracao.Start();
+            AtualizarLabelTempo();
+
+        }
+
+        private void lblExpira_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

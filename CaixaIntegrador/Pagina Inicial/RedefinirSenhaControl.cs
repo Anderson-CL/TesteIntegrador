@@ -23,6 +23,15 @@ namespace CaixaIntegrador.Pagina_Inicial
             this.emailRecuperacao = email;
             txtNovaSenha.Hint = "Nova senha (mínimo 8 caracteres)";
             txtConfirmar.Hint = "Confirme a nova senha";
+
+            barProgresso.Minimum = 0;
+            barProgresso.Maximum = 100;
+            barProgresso.Value = 0;
+
+
+            txtNovaSenha.KeyDown += txtCampos_KeyDown;
+            txtConfirmar.KeyDown += txtCampos_KeyDown;
+
         }
 
         private void MostrarMensagem(string texto, bool sucesso)
@@ -51,7 +60,19 @@ namespace CaixaIntegrador.Pagina_Inicial
 
             btnSalvar.Enabled = false;
 
+            MostrarMensagem("Salvando...", true);
+
+
+            barProgresso.Value = 0;
+
+            for (int i = 0; i <= 100; i += 10)
+            {
+                barProgresso.Value = i;
+                await Task.Delay(100); // controla velocidade da barra
+            }
+
             bool ok = ServicoDeRecuperacao.RedefinirSenha(emailRecuperacao, novaSenha);
+
 
             if (ok)
             {
@@ -68,5 +89,29 @@ namespace CaixaIntegrador.Pagina_Inicial
 
         private void btnVoltar_Click(object sender, EventArgs e) =>
         principal.MostrarLogin();
+
+        private void barProgresso_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void txtCampos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (sender == txtNovaSenha)
+                {
+                    txtConfirmar.Focus();
+                }
+                else
+                {
+                    btnSalvar_Click_1(this, EventArgs.Empty); 
+                }
+
+                e.SuppressKeyPress = true; 
+            }
+        }
+
     }
 }
