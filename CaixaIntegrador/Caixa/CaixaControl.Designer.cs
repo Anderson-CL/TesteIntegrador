@@ -69,7 +69,7 @@
             // 
             // btnLimparCarrinho
             // 
-            btnLimparCarrinho.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnLimparCarrinho.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnLimparCarrinho.AutoSize = false;
             btnLimparCarrinho.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnLimparCarrinho.BackColor = Color.Red;
@@ -94,7 +94,7 @@
             // 
             // btn_Pedido
             // 
-            btn_Pedido.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btn_Pedido.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btn_Pedido.AutoSize = false;
             btn_Pedido.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btn_Pedido.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
@@ -116,7 +116,7 @@
             // 
             // btnDeletarMarcados
             // 
-            btnDeletarMarcados.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnDeletarMarcados.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnDeletarMarcados.AutoSize = false;
             btnDeletarMarcados.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnDeletarMarcados.BackColor = Color.Orange;
@@ -551,6 +551,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             groupBox1.Controls.Add(btnLimparCarrinho);
             groupBox1.Controls.Add(DataGrid_Produtos);
             groupBox1.Controls.Add(btnDeletarMarcados);

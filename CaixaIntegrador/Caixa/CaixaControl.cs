@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Microsoft.EntityFrameworkCore;
 
 namespace CaixaIntegrador.Caixa
 {
@@ -16,6 +17,9 @@ namespace CaixaIntegrador.Caixa
         private List<CarrinhoCompra> carrinho = new List<CarrinhoCompra>();
         private List<Pedido> pedidos = new List<Pedido>();
         private List<Pagamento> pagamentosAtuais = new List<Pagamento>();
+                                                                
+        // BindingSource para o DataGrid (mantém estrutura/colunas do grid)
+        private BindingSource bindingSource = new BindingSource();
 
         // UserControls auxiliares
         private UCCategorias ucCategorias = new UCCategorias();
@@ -29,6 +33,7 @@ namespace CaixaIntegrador.Caixa
             InicializarEventos();
             CarregarDadosIniciais();
             AdicionarUserControlPrincipal();
+            InicializarBindingSource();
         }
 
         #region User Controls e navegação
@@ -62,6 +67,16 @@ namespace CaixaIntegrador.Caixa
             panelPrincipal.Controls.Clear();
             panelPrincipal.Controls.Add(userControl);
             userControl.Dock = DockStyle.Fill;
+        }
+        #endregion
+
+        #region Inicialização do BindingSource
+        private void InicializarBindingSource()
+        {
+            // Vincula o BindingSource ao DataGrid e à lista de carrinho.
+            // Usar BindingSource evita recriar colunas ao reatribuir DataSource.
+            DataGrid_Produtos.DataSource = bindingSource;
+            bindingSource.DataSource = carrinho;
         }
         #endregion
 
@@ -139,14 +154,16 @@ namespace CaixaIntegrador.Caixa
 
         private void AtualizarCarrinhoUI()
         {
-            DataGrid_Produtos.DataSource = null;
-            DataGrid_Produtos.DataSource = carrinho;
+            // Não reatribuir DataSource direto no DataGrid (evita recriar colunas).
+            // Atualiza o BindingSource que está ligado ao grid.
+            bindingSource.ResetBindings(false);
 
             if (DataGrid_Produtos.Columns["Preco"] != null)
                 DataGrid_Produtos.Columns["Preco"].DefaultCellStyle.Format = "C2";
 
             if (DataGrid_Produtos.Columns["Total"] != null)
                 DataGrid_Produtos.Columns["Total"].DefaultCellStyle.Format = "C2";
+
             // Garantir que a coluna de checkbox tenha valores padrão (false) após rebind
             if (DataGrid_Produtos.Columns.Contains("Column5"))
             {
@@ -176,8 +193,11 @@ namespace CaixaIntegrador.Caixa
                 {
                     var item = carrinho[e.RowIndex];
                     item.Qtd = novaQuantidade;
+                    // atualiza valor exibido e recalcula total
                     row.Cells["Total"].Value = item.Total;
                     AtualizarTotal();
+                    // notifica binding para refrescar células sem recriar colunas
+                    bindingSource.ResetBindings(false);
                     DataGrid_Produtos.Refresh();
                 }
             }
@@ -466,7 +486,46 @@ namespace CaixaIntegrador.Caixa
             decimal totalPedido = carrinho.Sum(c => c.Total);
             decimal totalPago = pagamentosAtuais.Sum(p => p.Valor);
             var troco = totalPago - totalPedido;
+           
+            try
+            {
+                using var ctx = new AppDbContext();
 
+                foreach (var item in carrinho)
+                {
+                    var produto = ctx.Produtos.FirstOrDefault(p => p.Nome == item.Produto);
+
+                    if (produto == null)
+                    {
+                        MessageBox.Show($"Produto '{item.Produto}' não encontrado no estoque.", "Erro");
+                        return;
+                    }
+
+                    if (produto.Quantidade < item.Qtd)
+                    {
+                        MessageBox.Show($"Estoque insuficiente para '{item.Produto}'.\n" +
+                                        $"Disponível: {produto.Quantidade} | Pedido: {item.Qtd}", "Erro");
+                        return;
+                    }
+
+                    produto.Quantidade -= item.Qtd;
+
+                    ctx.Vendas.Add(new Venda
+                    {
+                        ProdutoId = produto.Id,
+                        Quantidade = item.Qtd,
+                        DataVenda = DateTime.Now
+                    });
+                }
+
+                ctx.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao finalizar venda: {ex.Message}", "Erro");
+            }
+           
+            
             if (totalPago < totalPedido)
             {
                 MessageBox.Show($"Pagamento incompleto. Total: R$ {totalPedido:F2}, Pago: R$ {totalPago:F2}", "Erro");
@@ -557,10 +616,11 @@ namespace CaixaIntegrador.Caixa
 
         }
 
-      
+
     }
     public interface IImpressora
     {
         void ImprimirNFC(Pedido pedido);
     }
 }
+
