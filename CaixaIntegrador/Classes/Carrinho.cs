@@ -8,6 +8,7 @@ namespace CaixaIntegrador.Classes
 {
     public class CarrinhoCompra
     {
+        public int Id { get; set; }
         public string Produto { get; set; }
 
         public int Qtd { get; set; }

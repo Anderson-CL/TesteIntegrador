@@ -170,7 +170,7 @@
             DataGrid_Produtos.DefaultCellStyle = dataGridViewCellStyle5;
             DataGrid_Produtos.EnableHeadersVisualStyles = false;
             DataGrid_Produtos.GridColor = Color.FromArgb(80, 80, 80);
-            DataGrid_Produtos.Location = new Point(-3, 7);
+            DataGrid_Produtos.Location = new Point(3, 19);
             DataGrid_Produtos.Name = "DataGrid_Produtos";
             DataGrid_Produtos.RowHeadersVisible = false;
             DataGrid_Produtos.RowHeadersWidth = 35;

@@ -13,6 +13,7 @@ namespace CaixaIntegrador.Classes
     // informações de cada forma de pagamento
     public class Pagamento
     {
+        public int id { get; set; }
         public FormaPagamento Forma { get; set; }
         public decimal Valor { get; set; }
     }
