@@ -26,7 +26,7 @@ namespace CaixaIntegrador.Caixa
 
         }
 
-        private void NFCtela_Load(object sender, EventArgs e)
+        public void NFCtela_Load(object sender, EventArgs e)
         {
 
             NFCdoc = new PrintDocument();

@@ -486,7 +486,7 @@ namespace CaixaIntegrador.Caixa
             decimal totalPedido = carrinho.Sum(c => c.Total);
             decimal totalPago = pagamentosAtuais.Sum(p => p.Valor);
             var troco = totalPago - totalPedido;
-           
+
             try
             {
                 using var ctx = new AppDbContext();
@@ -524,8 +524,8 @@ namespace CaixaIntegrador.Caixa
             {
                 MessageBox.Show($"Erro ao finalizar venda: {ex.Message}", "Erro");
             }
-           
-            
+
+
             if (totalPago < totalPedido)
             {
                 MessageBox.Show($"Pagamento incompleto. Total: R$ {totalPedido:F2}, Pago: R$ {totalPago:F2}", "Erro");
@@ -563,10 +563,20 @@ namespace CaixaIntegrador.Caixa
 
             if (resultado == DialogResult.Yes)
             {
-                var impressora = new ImpressoraNormal();
-                impressora.ImprimirNFC(novoPedido);
-            }
+                try
+                {
+                    var impressora = new ImpressoraNormal();
+                    impressora.ImprimirNFC(novoPedido);
+                }
+                catch
+                {
 
+                    MessageBox.Show($"Erro ao imprimir:\nAbrindo pré‑visualização para salvar.", "Erro");
+                    using var preview = new NFCtela(novoPedido);
+                    preview.ShowDialog();
+
+                }
+            }
             carrinho.Clear();
             pagamentosAtuais.Clear();
             AtualizarCarrinhoUI();
