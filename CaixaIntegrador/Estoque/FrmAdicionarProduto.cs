@@ -20,17 +20,21 @@ namespace CaixaIntegrador.Estoque
         public FrmAdicionarProduto()
         {
             InitializeComponent();
-            CarregarSubCategorias();
+            CarregarCategorias();
         }
 
-        private void CarregarSubCategorias()
+        private void CarregarCategorias()
         {
-
             using var db = new AppDbContext();
-            cmbSubCategoria.DataSource = db.SubCategorias.ToList();
-            cmbSubCategoria.DisplayMember = "Nome";
-            cmbSubCategoria.ValueMember = "Id";
+            var categorias = db.Categorias.ToList();
 
+            cmbCategoria.DataSource = categorias;
+            cmbCategoria.DisplayMember = "Nome";
+            cmbCategoria.ValueMember = "Id";
+
+            //Carrega as subcategorias
+            if (cmbCategoria.SelectedValue != null)
+                FiltrarSubCategorias((int)cmbCategoria.SelectedValue);
         }
 
         private void cbSubCategoria_SelectedIndexChanged(object sender, EventArgs e)
@@ -40,18 +44,50 @@ namespace CaixaIntegrador.Estoque
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            //Validações
 
+            //Nome
             if (string.IsNullOrWhiteSpace(txtNome.Text))
             {
                 MessageBox.Show("Informe o nome do produto");
                 return;
             }
 
+            //Preço
+            if (!decimal.TryParse(txtPreco.Text.Replace(",", "."),
+                System.Globalization.NumberStyles.Any,
+                System.Globalization.CultureInfo.InvariantCulture,
+                out decimal preco) || preco < 0)
+            {
+                MessageBox.Show("Informe um preço válido (ex: 9,90).", "Atenção",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPreco.Focus();
+                return;
+            }
+
+            //Quantidade
+            if (!int.TryParse(txtQuantidade.Text, out int qtd) || qtd < 0)
+            {
+                MessageBox.Show("Informe uma quantidade válida (número inteiro positivo).", "Atenção",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtQuantidade.Focus();
+                return;
+            }
+
+            //Subcategoria
+            if (cmbSubCategoria.SelectedValue == null)
+            {
+                MessageBox.Show("Selecione uma subcategoria.", "Atenção",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            //Criação do Produto
             ProdutoCriado = new Produto
             {
-                Nome = txtNome.Text,
-                Preco = decimal.Parse(txtPreco.Text),
-                Quantidade = int.Parse(txtQuantidade.Text),
+                Nome = txtNome.Text.Trim(),
+                Preco = preco,
+                Quantidade = qtd,
                 SubCategoriaId = (int)cmbSubCategoria.SelectedValue
             };
 
@@ -68,24 +104,23 @@ namespace CaixaIntegrador.Estoque
 
         }
 
-        private void nudPreco1_ValueChanged(object sender, EventArgs e)
-        {
 
+        private void FiltrarSubCategorias(int categoriaId)
+        {
+            using var db = new AppDbContext();
+            var subs = db.SubCategorias
+                         .Where(s => s.CategoriaId == categoriaId)
+                         .ToList();
+
+            cmbSubCategoria.DataSource = subs;
+            cmbSubCategoria.DisplayMember = "Nome";
+            cmbSubCategoria.ValueMember = "Id";
         }
 
-        private void nudQuantidade1_Click(object sender, EventArgs e)
+        private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            if (cmbCategoria.SelectedValue != null)
+                FiltrarSubCategorias((int)cmbCategoria.SelectedValue);
         }
     }
 }

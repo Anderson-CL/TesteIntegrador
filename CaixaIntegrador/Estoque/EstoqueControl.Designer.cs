@@ -43,6 +43,7 @@
             panelCabecalho = new Panel();
             panel1 = new Panel();
             btnVoltar = new MaterialSkin.Controls.MaterialButton();
+            btnEditar = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panelCabecalho.SuspendLayout();
             panel1.SuspendLayout();
@@ -289,6 +290,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(50, 50, 50);
+            panel1.Controls.Add(btnEditar);
             panel1.Controls.Add(btnVoltar);
             panel1.Controls.Add(BtnAtualizarQtd);
             panel1.Controls.Add(txtQuantidade);
@@ -322,6 +324,26 @@
             btnVoltar.UseVisualStyleBackColor = true;
             btnVoltar.Click += btnVoltar_Click;
             // 
+            // btnEditar
+            // 
+            btnEditar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnEditar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnEditar.Depth = 0;
+            btnEditar.HighEmphasis = true;
+            btnEditar.Icon = null;
+            btnEditar.Location = new Point(92, 15);
+            btnEditar.Margin = new Padding(4, 6, 4, 6);
+            btnEditar.MouseState = MaterialSkin.MouseState.HOVER;
+            btnEditar.Name = "btnEditar";
+            btnEditar.NoAccentTextColor = Color.Empty;
+            btnEditar.Size = new Size(98, 36);
+            btnEditar.TabIndex = 8;
+            btnEditar.Text = "Editar";
+            btnEditar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnEditar.UseAccentColor = false;
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
+            // 
             // EstoqueControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -353,5 +375,6 @@
         private Panel panelCabecalho;
         private Panel panel1;
         private MaterialSkin.Controls.MaterialButton btnVoltar;
+        private MaterialSkin.Controls.MaterialButton btnEditar;
     }
 }

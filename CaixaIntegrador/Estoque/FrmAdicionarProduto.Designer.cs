@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             txtNome = new MaterialSkin.Controls.MaterialTextBox2();
-            cmbSubCategoria = new MaterialSkin.Controls.MaterialComboBox();
+            cmbCategoria = new MaterialSkin.Controls.MaterialComboBox();
             btnCancelar = new MaterialSkin.Controls.MaterialButton();
             btnSalvar = new MaterialSkin.Controls.MaterialButton();
             txtPreco = new MaterialSkin.Controls.MaterialTextBox2();
             txtQuantidade = new MaterialSkin.Controls.MaterialTextBox2();
-            materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
+            cmbSubCategoria = new MaterialSkin.Controls.MaterialComboBox();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
@@ -70,28 +70,28 @@
             txtNome.TrailingIcon = null;
             txtNome.UseSystemPasswordChar = false;
             // 
-            // cmbSubCategoria
+            // cmbCategoria
             // 
-            cmbSubCategoria.AutoResize = false;
-            cmbSubCategoria.BackColor = Color.FromArgb(255, 255, 255);
-            cmbSubCategoria.Depth = 0;
-            cmbSubCategoria.DrawMode = DrawMode.OwnerDrawVariable;
-            cmbSubCategoria.DropDownHeight = 174;
-            cmbSubCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbSubCategoria.DropDownWidth = 121;
-            cmbSubCategoria.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            cmbSubCategoria.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            cmbSubCategoria.FormattingEnabled = true;
-            cmbSubCategoria.IntegralHeight = false;
-            cmbSubCategoria.ItemHeight = 43;
-            cmbSubCategoria.Location = new Point(23, 153);
-            cmbSubCategoria.MaxDropDownItems = 4;
-            cmbSubCategoria.MouseState = MaterialSkin.MouseState.OUT;
-            cmbSubCategoria.Name = "cmbSubCategoria";
-            cmbSubCategoria.Size = new Size(200, 49);
-            cmbSubCategoria.StartIndex = 0;
-            cmbSubCategoria.TabIndex = 3;
-            cmbSubCategoria.SelectedIndexChanged += cbSubCategoria_SelectedIndexChanged;
+            cmbCategoria.AutoResize = false;
+            cmbCategoria.BackColor = Color.FromArgb(255, 255, 255);
+            cmbCategoria.Depth = 0;
+            cmbCategoria.DrawMode = DrawMode.OwnerDrawVariable;
+            cmbCategoria.DropDownHeight = 174;
+            cmbCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbCategoria.DropDownWidth = 121;
+            cmbCategoria.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cmbCategoria.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cmbCategoria.FormattingEnabled = true;
+            cmbCategoria.IntegralHeight = false;
+            cmbCategoria.ItemHeight = 43;
+            cmbCategoria.Location = new Point(23, 153);
+            cmbCategoria.MaxDropDownItems = 4;
+            cmbCategoria.MouseState = MaterialSkin.MouseState.OUT;
+            cmbCategoria.Name = "cmbCategoria";
+            cmbCategoria.Size = new Size(200, 49);
+            cmbCategoria.StartIndex = 0;
+            cmbCategoria.TabIndex = 3;
+            cmbCategoria.SelectedIndexChanged += cbSubCategoria_SelectedIndexChanged;
             // 
             // btnCancelar
             // 
@@ -191,29 +191,28 @@
             txtQuantidade.TrailingIcon = null;
             txtQuantidade.UseSystemPasswordChar = false;
             txtQuantidade.UseTallSize = false;
-            txtQuantidade.Click += nudQuantidade1_Click;
             // 
-            // materialComboBox1
+            // cmbSubCategoria
             // 
-            materialComboBox1.AutoResize = false;
-            materialComboBox1.BackColor = Color.FromArgb(255, 255, 255);
-            materialComboBox1.Depth = 0;
-            materialComboBox1.DrawMode = DrawMode.OwnerDrawVariable;
-            materialComboBox1.DropDownHeight = 174;
-            materialComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            materialComboBox1.DropDownWidth = 121;
-            materialComboBox1.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            materialComboBox1.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialComboBox1.FormattingEnabled = true;
-            materialComboBox1.IntegralHeight = false;
-            materialComboBox1.ItemHeight = 43;
-            materialComboBox1.Location = new Point(231, 153);
-            materialComboBox1.MaxDropDownItems = 4;
-            materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
-            materialComboBox1.Name = "materialComboBox1";
-            materialComboBox1.Size = new Size(200, 49);
-            materialComboBox1.StartIndex = 0;
-            materialComboBox1.TabIndex = 12;
+            cmbSubCategoria.AutoResize = false;
+            cmbSubCategoria.BackColor = Color.FromArgb(255, 255, 255);
+            cmbSubCategoria.Depth = 0;
+            cmbSubCategoria.DrawMode = DrawMode.OwnerDrawVariable;
+            cmbSubCategoria.DropDownHeight = 174;
+            cmbSubCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSubCategoria.DropDownWidth = 121;
+            cmbSubCategoria.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cmbSubCategoria.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cmbSubCategoria.FormattingEnabled = true;
+            cmbSubCategoria.IntegralHeight = false;
+            cmbSubCategoria.ItemHeight = 43;
+            cmbSubCategoria.Location = new Point(231, 153);
+            cmbSubCategoria.MaxDropDownItems = 4;
+            cmbSubCategoria.MouseState = MaterialSkin.MouseState.OUT;
+            cmbSubCategoria.Name = "cmbSubCategoria";
+            cmbSubCategoria.Size = new Size(200, 49);
+            cmbSubCategoria.StartIndex = 0;
+            cmbSubCategoria.TabIndex = 12;
             // 
             // materialLabel1
             // 
@@ -291,12 +290,12 @@
             Controls.Add(materialLabel3);
             Controls.Add(materialLabel2);
             Controls.Add(materialLabel1);
-            Controls.Add(materialComboBox1);
+            Controls.Add(cmbSubCategoria);
             Controls.Add(txtQuantidade);
             Controls.Add(txtPreco);
             Controls.Add(btnSalvar);
             Controls.Add(btnCancelar);
-            Controls.Add(cmbSubCategoria);
+            Controls.Add(cmbCategoria);
             Controls.Add(txtNome);
             FormStyle = FormStyles.ActionBar_None;
             MaximizeBox = false;
@@ -310,12 +309,12 @@
         #endregion
 
         private MaterialSkin.Controls.MaterialTextBox2 txtNome;
-        private MaterialSkin.Controls.MaterialComboBox cmbSubCategoria;
+        private MaterialSkin.Controls.MaterialComboBox cmbCategoria;
         private MaterialSkin.Controls.MaterialButton btnCancelar;
         private MaterialSkin.Controls.MaterialButton btnSalvar;
         private MaterialSkin.Controls.MaterialTextBox2 txtPreco;
         private MaterialSkin.Controls.MaterialTextBox2 txtQuantidade;
-        private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
+        private MaterialSkin.Controls.MaterialComboBox cmbSubCategoria;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;

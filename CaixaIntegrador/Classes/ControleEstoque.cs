@@ -1,9 +1,10 @@
-﻿using System;
+﻿using CaixaIntegrador.Data;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 
 namespace CaixaIntegrador.Classes
 {
@@ -58,5 +59,21 @@ namespace CaixaIntegrador.Classes
             return db.Produtos.Include(p => p.SubCategoria)
                 .Where(p => p.SubCategoria.CategoriaId == categoriaId).ToList();
         }
+
+        public void Editar(Produto produtoEditado)
+        {
+            using var db = new AppDbContext();
+
+            var produto = db.Produtos.Find(produtoEditado.Id);
+            if (produto == null) return;
+
+            produto.Nome = produtoEditado.Nome;
+            produto.Preco = produtoEditado.Preco;
+            produto.Quantidade = produtoEditado.Quantidade;
+            produto.SubCategoriaId = produtoEditado.SubCategoriaId;
+
+            db.SaveChanges();
+        }
+
     }
 }
