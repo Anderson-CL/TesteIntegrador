@@ -23,6 +23,14 @@ namespace CaixaIntegrador.Estoque
         {
             InitializeComponent();
             _produtoId = produtoId;
+
+            this.Load += FrmEditarProduto_Load;
+        }
+
+        private void FrmEditarProduto_Load(object sender, EventArgs e)
+        {
+            CarregarCategorias();
+            PreencherCampos();
         }
 
         private void CarregarCategorias()
@@ -64,12 +72,21 @@ namespace CaixaIntegrador.Estoque
             var sub = db.SubCategorias.Find(produto.SubCategoriaId);
             var catId = sub?.CategoriaId ?? 0;
 
-            // Seleciona a categoria correta
-            // SelectedIndexChanged e carrega as subcategorias
-            cmbCategoria.SelectedValue = catId;
+            // Desliga o evento enquanto preenche
+            cmbCategoria.SelectedIndexChanged -= cmbCategoria_SelectedIndexChanged;
 
-            // seleciona a subcategoria correta
-            cmbSubCategoria.SelectedValue = produto.SubCategoriaId;
+            cmbCategoria.SelectedItem = cmbCategoria.Items
+            .Cast<Categoria>()
+            .FirstOrDefault(c => c.Id == catId);
+
+            FiltrarSubCategorias(catId);
+
+            cmbSubCategoria.SelectedItem = cmbSubCategoria.Items
+                .Cast<SubCategoria>()
+                .FirstOrDefault(s => s.Id == produto.SubCategoriaId);
+
+            // Religa o evento
+            cmbCategoria.SelectedIndexChanged += cmbCategoria_SelectedIndexChanged;
 
             txtNome.Text = produto.Nome;
             txtPreco.Text = produto.Preco.ToString("F2");
@@ -80,8 +97,8 @@ namespace CaixaIntegrador.Estoque
 
         private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbCategoria.SelectedValue != null)
-                FiltrarSubCategorias((int)cmbCategoria.SelectedValue);
+            if (cmbCategoria.SelectedItem is Categoria cat)
+                FiltrarSubCategorias(cat.Id);
         }
 
         private void cmbSubCategoria_SelectedIndexChanged(object sender, EventArgs e)
