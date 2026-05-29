@@ -1,5 +1,6 @@
 using CaixaIntegrador.Data;
 using CaixaIntegrador.Pagina_Inicial;
+using Microsoft.EntityFrameworkCore;
 
 namespace CaixaIntegrador
 {
@@ -15,6 +16,7 @@ namespace CaixaIntegrador
             using (var db = new AppDbContext())
             {
                 db.Database.EnsureCreated();
+
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
