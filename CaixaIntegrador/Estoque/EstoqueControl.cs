@@ -189,25 +189,25 @@ namespace CaixaIntegrador.Estoque
 
         private void BtnAtualizarQtd_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow == null)
-            {
-                MessageBox.Show("Selecione um produto.", "Atenção",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            /* if (dataGridView1.CurrentRow == null)
+             {
+                 MessageBox.Show("Selecione um produto.", "Atenção",
+                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                 return;
+             }
 
-            if (!int.TryParse(txtQuantidade.Text, out int novaQtd) || novaQtd < 0)
-            {
-                MessageBox.Show("Informe uma quantidade válida.", "Atenção",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtQuantidade.Focus();
-                return;
-            }
+             if (!int.TryParse(txtQuantidade.Text, out int novaQtd) || novaQtd < 0)
+             {
+                 MessageBox.Show("Informe uma quantidade válida.", "Atenção",
+                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                 txtQuantidade.Focus();
+                 return;
+             }
 
-            int id = (int)dataGridView1.CurrentRow.Cells["Id"].Value;
-            controle.AtualizarQuantidade(id, novaQtd);
-            AtualizarGrid();
-
+             int id = (int)dataGridView1.CurrentRow.Cells["Id"].Value;
+             controle.AtualizarQuantidade(id, novaQtd);
+             AtualizarGrid();
+            */
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
@@ -259,6 +259,26 @@ namespace CaixaIntegrador.Estoque
             {
                 controle.Editar(form.ProdutoEditado);
                 AtualizarGrid();
+            }
+        }
+
+        private void btnMovimentar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null)
+            {
+                MessageBox.Show("Selecione um produto para movimentar.", "Atenção",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int id = (int)dataGridView1.CurrentRow.Cells["Id"].Value;
+            string nome = dataGridView1.CurrentRow.Cells["Nome"].Value?.ToString();
+            int qtdAtual = Convert.ToInt32(dataGridView1.CurrentRow.Cells["Quantidade"].Value);
+
+            using var form = new FrmMovimentacao(id, nome, qtdAtual);
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                AtualizarGrid(); // Atualiza o grid após a movimentação
             }
         }
     }

@@ -297,6 +297,7 @@
             Controls.Add(btnCancelar);
             Controls.Add(cmbCategoria);
             Controls.Add(txtNome);
+            ForeColor = SystemColors.ControlText;
             FormStyle = FormStyles.ActionBar_None;
             MaximizeBox = false;
             Name = "FrmAdicionarProduto";

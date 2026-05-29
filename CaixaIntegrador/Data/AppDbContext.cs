@@ -17,6 +17,8 @@ namespace CaixaIntegrador.Data
         public DbSet<Venda> Vendas { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
 
+        public DbSet<MovimentacaoEstoque> MovimentacoesEstoque { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
 
