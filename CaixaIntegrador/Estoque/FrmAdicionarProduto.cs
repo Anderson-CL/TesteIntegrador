@@ -20,6 +20,10 @@ namespace CaixaIntegrador.Estoque
         public FrmAdicionarProduto()
         {
             InitializeComponent();
+            this.Load += FrmAdicionarProduto_Load;
+        }
+        private void FrmAdicionarProduto_Load(object sender, EventArgs e)
+        {
             CarregarCategorias();
         }
 
@@ -119,8 +123,10 @@ namespace CaixaIntegrador.Estoque
 
         private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbCategoria.SelectedValue != null)
-                FiltrarSubCategorias((int)cmbCategoria.SelectedValue);
+            if (cmbCategoria.SelectedItem is Categoria cat)
+                FiltrarSubCategorias(cat.Id);
         }
+
+       
     }
 }

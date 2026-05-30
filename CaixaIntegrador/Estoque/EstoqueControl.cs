@@ -21,45 +21,23 @@ namespace CaixaIntegrador.Estoque
         {
             InitializeComponent();
             txtBuscar.Hint = "Digite aqui!";
-            txtQuantidade.Hint = "Nova Qantidade";
         }
 
         private void EstoqueControl_Load(object sender, EventArgs e)
         {
             ConfigurarGrid();
-            AtualizarGrid();
             CarregarCategorias();
-
-            dataGridView1.AutoGenerateColumns = true;
-
-            using var db = new AppDbContext();
-            cmbFiltrar.DataSource = db.Categorias.ToList();
-            dataGridView1.AllowUserToOrderColumns = false;
-            dataGridView1.ReadOnly = true;
-
-            cmbFiltrar.DisplayMember = "Nome";   // o que aparece na lista
-            cmbFiltrar.ValueMember = "Id";       // valor interno usado no filtro
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridView1.AllowUserToResizeRows = false;
-            dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.Columns["Id"].Visible = false;
-            dataGridView1.Columns["nome"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            //  dataGridView1.Columns["Preco"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns["Quantidade"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns["preco"].DefaultCellStyle.Format = "C2";
+            AtualizarGrid();
         }
 
         private void ConfigurarGrid()
         {
-            dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ReadOnly = true;
             dataGridView1.AllowUserToOrderColumns = false;
             dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            // Linha abaixo: quando o grid terminar de pintar cada linha,
-            // colore em vermelho as que estiverem com quantidade zero
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.RowPostPaint += ColorirLinhasEstoqueBaixo;
         }
 
@@ -89,16 +67,83 @@ namespace CaixaIntegrador.Estoque
             cmbFiltrar.ValueMember = "Id";
         }
 
+        private void CarregarDados(IQueryable<Produto> fonte = null)
+        {
+            using var db = new AppDbContext();
+
+            var query = fonte ?? db.Produtos;
+
+            var dados = db.Produtos
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Nome,
+                    SubCategoria = p.SubCategoria.Nome,
+                    Categoria = p.SubCategoria.Categoria.Nome,
+                    p.Preco,
+                    p.Quantidade
+                })
+                .ToList();
+
+            AplicarDadosNoGrid(dados.Cast<object>().ToList());
+        }
+
         private void btbBuscar_Click(object sender, EventArgs e)
         {
             string termo = txtBuscar.Text.Trim();
+
             if (string.IsNullOrEmpty(termo))
             {
                 AtualizarGrid();
                 return;
             }
-            dataGridView1.DataSource = controle.Buscar(termo);
 
+            using var db = new AppDbContext();
+
+            var dados = db.Produtos
+                .Where(p => p.Nome.Contains(termo))
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Nome,
+                    SubCategoria = p.SubCategoria.Nome,
+                    Categoria = p.SubCategoria.Categoria.Nome,
+                    p.Preco,
+                    p.Quantidade
+                })
+                .ToList();
+
+            dataGridView1.AutoGenerateColumns = true;
+            dataGridView1.DataSource = dados;
+
+            FormatarColunas();
+
+        }
+
+        private void FormatarColunas()
+        {
+            if (dataGridView1.Columns["Id"] != null)
+                dataGridView1.Columns["Id"].Visible = false;
+
+            if (dataGridView1.Columns["Nome"] != null)
+                dataGridView1.Columns["Nome"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            if (dataGridView1.Columns["Preco"] != null)
+                dataGridView1.Columns["Preco"].DefaultCellStyle.Format = "C2";
+
+            if (dataGridView1.Columns["Quantidade"] != null)
+                dataGridView1.Columns["Quantidade"].DefaultCellStyle.Alignment =
+                    DataGridViewContentAlignment.MiddleCenter;
+
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+            if (dataGridView1.Columns["Nome"] != null)
+                dataGridView1.Columns["Nome"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        private void AplicarDadosNoGrid(System.Collections.Generic.List<object> dados) 
+        {
+        
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -150,13 +195,14 @@ namespace CaixaIntegrador.Estoque
 
             using var db = new AppDbContext();
 
+            // O Select projeta strings — nunca objetos — para o grid
             var dados = db.Produtos
                 .Select(p => new
                 {
                     p.Id,
                     p.Nome,
-                    SubCategoria = p.SubCategoria.Nome,
-                    Categoria = p.SubCategoria.Categoria.Nome,
+                    SubCategoria = p.SubCategoria.Nome,          // string, não objeto
+                    Categoria = p.SubCategoria.Categoria.Nome, // string, não objeto
                     p.Preco,
                     p.Quantidade
                 })
@@ -165,26 +211,7 @@ namespace CaixaIntegrador.Estoque
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.DataSource = dados;
 
-            // Esconde Id e formata colunas
-            if (dataGridView1.Columns["Id"] != null)
-                dataGridView1.Columns["Id"].Visible = false;
-
-            if (dataGridView1.Columns["Nome"] != null)
-                dataGridView1.Columns["Nome"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-            if (dataGridView1.Columns["Preco"] != null)
-                dataGridView1.Columns["Preco"].DefaultCellStyle.Format = "C2";
-
-            if (dataGridView1.Columns["Quantidade"] != null)
-                dataGridView1.Columns["Quantidade"].DefaultCellStyle.Alignment =
-                    DataGridViewContentAlignment.MiddleCenter;
-
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-
-            if (dataGridView1.Columns["Nome"] != null)
-                dataGridView1.Columns["Nome"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-
+            FormatarColunas();
         }
 
         private void BtnAtualizarQtd_Click(object sender, EventArgs e)
@@ -214,8 +241,27 @@ namespace CaixaIntegrador.Estoque
         {
             if (cmbFiltrar.SelectedValue != null)
             {
-                int categoriaId = (int)cmbFiltrar.SelectedValue;
-                dataGridView1.DataSource = controle.ListarPorCategoria(categoriaId);
+                if (cmbFiltrar.SelectedItem is not Categoria cat) return;
+
+                using var db = new AppDbContext();
+
+                var dados = db.Produtos
+                    .Where(p => p.SubCategoria.CategoriaId == cat.Id)
+                    .Select(p => new
+                    {
+                        p.Id,
+                        p.Nome,
+                        SubCategoria = p.SubCategoria.Nome,
+                        Categoria = p.SubCategoria.Categoria.Nome,
+                        p.Preco,
+                        p.Quantidade
+                    })
+                    .ToList();
+
+                dataGridView1.AutoGenerateColumns = true;
+                dataGridView1.DataSource = dados;
+
+                FormatarColunas();
             }
         }
 
@@ -280,6 +326,20 @@ namespace CaixaIntegrador.Estoque
             {
                 AtualizarGrid(); // Atualiza o grid após a movimentação
             }
+        }
+
+        private void btnHistorico_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null)
+            {
+                MessageBox.Show("Selecione um produto para ver o histórico.", "Atenção",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int id = (int)dataGridView1.CurrentRow.Cells["Id"].Value;
+            using var form = new FrmHistorico(id);
+            form.ShowDialog();
         }
     }
 }

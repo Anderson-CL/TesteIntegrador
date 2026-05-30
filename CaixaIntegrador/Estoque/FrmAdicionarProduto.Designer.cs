@@ -302,7 +302,9 @@
             MaximizeBox = false;
             Name = "FrmAdicionarProduto";
             Padding = new Padding(3, 24, 3, 3);
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmAdicionarProduto";
+            Load += FrmAdicionarProduto_Load;
             ResumeLayout(false);
             PerformLayout();
         }

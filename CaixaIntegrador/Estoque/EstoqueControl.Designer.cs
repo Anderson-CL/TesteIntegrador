@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             btnFiltrar = new MaterialSkin.Controls.MaterialButton();
             cmbFiltrar = new MaterialSkin.Controls.MaterialComboBox();
             btbBuscar = new MaterialSkin.Controls.MaterialButton();
             txtBuscar = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            txtQuantidade = new MaterialSkin.Controls.MaterialTextBox();
             btnRemover = new MaterialSkin.Controls.MaterialButton();
             btnAdicionar = new MaterialSkin.Controls.MaterialButton();
             dataGridView1 = new DataGridView();
             panelCabecalho = new Panel();
             panel1 = new Panel();
+            btnHistorico = new MaterialSkin.Controls.MaterialButton();
+            btnMovimentar = new MaterialSkin.Controls.MaterialButton();
             btnEditar = new MaterialSkin.Controls.MaterialButton();
             btnVoltar = new MaterialSkin.Controls.MaterialButton();
-            btnMovimentar = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panelCabecalho.SuspendLayout();
             panel1.SuspendLayout();
@@ -156,26 +156,6 @@
             txtBuscar.UseTallSize = false;
             txtBuscar.ValidatingType = null;
             // 
-            // txtQuantidade
-            // 
-            txtQuantidade.AnimateReadOnly = false;
-            txtQuantidade.BorderStyle = BorderStyle.None;
-            txtQuantidade.Depth = 0;
-            txtQuantidade.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtQuantidade.LeadingIcon = null;
-            txtQuantidade.Location = new Point(464, 15);
-            txtQuantidade.Margin = new Padding(3, 2, 3, 2);
-            txtQuantidade.MaxLength = 50;
-            txtQuantidade.MouseState = MaterialSkin.MouseState.OUT;
-            txtQuantidade.Multiline = false;
-            txtQuantidade.Name = "txtQuantidade";
-            txtQuantidade.Size = new Size(122, 36);
-            txtQuantidade.TabIndex = 4;
-            txtQuantidade.Text = "";
-            txtQuantidade.TrailingIcon = null;
-            txtQuantidade.UseTallSize = false;
-            txtQuantidade.TextChanged += txtQuantidade_TextChanged;
-            // 
             // btnRemover
             // 
             btnRemover.AutoSizeMode = AutoSizeMode.GrowAndShrink;
@@ -183,7 +163,7 @@
             btnRemover.Depth = 0;
             btnRemover.HighEmphasis = true;
             btnRemover.Icon = null;
-            btnRemover.Location = new Point(316, 15);
+            btnRemover.Location = new Point(340, 15);
             btnRemover.Margin = new Padding(4, 6, 4, 6);
             btnRemover.MouseState = MaterialSkin.MouseState.HOVER;
             btnRemover.Name = "btnRemover";
@@ -203,7 +183,7 @@
             btnAdicionar.Depth = 0;
             btnAdicionar.HighEmphasis = true;
             btnAdicionar.Icon = null;
-            btnAdicionar.Location = new Point(198, 15);
+            btnAdicionar.Location = new Point(234, 15);
             btnAdicionar.Margin = new Padding(4, 6, 4, 6);
             btnAdicionar.MouseState = MaterialSkin.MouseState.HOVER;
             btnAdicionar.Name = "btnAdicionar";
@@ -218,31 +198,31 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(70, 70, 70);
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(70, 70, 70);
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.BackgroundColor = Color.FromArgb(50, 50, 50);
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(139, 38, 53);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(139, 38, 53);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(60, 60, 60);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(139, 38, 53);
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(60, 60, 60);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(139, 38, 53);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = Color.FromArgb(80, 80, 80);
-            dataGridView1.Location = new Point(0, 71);
+            dataGridView1.Location = new Point(3, 67);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
@@ -270,10 +250,10 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(50, 50, 50);
+            panel1.Controls.Add(btnHistorico);
             panel1.Controls.Add(btnMovimentar);
             panel1.Controls.Add(btnEditar);
             panel1.Controls.Add(btnVoltar);
-            panel1.Controls.Add(txtQuantidade);
             panel1.Controls.Add(btnRemover);
             panel1.Controls.Add(btnAdicionar);
             panel1.Dock = DockStyle.Bottom;
@@ -283,6 +263,46 @@
             panel1.Size = new Size(720, 84);
             panel1.TabIndex = 6;
             // 
+            // btnHistorico
+            // 
+            btnHistorico.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnHistorico.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnHistorico.Depth = 0;
+            btnHistorico.HighEmphasis = true;
+            btnHistorico.Icon = null;
+            btnHistorico.Location = new Point(563, 15);
+            btnHistorico.Margin = new Padding(4, 6, 4, 6);
+            btnHistorico.MouseState = MaterialSkin.MouseState.HOVER;
+            btnHistorico.Name = "btnHistorico";
+            btnHistorico.NoAccentTextColor = Color.Empty;
+            btnHistorico.Size = new Size(97, 36);
+            btnHistorico.TabIndex = 10;
+            btnHistorico.Text = "Historico";
+            btnHistorico.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnHistorico.UseAccentColor = false;
+            btnHistorico.UseVisualStyleBackColor = true;
+            btnHistorico.Click += btnHistorico_Click;
+            // 
+            // btnMovimentar
+            // 
+            btnMovimentar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnMovimentar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnMovimentar.Depth = 0;
+            btnMovimentar.HighEmphasis = true;
+            btnMovimentar.Icon = null;
+            btnMovimentar.Location = new Point(437, 15);
+            btnMovimentar.Margin = new Padding(4, 6, 4, 6);
+            btnMovimentar.MouseState = MaterialSkin.MouseState.HOVER;
+            btnMovimentar.Name = "btnMovimentar";
+            btnMovimentar.NoAccentTextColor = Color.Empty;
+            btnMovimentar.Size = new Size(118, 36);
+            btnMovimentar.TabIndex = 9;
+            btnMovimentar.Text = "Movimentar";
+            btnMovimentar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnMovimentar.UseAccentColor = false;
+            btnMovimentar.UseVisualStyleBackColor = true;
+            btnMovimentar.Click += btnMovimentar_Click;
+            // 
             // btnEditar
             // 
             btnEditar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
@@ -290,7 +310,7 @@
             btnEditar.Depth = 0;
             btnEditar.HighEmphasis = true;
             btnEditar.Icon = null;
-            btnEditar.Location = new Point(92, 15);
+            btnEditar.Location = new Point(155, 15);
             btnEditar.Margin = new Padding(4, 6, 4, 6);
             btnEditar.MouseState = MaterialSkin.MouseState.HOVER;
             btnEditar.Name = "btnEditar";
@@ -324,26 +344,6 @@
             btnVoltar.UseVisualStyleBackColor = true;
             btnVoltar.Click += btnVoltar_Click;
             // 
-            // btnMovimentar
-            // 
-            btnMovimentar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnMovimentar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnMovimentar.Depth = 0;
-            btnMovimentar.HighEmphasis = true;
-            btnMovimentar.Icon = null;
-            btnMovimentar.Location = new Point(610, 15);
-            btnMovimentar.Margin = new Padding(4, 6, 4, 6);
-            btnMovimentar.MouseState = MaterialSkin.MouseState.HOVER;
-            btnMovimentar.Name = "btnMovimentar";
-            btnMovimentar.NoAccentTextColor = Color.Empty;
-            btnMovimentar.Size = new Size(89, 36);
-            btnMovimentar.TabIndex = 9;
-            btnMovimentar.Text = "Movimentar";
-            btnMovimentar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnMovimentar.UseAccentColor = false;
-            btnMovimentar.UseVisualStyleBackColor = true;
-            btnMovimentar.Click += btnMovimentar_Click;
-            // 
             // EstoqueControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -370,11 +370,11 @@
         private MaterialSkin.Controls.MaterialButton btnRemover;
         private MaterialSkin.Controls.MaterialButton btnAdicionar;
         private DataGridView dataGridView1;
-        private MaterialSkin.Controls.MaterialTextBox txtQuantidade;
         private Panel panelCabecalho;
         private Panel panel1;
         private MaterialSkin.Controls.MaterialButton btnVoltar;
         private MaterialSkin.Controls.MaterialButton btnEditar;
         private MaterialSkin.Controls.MaterialButton btnMovimentar;
+        private MaterialSkin.Controls.MaterialButton btnHistorico;
     }
 }

@@ -258,6 +258,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(50, 50, 50);
             ClientSize = new Size(450, 450);
             Controls.Add(lblEstoqueAtual);
             Controls.Add(btnConfirmar);
@@ -271,6 +272,7 @@
             Controls.Add(lblQuantidade);
             Controls.Add(lblNomeProduto);
             Name = "FrmMovimentacao";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmMovimentacao";
             Load += FrmMovimentacao_Load;
             ResumeLayout(false);

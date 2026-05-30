@@ -292,6 +292,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(50, 50, 50);
             ClientSize = new Size(450, 450);
             Controls.Add(materialLabel5);
             Controls.Add(materialLabel4);
@@ -306,6 +307,7 @@
             Controls.Add(cmbCategoria);
             Controls.Add(txtNome);
             Name = "FrmEditarProduto";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmEditarProduto";
             ResumeLayout(false);
             PerformLayout();
