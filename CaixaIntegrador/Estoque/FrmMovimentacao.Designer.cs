@@ -76,7 +76,7 @@
             lblPreview.Depth = 0;
             lblPreview.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblPreview.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            lblPreview.Location = new Point(38, 286);
+            lblPreview.Location = new Point(38, 292);
             lblPreview.MouseState = MaterialSkin.MouseState.HOVER;
             lblPreview.Name = "lblPreview";
             lblPreview.Size = new Size(107, 24);
@@ -91,8 +91,9 @@
             txtObservacao.Depth = 0;
             txtObservacao.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtObservacao.HideSelection = true;
+            txtObservacao.Hint = "Adicione uma Observação";
             txtObservacao.LeadingIcon = null;
-            txtObservacao.Location = new Point(38, 324);
+            txtObservacao.Location = new Point(38, 337);
             txtObservacao.MaxLength = 32767;
             txtObservacao.MouseState = MaterialSkin.MouseState.OUT;
             txtObservacao.Name = "txtObservacao";
@@ -110,6 +111,7 @@
             txtObservacao.TextAlign = HorizontalAlignment.Left;
             txtObservacao.TrailingIcon = null;
             txtObservacao.UseSystemPasswordChar = false;
+            txtObservacao.Click += txtObservacao_Click;
             // 
             // txtQuantidade
             // 
@@ -119,6 +121,7 @@
             txtQuantidade.Depth = 0;
             txtQuantidade.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtQuantidade.HideSelection = true;
+            txtQuantidade.Hint = "Adicione a Quantidade";
             txtQuantidade.LeadingIcon = null;
             txtQuantidade.Location = new Point(38, 223);
             txtQuantidade.MaxLength = 32767;
@@ -207,7 +210,7 @@
             btnCancelar.Depth = 0;
             btnCancelar.HighEmphasis = true;
             btnCancelar.Icon = null;
-            btnCancelar.Location = new Point(38, 381);
+            btnCancelar.Location = new Point(38, 394);
             btnCancelar.Margin = new Padding(4, 6, 4, 6);
             btnCancelar.MouseState = MaterialSkin.MouseState.HOVER;
             btnCancelar.Name = "btnCancelar";
@@ -227,7 +230,7 @@
             btnConfirmar.Depth = 0;
             btnConfirmar.HighEmphasis = true;
             btnConfirmar.Icon = null;
-            btnConfirmar.Location = new Point(228, 381);
+            btnConfirmar.Location = new Point(228, 394);
             btnConfirmar.Margin = new Padding(4, 6, 4, 6);
             btnConfirmar.MouseState = MaterialSkin.MouseState.HOVER;
             btnConfirmar.Name = "btnConfirmar";

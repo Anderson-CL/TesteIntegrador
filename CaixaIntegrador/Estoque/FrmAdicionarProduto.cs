@@ -70,13 +70,13 @@ namespace CaixaIntegrador.Estoque
             }
 
             //Quantidade
-            if (!int.TryParse(txtQuantidade.Text, out int qtd) || qtd < 0)
+            /*if (!int.TryParse(txtQuantidade.Text, out int qtd) || qtd < 0)
             {
                 MessageBox.Show("Informe uma quantidade válida (número inteiro positivo).", "Atenção",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtQuantidade.Focus();
                 return;
-            }
+            }*/
 
             //Subcategoria
             if (cmbSubCategoria.SelectedValue == null)
@@ -91,7 +91,7 @@ namespace CaixaIntegrador.Estoque
             {
                 Nome = txtNome.Text.Trim(),
                 Preco = preco,
-                Quantidade = qtd,
+                //Quantidade = qtd,
                 SubCategoriaId = (int)cmbSubCategoria.SelectedValue
             };
 
@@ -127,6 +127,9 @@ namespace CaixaIntegrador.Estoque
                 FiltrarSubCategorias(cat.Id);
         }
 
-       
+        private void txtQuantidade_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -90,7 +90,7 @@ namespace CaixaIntegrador.Estoque
 
             txtNome.Text = produto.Nome;
             txtPreco.Text = produto.Preco.ToString("F2");
-            txtQuantidade.Text = produto.Quantidade.ToString();
+            //txtQuantidade.Text = produto.Quantidade.ToString();
 
 
         }
@@ -142,13 +142,13 @@ namespace CaixaIntegrador.Estoque
                 return;
             }
 
-            if (!int.TryParse(txtQuantidade.Text, out int qtd) || qtd < 0)
+            /*if (!int.TryParse(txtQuantidade.Text, out int qtd) || qtd < 0)
             {
                 MessageBox.Show("Informe uma quantidade válida.", "Atenção",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtQuantidade.Focus();
                 return;
-            }
+            }*/
 
             if (cmbSubCategoria.SelectedValue == null)
             {
@@ -162,7 +162,7 @@ namespace CaixaIntegrador.Estoque
                 Id = _produtoId,
                 Nome = txtNome.Text.Trim(),
                 Preco = preco,
-                Quantidade = qtd,
+                //Quantidade = qtd,
                 SubCategoriaId = (int)cmbSubCategoria.SelectedValue
             };
 

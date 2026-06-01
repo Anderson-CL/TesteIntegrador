@@ -33,13 +33,11 @@
             btnCancelar = new MaterialSkin.Controls.MaterialButton();
             btnSalvar = new MaterialSkin.Controls.MaterialButton();
             txtPreco = new MaterialSkin.Controls.MaterialTextBox2();
-            txtQuantidade = new MaterialSkin.Controls.MaterialTextBox2();
             cmbSubCategoria = new MaterialSkin.Controls.MaterialComboBox();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             SuspendLayout();
             // 
             // txtNome
@@ -163,35 +161,6 @@
             txtPreco.UseSystemPasswordChar = false;
             txtPreco.UseTallSize = false;
             // 
-            // txtQuantidade
-            // 
-            txtQuantidade.AnimateReadOnly = false;
-            txtQuantidade.BackgroundImageLayout = ImageLayout.None;
-            txtQuantidade.CharacterCasing = CharacterCasing.Normal;
-            txtQuantidade.Depth = 0;
-            txtQuantidade.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtQuantidade.HideSelection = true;
-            txtQuantidade.LeadingIcon = null;
-            txtQuantidade.Location = new Point(158, 264);
-            txtQuantidade.MaxLength = 32767;
-            txtQuantidade.MouseState = MaterialSkin.MouseState.OUT;
-            txtQuantidade.Name = "txtQuantidade";
-            txtQuantidade.PasswordChar = '\0';
-            txtQuantidade.PrefixSuffixText = null;
-            txtQuantidade.ReadOnly = false;
-            txtQuantidade.RightToLeft = RightToLeft.No;
-            txtQuantidade.SelectedText = "";
-            txtQuantidade.SelectionLength = 0;
-            txtQuantidade.SelectionStart = 0;
-            txtQuantidade.ShortcutsEnabled = true;
-            txtQuantidade.Size = new Size(100, 36);
-            txtQuantidade.TabIndex = 10;
-            txtQuantidade.TabStop = false;
-            txtQuantidade.TextAlign = HorizontalAlignment.Left;
-            txtQuantidade.TrailingIcon = null;
-            txtQuantidade.UseSystemPasswordChar = false;
-            txtQuantidade.UseTallSize = false;
-            // 
             // cmbSubCategoria
             // 
             cmbSubCategoria.AutoResize = false;
@@ -266,32 +235,17 @@
             materialLabel4.TabIndex = 13;
             materialLabel4.Text = "Preço";
             // 
-            // materialLabel5
-            // 
-            materialLabel5.AutoSize = true;
-            materialLabel5.Depth = 0;
-            materialLabel5.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
-            materialLabel5.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            materialLabel5.Location = new Point(158, 237);
-            materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel5.Name = "materialLabel5";
-            materialLabel5.Size = new Size(104, 24);
-            materialLabel5.TabIndex = 13;
-            materialLabel5.Text = "Quantidade";
-            // 
             // FrmAdicionarProduto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(50, 50, 50);
             ClientSize = new Size(450, 450);
-            Controls.Add(materialLabel5);
             Controls.Add(materialLabel4);
             Controls.Add(materialLabel3);
             Controls.Add(materialLabel2);
             Controls.Add(materialLabel1);
             Controls.Add(cmbSubCategoria);
-            Controls.Add(txtQuantidade);
             Controls.Add(txtPreco);
             Controls.Add(btnSalvar);
             Controls.Add(btnCancelar);
@@ -316,12 +270,10 @@
         private MaterialSkin.Controls.MaterialButton btnCancelar;
         private MaterialSkin.Controls.MaterialButton btnSalvar;
         private MaterialSkin.Controls.MaterialTextBox2 txtPreco;
-        private MaterialSkin.Controls.MaterialTextBox2 txtQuantidade;
         private MaterialSkin.Controls.MaterialComboBox cmbSubCategoria;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private MaterialSkin.Controls.MaterialLabel materialLabel5;
     }
 }

@@ -32,7 +32,7 @@ namespace CaixaIntegrador.Caixa
             NFCdoc = new PrintDocument();
             // Calcula a altura com base nos itens e pagamentos
             int linhasFixas = 10; // cabeçalho + data + separadores + total + rodapé
-            int linhasItens = NFCpedido.Itens.Count*2; // cada item ocupa 2 linhas
+            int linhasItens = NFCpedido.Itens.Count * 2; // cada item ocupa 2 linhas
             int linhasPagamentos = NFCpedido.Pagamentos.Count;
             int linhasTroco = NFCpedido.Troco > 0 ? 1 : 0;
             int totalLinhas = linhasFixas + linhasItens + linhasPagamentos + linhasTroco;
@@ -59,6 +59,11 @@ namespace CaixaIntegrador.Caixa
         {
             NFCdoc.Print();
             this.Close();
+        }
+
+        private void PrintViewNFC_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

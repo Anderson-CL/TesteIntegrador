@@ -237,6 +237,11 @@ namespace CaixaIntegrador.Estoque
             DialogResult = DialogResult.Cancel;
             Close();
         }
+
+        private void txtObservacao_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -42,6 +42,7 @@
             PrintViewNFC.Name = "PrintViewNFC";
             PrintViewNFC.Size = new Size(350, 634);
             PrintViewNFC.TabIndex = 0;
+            PrintViewNFC.Click += PrintViewNFC_Click;
             // 
             // materialCard1
             // 

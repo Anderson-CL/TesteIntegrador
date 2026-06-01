@@ -43,7 +43,7 @@
             materialLabel1.AutoSize = true;
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel1.Location = new Point(23, 79);
+            materialLabel1.Location = new Point(23, 39);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
             materialLabel1.Size = new Size(129, 19);
@@ -55,7 +55,7 @@
             materialLabel2.AutoSize = true;
             materialLabel2.Depth = 0;
             materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel2.Location = new Point(433, 79);
+            materialLabel2.Location = new Point(433, 39);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
             materialLabel2.Size = new Size(105, 19);
@@ -121,7 +121,7 @@
             lblTotal.AutoSize = true;
             lblTotal.Depth = 0;
             lblTotal.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            lblTotal.Location = new Point(34, 381);
+            lblTotal.Location = new Point(34, 341);
             lblTotal.MouseState = MaterialSkin.MouseState.HOVER;
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(38, 19);
@@ -135,7 +135,7 @@
             btnFechar.Depth = 0;
             btnFechar.HighEmphasis = true;
             btnFechar.Icon = null;
-            btnFechar.Location = new Point(537, 371);
+            btnFechar.Location = new Point(537, 331);
             btnFechar.Margin = new Padding(4, 6, 4, 6);
             btnFechar.MouseState = MaterialSkin.MouseState.HOVER;
             btnFechar.Name = "btnFechar";
@@ -161,7 +161,10 @@
             Controls.Add(cmbFiltroProduto);
             Controls.Add(materialLabel2);
             Controls.Add(materialLabel1);
+            FormStyle = FormStyles.ActionBar_None;
             Name = "FrmHistorico";
+            Padding = new Padding(3, 24, 3, 3);
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmHistorico";
             Load += FrmHistorico_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
