@@ -25,24 +25,24 @@ O **CaixaIntegrador** é um sistema desktop desenvolvido como projeto acadêmico
     <td align="center"><b>Menu Principal</b></td>
   </tr>
   <tr>
-    <td><img src="screenshots/login.png" width="350"/></td>
-    <td><img src="screenshots/menu.png" width="350"/></td>
+    <td><img src="screenshots/login1.png" width="350"/></td>
+    <td><img src="screenshots/menu1.png" width="350"/></td>
   </tr>
   <tr>
     <td align="center"><b>Caixa</b></td>
     <td align="center"><b>Estoque</b></td>
   </tr>
   <tr>
-    <td><img src="screenshots/caixa.png" width="350"/></td>
-    <td><img src="screenshots/estoque.png" width="350"/></td>
+    <td><img src="screenshots/caixa1.png" width="350"/></td>
+    <td><img src="screenshots/estoque1.png" width="350"/></td>
   </tr>
   <tr>
     <td align="center"><b>Movimentação de Estoque</b></td>
     <td align="center"><b>Relatório de Vendas</b></td>
   </tr>
   <tr>
-    <td><img src="screenshots/movimentacao.png" width="350"/></td>
-    <td><img src="screenshots/relatorio.png" width="350"/></td>
+    <td><img src="screenshots/movimentacao1.png" width="350"/></td>
+    <td><img src="screenshots/relatorio1.png" width="350"/></td>
   </tr>
 </table>
 
