@@ -61,7 +61,7 @@
             materialLabel3.Depth = 0;
             materialLabel3.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel3.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            materialLabel3.Location = new Point(230, 130);
+            materialLabel3.Location = new Point(228, 146);
             materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel3.Name = "materialLabel3";
             materialLabel3.Size = new Size(119, 24);
@@ -75,7 +75,7 @@
             materialLabel2.Depth = 0;
             materialLabel2.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            materialLabel2.Location = new Point(22, 130);
+            materialLabel2.Location = new Point(20, 146);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
             materialLabel2.Size = new Size(88, 24);
@@ -89,7 +89,7 @@
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            materialLabel1.Location = new Point(24, 34);
+            materialLabel1.Location = new Point(20, 40);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
             materialLabel1.Size = new Size(72, 24);
@@ -110,7 +110,7 @@
             cmbSubCategoria.FormattingEnabled = true;
             cmbSubCategoria.IntegralHeight = false;
             cmbSubCategoria.ItemHeight = 43;
-            cmbSubCategoria.Location = new Point(230, 189);
+            cmbSubCategoria.Location = new Point(228, 190);
             cmbSubCategoria.MaxDropDownItems = 4;
             cmbSubCategoria.MouseState = MaterialSkin.MouseState.OUT;
             cmbSubCategoria.Name = "cmbSubCategoria";
@@ -157,7 +157,7 @@
             btnSalvar.Depth = 0;
             btnSalvar.HighEmphasis = true;
             btnSalvar.Icon = null;
-            btnSalvar.Location = new Point(315, 361);
+            btnSalvar.Location = new Point(303, 321);
             btnSalvar.Margin = new Padding(4, 6, 4, 6);
             btnSalvar.MouseState = MaterialSkin.MouseState.HOVER;
             btnSalvar.Name = "btnSalvar";
@@ -204,7 +204,7 @@
             cmbCategoria.FormattingEnabled = true;
             cmbCategoria.IntegralHeight = false;
             cmbCategoria.ItemHeight = 43;
-            cmbCategoria.Location = new Point(24, 189);
+            cmbCategoria.Location = new Point(22, 190);
             cmbCategoria.MaxDropDownItems = 4;
             cmbCategoria.MouseState = MaterialSkin.MouseState.OUT;
             cmbCategoria.Name = "cmbCategoria";
@@ -222,7 +222,7 @@
             txtNome.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtNome.HideSelection = true;
             txtNome.LeadingIcon = null;
-            txtNome.Location = new Point(22, 79);
+            txtNome.Location = new Point(20, 77);
             txtNome.MaxLength = 32767;
             txtNome.MouseState = MaterialSkin.MouseState.OUT;
             txtNome.Name = "txtNome";

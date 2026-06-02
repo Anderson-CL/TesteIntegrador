@@ -48,7 +48,7 @@
             lblNomeProduto.Depth = 0;
             lblNomeProduto.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblNomeProduto.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            lblNomeProduto.Location = new Point(38, 83);
+            lblNomeProduto.Location = new Point(38, 51);
             lblNomeProduto.MouseState = MaterialSkin.MouseState.HOVER;
             lblNomeProduto.Name = "lblNomeProduto";
             lblNomeProduto.Size = new Size(72, 24);
@@ -62,7 +62,7 @@
             lblQuantidade.Depth = 0;
             lblQuantidade.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblQuantidade.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            lblQuantidade.Location = new Point(38, 186);
+            lblQuantidade.Location = new Point(38, 168);
             lblQuantidade.MouseState = MaterialSkin.MouseState.HOVER;
             lblQuantidade.Name = "lblQuantidade";
             lblQuantidade.Size = new Size(104, 24);
@@ -76,7 +76,7 @@
             lblPreview.Depth = 0;
             lblPreview.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblPreview.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            lblPreview.Location = new Point(38, 292);
+            lblPreview.Location = new Point(38, 291);
             lblPreview.MouseState = MaterialSkin.MouseState.HOVER;
             lblPreview.Name = "lblPreview";
             lblPreview.Size = new Size(107, 24);
@@ -150,7 +150,7 @@
             btnEntrada.Depth = 0;
             btnEntrada.HighEmphasis = true;
             btnEntrada.Icon = null;
-            btnEntrada.Location = new Point(38, 134);
+            btnEntrada.Location = new Point(38, 116);
             btnEntrada.Margin = new Padding(4, 6, 4, 6);
             btnEntrada.MouseState = MaterialSkin.MouseState.HOVER;
             btnEntrada.Name = "btnEntrada";
@@ -170,7 +170,7 @@
             btnSaida.Depth = 0;
             btnSaida.HighEmphasis = true;
             btnSaida.Icon = null;
-            btnSaida.Location = new Point(161, 134);
+            btnSaida.Location = new Point(161, 116);
             btnSaida.Margin = new Padding(4, 6, 4, 6);
             btnSaida.MouseState = MaterialSkin.MouseState.HOVER;
             btnSaida.Name = "btnSaida";
@@ -190,7 +190,7 @@
             btnAjuste.Depth = 0;
             btnAjuste.HighEmphasis = true;
             btnAjuste.Icon = null;
-            btnAjuste.Location = new Point(258, 134);
+            btnAjuste.Location = new Point(258, 116);
             btnAjuste.Margin = new Padding(4, 6, 4, 6);
             btnAjuste.MouseState = MaterialSkin.MouseState.HOVER;
             btnAjuste.Name = "btnAjuste";
@@ -250,7 +250,7 @@
             lblEstoqueAtual.Depth = 0;
             lblEstoqueAtual.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblEstoqueAtual.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            lblEstoqueAtual.Location = new Point(258, 77);
+            lblEstoqueAtual.Location = new Point(258, 51);
             lblEstoqueAtual.MouseState = MaterialSkin.MouseState.HOVER;
             lblEstoqueAtual.Name = "lblEstoqueAtual";
             lblEstoqueAtual.Size = new Size(120, 24);
@@ -274,7 +274,9 @@
             Controls.Add(lblPreview);
             Controls.Add(lblQuantidade);
             Controls.Add(lblNomeProduto);
+            FormStyle = FormStyles.ActionBar_None;
             Name = "FrmMovimentacao";
+            Padding = new Padding(3, 24, 3, 3);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmMovimentacao";
             Load += FrmMovimentacao_Load;
