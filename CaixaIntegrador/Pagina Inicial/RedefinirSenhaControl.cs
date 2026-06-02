@@ -125,7 +125,7 @@ namespace CaixaIntegrador.Pagina_Inicial
 
         private void picNovaSenha_Click(object sender, EventArgs e)
         {
-            if (txtNovaSenha.PasswordChar == '●') // senha está oculta
+            if (txtNovaSenha.PasswordChar != '\0') // senha está oculta
             {
                 txtNovaSenha.PasswordChar = '\0'; // mostra senha
                 picNovaSenha.Image = Properties.Resources.Olhar;
@@ -139,7 +139,7 @@ namespace CaixaIntegrador.Pagina_Inicial
 
         private void picConfirmar_Click(object sender, EventArgs e)
         {
-            if (txtConfirmar.PasswordChar == '●') // senha está oculta
+            if (txtConfirmar.PasswordChar != '\0') // senha está oculta
             {
                 txtConfirmar.PasswordChar = '\0'; // mostra senha
                 picConfirmar.Image = Properties.Resources.Olhar;
@@ -149,6 +149,16 @@ namespace CaixaIntegrador.Pagina_Inicial
                 txtConfirmar.PasswordChar = '●'; // oculta senha
                 picConfirmar.Image = Properties.Resources.OlharNo;
             }
+        }
+
+        private void txtConfirmar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNovaSenha_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

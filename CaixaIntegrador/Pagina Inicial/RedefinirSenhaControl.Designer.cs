@@ -49,7 +49,7 @@
             materialLabel1.AutoSize = true;
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel1.Location = new Point(72, 19);
+            materialLabel1.Location = new Point(70, 9);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
             materialLabel1.Size = new Size(120, 19);
@@ -61,7 +61,7 @@
             materialLabel2.AutoSize = true;
             materialLabel2.Depth = 0;
             materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel2.Location = new Point(72, 56);
+            materialLabel2.Location = new Point(70, 46);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
             materialLabel2.Size = new Size(326, 19);
@@ -73,7 +73,7 @@
             materialLabel3.AutoSize = true;
             materialLabel3.Depth = 0;
             materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel3.Location = new Point(73, 78);
+            materialLabel3.Location = new Point(71, 68);
             materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel3.Name = "materialLabel3";
             materialLabel3.Size = new Size(85, 19);
@@ -85,7 +85,7 @@
             materialLabel4.AutoSize = true;
             materialLabel4.Depth = 0;
             materialLabel4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel4.Location = new Point(73, 175);
+            materialLabel4.Location = new Point(71, 165);
             materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel4.Name = "materialLabel4";
             materialLabel4.Size = new Size(119, 19);
@@ -101,12 +101,12 @@
             txtNovaSenha.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtNovaSenha.HideSelection = true;
             txtNovaSenha.LeadingIcon = null;
-            txtNovaSenha.Location = new Point(73, 107);
+            txtNovaSenha.Location = new Point(71, 97);
             txtNovaSenha.Margin = new Padding(3, 2, 3, 2);
             txtNovaSenha.MaxLength = 32767;
             txtNovaSenha.MouseState = MaterialSkin.MouseState.OUT;
             txtNovaSenha.Name = "txtNovaSenha";
-            txtNovaSenha.PasswordChar = '\0';
+            txtNovaSenha.PasswordChar = '●';
             txtNovaSenha.PrefixSuffixText = null;
             txtNovaSenha.ReadOnly = false;
             txtNovaSenha.RightToLeft = RightToLeft.No;
@@ -119,7 +119,8 @@
             txtNovaSenha.TabStop = false;
             txtNovaSenha.TextAlign = HorizontalAlignment.Left;
             txtNovaSenha.TrailingIcon = null;
-            txtNovaSenha.UseSystemPasswordChar = false;
+            txtNovaSenha.UseSystemPasswordChar = true;
+            txtNovaSenha.Click += txtNovaSenha_Click;
             txtNovaSenha.TextChanged += txtNovaSenha_TextChanged;
             // 
             // txtConfirmar
@@ -131,12 +132,12 @@
             txtConfirmar.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtConfirmar.HideSelection = true;
             txtConfirmar.LeadingIcon = null;
-            txtConfirmar.Location = new Point(73, 204);
+            txtConfirmar.Location = new Point(71, 194);
             txtConfirmar.Margin = new Padding(3, 2, 3, 2);
             txtConfirmar.MaxLength = 32767;
             txtConfirmar.MouseState = MaterialSkin.MouseState.OUT;
             txtConfirmar.Name = "txtConfirmar";
-            txtConfirmar.PasswordChar = '\0';
+            txtConfirmar.PasswordChar = '●';
             txtConfirmar.PrefixSuffixText = null;
             txtConfirmar.ReadOnly = false;
             txtConfirmar.RightToLeft = RightToLeft.No;
@@ -149,7 +150,8 @@
             txtConfirmar.TabStop = false;
             txtConfirmar.TextAlign = HorizontalAlignment.Left;
             txtConfirmar.TrailingIcon = null;
-            txtConfirmar.UseSystemPasswordChar = false;
+            txtConfirmar.UseSystemPasswordChar = true;
+            txtConfirmar.Click += txtConfirmar_Click;
             txtConfirmar.TextChanged += txtConfirmar_TextChanged;
             // 
             // btnSalvar
@@ -159,7 +161,7 @@
             btnSalvar.Depth = 0;
             btnSalvar.HighEmphasis = true;
             btnSalvar.Icon = null;
-            btnSalvar.Location = new Point(73, 274);
+            btnSalvar.Location = new Point(71, 264);
             btnSalvar.Margin = new Padding(4);
             btnSalvar.MouseState = MaterialSkin.MouseState.HOVER;
             btnSalvar.Name = "btnSalvar";
@@ -179,7 +181,7 @@
             btnVoltar.Depth = 0;
             btnVoltar.HighEmphasis = true;
             btnVoltar.Icon = null;
-            btnVoltar.Location = new Point(73, 321);
+            btnVoltar.Location = new Point(71, 308);
             btnVoltar.Margin = new Padding(4);
             btnVoltar.MouseState = MaterialSkin.MouseState.HOVER;
             btnVoltar.Name = "btnVoltar";
@@ -195,7 +197,7 @@
             // barProgresso
             // 
             barProgresso.Depth = 0;
-            barProgresso.Location = new Point(73, 263);
+            barProgresso.Location = new Point(71, 253);
             barProgresso.Margin = new Padding(3, 2, 3, 2);
             barProgresso.MouseState = MaterialSkin.MouseState.HOVER;
             barProgresso.Name = "barProgresso";
@@ -208,7 +210,7 @@
             lblMensagem.AutoSize = true;
             lblMensagem.Depth = 0;
             lblMensagem.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            lblMensagem.Location = new Point(289, 284);
+            lblMensagem.Location = new Point(287, 274);
             lblMensagem.MouseState = MaterialSkin.MouseState.HOVER;
             lblMensagem.Name = "lblMensagem";
             lblMensagem.Size = new Size(1, 0);
@@ -217,7 +219,7 @@
             // picNovaSenha
             // 
             picNovaSenha.Image = Properties.Resources.OlharNo;
-            picNovaSenha.Location = new Point(356, 119);
+            picNovaSenha.Location = new Point(354, 109);
             picNovaSenha.Margin = new Padding(3, 2, 3, 2);
             picNovaSenha.Name = "picNovaSenha";
             picNovaSenha.Size = new Size(42, 36);
@@ -230,7 +232,7 @@
             // picConfirmar
             // 
             picConfirmar.Image = Properties.Resources.OlharNo;
-            picConfirmar.Location = new Point(356, 216);
+            picConfirmar.Location = new Point(354, 206);
             picConfirmar.Margin = new Padding(3, 2, 3, 2);
             picConfirmar.Name = "picConfirmar";
             picConfirmar.Size = new Size(42, 36);
@@ -258,7 +260,7 @@
             Controls.Add(materialLabel1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "RedefinirSenhaControl";
-            Size = new Size(630, 360);
+            Size = new Size(630, 377);
             ((System.ComponentModel.ISupportInitialize)picNovaSenha).EndInit();
             ((System.ComponentModel.ISupportInitialize)picConfirmar).EndInit();
             ResumeLayout(false);

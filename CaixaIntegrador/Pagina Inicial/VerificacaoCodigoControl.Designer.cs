@@ -251,7 +251,7 @@
             lblMensagem.AutoSize = true;
             lblMensagem.Depth = 0;
             lblMensagem.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            lblMensagem.Location = new Point(236, 178);
+            lblMensagem.Location = new Point(208, 178);
             lblMensagem.MouseState = MaterialSkin.MouseState.HOVER;
             lblMensagem.Name = "lblMensagem";
             lblMensagem.Size = new Size(1, 0);

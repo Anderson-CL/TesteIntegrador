@@ -7,7 +7,7 @@ namespace CaixaIntegrador.Classes
 {
     public static class ServicoDeEmail
     {
-        private const string ApiKey = "CHAVE AQUI";
+        private const string ApiKey = "CHAVE API AQUI";
         private const string RemetenteEmail = "totoraivo@gmail.com"; // email verificado no Brevo
         private const string RemetenteNome = "Adega";
         private const string ApiUrl = "https://api.brevo.com/v3/smtp/email";
