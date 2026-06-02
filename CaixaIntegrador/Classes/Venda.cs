@@ -12,6 +12,10 @@ namespace CaixaIntegrador.Classes
         public int ProdutoId { get; set; }
         public int Quantidade { get; set; }
         public DateTime DataVenda { get; set; }
+        public decimal PrecoUnitario { get; set; }  // ← NOVO
+        public decimal Subtotal { get; set; }  // ← NOVO
+        public int? PedidoId { get; set; }  // ← NOVO
+
         public Produto Produto { get; set; }
     }
 }

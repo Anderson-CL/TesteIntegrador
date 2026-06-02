@@ -162,12 +162,12 @@
             // 
             // btnConfiguracoes
             // 
-            btnConfiguracoes.BackColor = Color.DarkBlue;
+            btnConfiguracoes.BackColor = Color.SteelBlue;
             btnConfiguracoes.BackgroundImage = Properties.Resources.Configuração;
             btnConfiguracoes.BackgroundImageLayout = ImageLayout.Zoom;
             btnConfiguracoes.FlatStyle = FlatStyle.Popup;
             btnConfiguracoes.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            btnConfiguracoes.ForeColor = Color.White;
+            btnConfiguracoes.ForeColor = Color.Transparent;
             btnConfiguracoes.Location = new Point(664, 269);
             btnConfiguracoes.Margin = new Padding(4);
             btnConfiguracoes.Name = "btnConfiguracoes";

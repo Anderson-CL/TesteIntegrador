@@ -116,14 +116,20 @@ namespace CaixaIntegrador.Caixa
         #region Carrinho
         private void AdicionarAoCarrinho(Produto produto)
         {
-            var itemExistente = carrinho.FirstOrDefault(c => c.Produto == produto.Nome);
+            var itemExistente = carrinho.FirstOrDefault(c => c.ProdutoId == produto.Id); // ← busca por Id
             if (itemExistente != null)
             {
                 itemExistente.Qtd++;
             }
             else
             {
-                carrinho.Add(new CarrinhoCompra { Produto = produto.Nome, Qtd = 1, Preco = produto.Preco });
+                carrinho.Add(new CarrinhoCompra
+                {
+                    ProdutoId = produto.Id,   // ← preenche o Id
+                    Produto = produto.Nome,
+                    Qtd = 1,
+                    Preco = produto.Preco
+                });
             }
             AtualizarCarrinhoUI();
         }
@@ -205,11 +211,10 @@ namespace CaixaIntegrador.Caixa
         #endregion
 
         #region Pedido e Pagamento
-        private void btn_Pedido_Click(object sender, EventArgs e)
+        private void btn_Pedido_Click_1(object sender, EventArgs e)
         {
-            // Se Order for um Form, pode manter ShowDialog, senão adapte para UserControl
-            Order tabOrder = new Order();
-            tabOrder.CarregarPedidos(pedidos);
+            var tabOrder = new Order();
+            tabOrder.CarregarPedidosDoBanco(); // ← carrega direto do banco
             tabOrder.ShowDialog();
         }
 
@@ -405,13 +410,6 @@ namespace CaixaIntegrador.Caixa
             AtualizarCarrinhoUI();
         }
 
-        private void btn_Pedido_Click_1(object sender, EventArgs e)
-        {
-            Order tabOrder = new Order();
-            tabOrder.CarregarPedidos(pedidos);
-            tabOrder.ShowDialog();
-        }
-
         private void btn_Limparpag_Click_1(object sender, EventArgs e)
         {
             LimparFormularioPagamento();
@@ -487,42 +485,97 @@ namespace CaixaIntegrador.Caixa
             decimal totalPago = pagamentosAtuais.Sum(p => p.Valor);
             var troco = totalPago - totalPedido;
 
+            var novoPedido = new Pedido
+            {
+                DataCriacao = DateTime.Now,
+                Itens = new List<CarrinhoCompra>(carrinho),
+                Total = totalPedido,
+                Status = PedidoStatus.Finalizado,
+                Pagamentos = new List<Pagamento>(pagamentosAtuais),
+                Troco = troco < 0 ? 0 : troco
+            };
+
             try
             {
                 using var ctx = new AppDbContext();
 
+                // Valida estoque antes de qualquer alteração
                 foreach (var item in carrinho)
                 {
-                    var produto = ctx.Produtos.FirstOrDefault(p => p.Nome == item.Produto);
-
+                    var produto = ctx.Produtos.FirstOrDefault(p => p.Id == item.ProdutoId);
                     if (produto == null)
                     {
-                        MessageBox.Show($"Produto '{item.Produto}' não encontrado no estoque.", "Erro");
+                        MessageBox.Show($"Produto '{item.Produto}' não encontrado.", "Erro");
                         return;
                     }
-
                     if (produto.Quantidade < item.Qtd)
                     {
                         MessageBox.Show($"Estoque insuficiente para '{item.Produto}'.\n" +
                                         $"Disponível: {produto.Quantidade} | Pedido: {item.Qtd}", "Erro");
                         return;
                     }
+                }
 
+                // Cria o pedido no banco
+                var pedidoDB = new Pedido
+                {
+                    DataCriacao = DateTime.Now,
+                    Total = totalPedido,
+                    Troco = troco < 0 ? 0 : troco,
+                    Status = PedidoStatus.Finalizado
+                };
+                ctx.Pedidos.Add(pedidoDB);
+                ctx.SaveChanges(); // gera o Id do pedido
+
+                // Salva itens, baixa estoque e registra movimentação
+                foreach (var item in carrinho)
+                {
+                    var produto = ctx.Produtos.First(p => p.Id == item.ProdutoId);
+                    int qtdAntes = produto.Quantidade;
                     produto.Quantidade -= item.Qtd;
 
                     ctx.Vendas.Add(new Venda
                     {
                         ProdutoId = produto.Id,
                         Quantidade = item.Qtd,
-                        DataVenda = DateTime.Now
+                        DataVenda = DateTime.Now,
+                        PrecoUnitario = item.Preco,
+                        Subtotal = item.Total,
+                        PedidoId = pedidoDB.Id
+                    });
+
+                    ctx.MovimentacoesEstoque.Add(new MovimentacaoEstoque
+                    {
+                        ProdutoId = produto.Id,
+                        Tipo = "Saida",
+                        Quantidade = item.Qtd,
+                        QuantidadeAnterior = qtdAntes,
+                        QuantidadeNova = produto.Quantidade,
+                        Observacao = $"Pedido #{pedidoDB.Id}",
+                        Data = DateTime.Now
+                    });
+                }
+
+                // Salva pagamentos vinculados ao pedido
+                foreach (var pag in pagamentosAtuais)
+                {
+                    ctx.PedidoPagamentos.Add(new Pagamento
+                    {
+                        PedidoId = pedidoDB.Id,
+                        Forma = pag.Forma,
+                        Valor = pag.Valor
                     });
                 }
 
                 ctx.SaveChanges();
+
+                // Atualiza o Id do pedido em memória para exibir na mensagem/impressão
+                novoPedido.Id = pedidoDB.Id;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao finalizar venda: {ex.Message}", "Erro");
+                return;
             }
 
 
@@ -531,17 +584,6 @@ namespace CaixaIntegrador.Caixa
                 MessageBox.Show($"Pagamento incompleto. Total: R$ {totalPedido:F2}, Pago: R$ {totalPago:F2}", "Erro");
                 return;
             }
-
-            var novoPedido = new Pedido
-            {
-                Id = pedidos.Count > 0 ? pedidos.Max(p => p.Id) + 1 : 1,
-                DataCriacao = DateTime.Now,
-                Itens = new List<CarrinhoCompra>(carrinho),
-                Total = totalPedido,
-                Status = PedidoStatus.Finalizado,
-                Pagamentos = new List<Pagamento>(pagamentosAtuais),
-                Troco = troco
-            };
 
             pedidos.Add(novoPedido);
 
