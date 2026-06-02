@@ -119,7 +119,7 @@
             btnSalvar.Depth = 0;
             btnSalvar.HighEmphasis = true;
             btnSalvar.Icon = null;
-            btnSalvar.Location = new Point(316, 330);
+            btnSalvar.Location = new Point(314, 330);
             btnSalvar.Margin = new Padding(4, 6, 4, 6);
             btnSalvar.MouseState = MaterialSkin.MouseState.HOVER;
             btnSalvar.Name = "btnSalvar";

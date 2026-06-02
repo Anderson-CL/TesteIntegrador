@@ -162,9 +162,15 @@
             // 
             // btnConfiguracoes
             // 
+
             btnConfiguracoes.BackColor = Color.SteelBlue;
             btnConfiguracoes.BackgroundImage = Properties.Resources.Configuração;
             btnConfiguracoes.BackgroundImageLayout = ImageLayout.Zoom;
+
+            btnConfiguracoes.BackColor = Color.Orange;
+            btnConfiguracoes.BackgroundImage = Properties.Resources.BCO_f8e6bf86_b615_4422_9b82_c700895e2aaf;
+            btnConfiguracoes.BackgroundImageLayout = ImageLayout.Stretch;
+
             btnConfiguracoes.FlatStyle = FlatStyle.Popup;
             btnConfiguracoes.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             btnConfiguracoes.ForeColor = Color.Transparent;
@@ -198,7 +204,7 @@
             // 
             // btnRelatorios
             // 
-            btnRelatorios.BackColor = Color.MediumBlue;
+            btnRelatorios.BackColor = Color.Orange;
             btnRelatorios.BackgroundImage = Properties.Resources.Relatório;
             btnRelatorios.BackgroundImageLayout = ImageLayout.Zoom;
             btnRelatorios.FlatStyle = FlatStyle.Popup;

@@ -154,13 +154,16 @@
   <data name="Estoque" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Estoque1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Olhar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Olhar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="config" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\config.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Olhar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Olhar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BCO.f8e6bf86-b615-4422-9b82-c700895e2aaf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BCO.f8e6bf86-b615-4422-9b82-c700895e2aaf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
