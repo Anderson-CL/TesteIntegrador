@@ -152,6 +152,9 @@ O sistema usa **SQLite** com arquivo local `Adega.db`. As principais tabelas sã
 |---|---|
 | **Anderson CL** | Módulo de estoque, relatórios, banco de dados e autenticação |
 | **Victor Dennis SA** | Módulo de caixa, geração de PDF e design da interface |
+| **Kathellyn Larry** | Wireframe e prototipação das telas, documentação do projeto |
+| **João Carlos** | Levantamento de requisitos, testes e validação do sistema |
+| **Victor Paulo** | Modelagem do banco de dados e diagramas do sistema |
 
 ---
 
@@ -270,6 +273,9 @@ O sistema usa **SQLite** com arquivo local `Adega.db`. As principais tabelas sã
 |---|---|
 | **Anderson CL** | Inventory module, reports, database and authentication |
 | **Victor Dennis SA** | Point of sale module, PDF generation and UI design |
+| **Kathellyn Larry** | Wireframing, screen prototyping and project documentation |
+| **João Carlos** | Requirements gathering, testing and system validation |
+| **Victor Paulo** | Database modeling and system diagrams |
 
 ---
 
