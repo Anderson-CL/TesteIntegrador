@@ -1,4 +1,6 @@
-using CaixaIntegrador.LOGIN_REGISTRO;
+using CaixaIntegrador.Data;
+using CaixaIntegrador.Pagina_Inicial;
+using Microsoft.EntityFrameworkCore;
 
 namespace CaixaIntegrador
 {
@@ -10,10 +12,15 @@ namespace CaixaIntegrador
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            using (var db = new AppDbContext())
+            {
+                db.Database.EnsureCreated();
+
+            }
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new PaginaInicial());
         }
     }
 }

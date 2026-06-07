@@ -17,6 +17,7 @@ packages/
 .vscode/
 *.opendb
 *.db
+!Data/Adega.db
 
 # Misc
 Thumbs.db

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CaixaIntegrador
+namespace CaixaIntegrador.Configuracoes
 {
-    public partial class Estoque : Form
+    public partial class ConfiguracoesControl : UserControl
     {
-        public Estoque()
+        public ConfiguracoesControl()
         {
             InitializeComponent();
         }

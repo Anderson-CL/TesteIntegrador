@@ -1,4 +1,6 @@
-﻿using MySql.Data.MySqlClient;
+﻿using CaixaIntegrador.Classes;
+using MaterialSkin.Controls;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +13,7 @@ using System.Windows.Forms;
 
 namespace CaixaIntegrador.LOGIN_REGISTRO
 {
-    public partial class TelaLogin : Form
+    public partial class TelaLogin : MaterialForm
     {
         private bool MostrarSenha = false;
 
@@ -23,7 +25,7 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            if (txtLogin.Text == "" || txtSenha.Text == "")
+            if (txtLogin00.Text == "" || txtSenha00.Text == "")
             {
                 MessageBox.Show("Por favor, Preencha todos os campos!", "Mensagem de Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -41,11 +43,11 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
 
                         using (MySqlCommand comando = new MySqlCommand(selectData, Conexao))
                         {
-                            comando.Parameters.AddWithValue("@login", txtLogin.Text.Trim());
+                            comando.Parameters.AddWithValue("@login", txtLogin00.Text.Trim());
 
 
                             string senhaCriptografada =
-                                    Criptografia.CriptografarSenha(txtSenha.Text.Trim());
+                                    Criptografia.CriptografarSenha(txtSenha00.Text.Trim());
 
 
                             comando.Parameters.AddWithValue("@senha", senhaCriptografada);
@@ -99,7 +101,7 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
         {
 
 
-            txtSenha.UseSystemPasswordChar = true;
+            txtSenha00.UseSystemPasswordChar = true;
 
             MostrarOcultar.Visible = false;
 
@@ -113,18 +115,18 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
             {
                 MostrarSenha = !MostrarSenha;
 
-                txtSenha.UseSystemPasswordChar = !MostrarSenha;
+                txtSenha00.UseSystemPasswordChar = !MostrarSenha;
             }
 
         }
 
         private void txtSenha_TextChanged(object sender, EventArgs e)
         {
-            MostrarOcultar.Visible = txtSenha.TextLength > 0;
-            if (txtSenha.TextLength == 0)
+            MostrarOcultar.Visible = txtSenha00.TextLength > 0;
+            if (txtSenha00.TextLength == 0)
             {
                 MostrarSenha = false;
-                txtSenha.UseSystemPasswordChar = true;
+                txtSenha00.UseSystemPasswordChar = true;
             }
         }
     }

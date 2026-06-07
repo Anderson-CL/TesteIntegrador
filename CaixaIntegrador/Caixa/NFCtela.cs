@@ -1,4 +1,5 @@
 ﻿using CaixaIntegrador.Classes;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace CaixaIntegrador.Caixa
 {
-    public partial class NFCtela : Form
+    public partial class NFCtela : MaterialForm
     {
         private Pedido NFCpedido;
         private ImpressoraBase NFCimpressora;
@@ -25,13 +26,13 @@ namespace CaixaIntegrador.Caixa
 
         }
 
-        private void NFCtela_Load(object sender, EventArgs e)
+        public void NFCtela_Load(object sender, EventArgs e)
         {
 
             NFCdoc = new PrintDocument();
             // Calcula a altura com base nos itens e pagamentos
             int linhasFixas = 10; // cabeçalho + data + separadores + total + rodapé
-            int linhasItens = NFCpedido.Itens.Count*2; // cada item ocupa 2 linhas
+            int linhasItens = NFCpedido.Itens.Count * 2; // cada item ocupa 2 linhas
             int linhasPagamentos = NFCpedido.Pagamentos.Count;
             int linhasTroco = NFCpedido.Troco > 0 ? 1 : 0;
             int totalLinhas = linhasFixas + linhasItens + linhasPagamentos + linhasTroco;
@@ -58,6 +59,11 @@ namespace CaixaIntegrador.Caixa
         {
             NFCdoc.Print();
             this.Close();
+        }
+
+        private void PrintViewNFC_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

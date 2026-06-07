@@ -1,4 +1,10 @@
-﻿using System;
+﻿using CaixaIntegrador.Caixa;
+using CaixaIntegrador.Estoque;
+using CaixaIntegrador.Pagina_Inicial;
+using MaterialSkin;
+using MaterialSkin.Controls;
+using Microsoft.VisualBasic.Logging;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +16,144 @@ using System.Windows.Forms;
 
 namespace CaixaIntegrador
 {
-    public partial class PaginaInicial : Form
+    public partial class PaginaInicial : MaterialForm
     {
+        public string UsuarioLogado { get; set; }
+        private EstoqueControl estoqueControl = new EstoqueControl();
+
         public PaginaInicial()
         {
             InitializeComponent();
+            // quando EstoqueControl pedir para voltar, mostrar a tela inicial
+            estoqueControl.VoltarClick += MostrarTelaInicial;
+            TemaFormSkin();
         }
+
+        private void PaginaInicial_Load(object sender, EventArgs e)
+        {
+            MostrarLogin();
+        }
+
+        private void CentralizarControl(UserControl control)
+        {
+            panelPrincipal.Controls.Clear();
+            panelPrincipal.Controls.Add(control);
+            this.ClientSize = new Size(control.Width, control.Height);
+            this.CenterToScreen();
+        }
+
+        public void MostrarLogin()
+        {
+            var login = new LoginControl(this);
+            login.Dock = DockStyle.None;
+            CentralizarControl(login);
+            this.MaximizeBox = false;
+            this.Sizable = false;
+        }
+
+        public void MostrarRegistro()
+        {
+            var registro = new RegistroControl(this);
+            registro.Dock = DockStyle.None;
+            CentralizarControl(registro);
+            this.MaximizeBox = false;
+            this.Sizable = false;
+        }
+
+        public void CarregarCaixa()
+        {
+            var caixaControl = new CaixaControl();
+            caixaControl.Dock = DockStyle.Fill;
+            CentralizarControl(caixaControl);
+            this.MaximizeBox = true;
+           
+        }
+
+        public void MostrarTelaInicial()
+        {
+            var telaInicial = new TelaInicialControl(this);
+
+            CentralizarControl(telaInicial);
+        }
+
+        public void CarregarEstoque()
+        {
+            var estoqueControl = new Estoque.EstoqueControl();
+            estoqueControl.VoltarClick += MostrarTelaInicial;
+            estoqueControl.Dock = DockStyle.None;
+            CentralizarControl(estoqueControl);
+            this.MaximizeBox = false;
+            this.Sizable = false;
+        }
+
+
+        public void CarregarRelatorio() //Dessa forma o relatório abre em uma janela separada, sem substituir o conteúdo do painel principal
+        {
+            var relatorio = new Relatorios.RelatorioVendasForm();
+            relatorio.Show(); // abre como janela separada
+        }
+
+        /*
+         
+         
+        public void CarregarRelatorio() //Dessa forma o relatório é carregado dentro do painel principal, substituindo o conteúdo atual
+        {
+            panelPrincipal.Controls.Clear();
+            var relatorio = new Relatorios.RelatorioVendasForm();
+            relatorio.TopLevel = false;          // importante: não será janela independente
+            relatorio.FormBorderStyle = FormBorderStyle.None;
+            relatorio.Dock = DockStyle.Fill;     // ocupa todo o painel
+            panelPrincipal.Controls.Add(relatorio);
+            relatorio.Show();
+        }
+        
+         */
+
+        private void TemaFormSkin()
+        {
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Red900,    // Cor Principal: Vinho bem escuro (fundo de botões/barras)
+                Primary.BlueGrey900, // Tom de contraste profundo para barras de título
+                Primary.Red600,    // Tom médio para destaques suaves
+                Accent.Blue700,
+                TextShade.WHITE    // Texto branco puro
+            );
+        }
+
+        private void panelPrincipal_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+
+
+        public void MostrarEsqueciSenha()
+        {
+            var tela = new EsqueciSenhaControl(this);
+            tela.Dock = DockStyle.None;
+            CentralizarControl(tela);
+        }
+
+        public void MostrarVerificacaoCodigo(string email)
+        {
+            var tela = new VerificacaoCodigoControl(this, email);
+            tela.Dock = DockStyle.None;
+            CentralizarControl(tela);
+        }
+
+        public void MostrarRedefinirSenha(string email)
+        {
+            var tela = new RedefinirSenhaControl(this, email);
+            tela.Dock = DockStyle.None;
+            CentralizarControl(tela);
+        }
+
+
+
+
     }
 }

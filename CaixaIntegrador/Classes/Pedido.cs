@@ -1,4 +1,4 @@
-namespace CaixaIntegrador.Classes
+﻿namespace CaixaIntegrador.Classes
 {
     // formas de pagamento 
     public enum FormaPagamento
@@ -10,24 +10,25 @@ namespace CaixaIntegrador.Classes
         Dinheiro
     }
 
-    // informa��es de cada forma de pagamento
+    // informações de cada forma de pagamento
     public class Pagamento
     {
+        public int Id { get; set; }
+        public int PedidoId { get; set; }  // ← NOVO
         public FormaPagamento Forma { get; set; }
         public decimal Valor { get; set; }
     }
 
-    // informa��es de cada pedido
+    // informações de cada pedido
     public class Pedido
     {
         public int Id { get; set; }
         public DateTime DataCriacao { get; set; } = DateTime.Now;
-        public List<CarrinhoCompra> Itens { get; set; } = new List<CarrinhoCompra>();
         public decimal Total { get; set; }
-        public PedidoStatus Status { get; set; }
-        // Lista de pagamentos utilizados neste pedido
-        public List<Pagamento> Pagamentos { get; set; } = new List<Pagamento>();
         public decimal Troco { get; set; }
+        public PedidoStatus Status { get; set; }
+        public List<CarrinhoCompra> Itens { get; set; } = new();   // ← mantém CarrinhoCompra
+        public List<Pagamento> Pagamentos { get; set; } = new();
     }
 
     // status de um pedido

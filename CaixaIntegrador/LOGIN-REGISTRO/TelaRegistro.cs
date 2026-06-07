@@ -8,12 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CaixaIntegrador.LOGIN_REGISTRO;
+using MaterialSkin.Controls;
+using CaixaIntegrador.Classes;
 
 namespace CaixaIntegrador.LOGIN_REGISTRO
 {
 
-    public partial class TelaRegistro : Form
+    public partial class TelaRegistro : MaterialForm
     {
         private bool MostrarSenha1 = false;
         private bool MostrarSenha2 = false;
@@ -27,15 +28,15 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
         private void btnRegistro_Click(object sender, EventArgs e)
         {
 
-            if (txtRegistroLogin.Text == "" || txtRegistroSenha1.Text == "" || txtRegistroSenha2.Text == "")
+            if (txtRegistroLogin00.Text == "" || txtRegistroSenha100.Text == "" || txtRegistroSenha200.Text == "")
             {
                 MessageBox.Show("Por favor, preencha todos os campos vazios", "Mensagem de Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (txtRegistroSenha1.Text != txtRegistroSenha2.Text)
+            else if (txtRegistroSenha100.Text != txtRegistroSenha200.Text)
             {
                 MessageBox.Show("As Senhas não coincidem!", "Mensagem de Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (txtRegistroSenha1.Text.Length < 8)
+            else if (txtRegistroSenha100.Text.Length < 8)
             {
                 MessageBox.Show("A senha tem menos de 8 caracteres, por favor crie outra", "Mensagem de Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -55,7 +56,7 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
                             string VerificarUsuario = "SELECT COUNT(*) FROM usuarios WHERE login = @login";
                             using (MySqlCommand verificarComando = new MySqlCommand(VerificarUsuario, Conexao))
                             {
-                                verificarComando.Parameters.AddWithValue("@login", txtRegistroLogin.Text.Trim());
+                                verificarComando.Parameters.AddWithValue("@login", txtRegistroLogin00.Text.Trim());
                                 int usuarioExistente = Convert.ToInt32(verificarComando.ExecuteScalar());
 
                                 if (usuarioExistente > 0)
@@ -71,12 +72,12 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
 
                             using (MySqlCommand comando = new MySqlCommand(InserirDados, Conexao))
                             {
-                                comando.Parameters.AddWithValue("@login", txtRegistroLogin.Text.Trim());
+                                comando.Parameters.AddWithValue("@login", txtRegistroLogin00.Text.Trim());
 
                                 // Criptografar senha
 
                                 string senhaCriptografada = Criptografia.CriptografarSenha(
-                                    txtRegistroSenha1.Text.Trim()
+                                    txtRegistroSenha100.Text.Trim()
                                 );
 
 
@@ -128,41 +129,41 @@ namespace CaixaIntegrador.LOGIN_REGISTRO
         {
             MostrarSenha1 = !MostrarSenha1;
 
-            txtRegistroSenha1.UseSystemPasswordChar = !MostrarSenha1;
+            txtRegistroSenha100.UseSystemPasswordChar = !MostrarSenha1;
         }
 
         private void MostrarOcultar2_Click(object sender, EventArgs e)
         {
             MostrarSenha2 = !MostrarSenha2;
 
-            txtRegistroSenha2.UseSystemPasswordChar = !MostrarSenha2;
+            txtRegistroSenha200.UseSystemPasswordChar = !MostrarSenha2;
         }
 
         private void txtRegistroSenha1_TextChanged(object sender, EventArgs e)
         {
-            MostrarOcultar1.Visible = txtRegistroSenha1.TextLength > 0;
-            if (txtRegistroSenha1.TextLength == 0)
+            MostrarOcultar1.Visible = txtRegistroSenha100.TextLength > 0;
+            if (txtRegistroSenha100.TextLength == 0)
             {
                 MostrarSenha1 = false;
-                txtRegistroSenha1.UseSystemPasswordChar = true;
+                txtRegistroSenha100.UseSystemPasswordChar = true;
             }
         }
 
         private void txtRegistroSenha2_TextChanged(object sender, EventArgs e)
         {
-            MostrarOcultar2.Visible = txtRegistroSenha2.TextLength > 0;
-            if (txtRegistroSenha2.TextLength == 0)
+            MostrarOcultar2.Visible = txtRegistroSenha200.TextLength > 0;
+            if (txtRegistroSenha200.TextLength == 0)
             {
                 MostrarSenha2 = false;
-                txtRegistroSenha2.UseSystemPasswordChar = true;
+                txtRegistroSenha200.UseSystemPasswordChar = true;
             }
         }
 
         private void TelaRegistro_Load(object sender, EventArgs e)
         {
 
-            txtRegistroSenha1.UseSystemPasswordChar = true;
-            txtRegistroSenha2.UseSystemPasswordChar = true;
+            txtRegistroSenha100.UseSystemPasswordChar = true;
+            txtRegistroSenha200.UseSystemPasswordChar = true;
 
             MostrarOcultar1.Visible = false;
             MostrarOcultar2.Visible = false;

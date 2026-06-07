@@ -24,7 +24,7 @@ namespace CaixaIntegrador
         public void CarregarProdutos(List<Produto> produtos)
         {
             FlowProdutos.Controls.Clear();
-            FlowProdutos.Controls.Add(btnVoltar);
+           // FlowProdutos.Controls.Add(btnVoltar);
             foreach (var prod in produtos)
            
             {
@@ -32,11 +32,13 @@ namespace CaixaIntegrador
                 btn.Text = prod.Nome;
                 btn.Width = 120;
                 btn.Height = 120;
-                btn.Font = new Font("Arial Black", 12);
-                btn.BorderRadius = 13;
+                btn.Font = new Font("Roboto", 12, FontStyle.Regular);
+                btn.BorderRadius = 8;
                 btn.BorderThickness = 2;
-                btn.BorderColor = Color.Black;
-
+                btn.Animated = true;
+                btn.FillColor = Color.FromArgb(25, 118, 210);
+                btn.ShadowDecoration.Enabled = false;
+                
                 btn.Click += (s, e) =>
                 {
                     ProdutoSelecionado?.Invoke(prod);
