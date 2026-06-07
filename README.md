@@ -176,24 +176,24 @@ O sistema usa **SQLite** com arquivo local `Adega.db`. As principais tabelas sã
     <td align="center"><b>Main Menu</b></td>
   </tr>
   <tr>
-    <td><img src="screenshots/login.png" width="350"/></td>
-    <td><img src="screenshots/menu.png" width="350"/></td>
+    <td><img src="screenshots/login1.png" width="350"/></td>
+    <td><img src="screenshots/menu1.png" width="350"/></td>
   </tr>
   <tr>
     <td align="center"><b>Point of Sale</b></td>
     <td align="center"><b>Inventory</b></td>
   </tr>
   <tr>
-    <td><img src="screenshots/caixa.png" width="350"/></td>
-    <td><img src="screenshots/estoque.png" width="350"/></td>
+    <td><img src="screenshots/caixa1.png" width="350"/></td>
+    <td><img src="screenshots/estoque1.png" width="350"/></td>
   </tr>
   <tr>
     <td align="center"><b>Stock Movement</b></td>
     <td align="center"><b>Sales Report</b></td>
   </tr>
   <tr>
-    <td><img src="screenshots/movimentacao.png" width="350"/></td>
-    <td><img src="screenshots/relatorio.png" width="350"/></td>
+    <td><img src="screenshots/movimentacao1.png" width="350"/></td>
+    <td><img src="screenshots/relatorio1.png" width="350"/></td>
   </tr>
 </table>
 
