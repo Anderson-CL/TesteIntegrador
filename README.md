@@ -1,4 +1,4 @@
-# 🍺 CaixaIntegrador — Adega do Alemão
+# 🍺 Projeto Integrador PDV — Adega do Alemão
 
 > Sistema de gestão comercial desenvolvido em C# Windows Forms para controle de estoque, caixa, vendas e relatórios de uma adega.
 
@@ -151,7 +151,7 @@ O sistema usa **SQLite** com arquivo local `Adega.db`. As principais tabelas sã
 | Nome | Responsabilidade |
 |---|---|
 | **Anderson CL** | Módulo de estoque, relatórios, banco de dados e autenticação |
-| **Victor Dennis SA** | Módulo de caixa, geração de PDF e design da interface |
+| **Victor Dennis SA** | Módulo de caixa, geração de PDF e design da interface|
 | **Kathellyn Larry** | Wireframe e prototipação das telas, documentação do projeto |
 | **João Carlos** | Levantamento de requisitos, testes e validação do sistema |
 | **Victor Paulo** | Modelagem do banco de dados e diagramas do sistema |
